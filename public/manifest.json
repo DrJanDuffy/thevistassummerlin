@@ -1,0 +1,17 @@
+{
+  "name": "The Vistas Summerlin",
+  "short_name": "VistasSummerlin",
+  "description": "Find your perfect home in The Vistas Summerlin. Explore subcommunities, market trends, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F9FC",
+  "theme_color": "#0A2540",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 72x72 96x96 128x128 256x256",
+      "type": "image/x-icon"
+    }
+  ]
+} 
