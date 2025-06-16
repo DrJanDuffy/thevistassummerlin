@@ -35,10 +35,7 @@ export default function Navbar() {
         {/* Mobile Hamburger */}
         <div className="flex md:hidden items-center">
           <OffCanvasNav
-            links={[
-              ...mainLinks,
-              { href: "#", label: "Subcommunities", sublinks: subcommunityLinks },
-            ]}
+            links={mainLinks}
           />
           <ThemeToggle />
         </div>
