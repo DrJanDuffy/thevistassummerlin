@@ -3,6 +3,18 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
+      {/* Optimized Hero Image */}
+      <div className="w-full max-w-3xl mb-8">
+        <Image
+          src="/hero.jpg"
+          alt="The Vistas Summerlin Hero"
+          width={1200}
+          height={480}
+          sizes="(max-width: 768px) 100vw, 768px"
+          priority
+          className="rounded-lg shadow-lg w-full h-auto object-cover"
+        />
+      </div>
       <main className="flex flex-col items-center gap-8">
         <h1 className="text-h1 text-blue-900 text-center mb-4">
           Welcome to The Vistas Summerlin
