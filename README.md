@@ -1,4 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Vistas Summerlin
+
+A modern, scalable, hyperlocal real estate site for The Vistas Summerlin.
+
+## Folder Structure
+
+- `app/` - Main Next.js app directory (pages, layouts, components)
+  - `components/` - Shared React components
+    - `ui/` - Atomic UI elements (Button, Accordion, etc.)
+  - `communities/` - Individual subcommunity pages
+- `public/` - Static assets
+  - `subcommunities/` - Hero images for each subcommunity
+- `lib/` - Utility functions and shared logic
+- `.taskmaster/` - Task Master AI project management files
+
+## Best Practices
+- Keep all subcommunity pages and images in sync with the authoritative list.
+- Use atomic UI components for consistency and reusability.
+- Document new folders and components with a `README.md`.
+- Remove unused files and assets regularly.
+- Optimize images for web performance.
 
 ## Getting Started
 
