@@ -2,8 +2,7 @@ import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import ThemeProvider from "./components/ThemeProvider";
+import ClientLayoutShell from "./components/ClientLayoutShell";
 
 const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
 const RegisterServiceWorker = dynamic(() => import("./components/RegisterServiceWorker"), { ssr: false });
@@ -37,12 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
-          <RegisterServiceWorker />
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <ClientLayoutShell>{children}</ClientLayoutShell>
       </body>
     </html>
   );
