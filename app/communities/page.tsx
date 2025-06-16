@@ -1,5 +1,32 @@
 const subcommunities = [
-  "Solano", "Encanto", "Belmonte", "Cielo", "Estancia", "Granite Peaks", "Miraleste", "Montecito", "Montaire", "Paradiso", "Portofino", "San Marcos", "Santaluz", "Serrano", "Talaverde", "Talavera", "Traccia", "Vista Verde", "Wisteria Hills", "Amber Hills", "Andorra", "Barcelona", "Cortona", "Cresta Del Sol", "Mariposa", "Palomar", "Sage Hills", "Sierra Woods"
+  "Altessa",
+  "Ashton Park",
+  "Barrington",
+  "Bella Vista",
+  "Canterra",
+  "Capri",
+  "Cara Vella",
+  "Casa Rosa",
+  "Encanto",
+  "Estancia",
+  "Hillstone",
+  "Kingwood",
+  "Miraleste",
+  "Miramonte",
+  "Monterossa",
+  "Palmilla",
+  "Paradiso",
+  "Portofino",
+  "Sage Hills",
+  "San Marcos",
+  "Santalina",
+  "Solano",
+  "Somerset",
+  "Sonesta",
+  "Summerfield",
+  "Talaverde",
+  "Talega",
+  "Vista Verde"
 ];
 
 function toKebabCase(name: string) {
