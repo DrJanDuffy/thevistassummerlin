@@ -1,11 +1,7 @@
-import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayoutShell from "./components/ClientLayoutShell";
-
-const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
-const RegisterServiceWorker = dynamic(() => import("./components/RegisterServiceWorker"), { ssr: false });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
