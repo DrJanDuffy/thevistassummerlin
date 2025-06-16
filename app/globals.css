@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/*
+  === Design System: The Vistas Summerlin ===
+  - Mobile-first 12-column grid
+  - Scalable typography
+  - Color palette (primary, accent, semantic)
+  - Utility classes: spacing, z-index, box-shadow
+  - Responsive breakpoints: xs, sm, md, lg, xl
+*/
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -8,6 +17,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #0A2540;
+  --color-accent: #3A8DDE;
+  --color-buyer: #3A8DDE;
+  --color-seller: #16B286;
+  --color-bg-light: #F7F9FC;
+  --color-success: #16B286;
+  --color-error: #E53E3E;
+  --color-warning: #F59E42;
+  --color-info: #3A8DDE;
+  --box-shadow-widget: 0 2px 8px rgba(0,0,0,0.08);
+  --z-modal: 1000;
+  --min-widget-height: 480px;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -25,16 +46,10 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
@@ -45,24 +60,33 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: #fff;
+  --foreground: #22223B;
+  --primary: #0A2540;
+  --primary-foreground: #fff;
+  --accent: #3A8DDE;
+  --accent-foreground: #fff;
+  --buyer: #3A8DDE;
+  --seller: #16B286;
+  --bg-light: #F7F9FC;
+  --success: #16B286;
+  --error: #E53E3E;
+  --warning: #F59E42;
+  --info: #3A8DDE;
+  --ring: #3A8DDE;
+  --border: #E5E7EB;
+  --input: #F7F9FC;
+  --z-modal: 1000;
+  --min-widget-height: 480px;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -79,24 +103,24 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
+  --background: #22223B;
+  --foreground: #F7F9FC;
+  --primary: #3A8DDE;
+  --primary-foreground: #fff;
+  --accent: #16B286;
+  --accent-foreground: #fff;
+  --ring: #16B286;
+  --border: #444;
+  --input: #333;
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -111,6 +135,25 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
+
+/* === Typography === */
+.text-h1 { @apply text-4xl sm:text-5xl font-bold; }
+.text-h2 { @apply text-3xl sm:text-4xl font-bold; }
+.text-h3 { @apply text-2xl sm:text-3xl font-semibold; }
+.text-h4 { @apply text-xl sm:text-2xl font-semibold; }
+.text-body { @apply text-base sm:text-lg; }
+.text-caption { @apply text-sm text-gray-500; }
+
+/* === Grid System === */
+.grid-12 { @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 gap-4; }
+.col-span-full { @apply col-span-12; }
+
+/* === Utility Classes === */
+.box-widget { box-shadow: var(--box-shadow-widget); min-height: var(--min-widget-height); background: var(--bg-light); border-radius: var(--radius-lg); }
+.z-modal { z-index: var(--z-modal); }
+
+/* === Responsive Breakpoints === */
+/* xs: <576px, sm: ≥576px, md: ≥768px, lg: ≥992px, xl: ≥1200px */
 
 @layer base {
   * {
