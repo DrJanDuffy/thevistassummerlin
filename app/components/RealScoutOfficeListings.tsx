@@ -1,8 +1,3 @@
-export {};
-
-import { useEffect, useRef } from "react";
-
-// Add custom element type for TypeScript
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -10,6 +5,9 @@ declare global {
     }
   }
 }
+export {};
+
+import { useEffect, useRef } from "react";
 
 interface RealScoutOfficeListingsProps {
   agentEncodedId: string;
