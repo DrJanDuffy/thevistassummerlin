@@ -39,11 +39,7 @@ function toKebabCase(name: string) {
   return name.toLowerCase().replace(/\s+/g, "-");
 }
 
-type Props = {
-  params: { slug: string }
-};
-
-export default function CommunityPage({ params }: Props) {
+export default function CommunityPage({ params }: { params: { slug: string } }) {
   const name = subcommunities.find(
     (n) => toKebabCase(n) === params.slug
   );
