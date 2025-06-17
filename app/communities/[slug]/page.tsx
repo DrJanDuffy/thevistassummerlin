@@ -1,8 +1,6 @@
-"use client";
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import { useState } from "react";
 import RealScoutOfficeListings from "../../components/RealScoutOfficeListings";
+import CommunityHeroImage from "../../components/CommunityHeroImage";
 
 const subcommunities = [
   "Altessa",
@@ -45,20 +43,11 @@ export default function CommunityPage(props: any) {
     (n) => toKebabCase(n) === params.slug
   );
   if (!name) return notFound();
-  const [imgSrc, setImgSrc] = useState(`/subcommunities/${name.replace(/ /g, "-")}.jpg`);
+  const imgSrc = `/subcommunities/${name.replace(/ /g, "-")}.jpg`;
   return (
     <main className="max-w-2xl mx-auto py-16 px-4">
       <div className="w-full mb-6">
-        <Image
-          src={imgSrc}
-          alt={`${name} at The Vistas Summerlin`}
-          width={800}
-          height={320}
-          sizes="(max-width: 768px) 100vw, 768px"
-          className="rounded-lg shadow-lg w-full h-auto object-cover"
-          onError={() => setImgSrc("/hero.jpg")}
-          priority
-        />
+        <CommunityHeroImage name={name} imgSrc={imgSrc} />
       </div>
       {/* RealScout Widget */}
       <div className="mb-8">
