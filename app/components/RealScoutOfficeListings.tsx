@@ -14,7 +14,7 @@ export default function RealScoutOfficeListings({
   agentEncodedId,
   sortOrder = "STATUS_AND_SIGNIFICANT_CHANGE",
   listingStatus = "For Sale",
-  propertyTypes = ",SFR,MF",
+  propertyTypes = "SFR,MF,TC,MOBILE",
   priceMin = "500000",
   priceMax = "4000000",
   ...rest
