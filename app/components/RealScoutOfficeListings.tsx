@@ -1,13 +1,4 @@
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'realscout-office-listings': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
-}
-export {};
-
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface RealScoutOfficeListingsProps {
   agentEncodedId: string;
@@ -49,7 +40,7 @@ export default function RealScoutOfficeListings({
 
   return (
     <>
-      <realscout-office-listings ref={ref as any}></realscout-office-listings>
+      {React.createElement('realscout-office-listings', { ref })}
       <noscript>
         <div style={{ color: 'red' }}>
           RealScout widgets require JavaScript to be enabled.
