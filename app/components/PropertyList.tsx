@@ -1,3 +1,5 @@
+// Trigger redeploy: 2025-06-18
+// This comment is to force Vercel to use the latest code and break any cache issues.
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../../lib/supabaseClient';
