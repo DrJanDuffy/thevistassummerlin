@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayoutShell from "./components/ClientLayoutShell";
 import Script from 'next/script';
 import { ReactNode } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthButton } from './components/AuthButton';
 
-const geistSans = Geist({
+const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const robotoMono = Roboto_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-const queryClient = new QueryClient();
 
 // --- SEO Best Practices: All canonical/meta tags use www.thevistassummerlin.com ---
 export const metadata: Metadata = {
@@ -116,7 +113,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preload" as="image" href="/hero.jpg" imageSrcSet="/hero.jpg 1x" />
         {/* Google Analytics (GA4) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PW6F30EHD8" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PW6F30EHD8" strategy="afterInteractive" />
         <Script id="ga4-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -127,14 +124,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={"min-h-screen bg-white text-gray-900 antialiased font-sans "+geistSans.variable+" "+geistMono.variable}
+        className={"min-h-screen bg-white text-gray-900 antialiased font-sans "+inter.variable+" "+robotoMono.variable}
       >
-        <QueryClientProvider client={queryClient}>
-          <ClientLayoutShell>
-            <AuthButton />
-            {children}
-          </ClientLayoutShell>
-        </QueryClientProvider>
+        <ClientLayoutShell>
+          <AuthButton />
+          {children}
+        </ClientLayoutShell>
         <RegisterServiceWorker />
       </body>
     </html>

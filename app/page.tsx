@@ -22,7 +22,7 @@ export default function Home() {
       </div>
       {/* RealScout Widget */}
       <div className="w-full max-w-2xl mb-8">
-        <RealScoutOfficeListings agentEncodedId="QWdlbnQtMjI1MDUw" />
+        <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" />
       </div>
       <main className="flex flex-col items-center gap-8">
         <h1 className="text-h1 text-blue-900 text-center mb-4">

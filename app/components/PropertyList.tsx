@@ -1,7 +1,7 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../../lib/supabaseClient';
-import { Card } from 'app/components/ui/Card';
+import { Card } from './ui/Card';
 import { usePropertyFilterStore } from './propertyFilterStore';
 import { CalendlyButton } from './CalendlyButton';
 
