@@ -1,3 +1,5 @@
+import { CalendlyButton } from './components/CalendlyButton';
+
 export default function Contact() {
   return (
     <main className="max-w-2xl mx-auto py-16 px-4">
@@ -11,6 +13,9 @@ export default function Contact() {
         <textarea placeholder="Your Message" className="border rounded px-4 py-2" rows={5} required />
         <button type="submit" className="bg-blue-700 text-white font-semibold py-2 px-6 rounded hover:bg-blue-800 transition-colors">Send Message</button>
       </form>
+      <div className="mb-8">
+        <CalendlyButton url="https://calendly.com/your-link" />
+      </div>
     </main>
   );
 } 

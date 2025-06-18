@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thevistassummerlin.com
+
+# Sitemaps
+Sitemap: https://thevistassummerlin.com/sitemap.xml
+
+# PWA: Allow service worker and manifest
+Disallow: /service-worker.js
+Disallow: /manifest.json

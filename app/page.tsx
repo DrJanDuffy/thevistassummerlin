@@ -1,4 +1,9 @@
+"use client";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import { PropertyFilter } from './components/PropertyFilter';
+import { PropertyList } from './components/PropertyList';
+const RealScoutOfficeListings = dynamic(() => import("./components/RealScoutOfficeListings"), { ssr: false, loading: () => <div className="w-full max-w-2xl mb-8 text-center text-gray-500">Loading listings…</div> });
 
 export default function Home() {
   return (
@@ -14,6 +19,10 @@ export default function Home() {
           priority
           className="rounded-lg shadow-lg w-full h-auto object-cover"
         />
+      </div>
+      {/* RealScout Widget */}
+      <div className="w-full max-w-2xl mb-8">
+        <RealScoutOfficeListings agentEncodedId="QWdlbnQtMjI1MDUw" />
       </div>
       <main className="flex flex-col items-center gap-8">
         <h1 className="text-h1 text-blue-900 text-center mb-4">
@@ -37,6 +46,8 @@ export default function Home() {
             <li>Expert local insights and resources</li>
           </ul>
         </div>
+        <PropertyFilter />
+        <PropertyList />
       </main>
     </div>
   );

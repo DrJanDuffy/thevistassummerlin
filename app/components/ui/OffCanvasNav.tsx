@@ -7,7 +7,7 @@ type OffCanvasNavProps = {
   links: NavLink[];
 };
 
-export function OffCanvasNav({ links }: OffCanvasNavProps) {
+export default function OffCanvasNav({ links }: OffCanvasNavProps) {
   const [open, setOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
 

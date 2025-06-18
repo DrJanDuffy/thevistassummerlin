@@ -60,4 +60,94 @@ node_modules/
 # OS specific
 # Task files
 tasks.json
-tasks/ 
+tasks/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+
+# Vercel
+.vercel/
+
+# Environment
+.env*
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Misc
+*.local
+*.cache
+*.swp
+
+# Test coverage
+coverage/
+
+# Build output
+build/
+dist/
+
+# Public export
+exported/
+
+# Misc
+*.tgz
+*.zip
+*.bak
+*.tmp
+
+# Ignore Mac system files
+.AppleDouble
+.LSOverride
+
+# Ignore Windows system files
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore by Next.js static export
+out/
+
+# Ignore by Vercel
+.vercel/
+
+# Ignore by npm pack
+*.tgz
+
+# Ignore by npm
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore by TypeScript
+*.tsbuildinfo
+
+# Ignore by Jest
+coverage/
+
+# Ignore by Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Ignore by Playwright
+playwright-report/ 

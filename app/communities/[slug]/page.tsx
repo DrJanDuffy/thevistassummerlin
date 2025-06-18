@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import RealScoutOfficeListings from "../../components/RealScoutOfficeListings";
 import CommunityHeroImage from "../../components/CommunityHeroImage";
+import CommunityListingsClient from "../../components/CommunityListingsClient";
 
 const subcommunities = [
   "Altessa",
@@ -51,7 +51,7 @@ export default function CommunityPage(props: any) {
       </div>
       {/* RealScout Widget */}
       <div className="mb-8">
-        <RealScoutOfficeListings agentEncodedId="QWdlbnQtMjI1MDUw" />
+        <CommunityListingsClient agentEncodedId="QWdlbnQtMjI1MDUw" />
       </div>
       <h1 className="text-3xl font-bold mb-4 text-blue-900">{name} at The Vistas Summerlin</h1>
       <p className="mb-4 text-gray-700">Welcome to {name}, a premier subcommunity in The Vistas Summerlin. Discover beautiful homes, amenities, and a vibrant lifestyle in this sought-after neighborhood.</p>
