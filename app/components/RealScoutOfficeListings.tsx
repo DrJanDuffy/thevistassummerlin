@@ -1,48 +1,20 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from 'react';
 
-interface RealScoutOfficeListingsProps {
-  agentEncodedId: string;
-  sortOrder?: string;
-  listingStatus?: string;
-  propertyTypes?: string;
-  priceMin?: string | number;
-  priceMax?: string | number;
-  [key: string]: any;
-}
-
-export default function RealScoutOfficeListings({
-  agentEncodedId,
-  sortOrder = "STATUS_AND_SIGNIFICANT_CHANGE",
-  listingStatus = "For Sale",
-  propertyTypes = "SFR,MF,TC,MOBILE",
-  priceMin = "500000",
-  priceMax = "4000000",
-  ...rest
-}: RealScoutOfficeListingsProps) {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.setAttribute("agent-encoded-id", agentEncodedId);
-      ref.current.setAttribute("sort-order", sortOrder);
-      ref.current.setAttribute("listing-status", listingStatus);
-      ref.current.setAttribute("property-types", propertyTypes);
-      ref.current.setAttribute("price-min", String(priceMin));
-      ref.current.setAttribute("price-max", String(priceMax));
-      // Set any additional props as attributes
-      Object.entries(rest).forEach(([key, value]) => {
-        if (typeof value !== "undefined") {
-          ref.current!.setAttribute(key.replace(/[A-Z]/g, m => "-" + m.toLowerCase()), String(value));
-        }
-      });
-    }
-  }, [agentEncodedId, sortOrder, listingStatus, propertyTypes, priceMin, priceMax, rest]);
-
+export default function RealScoutOfficeListings() {
+  // @ts-ignore: Custom element for RealScout
   return (
     <>
-      {React.createElement('realscout-office-listings', { ref })}
+      {React.createElement('realscout-office-listings', {
+        'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+        'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
+        'listing-status': 'For Sale',
+        'property-types': 'SFR,MF,TC',
+        'price-min': '500000',
+        'price-max': '4000000',
+        suppressHydrationWarning: true,
+      })}
       <noscript>
         <div style={{ color: 'red' }}>
           RealScout widgets require JavaScript to be enabled.

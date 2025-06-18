@@ -61,11 +61,14 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0A2540" />
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-          strategy="afterInteractive"
-        />
+        {/* RealScout official embed (only once) */}
+        <Script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module" strategy="afterInteractive" />
+        <style dangerouslySetInnerHTML={{__html: `
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}} />
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -96,10 +99,6 @@ export default function RootLayout({
             --rs-listing-divider-color: rgb(101, 141, 172);
             width: 100%;
           }
-          realscout-office-listings {
-            --rs-listing-divider-color: rgb(101, 141, 172);
-            width: 100%;
-          }
           realscout-home-value {
             --rs-hvw-background-color: #ffffff;
             --rs-hvw-title-color: #000000;
@@ -117,15 +116,27 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preload" as="image" href="/hero.jpg" imageSrcSet="/hero.jpg 1x" />
         {/* Google Analytics (GA4) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PW6F30EHD8" strategy="afterInteractive" />
         <Script id="ga4-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-PW6F30EHD8');
           `}
         </Script>
       </head>
       <body
-        className={`
+        className={"min-h-screen bg-white text-gray-900 antialiased font-sans "+geistSans.variable+" "+geistMono.variable}
+      >
+        <QueryClientProvider client={queryClient}>
+          <ClientLayoutShell>
+            <AuthButton />
+            {children}
+          </ClientLayoutShell>
+        </QueryClientProvider>
+        <RegisterServiceWorker />
+      </body>
+    </html>
+  );
+}

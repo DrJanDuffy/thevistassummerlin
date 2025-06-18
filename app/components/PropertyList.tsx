@@ -33,7 +33,7 @@ export function PropertyList() {
           <div className="text-primary font-semibold">${property.price?.toLocaleString() || 'N/A'}</div>
           <div className="text-sm text-gray-500">{property.beds} beds • {property.baths} baths</div>
           <div className="flex-1" />
-          <CalendlyButton url="https://calendly.com/your-link" />
+          <CalendlyButton url="https://calendly.com/drjanduffy/showing" />
         </Card>
       ))}
     </div>

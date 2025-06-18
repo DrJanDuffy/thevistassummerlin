@@ -14,7 +14,7 @@ export default function Contact() {
         <button type="submit" className="bg-blue-700 text-white font-semibold py-2 px-6 rounded hover:bg-blue-800 transition-colors">Send Message</button>
       </form>
       <div className="mb-8">
-        <CalendlyButton url="https://calendly.com/your-link" />
+        <CalendlyButton url="https://calendly.com/drjanduffy/showing" />
       </div>
     </main>
   );

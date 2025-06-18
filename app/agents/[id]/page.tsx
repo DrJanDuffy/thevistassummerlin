@@ -7,7 +7,7 @@ export default function AgentProfilePage() {
       <p className="mb-6 text-lg text-gray-700">Berkshire Hathaway HomeServices / SkyeCanyon</p>
       {/* Add agent photo, bio, contact info here if desired */}
       <div className="mb-8">
-        <CalendlyButton url="https://calendly.com/your-link" />
+        <CalendlyButton url="https://calendly.com/drjanduffy/showing" />
       </div>
     </main>
   );
