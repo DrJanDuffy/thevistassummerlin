@@ -2,13 +2,6 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "thevistassummerlin.com" }],
-      "destination": "https://www.thevistassummerlin.com/:1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": ":vercel.app" }],
       "destination": "https://www.thevistassummerlin.com/:1",
       "permanent": true
     }
