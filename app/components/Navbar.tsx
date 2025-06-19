@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import dynamic from "next/dynamic";
-const OffCanvasNav = dynamic(() => import("./ui/OffCanvasNav"), { ssr: false });
+const OffCanvasNav = dynamic(() => import("@/components/ui/OffCanvasNav"), { ssr: false });
 
 const subcommunities = [
   "Altessa",
