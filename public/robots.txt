@@ -2,12 +2,16 @@
 User-agent: *
 Allow: /
 
+# *
+User-agent: *
+Disallow: /api/
+
+# *
+User-agent: *
+Disallow: /*.vercel.app/
+
 # Host
-Host: https://thevistassummerlin.com
+Host: https://www.thevistassummerlin.com
 
 # Sitemaps
-Sitemap: https://thevistassummerlin.com/sitemap.xml
-
-# PWA: Allow service worker and manifest
-Disallow: /service-worker.js
-Disallow: /manifest.json
+Sitemap: https://www.thevistassummerlin.com/sitemap.xml

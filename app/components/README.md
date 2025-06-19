@@ -16,4 +16,25 @@ Import components from this folder into your pages or feature components as need
 ## Contribution
 - Add new shared components here.
 - Keep atomic UI elements in the `ui/` subfolder.
-- Update this README with new components and usage notes. 
+- Update this README with new components and usage notes.
+
+## CardReplacement
+
+A simple, reusable card UI component for consistent styling across the app.
+
+**Usage:**
+
+```tsx
+import { CardReplacement } from '@/components/ui/CardReplacement';
+
+<CardReplacement>
+  {/* Your content here */}
+</CardReplacement>
+```
+
+- Accepts `children` and an optional `className` prop for further customization.
+- Applies standard card styling: white background, rounded corners, shadow, border, and padding.
+
+---
+
+Add new shared components here and document their usage for consistency. 

@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../../lib/supabaseClient';
 import { usePropertyFilterStore } from '@/components/propertyFilterStore';
 import { CalendlyButton } from '@/components/CalendlyButton';
-import { Card } from '@/components/ui/Card';
+import { RealScoutWidget } from './RealScoutWidget';
 
 export function PropertyList() {
   const filters = usePropertyFilterStore((state) => state.filters);
@@ -29,14 +29,10 @@ export function PropertyList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {data.map((property: any) => (
-        <Card key={property.id} className="p-6 flex flex-col gap-2">
-          <div className="font-bold text-lg">{property.address || 'Property'}</div>
-          <div className="text-gray-600">{property.city}, {property.state}</div>
-          <div className="text-primary font-semibold">${property.price?.toLocaleString() || 'N/A'}</div>
-          <div className="text-sm text-gray-500">{property.beds} beds • {property.baths} baths</div>
-          <div className="flex-1" />
-          <CalendlyButton url="https://calendly.com/drjanduffy/showing" />
-        </Card>
+        <div key={property.id} className="mb-6">
+          {/* RealScoutWidget integration for each property. Pass property as needed in future. */}
+          <RealScoutWidget />
+        </div>
       ))}
     </div>
   );
