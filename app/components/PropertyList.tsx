@@ -1,4 +1,4 @@
-// Trigger redeploy: 2025-06-18
+// Dummy comment to force Vercel clean redeploy: 2025-06-18T23:00Z
 // This comment is to force Vercel to use the latest code and break any cache issues.
 'use client';
 import { useQuery } from '@tanstack/react-query';
