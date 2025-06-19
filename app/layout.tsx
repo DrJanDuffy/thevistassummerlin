@@ -4,7 +4,8 @@ import "./globals.css";
 import ClientLayoutShell from "./components/ClientLayoutShell";
 import Script from 'next/script';
 import { ReactNode } from 'react';
-import { AuthButton } from './components/AuthButton';
+import { AuthButton } from '@/components/AuthButton';
+import AudioPlayer from '@/components/AudioPlayer';
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -128,6 +129,8 @@ export default function RootLayout({
       >
         <ClientLayoutShell>
           <AuthButton />
+          {/* Global Audio Player */}
+          <AudioPlayer src="/audio/home-guide.mp3" title="Home Buying & Selling Audio Guide" />
           {children}
         </ClientLayoutShell>
         <RegisterServiceWorker />
