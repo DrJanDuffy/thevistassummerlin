@@ -41,6 +41,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
+    "claude-task-master": "^1.6.4",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10",
     "tw-animate-css": "^1.3.4",

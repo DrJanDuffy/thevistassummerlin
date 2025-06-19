@@ -2,7 +2,7 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { usePropertyFilterStore } from './propertyFilterStore';
+import { usePropertyFilterStore } from '@/components/propertyFilterStore';
 
 const filterSchema = z.object({
   city: z.string().optional(),

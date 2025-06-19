@@ -1,8 +1,8 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getUserRole } from '../../lib/utils';
-import { LeadsTable } from './LeadsTable';
-import CalendlyAppointments from './CalendlyAppointments';
+import { LeadsTable } from '@/admin/LeadsTable';
+import CalendlyAppointments from '@/admin/CalendlyAppointments';
 
 async function getSession() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/auth/session`, {

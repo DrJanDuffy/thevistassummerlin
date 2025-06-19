@@ -3,9 +3,9 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../../lib/supabaseClient';
-import { Card } from './ui/Card';
-import { usePropertyFilterStore } from './propertyFilterStore';
-import { CalendlyButton } from './CalendlyButton';
+import { Card } from '@/components/ui/Card';
+import { usePropertyFilterStore } from '@/components/propertyFilterStore';
+import { CalendlyButton } from '@/components/CalendlyButton';
 
 export function PropertyList() {
   const filters = usePropertyFilterStore((state) => state.filters);

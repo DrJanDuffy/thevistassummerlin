@@ -1,6 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // config options here
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    // appDir: true, // Uncomment if you use the App Router (Next.js 13+)
+    // serverActions: true, // Uncomment if you use Server Actions
+  },
+  images: {
+    // domains: ['your-image-domains.com'], // Add if you use external images
+  },
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  // },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: [
+  //         { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+  //       ],
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig; 

@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { PropertyFilter } from './components/PropertyFilter';
-import { PropertyList } from './components/PropertyList';
+import { PropertyFilter } from '@/components/PropertyFilter';
+import { PropertyList } from '@/components/PropertyList';
 const RealScoutOfficeListings = dynamic(() => import("./components/RealScoutOfficeListings"), { ssr: false, loading: () => <div className="w-full max-w-2xl mb-8 text-center text-gray-500">Loading listings…</div> });
 
 export default function Home() {

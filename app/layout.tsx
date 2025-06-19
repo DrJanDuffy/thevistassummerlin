@@ -19,6 +19,7 @@ const robotoMono = Roboto_Mono({
 
 // --- SEO Best Practices: All canonical/meta tags use www.thevistassummerlin.com ---
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.thevistassummerlin.com'),
   title: "The Vistas Summerlin",
   description: "Discover your perfect home in one of 28 vibrant subcommunities.",
   openGraph: {
