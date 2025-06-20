@@ -3,6 +3,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { PropertyFilter } from '@/components/PropertyFilter';
 import { PropertyList } from '@/components/PropertyList';
+import { NLPSearchBar } from '@/components/NLPSearchBar';
 const RealScoutOfficeListings = dynamic(() => import("./components/RealScoutOfficeListings"), { ssr: false, loading: () => <div className="w-full max-w-2xl mb-8 text-center text-gray-500">Loading listings…</div> });
 
 export default function Home() {
@@ -24,18 +25,21 @@ export default function Home() {
       <div className="w-full max-w-2xl mb-8">
         <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" />
       </div>
-      <main className="flex flex-col items-center gap-8">
-        <h1 className="text-h1 text-blue-900 text-center mb-4">
+      <main className="flex flex-col items-center gap-8 w-full">
+        <h1 className="text-h1 text-foreground text-center mb-4">
           Welcome to The Vistas Summerlin
         </h1>
-        <p className="text-body text-gray-700 text-center max-w-xl mb-8">
+        <p className="text-body text-muted-foreground text-center max-w-xl mb-2">
           Discover your perfect home in one of 28 vibrant subcommunities. Explore local market insights, community events, and the best of Summerlin living—all in one place.
         </p>
+        
+        <NLPSearchBar />
+
         <a
           href="#communities"
-          className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors mt-4"
         >
-          Explore Communities
+          Or, Explore Communities Manually
         </a>
         <div className="box-widget w-full max-w-2xl mt-8 p-6">
           <h2 className="text-h3 mb-2">Why The Vistas Summerlin?</h2>
