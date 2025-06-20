@@ -29,9 +29,18 @@ export function PropertyList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {data.map((property: any) => (
-        <div key={property.id} className="mb-6">
-          {/* RealScoutWidget integration for each property. Pass property as needed in future. */}
-          <RealScoutWidget />
+        <div key={property.id} className="mb-6 bg-card text-card-foreground border border-border rounded-lg shadow-md p-4">
+          <h3 className="text-h3">{property.address || 'Luxury Residence'}</h3>
+          <p className="text-muted-foreground">{property.city}, {property.state}</p>
+          <div className="my-4">
+            <RealScoutWidget />
+          </div>
+          <div className="flex justify-between items-center mt-4">
+            <div className="font-bold text-lg text-primary">
+              ${property.price ? new Intl.NumberFormat('en-US').format(property.price) : 'Contact for Price'}
+            </div>
+            <CalendlyButton url="https://calendly.com/your-scheduling-link" />
+          </div>
         </div>
       ))}
     </div>
