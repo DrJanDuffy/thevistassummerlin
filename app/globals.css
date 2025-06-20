@@ -13,21 +13,21 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #fff;
-  --foreground: #22223B;
-  --primary: #0A2540;
-  --primary-foreground: #fff;
-  --accent: #3A8DDE;
-  --accent-foreground: #fff;
-  --buyer: #3A8DDE;
-  --seller: #16B286;
+  --background: #FDFCFB;
+  --foreground: #1E1E1E;
+  --primary: #2C3E50;
+  --primary-foreground: #FFFFFF;
+  --accent: #B8860B;
+  --accent-foreground: #FFFFFF;
+  --buyer: #B8860B;
+  --seller: #5a7d9a;
   --bg-light: #F7F9FC;
   --success: #16B286;
   --error: #E53E3E;
   --warning: #F59E42;
   --info: #3A8DDE;
-  --ring: #3A8DDE;
-  --border: #E5E7EB;
+  --ring: #B8860B;
+  --border: #E0E0E0;
   --input: #F7F9FC;
   --z-modal: 1000;
   --min-widget-height: 480px;
@@ -56,15 +56,15 @@
 }
 
 .dark {
-  --background: #22223B;
-  --foreground: #F7F9FC;
-  --primary: #3A8DDE;
-  --primary-foreground: #fff;
-  --accent: #16B286;
-  --accent-foreground: #fff;
-  --ring: #16B286;
-  --border: #444;
-  --input: #333;
+  --background: #121212;
+  --foreground: #E0E0E0;
+  --primary: #B8860B;
+  --primary-foreground: #1E1E1E;
+  --accent: #F0E68C;
+  --accent-foreground: #1E1E1E;
+  --ring: #F0E68C;
+  --border: #333333;
+  --input: #2C2C2C;
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
@@ -90,7 +90,7 @@
 }
 
 /* === Typography === */
-.text-h1 { @apply text-4xl sm:text-5xl font-bold; }
+.text-h1 { @apply text-4xl font-bold; } /* Removed sm:text-4xl for Tailwind compatibility */
 .text-h2 { @apply text-3xl sm:text-4xl font-bold; }
 .text-h3 { @apply text-2xl sm:text-3xl font-semibold; }
 .text-h4 { @apply text-xl sm:text-2xl font-semibold; }
