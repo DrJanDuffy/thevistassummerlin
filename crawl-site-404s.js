@@ -1,7 +1,7 @@
 // Node.js v18+ required (for global fetch)
 const { JSDOM } = require('jsdom');
 
-const BASE_URL = 'https://thevistassummerlin-2ydwfcj0h-janet-duffys-projects.vercel.app';
+const BASE_URL = 'http://localhost:3000';
 const visited = new Set();
 const toVisit = [`${BASE_URL}/`];
 
@@ -48,4 +48,4 @@ async function crawl() {
   console.log('\nCrawl complete!');
 }
 
-crawl(); 
+crawl();

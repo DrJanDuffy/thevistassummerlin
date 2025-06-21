@@ -7,7 +7,7 @@ const nextConfig = {
     // serverActions: true, // Uncomment if you use Server Actions
   },
   images: {
-    // domains: ['your-image-domains.com'], // Add if you use external images
+    domains: ['placehold.co'], // Add if you use external images
   },
   // i18n: {
   //   locales: ['en'],

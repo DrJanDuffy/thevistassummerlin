@@ -149,7 +149,7 @@ export async function getCommunityBySlug(slug: string): Promise<CommunityData | 
       stats: generateStats(communityType),
       amenities: getAmenitiesForType(communityType, 6),
       neighborhood: getNeighborhoodScores(communityType),
-      location: generateLocation(communityName),
+      location: generateLocation(),
       marketTrends: generateMarketTrends(),
     };
     return communityData;
@@ -179,7 +179,7 @@ function generateStats(communityType: string = 'default') {
   };
 }
 
-function generateLocation(communityName: string) {
+function generateLocation() {
   const { defaultCity, defaultState, baseCoordinates, coordinateRadius } = LOCATION_CONFIG;
   return {
     city: defaultCity,

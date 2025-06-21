@@ -4,7 +4,6 @@ import "./globals.css";
 import ClientLayoutShell from "./components/ClientLayoutShell";
 import Script from 'next/script';
 import { ReactNode } from 'react';
-import { AuthButton } from '@/components/AuthButton';
 import AudioPlayer from '@/components/AudioPlayer';
 
 const inter = Inter({
@@ -26,29 +25,19 @@ export const metadata: Metadata = {
     title: "The Vistas Summerlin",
     description: "Explore local market insights, community events, and more.",
     url: "https://www.thevistassummerlin.com",
-    images: ["/hero.jpg"],
+    images: ["/subcommunities/Santaluz.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "The Vistas Summerlin",
     description: "Find your dream home in Summerlin.",
-    images: ["/hero.jpg"],
+    images: ["/subcommunities/Santaluz.jpg"],
   },
   alternates: {
     canonical: "https://www.thevistassummerlin.com",
   },
 };
-
-// Client-only component for service worker registration
-function RegisterServiceWorker() {
-  if (typeof window === 'undefined') return null;
-  // @ts-ignore
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js');
-  }
-  return null;
-}
 
 export default function RootLayout({
   children,
@@ -60,8 +49,6 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0A2540" />
-        {/* RealScout official embed (only once) */}
-        <Script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module" strategy="afterInteractive" />
         <style dangerouslySetInnerHTML={{__html: `
           realscout-office-listings {
             --rs-listing-divider-color: rgb(101, 141, 172);
@@ -113,7 +100,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
-        <link rel="preload" as="image" href="/hero.jpg" imageSrcSet="/hero.jpg 1x" />
         {/* Google Analytics (GA4) */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-PW6F30EHD8" strategy="afterInteractive" />
         <Script id="ga4-init" strategy="afterInteractive">
@@ -129,12 +115,10 @@ export default function RootLayout({
         className={"min-h-screen bg-white text-gray-900 antialiased font-sans "+inter.variable+" "+robotoMono.variable}
       >
         <ClientLayoutShell>
-          <AuthButton />
           {/* Global Audio Player */}
           <AudioPlayer src="/audio/home-guide.mp3" title="Home Buying & Selling Audio Guide" />
           {children}
         </ClientLayoutShell>
-        <RegisterServiceWorker />
       </body>
     </html>
   );

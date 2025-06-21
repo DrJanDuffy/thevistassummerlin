@@ -1,20 +1,50 @@
+import { getCommunityBySlug, getAllCommunitySlugs } from "@/lib/community-utils";
 import { notFound } from "next/navigation";
-import { getCommunityBySlug } from "../../../lib/community-utils";
 import Image from "next/image";
 import Head from "next/head";
 import React from "react";
+import Link from "next/link";
+
+const AGENT_ID = process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID;
 
 export default async function CommunityPage({ params }: { params: { slug: string } }) {
   const community = await getCommunityBySlug(params.slug);
   if (!community) return notFound();
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Communities",
+        "item": "https://www.thevistassummerlin.com/communities"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": community.name,
+        "item": `https://www.thevistassummerlin.com/communities/${params.slug}`
+      }
+    ]
+  };
 
   return (
     <>
       <Head>
         <title>{community.name} at The Vistas Summerlin</title>
         <meta name="description" content={community.description || `Explore ${community.name} in The Vistas Summerlin.`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       </Head>
       <main className="max-w-3xl mx-auto py-16 px-4">
+        <nav aria-label="Breadcrumb" className="mb-4 text-sm">
+          <ol className="list-reset flex text-gray-600">
+            <li><Link href="/communities" className="hover:underline">Communities</Link></li>
+            <li><span className="mx-2">/</span></li>
+            <li className="text-gray-900 font-semibold">{community.name}</li>
+          </ol>
+        </nav>
         <div className="w-full mb-6 rounded-lg overflow-hidden shadow">
           <Image
             src={community.image}
@@ -28,9 +58,8 @@ export default async function CommunityPage({ params }: { params: { slug: string
         {/* RealScout Widget */}
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-3 text-blue-900">Live Listings in {community.name}</h2>
-          {/* @ts-ignore: Custom element for RealScout */}
-          {React.createElement('realscout-office-listings', {
-            'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+          {AGENT_ID && React.createElement('realscout-office-listings', {
+            'agent-encoded-id': AGENT_ID,
             'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
             'listing-status': 'For Sale',
             'property-types': 'SFR,MF,TC',
@@ -39,6 +68,11 @@ export default async function CommunityPage({ params }: { params: { slug: string
             suppressHydrationWarning: true,
             style: { width: '100%' },
           })}
+          {!AGENT_ID && (
+            <div className="text-red-600 p-4 border border-red-300 rounded">
+              RealScout Agent ID not configured.
+            </div>
+          )}
           <noscript>
             <div style={{ color: 'red' }}>
               RealScout widgets require JavaScript to be enabled.
@@ -93,4 +127,11 @@ export default async function CommunityPage({ params }: { params: { slug: string
       </main>
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const slugs = await getAllCommunitySlugs();
+  return slugs.map((slug) => ({
+    slug,
+  }));
 } 

@@ -49,11 +49,6 @@ const mainLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const subcommunityLinks = subcommunities.map((name) => ({
-  href: `/communities/${toKebabCase(name)}`,
-  label: name,
-}));
-
 export default function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   return (

@@ -1,10 +1,7 @@
 "use client";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { PropertyFilter } from '@/components/PropertyFilter';
-import { PropertyList } from '@/components/PropertyList';
-import { NLPSearchBar } from '@/components/NLPSearchBar';
-const RealScoutOfficeListings = dynamic(() => import("./components/RealScoutOfficeListings"), { ssr: false, loading: () => <div className="w-full max-w-2xl mb-8 text-center text-gray-500">Loading listings…</div> });
+import { RealScoutWidget } from '@/components/RealScoutWidget';
 
 export default function Home() {
   return (
@@ -12,7 +9,7 @@ export default function Home() {
       {/* Optimized Hero Image */}
       <div className="w-full max-w-3xl mb-8">
         <Image
-          src="/hero.jpg"
+          src="https://placehold.co/1200x480/0A2540/FFF?text=The+Vistas+Summerlin"
           alt="The Vistas Summerlin Hero"
           width={1200}
           height={480}
@@ -20,10 +17,6 @@ export default function Home() {
           priority
           className="rounded-lg shadow-lg w-full h-auto object-cover"
         />
-      </div>
-      {/* RealScout Widget */}
-      <div className="w-full max-w-2xl mb-8">
-        <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" />
       </div>
       <main className="flex flex-col items-center gap-8 w-full">
         <h1 className="text-h1 text-foreground text-center mb-4">
@@ -33,8 +26,6 @@ export default function Home() {
           Discover your perfect home in one of 28 vibrant subcommunities. Explore local market insights, community events, and the best of Summerlin living—all in one place.
         </p>
         
-        <NLPSearchBar />
-
         <a
           href="#communities"
           className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors mt-4"
@@ -51,8 +42,12 @@ export default function Home() {
           </ul>
         </div>
         <PropertyFilter />
-        <PropertyList />
+        <RealScoutWidget />
       </main>
+
+      <div className="w-full mt-8">
+        <h2 className="text-2xl font-bold mb-4">Featured Properties</h2>
+      </div>
     </div>
   );
 }

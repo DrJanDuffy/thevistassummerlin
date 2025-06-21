@@ -17,7 +17,7 @@ export function CalendlyButton({ url }: { url: string }) {
     <button
       className="btn btn-primary"
       onClick={() => {
-        // @ts-ignore
+        // @ts-expect-error: Calendly is loaded as an external script
         window.Calendly.initPopupWidget({ url });
       }}
       type="button"
