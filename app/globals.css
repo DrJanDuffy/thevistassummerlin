@@ -94,7 +94,7 @@
 /* Removed .text-caption class. Use text-sm text-gray-500 directly in JSX. */
 
 /* === Grid System === */
-.grid-12 { @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 gap-4; }
+.grid-12 { @apply grid grid-cols-12 gap-4; }
 .col-span-full { @apply col-span-12; }
 
 /* === Utility Classes === */
