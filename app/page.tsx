@@ -19,7 +19,7 @@ export default function Home() {
         />
       </div>
       <main className="flex flex-col items-center gap-8 w-full">
-        <h1 className="text-h1 text-foreground text-center mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-4">
           Welcome to The Vistas Summerlin
         </h1>
         <p className="text-body text-muted-foreground text-center max-w-xl mb-2">
@@ -33,7 +33,7 @@ export default function Home() {
           Or, Explore Communities Manually
         </a>
         <div className="box-widget w-full max-w-2xl mt-8 p-6">
-          <h2 className="text-h3 mb-2">Why The Vistas Summerlin?</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-2">Why The Vistas Summerlin?</h2>
           <ul className="list-disc pl-6 text-body text-gray-700">
             <li>28 unique subcommunities</li>
             <li>Top-rated schools, parks, and amenities</li>
