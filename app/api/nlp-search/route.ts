@@ -1,11 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
-import { supabase } from '../../../lib/supabaseClient';
+import { createClient } from '@supabase/supabase-js';
 
-// Initialize the OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// This function will decide which AI client to use
+const getAIClient = () => {
+  if (process.env.AI_PROVIDER === 'perplexity') {
+    return new OpenAI({
+      apiKey: process.env.PERPLEXITY_API_KEY!,
+      baseURL: 'https://api.perplexity.ai',
+    });
+  }
+  // Default to OpenAI
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY!,
+  });
+};
+
+const openai = getAIClient();
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export async function POST(req: NextRequest) {
   const { query } = await req.json();
@@ -16,7 +31,8 @@ export async function POST(req: NextRequest) {
 
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: process.env.AI_PROVIDER === 'perplexity' ? 'llama-3-sonar-large-32k-online' : 'gpt-4o',
+      response_format: { type: 'json_object' },
       messages: [
         {
           role: 'system',
@@ -27,7 +43,6 @@ export async function POST(req: NextRequest) {
           content: query,
         },
       ],
-      response_format: { type: "json_object" },
     });
 
     const result = completion.choices[0].message?.content;

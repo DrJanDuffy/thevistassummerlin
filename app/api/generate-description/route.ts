@@ -1,9 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// This function will decide which AI client to use
+const getAIClient = () => {
+  if (process.env.AI_PROVIDER === 'perplexity') {
+    return new OpenAI({
+      apiKey: process.env.PERPLEXITY_API_KEY!,
+      baseURL: 'https://api.perplexity.ai',
+    });
+  }
+  // Default to OpenAI
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY!,
+  });
+};
+
+const openai = getAIClient();
 
 export async function POST(req: NextRequest) {
   const { bedrooms, bathrooms, sqft, features, neighborhood } = await req.json();
@@ -29,7 +41,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o", // Using a more advanced model for creative writing
+      model: process.env.AI_PROVIDER === 'perplexity' ? 'llama-3-sonar-large-32k-online' : 'gpt-4o',
       messages: [{ role: 'system', content: prompt }],
       temperature: 0.7,
       max_tokens: 500,
