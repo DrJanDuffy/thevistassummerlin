@@ -211,6 +211,29 @@ function simpleHash(str: string): number {
   return Math.abs(hash);
 }
 
+export async function getFeaturedCommunities(count: number = 3): Promise<CommunityData[]> {
+  try {
+    const slugs = await getAllCommunitySlugs();
+    
+    // Shuffle the slugs array
+    const shuffledSlugs = [...slugs].sort(() => 0.5 - Math.random());
+    
+    // Get the first 'count' slugs
+    const featuredSlugs = shuffledSlugs.slice(0, count);
+    
+    // Fetch community data for each featured slug
+    const featuredCommunities = await Promise.all(
+      featuredSlugs.map(slug => getCommunityBySlug(slug))
+    );
+    
+    // Filter out any null results and return
+    return featuredCommunities.filter((community): community is CommunityData => community !== null);
+  } catch (error) {
+    console.error('Error getting featured communities:', error);
+    return [];
+  }
+}
+
 export async function communityExists(slug: string): Promise<boolean> {
   const slugs = await getAllCommunitySlugs();
   return slugs.includes(slug);

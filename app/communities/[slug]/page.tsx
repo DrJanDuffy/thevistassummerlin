@@ -1,131 +1,144 @@
-import { getCommunityBySlug, getAllCommunitySlugs } from "@/lib/community-utils";
+import { getCommunityBySlug, getAllCommunitySlugs, CommunityData } from "@/lib/community-utils";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Head from "next/head";
-import React from "react";
 import Link from "next/link";
+import { BarChart, Users, MapPin, Building, Shield, Footprints, TrainFront, Bike, GraduationCap } from 'lucide-react';
+import { RealScoutWidget } from "@/components/RealScoutWidget";
 
-const AGENT_ID = process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID;
+// Sub-component for the details sidebar
+const CommunityDetailsSidebar = ({ community }: { community: CommunityData }) => (
+  <aside className="space-y-6">
+    {/* Stats Card */}
+    <div className="bg-white p-6 rounded-2xl shadow-lg">
+      <h3 className="text-2xl font-bold mb-4 flex items-center"><BarChart className="mr-3 text-blue-600" /> Stats</h3>
+      <ul className="space-y-2 text-gray-700">
+        <li className="flex justify-between"><span>Listings:</span> <span className="font-semibold">{community.stats?.listings ?? '—'}</span></li>
+        <li className="flex justify-between"><span>Price Range:</span> <span className="font-semibold">{community.stats?.priceRange ?? '—'}</span></li>
+        <li className="flex justify-between"><span>Sold Last Month:</span> <span className="font-semibold">{community.stats?.soldLastMonth ?? '—'}</span></li>
+      </ul>
+    </div>
+    
+    {/* Amenities Card */}
+    <div className="bg-white p-6 rounded-2xl shadow-lg">
+      <h3 className="text-2xl font-bold mb-4 flex items-center"><Users className="mr-3 text-green-600" /> Amenities</h3>
+      <ul className="flex flex-wrap gap-2">
+        {community.amenities?.map((a) => (
+          <li key={a} className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">{a}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Neighborhood Card */}
+    <div className="bg-white p-6 rounded-2xl shadow-lg">
+      <h3 className="text-2xl font-bold mb-4 flex items-center"><Building className="mr-3 text-purple-600" /> Neighborhood</h3>
+      <ul className="space-y-2 text-gray-700">
+        <li className="flex items-center justify-between"><span className="flex items-center"><Footprints className="mr-2" /> Walk Score:</span> <span className="font-semibold">{community.neighborhood?.walkScore ?? '—'}</span></li>
+        <li className="flex items-center justify-between"><span className="flex items-center"><TrainFront className="mr-2" /> Transit Score:</span> <span className="font-semibold">{community.neighborhood?.transitScore ?? '—'}</span></li>
+        <li className="flex items-center justify-between"><span className="flex items-center"><Bike className="mr-2" /> Bike Score:</span> <span className="font-semibold">{community.neighborhood?.bikeScore ?? '—'}</span></li>
+        <li className="flex items-center justify-between"><span className="flex items-center"><Shield className="mr-2" /> Crime Rate:</span> <span className="font-semibold">{community.neighborhood?.crimeRate ?? '—'}</span></li>
+        <li className="flex items-center justify-between"><span className="flex items-center"><GraduationCap className="mr-2" /> School Rating:</span> <span className="font-semibold">{community.neighborhood?.schoolRating ?? '—'}</span></li>
+      </ul>
+    </div>
+  </aside>
+);
 
 export default async function CommunityPage({ params }: { params: { slug: string } }) {
   const community = await getCommunityBySlug(params.slug);
   if (!community) return notFound();
 
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Communities",
-        "item": "https://www.thevistassummerlin.com/communities"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": community.name,
-        "item": `https://www.thevistassummerlin.com/communities/${params.slug}`
-      }
+  // For the map - ensure coordinates exist
+  const mapUrl = community.location?.coordinates
+    ? `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l+0A2540(${community.location.coordinates.lng},${community.location.coordinates.lat})/${community.location.coordinates.lng},${community.location.coordinates.lat},13/800x400?access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`
+    : null;
+    
+  // For RealScout widget - ensure coordinates exist
+  const geoBoundsJson = community.location?.coordinates ? JSON.stringify({
+    type: "Polygon",
+    coordinates: [
+      [
+        [community.location.coordinates.lng - 0.01, community.location.coordinates.lat - 0.01],
+        [community.location.coordinates.lng + 0.01, community.location.coordinates.lat - 0.01],
+        [community.location.coordinates.lng + 0.01, community.location.coordinates.lat + 0.01],
+        [community.location.coordinates.lng - 0.01, community.location.coordinates.lat + 0.01],
+        [community.location.coordinates.lng - 0.01, community.location.coordinates.lat - 0.01]
+      ]
     ]
-  };
+  }) : null;
 
   return (
-    <>
-      <Head>
-        <title>{community.name} at The Vistas Summerlin</title>
-        <meta name="description" content={community.description || `Explore ${community.name} in The Vistas Summerlin.`} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      </Head>
-      <main className="max-w-3xl mx-auto py-16 px-4">
-        <nav aria-label="Breadcrumb" className="mb-4 text-sm">
-          <ol className="list-reset flex text-gray-600">
-            <li><Link href="/communities" className="hover:underline">Communities</Link></li>
-            <li><span className="mx-2">/</span></li>
-            <li className="text-gray-900 font-semibold">{community.name}</li>
-          </ol>
-        </nav>
-        <div className="w-full mb-6 rounded-lg overflow-hidden shadow">
-          <Image
-            src={community.image}
-            alt={community.name + ' hero image'}
-            width={900}
-            height={400}
-            className="w-full h-64 object-cover"
-            priority
-          />
+    <div className="bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative h-96">
+        <Image
+          src={community.image}
+          alt={`Hero image for ${community.name}`}
+          layout="fill"
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white p-4">
+            <nav aria-label="Breadcrumb" className="text-sm text-gray-300 mb-2">
+              <ol className="list-reset flex justify-center">
+                <li><Link href="/communities" className="hover:underline">Communities</Link></li>
+                <li><span className="mx-2">/</span></li>
+                <li className="font-semibold text-white">{community.name}</li>
+              </ol>
+            </nav>
+            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">{community.name}</h1>
+            <p className="text-xl lg:text-2xl mt-2 max-w-2xl">{community.description}</p>
+          </div>
         </div>
-        {/* RealScout Widget */}
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-3 text-blue-900">Live Listings in {community.name}</h2>
-          {AGENT_ID && React.createElement('realscout-office-listings', {
-            'agent-encoded-id': AGENT_ID,
-            'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
-            'listing-status': 'For Sale',
-            'property-types': 'SFR,MF,TC',
-            'price-min': '500000',
-            'price-max': '4000000',
-            suppressHydrationWarning: true,
-            style: { width: '100%' },
-          })}
-          {!AGENT_ID && (
-            <div className="text-red-600 p-4 border border-red-300 rounded">
-              RealScout Agent ID not configured.
-            </div>
-          )}
-          <noscript>
-            <div style={{ color: 'red' }}>
-              RealScout widgets require JavaScript to be enabled.
-            </div>
-          </noscript>
-        </section>
-        <h1 className="text-3xl font-bold mb-2 text-blue-900">{community.name} at The Vistas Summerlin</h1>
-        <p className="mb-4 text-gray-700">{community.description}</p>
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Community Stats</h2>
-          <ul className="grid grid-cols-2 gap-2 text-gray-800">
-            <li>Listings: <b>{community.stats?.listings ?? '—'}</b></li>
-            <li>Price Range: <b>{community.stats?.priceRange ?? '—'}</b></li>
-            <li>Sold Last Month: <b>{community.stats?.soldLastMonth ?? '—'}</b></li>
-          </ul>
-        </section>
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Amenities</h2>
-          <ul className="flex flex-wrap gap-2">
-            {community.amenities?.map((a) => (
-              <li key={a} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">{a}</li>
-            ))}
-          </ul>
-        </section>
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Neighborhood</h2>
-          <ul className="grid grid-cols-2 gap-2 text-gray-800">
-            <li>Walk Score: <b>{community.neighborhood?.walkScore ?? '—'}</b></li>
-            <li>Transit Score: <b>{community.neighborhood?.transitScore ?? '—'}</b></li>
-            <li>Bike Score: <b>{community.neighborhood?.bikeScore ?? '—'}</b></li>
-            <li>Crime Rate: <b>{community.neighborhood?.crimeRate ?? '—'}</b></li>
-            <li>School Rating: <b>{community.neighborhood?.schoolRating ?? '—'}</b></li>
-          </ul>
-        </section>
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Location</h2>
-          <ul className="grid grid-cols-2 gap-2 text-gray-800">
-            <li>City: <b>{community.location?.city ?? '—'}</b></li>
-            <li>State: <b>{community.location?.state ?? '—'}</b></li>
-            <li>Zip Codes: <b>{community.location?.zipCodes?.join(', ') ?? '—'}</b></li>
-            <li>Coordinates: <b>{community.location?.coordinates ? `${community.location.coordinates.lat.toFixed(4)}, ${community.location.coordinates.lng.toFixed(4)}` : '—'}</b></li>
-          </ul>
-        </section>
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Market Trends</h2>
-          <ul className="grid grid-cols-2 gap-2 text-gray-800">
-            <li>Price Change: <b>{community.marketTrends?.priceChange ?? '—'}</b></li>
-            <li>Inventory Level: <b>{community.marketTrends?.inventoryLevel ?? '—'}</b></li>
-            <li>Days on Market: <b>{community.marketTrends?.daysOnMarket ?? '—'}</b></li>
-          </ul>
-        </section>
+      </section>
+
+      {/* Main Content */}
+      <main className="container mx-auto py-12 px-4">
+        <div className="grid lg:grid-cols-3 gap-12">
+          {/* Left Column */}
+          <div className="lg:col-span-2 space-y-12">
+            {/* Live Listings Section */}
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Live Listings in {community.name}</h2>
+              {geoBoundsJson ? (
+                <RealScoutWidget 
+                  listing-status="For Sale"
+                  property-types="SFR,MF,TC"
+                  price-min="500000"
+                  price-max="4000000"
+                  geo-bounds-json={geoBoundsJson}
+                />
+              ) : (
+                <div className="text-center text-gray-500 p-4 border rounded-lg">
+                  <p>Live listings for this area are currently unavailable.</p>
+                </div>
+              )}
+            </section>
+
+            {/* Location & Map Section */}
+            {mapUrl && (
+              <section>
+                <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center"><MapPin className="mr-3 text-red-600" /> Location</h2>
+                <div className="grid md:grid-cols-2 gap-8 text-lg">
+                  <ul className="space-y-2 text-gray-700">
+                    <li><strong>City:</strong> {community.location?.city ?? '—'}</li>
+                    <li><strong>State:</strong> {community.location?.state ?? '—'}</li>
+                    <li><strong>Zip Codes:</strong> {community.location?.zipCodes?.join(', ') ?? '—'}</li>
+                  </ul>
+                  <div className="rounded-2xl shadow-lg overflow-hidden h-64 relative">
+                     <Image src={mapUrl} alt={`Map of ${community.name}`} layout="fill" className="object-cover" />
+                  </div>
+                </div>
+              </section>
+            )}
+          </div>
+
+          {/* Right Column - Sidebar */}
+          <div className="lg:col-span-1">
+            <CommunityDetailsSidebar community={community} />
+          </div>
+        </div>
       </main>
-    </>
+    </div>
   );
 }
 

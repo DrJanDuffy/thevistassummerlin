@@ -1,49 +1,73 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { Buffer } from 'buffer';
 
-const REALSCOUT_SCRIPT_SRC = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+// The script is now loaded globally in app/layout.tsx
+// const REALSCOUT_SCRIPT_SRC = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
 const AGENT_ID = process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID;
 
-export function RealScoutWidget() {
-  const ref = useRef<HTMLDivElement>(null);
+interface Property {
+  id: string;
+  latitude: number;
+  longitude: number;
+  price: string;
+  address: string;
+}
+
+interface RealScoutWidgetProps {
+  'listing-status'?: string;
+  'property-types'?: string;
+  'price-min'?: string;
+  'price-max'?: string;
+  'beds-min'?: string;
+  'baths-min'?: string;
+  'geo-bounds-json'?: string;
+  'sort-order'?: string;
+  onListingsLoaded?: (properties: Property[]) => void;
+}
+
+export function RealScoutWidget(props: RealScoutWidgetProps) {
+  const widgetRef = useRef<HTMLElement | null>(null);
+  const { onListingsLoaded, ...widgetProps } = props;
+  const agentEncodedId = AGENT_ID ? Buffer.from(`Agent-${AGENT_ID}`).toString('base64') : null;
 
   useEffect(() => {
-    if (!AGENT_ID) {
-      console.error('NEXT_PUBLIC_REALSCOUT_AGENT_ID is not set.');
-      return;
-    }
+    const currentWidget = widgetRef.current;
+    
+    const handleListingsLoaded = (event: Event) => {
+      console.log('RealScout Widget Event Fired:', event); // DEBUGGING LINE
+      const customEvent = event as CustomEvent;
+      if (onListingsLoaded && customEvent.detail?.listings) {
+        onListingsLoaded(customEvent.detail.listings);
+      }
+    };
 
-    // Only inject the script if it hasn't been added yet
-    if (!document.querySelector(`script[src="${REALSCOUT_SCRIPT_SRC}"]`)) {
-      const script = document.createElement('script');
-      script.src = REALSCOUT_SCRIPT_SRC;
-      script.type = 'module';
-      script.crossOrigin = 'anonymous';
-      // TODO: Add the correct integrity hash for the script
-      // script.integrity = 'sha384-...'; 
-      document.body.appendChild(script);
-    }
-  }, []);
+    // The event listener name is a guess. We're using the console.log to discover the real one.
+    currentWidget?.addEventListener('rs:listings-loaded', handleListingsLoaded);
 
-  if (!AGENT_ID) {
-    return null; // Don't render if the agent ID is missing
+    return () => {
+      currentWidget?.removeEventListener('rs:listings-loaded', handleListingsLoaded);
+    };
+  }, [onListingsLoaded]);
+
+  if (!agentEncodedId) {
+    return (
+      <div className="text-red-600 p-4 border border-red-300 rounded-lg text-center">
+        Property search is temporarily unavailable. Missing Agent ID.
+      </div>
+    );
   }
 
+  const finalWidgetProps = {
+    'agent-encoded-id': agentEncodedId,
+    'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
+    ...widgetProps,
+  };
+
   return (
-    <div
-      ref={ref}
-      className="w-full flex justify-center bg-white rounded-lg shadow-widget overflow-hidden"
-      style={{ minHeight: 600 }}
-    >
-      <realscout-advanced-search
-        agent-encoded-id={AGENT_ID}
-        style={{
-          '--rs-as-button-text-color': '#ffffff',
-          '--rs-as-background-color': '#ffffff',
-          '--rs-as-button-color': 'rgb(35, 93, 137)',
-          '--rs-as-widget-width': '500px',
-        } as React.CSSProperties}
-      />
+    <div className="w-full" style={{ minHeight: 800 }}>
+      {/* We attach the ref directly to the custom element */}
+      <realscout-office-listings ref={widgetRef} {...finalWidgetProps} />
     </div>
   );
 } 

@@ -49,6 +49,14 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0A2540" />
+
+        {/* RealScout Widget Script */}
+        <Script 
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+          type="module" 
+          strategy="lazyOnload" 
+        />
+
         <style dangerouslySetInnerHTML={{__html: `
           realscout-office-listings {
             --rs-listing-divider-color: rgb(101, 141, 172);

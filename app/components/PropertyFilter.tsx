@@ -1,37 +1,87 @@
 'use client';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { usePropertyFilterStore } from '@/components/propertyFilterStore';
+import { create } from 'zustand';
+import { Button } from './ui/Button';
 
-const filterSchema = z.object({
-  city: z.string().optional(),
-  priceMin: z.string().optional(),
-  priceMax: z.string().optional(),
-});
+// 1. Zustand Store for filters
+interface FilterState {
+  priceMin: string;
+  priceMax: string;
+  bedsMin: string;
+  bathsMin: string;
+  setPriceMin: (price: string) => void;
+  setPriceMax: (price: string) => void;
+  setBedsMin: (beds: string) => void;
+  setBathsMin: (baths: string) => void;
+  resetFilters: () => void;
+}
 
-type FilterValues = z.infer<typeof filterSchema>;
+export const usePropertyFilterStore = create<FilterState>((set) => ({
+  priceMin: '500000',
+  priceMax: '4000000',
+  bedsMin: '0',
+  bathsMin: '0',
+  setPriceMin: (price) => set({ priceMin: price }),
+  setPriceMax: (price) => set({ priceMax: price }),
+  setBedsMin: (beds) => set({ bedsMin: beds }),
+  setBathsMin: (baths) => set({ bathsMin: baths }),
+  resetFilters: () => set({
+    priceMin: '500000',
+    priceMax: '4000000',
+    bedsMin: '0',
+    bathsMin: '0',
+  }),
+}));
 
+// 2. SearchFilters Component
 export function PropertyFilter() {
-  const setFilter = usePropertyFilterStore((state) => state.setFilter);
-  const clearFilters = usePropertyFilterStore((state) => state.clearFilters);
-  const { register, handleSubmit, reset } = useForm<FilterValues>({
-    resolver: zodResolver(filterSchema),
-  });
+  const {
+    priceMin,
+    priceMax,
+    bedsMin,
+    bathsMin,
+    setPriceMin,
+    setPriceMax,
+    setBedsMin,
+    setBathsMin,
+    resetFilters,
+  } = usePropertyFilterStore();
 
-  const onSubmit = (values: FilterValues) => {
-    setFilter('city', values.city || '');
-    setFilter('priceMin', values.priceMin ? Number(values.priceMin) : 0);
-    setFilter('priceMax', values.priceMax ? Number(values.priceMax) : 0);
+  const handleReset = (e: React.MouseEvent) => {
+    e.preventDefault();
+    resetFilters();
   };
-
+  
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-wrap gap-4 mb-6">
-      <input {...register('city')} placeholder="City" className="border rounded px-3 py-2" />
-      <input {...register('priceMin')} placeholder="Min Price" type="number" className="border rounded px-3 py-2" />
-      <input {...register('priceMax')} placeholder="Max Price" type="number" className="border rounded px-3 py-2" />
-      <button type="submit" className="bg-primary text-white px-4 py-2 rounded">Filter</button>
-      <button type="button" onClick={() => { clearFilters(); reset(); }} className="bg-gray-200 px-4 py-2 rounded">Clear</button>
-    </form>
+    <div className="bg-white p-6 rounded-2xl shadow-lg">
+      <h3 className="text-2xl font-bold mb-6">Filter Properties</h3>
+      <form className="space-y-6">
+        {/* Price Range */}
+        <div className="space-y-2">
+          <label className="font-semibold">Price Range</label>
+          <div className="flex gap-2">
+            <input type="number" value={priceMin} onChange={e => setPriceMin(e.target.value)} placeholder="Min" className="w-full p-2 border rounded-lg" />
+            <input type="number" value={priceMax} onChange={e => setPriceMax(e.target.value)} placeholder="Max" className="w-full p-2 border rounded-lg" />
+          </div>
+        </div>
+        
+        {/* Beds & Baths */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label className="font-semibold">Min Beds</label>
+            <input type="number" value={bedsMin} onChange={e => setBedsMin(e.target.value)} className="w-full p-2 border rounded-lg" />
+          </div>
+          <div className="space-y-2">
+            <label className="font-semibold">Min Baths</label>
+            <input type="number" value={bathsMin} onChange={e => setBathsMin(e.target.value)} className="w-full p-2 border rounded-lg" />
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-4 pt-4">
+          <Button onClick={handleReset} variant="outline" className="w-full">Reset</Button>
+          {/* The main widget will react to store changes, so a "Search" button is optional */}
+        </div>
+      </form>
+    </div>
   );
 } 
