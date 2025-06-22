@@ -7,7 +7,11 @@ const nextConfig = {
     // serverActions: true, // Uncomment if you use Server Actions
   },
   images: {
-    domains: ['placehold.co'], // Add if you use external images
+    domains: ['placehold.co', 'api.mapbox.com'],
+  },
+  webpack: (config) => {
+    config.resolve.alias['mapbox-gl'] = 'mapbox-gl/dist/mapbox-gl.js';
+    return config;
   },
   // i18n: {
   //   locales: ['en'],
