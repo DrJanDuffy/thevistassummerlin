@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css'; // This is now in globals.css
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 

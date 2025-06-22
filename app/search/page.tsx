@@ -2,7 +2,12 @@
 import { useState } from 'react';
 import { RealScoutWidget } from '../components/RealScoutWidget';
 import { PropertyFilter, usePropertyFilterStore } from '../components/PropertyFilter';
-import { InteractiveMap } from '../components/InteractiveMap';
+import dynamic from 'next/dynamic';
+
+const InteractiveMap = dynamic(() => import('../components/InteractiveMap').then(mod => mod.InteractiveMap), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gray-200 animate-pulse" />
+});
 
 // Define the Property type here to be used in state
 interface Property {
