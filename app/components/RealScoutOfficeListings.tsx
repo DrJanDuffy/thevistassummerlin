@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { Buffer } from 'buffer';
 
 const AGENT_ID = process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID;
 
@@ -12,11 +13,13 @@ export default function RealScoutOfficeListings() {
       </div>
     );
   }
+  
+  const agentEncodedId = Buffer.from(`Agent-${AGENT_ID}`).toString('base64');
 
   return (
     <>
       {React.createElement('realscout-office-listings', {
-        'agent-encoded-id': AGENT_ID,
+        'agent-encoded-id': agentEncodedId,
         'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
         'listing-status': 'For Sale',
         'property-types': 'SFR,MF,TC',
