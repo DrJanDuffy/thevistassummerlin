@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['react-map-gl', 'mapbox-gl'],
+  // transpilePackages: ['react-map-gl', 'mapbox-gl'], // This is no longer the recommended approach
   experimental: {
     // appDir: true, // Uncomment if you use the App Router (Next.js 13+)
     // serverActions: true, // Uncomment if you use Server Actions
@@ -10,7 +10,8 @@ const nextConfig = {
     domains: ['placehold.co', 'api.mapbox.com'],
   },
   webpack: (config) => {
-    config.resolve.alias['mapbox-gl'] = 'mapbox-gl/dist/mapbox-gl.js';
+    config.externals = [...config.externals, 'mapbox-gl'];
+    // config.resolve.alias['mapbox-gl'] = 'mapbox-gl/dist/mapbox-gl.js'; // This is also not needed with the externals config
     return config;
   },
   // i18n: {
