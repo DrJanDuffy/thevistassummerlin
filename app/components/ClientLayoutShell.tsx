@@ -1,7 +1,7 @@
 'use client';
 import dynamic from "next/dynamic";
 import ThemeProvider from "./ThemeProvider";
-import Navbar from "./Navbar";
+import Header from "./Header";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 
@@ -15,7 +15,7 @@ export default function ClientLayoutShell({ children }: { children: React.ReactN
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <RegisterServiceWorker />
-        <Navbar />
+        <Header />
         {children}
         <Footer />
       </ThemeProvider>
