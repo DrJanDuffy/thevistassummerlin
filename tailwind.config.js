@@ -15,6 +15,10 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
     },
+    fontFamily: {
+      heading: ['var(--font-heading)', 'serif'],
+      body: ['var(--font-body)', 'sans-serif'],
+    },
     extend: {
       colors: {
         primary: 'var(--primary)',

@@ -14,22 +14,22 @@
 */
 
 :root {
-  --radius: 0.625rem;
-  --background: #FDFCFB;
-  --foreground: #1E1E1E;
-  --primary: #2C3E50;
+  --radius: 0.5rem;
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --primary: #0A2540;
   --primary-foreground: #FFFFFF;
-  --accent: #B8860B;
+  --accent: #3A8DDE;
   --accent-foreground: #FFFFFF;
-  --buyer: #B8860B;
-  --seller: #5a7d9a;
+  --buyer: #3A8DDE;
+  --seller: #16B286;
   --bg-light: #F7F9FC;
   --success: #16B286;
   --error: #E53E3E;
   --warning: #F59E42;
   --info: #3A8DDE;
-  --ring: #B8860B;
-  --border: #E0E0E0;
+  --ring: #3A8DDE;
+  --border: #E5E7EB;
   --input: #F7F9FC;
   --z-modal: 1000;
   --min-widget-height: 480px;
@@ -37,8 +37,8 @@
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: #F7F9FC;
+  --secondary-foreground: #0A2540;
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
   --destructive: oklch(0.577 0.245 27.325);
@@ -58,21 +58,21 @@
 }
 
 .dark {
-  --background: #121212;
-  --foreground: #E0E0E0;
-  --primary: #B8860B;
-  --primary-foreground: #1E1E1E;
-  --accent: #F0E68C;
-  --accent-foreground: #1E1E1E;
-  --ring: #F0E68C;
-  --border: #333333;
+  --background: #0A2540;
+  --foreground: #F7F9FC;
+  --primary: #F7F9FC;
+  --primary-foreground: #0A2540;
+  --accent: #3A8DDE;
+  --accent-foreground: #0A2540;
+  --ring: #3A8DDE;
+  --border: #374151;
   --input: #2C2C2C;
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: #111827;
+  --secondary-foreground: #F7F9FC;
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
   --destructive: oklch(0.704 0.191 22.216);
@@ -108,10 +108,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 

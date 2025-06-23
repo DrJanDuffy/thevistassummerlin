@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import ClientLayoutShell from "./components/ClientLayoutShell";
 import Script from 'next/script';
 import { ReactNode } from 'react';
 import AudioPlayer from '@/components/AudioPlayer';
 
-const inter = Inter({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
 });
 
-const robotoMono = Roboto_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-body',
+  display: 'swap',
 });
 
 // --- SEO Best Practices: All canonical/meta tags use www.thevistassummerlin.com ---
@@ -120,7 +123,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={"min-h-screen bg-white text-gray-900 antialiased font-sans "+inter.variable+" "+robotoMono.variable}
+        className={`min-h-screen bg-white text-gray-900 antialiased ${playfair.variable} ${lato.variable} font-body`}
       >
         <ClientLayoutShell>
           {/* Global Audio Player */}

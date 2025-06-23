@@ -25,30 +25,30 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="py-20 bg-white">
+    <div className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-primary mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             We&apos;re proud to have helped so many people find their perfect place in The Vistas.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            <div key={index} className="bg-secondary rounded-2xl p-8 shadow-sm hover:shadow-xl border border-transparent hover:border-accent/50 transition-all duration-300 flex flex-col">
               <div className="flex-grow">
                 <div className="flex items-center mb-6">
                   <img src={testimonial.avatar} alt={testimonial.name} className="w-16 h-16 rounded-full mr-4" />
                   <div>
-                    <p className="text-lg font-bold text-gray-900">{testimonial.name}</p>
-                    <p className="text-blue-600">{testimonial.role}</p>
+                    <p className="text-lg font-bold text-primary">{testimonial.name}</p>
+                    <p className="text-accent">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed">&ldquo;{testimonial.statement}&rdquo;</p>
+                <p className="text-foreground/80 leading-relaxed">&ldquo;{testimonial.statement}&rdquo;</p>
               </div>
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-border">
                 <div className="flex items-center text-yellow-500">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 fill-current" />
