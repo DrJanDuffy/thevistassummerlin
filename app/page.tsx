@@ -7,13 +7,12 @@ import CommunitySpotlight from "@/components/CommunitySpotlight";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Merged Hero Section */}
+      {/* Hero Section */}
       <section className="relative w-full">
         <CommunityHeroImage 
           name="The Vistas Summerlin" 
           imgSrc="/subcommunities/IMG_0737.JPG"
-        />
-        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center text-white p-4">
+        >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
             Welcome to <span className="text-blue-300">The Vistas Summerlin</span>
           </h1>
@@ -34,7 +33,7 @@ export default function Home() {
               Explore Communities
             </Link>
           </div>
-        </div>
+        </CommunityHeroImage>
       </section>
 
       {/* Why Choose Section */}
