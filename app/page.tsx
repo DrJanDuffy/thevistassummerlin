@@ -7,13 +7,17 @@ import CommunitySpotlight from "@/components/CommunitySpotlight";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Hero Section */}
-      <section className="relative text-center py-16 lg:py-24 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Welcome to <span className="text-blue-600">The Vistas Summerlin</span>
+      {/* Merged Hero Section */}
+      <section className="relative w-full">
+        <CommunityHeroImage 
+          name="The Vistas Summerlin" 
+          imgSrc="/subcommunities/IMG_0737.JPG"
+        />
+        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center text-white p-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+            Welcome to <span className="text-blue-300">The Vistas Summerlin</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed drop-shadow-lg">
             Discover your perfect home in one of 28 vibrant subcommunities. Explore local market insights, community events, and the best of Summerlin living—all in one place.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -25,18 +29,11 @@ export default function Home() {
             </Link>
             <Link
               href="/communities"
-              className="bg-white hover:bg-gray-50 text-blue-600 font-semibold py-4 px-8 rounded-full text-lg shadow-lg border-2 border-blue-600 transition-all duration-300 transform hover:scale-105"
+              className="bg-white hover:bg-gray-50 text-blue-600 font-semibold py-4 px-8 rounded-full text-lg shadow-lg border-2 border-transparent transition-all duration-300 transform hover:scale-105"
             >
               Explore Communities
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Hero Image - Full Width */}
-      <section className="w-full">
-        <div className="w-full max-w-7xl mx-auto">
-          <CommunityHeroImage name="The Vistas Summerlin" imgSrc="https://placehold.co/1200x400/0A2540/FFF?text=Welcome+to+The+Vistas" />
         </div>
       </section>
 

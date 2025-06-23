@@ -9,16 +9,21 @@ interface CommunityHeroImageProps {
 
 export default function CommunityHeroImage({ name, imgSrc }: CommunityHeroImageProps) {
   const [src, setSrc] = useState(imgSrc);
+
   return (
-    <Image
-      src={src}
-      alt={`${name} at The Vistas Summerlin`}
-      width={800}
-      height={320}
-      sizes="(max-width: 768px) 100vw, 768px"
-      className="rounded-lg shadow-lg w-full h-auto object-cover"
-      onError={() => setSrc("/hero.jpg")}
-      priority
-    />
+    <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+      <Image
+        src={src}
+        alt={`A scenic view of ${name}`}
+        layout="fill"
+        objectFit="cover"
+        className="transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
+        onError={() => setSrc("https://placehold.co/1200x400/0A2540/FFF?text=Image+Not+Found")}
+        priority
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+        {/* The text from the hero section on the homepage is now part of this component */}
+      </div>
+    </div>
   );
 } 
