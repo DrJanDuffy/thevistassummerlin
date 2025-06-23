@@ -12,7 +12,7 @@ export default function CommunityHeroImage({ name, imgSrc, children }: Community
   const [src, setSrc] = useState(imgSrc);
 
   return (
-    <div className="relative w-full h-96 rounded-b-2xl overflow-hidden shadow-2xl">
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
       <Image
         src={src}
         alt={`A scenic view of ${name}`}
