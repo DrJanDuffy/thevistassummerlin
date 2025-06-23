@@ -1,8 +1,11 @@
 import React from 'react';
 import Link from "next/link";
+import { Home as HomeIcon, School, Trees, UserCheck } from 'lucide-react';
 import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
 import CommunityHeroImage from "@/components/CommunityHeroImage";
 import CommunitySpotlight from "@/components/CommunitySpotlight";
+import Testimonials from "@/components/Testimonials";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Home() {
   return (
@@ -37,47 +40,59 @@ export default function Home() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-white">
+      <AnimatedSection className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
               Why The Vistas Summerlin?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A perfect blend of luxury, convenience, and community.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience a perfect blend of luxury, convenience, and vibrant community life.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl mb-4">🏘️</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">28 Subcommunities</h3>
-              <p className="text-gray-600">Unique neighborhoods for every lifestyle.</p>
+            {/* Feature Card 1 */}
+            <div className="group text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="mb-6">
+                <HomeIcon className="h-12 w-12 text-blue-600 mx-auto transition-transform duration-300 group-hover:scale-110" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">28 Subcommunities</h3>
+              <p className="text-gray-600 leading-relaxed">Find your perfect fit among unique neighborhoods, each with its own character and charm.</p>
             </div>
             
-            <div className="text-center p-6 rounded-xl bg-green-50 hover:bg-green-100 transition-colors duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl mb-4">🎓</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Top-Rated Schools</h3>
-              <p className="text-gray-600">Excellence in education at your doorstep.</p>
+            {/* Feature Card 2 */}
+            <div className="group text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-2xl hover:bg-green-50 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="mb-6">
+                <School className="h-12 w-12 text-green-600 mx-auto transition-transform duration-300 group-hover:scale-110" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Top-Rated Schools</h3>
+              <p className="text-gray-600 leading-relaxed">Access to some of the best public and private schools, ensuring excellence in education.</p>
             </div>
             
-            <div className="text-center p-6 rounded-xl bg-purple-50 hover:bg-purple-100 transition-colors duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl mb-4">🌳</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Parks & Recreation</h3>
-              <p className="text-gray-600">Abundant outdoor spaces and modern facilities.</p>
+            {/* Feature Card 3 */}
+            <div className="group text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-2xl hover:bg-purple-50 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="mb-6">
+                <Trees className="h-12 w-12 text-purple-600 mx-auto transition-transform duration-300 group-hover:scale-110" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Parks & Recreation</h3>
+              <p className="text-gray-600 leading-relaxed">Enjoy abundant outdoor spaces, community pools, and modern recreational facilities.</p>
             </div>
             
-            <div className="text-center p-6 rounded-xl bg-orange-50 hover:bg-orange-100 transition-colors duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl mb-4">🤝</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Expert Local Insights</h3>
-              <p className="text-gray-600">Your trusted real estate advisors.</p>
+            {/* Feature Card 4 */}
+            <div className="group text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-2xl hover:bg-orange-50 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="mb-6">
+                <UserCheck className="h-12 w-12 text-orange-600 mx-auto transition-transform duration-300 group-hover:scale-110" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Expert Local Insights</h3>
+              <p className="text-gray-600 leading-relaxed">Leverage our deep market knowledge and get trusted advice from real estate professionals.</p>
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Community Spotlight Section */}
-      <section className="py-16 bg-gray-50">
+      <AnimatedSection className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -89,11 +104,11 @@ export default function Home() {
           </div>
           <CommunitySpotlight />
         </div>
-      </section>
+      </AnimatedSection>
 
 
       {/* Featured Listings Section */}
-      <section id="featured-listings" className="py-16 bg-white">
+      <AnimatedSection id="featured-listings" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -108,10 +123,15 @@ export default function Home() {
             <RealScoutOfficeListings />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* Testimonials Section */}
+      <AnimatedSection>
+        <Testimonials />
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600">
+      <AnimatedSection className="py-16 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Find Your Perfect Home?
@@ -134,7 +154,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   );
 }
