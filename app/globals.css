@@ -1,5 +1,4 @@
 @import 'mapbox-gl/dist/mapbox-gl.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,32 +6,65 @@
 /*
   === Design System: The Vistas Summerlin ===
   - Mobile-first 12-column grid
-  - Scalable typography
+  - Scalable typography with luxury fonts
   - Color palette (primary, accent, semantic)
   - Utility classes: spacing, z-index, box-shadow
   - Responsive breakpoints: xs, sm, md, lg, xl
 */
 
 :root {
+  /* Typography */
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-lato);
+  
+  /* Radius */
   --radius: 0.5rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  
+  /* Shadows */
+  --box-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --box-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --box-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --box-shadow-widget: var(--box-shadow-lg);
+  
+  /* Core Colors */
   --background: #FFFFFF;
   --foreground: #111827;
   --primary: #0A2540;
   --primary-foreground: #FFFFFF;
   --accent: #3A8DDE;
   --accent-foreground: #FFFFFF;
+  
+  /* Brand Colors */
   --buyer: #3A8DDE;
   --seller: #16B286;
   --bg-light: #F7F9FC;
+  
+  /* Semantic Colors */
   --success: #16B286;
   --error: #E53E3E;
   --warning: #F59E42;
   --info: #3A8DDE;
+  
+  /* UI Elements */
   --ring: #3A8DDE;
   --border: #E5E7EB;
   --input: #F7F9FC;
+  
+  /* Z-Index Scale */
   --z-modal: 1000;
+  --z-dropdown: 1010;
+  --z-tooltip: 1020;
+  --z-overlay: 1030;
+  
+  /* Widget Dimensions */
   --min-widget-height: 480px;
+  
+  /* shadcn/ui Variables */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -42,11 +74,15 @@
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
   --destructive: oklch(0.577 0.245 27.325);
+  
+  /* Chart Colors */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+  
+  /* Sidebar Colors */
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
   --sidebar-primary: oklch(0.208 0.042 265.755);
@@ -91,37 +127,76 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-/* === Typography === */
-/* Removed custom .text-h* classes. Use Tailwind classes directly in JSX. */
-/* Removed .text-caption class. Use text-sm text-gray-500 directly in JSX. */
-
 /* === Grid System === */
-.grid-12 { @apply grid grid-cols-12 gap-4; }
-.col-span-full { @apply col-span-12; }
+.grid-12 { 
+  @apply grid grid-cols-12 gap-4; 
+}
+
+.col-span-full { 
+  @apply col-span-12; 
+}
 
 /* === Utility Classes === */
-.box-widget { box-shadow: var(--box-shadow-widget); min-height: var(--min-widget-height); background: var(--bg-light); border-radius: var(--radius-lg); }
-.z-modal { z-index: var(--z-modal); }
+.box-widget { 
+  box-shadow: var(--box-shadow-widget); 
+  min-height: var(--min-widget-height); 
+  background: var(--bg-light); 
+  border-radius: var(--radius-lg); 
+  @apply p-6;
+}
 
-/* === Responsive Breakpoints === */
-/* xs: <576px, sm: ≥576px, md: ≥768px, lg: ≥992px, xl: ≥1200px */
+.z-modal { 
+  z-index: var(--z-modal); 
+}
 
+.z-dropdown { 
+  z-index: var(--z-dropdown); 
+}
+
+.z-tooltip { 
+  z-index: var(--z-tooltip); 
+}
+
+.z-overlay { 
+  z-index: var(--z-overlay); 
+}
+
+/* === Animation Utilities === */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-8px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: none; 
+  }
+}
+
+/* === Base Layer === */
 @layer base {
   * {
     @apply border-border;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
+  
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: none; }
+  
+  /* Ensure proper font loading */
+  .font-heading {
+    font-family: var(--font-heading), serif;
+  }
+  
+  .font-body {
+    font-family: var(--font-body), sans-serif;
+  }
 }
