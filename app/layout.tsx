@@ -53,6 +53,12 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0A2540" />
 
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://em.realscout.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
         {/* RealScout Widget Script */}
         <Script 
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
@@ -60,26 +66,12 @@ export default function RootLayout({
           strategy="lazyOnload" 
         />
 
-        <style dangerouslySetInnerHTML={{__html: `
+        {/* Consolidated RealScout Widget Styles */}
+        <style>{`
           realscout-office-listings {
             --rs-listing-divider-color: rgb(101, 141, 172);
             width: 100%;
           }
-        `}} />
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "RealEstateAgent",
-              "name": "The Vistas Summerlin",
-              "url": "https://www.thevistassummerlin.com"
-            })
-          }}
-        />
-        <style>{`
           realscout-simple-search {
             --rs-ss-font-primary-color: #6a6d72;
             --rs-ss-searchbar-border-color: hsl(0, 0%, 80%);
@@ -107,10 +99,22 @@ export default function RootLayout({
             --rs-hvw-widget-width: auto;
           }
         `}</style>
-        <link rel="preconnect" href="https://em.realscout.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+        {/* Structured Data */}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              "name": "The Vistas Summerlin",
+              "url": "https://www.thevistassummerlin.com"
+            })
+          }}
+        />
+
         {/* Google Analytics (GA4) */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-PW6F30EHD8" strategy="afterInteractive" />
         <Script id="ga4-init" strategy="afterInteractive">
