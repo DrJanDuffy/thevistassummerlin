@@ -8,14 +8,6 @@ import Testimonials from "@/components/Testimonials";
 import AnimatedSection from "@/components/AnimatedSection";
 
 // Loading fallback components
-const LoadingCard = () => (
-  <div className="animate-pulse bg-secondary rounded-2xl p-8">
-    <div className="h-12 w-12 bg-gray-300 rounded-full mx-auto mb-6"></div>
-    <div className="h-6 bg-gray-300 rounded mb-3"></div>
-    <div className="h-4 bg-gray-300 rounded"></div>
-  </div>
-);
-
 const LoadingSection = () => (
   <div className="animate-pulse">
     <div className="h-8 bg-gray-300 rounded w-1/2 mx-auto mb-4"></div>
