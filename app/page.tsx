@@ -1,11 +1,10 @@
-// No-op: Trigger redeploy to resolve stale LoadingCard error
 import React, { Suspense } from 'react';
 import Link from "next/link";
 import { Home as HomeIcon, School, Trees, UserCheck } from 'lucide-react';
 import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
 import CommunityHeroImage from "@/components/CommunityHeroImage";
 import CommunitySpotlight from "@/components/CommunitySpotlight";
-import Testimonials from "@/components/Testimonials";
+import Testimonials from "./testimonials";
 import AnimatedSection from "@/components/AnimatedSection";
 
 // Loading fallback components
