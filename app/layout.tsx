@@ -132,6 +132,7 @@ export default function RootLayout({
         <ClientLayoutShell>
           {/* Global Audio Player */}
           <AudioPlayer src="/audio/home-guide.mp3" title="Home Buying & Selling Audio Guide" />
+          <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="STATUS_AND_SIGNIFICANT_CHANGE" listing-status="For Sale" property-types="SFR,MF,TC" price-min="525000"></realscout-office-listings>
           {children}
         </ClientLayoutShell>
       </body>
