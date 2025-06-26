@@ -1,10 +1,5 @@
 'use client';
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import Navbar from "./Navbar";
-import ThemeToggle from "./ThemeToggle";
-
-const OffCanvasNav = dynamic(() => import("@/components/ui/OffCanvasNav"), { ssr: false });
 
 const navLinks = [
   { href: "/search", label: "Find a Home" },
