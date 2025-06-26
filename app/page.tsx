@@ -22,8 +22,8 @@ export default function Home() {
         {/* Left Hero Card */}
         <div className="relative h-80 md:h-[420px] rounded-2xl overflow-hidden shadow-xl flex items-end">
           <img
-            src="/subcommunities/IMG_0737.JPG"
-            alt="Welcome to Summerlin"
+            src="/sun-city-summerlin.jpg"
+            alt="Sun City Summerlin Sign"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -95,8 +95,8 @@ export default function Home() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
             <div className="relative h-48 w-full">
               <img
-                src="/subcommunities/IMG_0738.JPG"
-                alt="Start A Home Search"
+                src="/feature-home-1.jpg"
+                alt="Feature Home 1"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
@@ -110,8 +110,8 @@ export default function Home() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
             <div className="relative h-48 w-full">
               <img
-                src="https://placehold.co/400x200/0A2540/FFF?text=Builders"
-                alt="Meet The Builders"
+                src="/feature-home-2.jpg"
+                alt="Feature Home 2"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
@@ -125,8 +125,8 @@ export default function Home() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
             <div className="relative h-48 w-full">
               <img
-                src="https://placehold.co/400x200/3A8DDE/FFF?text=Neighborhood"
-                alt="Neighborhood Spotlight"
+                src="/feature-home-3.jpg"
+                alt="Feature Home 3"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
