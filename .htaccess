@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^market/?$ /pages/market-analysis.html [R=301,L]
+RewriteRule ^communities/?$ /pages/communities.html [R=301,L]
+RewriteRule ^search/?$ /pages/search.html [R=301,L]
+RewriteRule ^investment/?$ /pages/investment.html [R=301,L]
+RewriteRule ^about/?$ /pages/about.html [R=301,L] 

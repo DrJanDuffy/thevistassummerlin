@@ -1,0 +1,443 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Company Info -->
+            <div class="footer-section">
+                <h3>The Vistas Summerlin</h3>
+                <p>Las Vegas' premier luxury residential community featuring 28 unique subcommunities with world-class amenities and stunning views.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <span class="social-icon">📘</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <span class="social-icon">📷</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <span class="social-icon">💼</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <span class="social-icon">📺</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/pages/market-analysis.html">Market Analysis</a></li>
+                    <li><a href="/pages/communities.html">Communities</a></li>
+                    <li><a href="/pages/search.html">Property Search</a></li>
+                    <li><a href="/pages/investment.html">Investment Info</a></li>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Communities -->
+            <div class="footer-section">
+                <h4>Communities</h4>
+                <ul class="footer-links">
+                    <li><a href="/pages/communities.html#red-rock">Red Rock Views</a></li>
+                    <li><a href="/pages/communities.html#canyon">Canyon Views</a></li>
+                    <li><a href="/pages/communities.html#family">Family Friendly</a></li>
+                    <li><a href="/pages/communities.html#luxury">Luxury Estates</a></li>
+                    <li><a href="/pages/communities.html#golf">Golf Course Homes</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+17025551234">(702) 555-1234</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:info@thevistassummerlin.com">info@thevistassummerlin.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <span class="contact-label">Address</span>
+                            <span>The Vistas Summerlin<br>Las Vegas, NV 89135</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-section">
+                <h4>Stay Updated</h4>
+                <p>Get the latest market insights and property updates delivered to your inbox.</p>
+                <form class="newsletter-form" data-validate>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <small class="form-note">We respect your privacy. Unsubscribe at any time.</small>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-legal">
+                    <p>&copy; 2024 The Vistas Summerlin. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                        <a href="/accessibility">Accessibility</a>
+                    </div>
+                </div>
+                <div class="footer-disclaimer">
+                    <p><strong>Real Estate Disclaimer:</strong> All information provided is deemed reliable but not guaranteed. Prices and availability subject to change without notice. Equal Housing Opportunity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+/* Footer Styles */
+.site-footer {
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-2xl) 0 var(--spacing-md) 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: white;
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+}
+
+.footer-section h4 {
+    font-size: 1.125rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: var(--spacing-sm);
+    display: inline-block;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Social Links */
+.footer-social {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.footer-social .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social .social-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.footer-social .social-icon {
+    font-size: 1.25rem;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* Footer Contact */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.contact-icon {
+    font-size: 1.25rem;
+    margin-top: 2px;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-item a,
+.contact-item span {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    margin-top: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-group input[type="email"] {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.875rem;
+}
+
+.form-group input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.form-note {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.footer-legal {
+    flex: 1;
+}
+
+.footer-legal p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-sm);
+}
+
+.legal-links {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.legal-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-disclaimer {
+    flex: 2;
+    max-width: 600px;
+}
+
+.footer-disclaimer p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Form Validation Styles */
+.form-group input.error {
+    border-color: var(--error-color);
+}
+
+.field-error {
+    color: var(--error-color);
+    font-size: 0.75rem;
+    margin-top: var(--spacing-xs);
+}
+
+.form-group input.valid {
+    border-color: var(--success-color);
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    color: white;
+    font-weight: 500;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    background: var(--success-color);
+}
+
+.notification-error {
+    background: var(--error-color);
+}
+
+.notification-info {
+    background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .legal-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    .form-group .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+    }
+    
+    .footer-content {
+        gap: var(--spacing-md);
+    }
+    
+    .footer-section h3 {
+        font-size: 1.25rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+    
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        transform: translateY(-100%);
+    }
+    
+    .notification.show {
+        transform: translateY(0);
+    }
+}
+</style> 

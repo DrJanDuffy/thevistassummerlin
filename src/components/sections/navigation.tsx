@@ -18,8 +18,8 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden lg:block">
+            <div className="ml-10 flex items-baseline space-x-6">
               <Link 
                 href="/" 
                 className="text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
@@ -33,16 +33,28 @@ export default function Navigation() {
                 Communities
               </Link>
               <Link 
-                href="/market" 
+                href="/search" 
                 className="text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
               >
-                Market Data
+                Search
               </Link>
               <Link 
-                href="/valuation" 
+                href="/market-analysis" 
                 className="text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
               >
-                Home Valuation
+                Market Analysis
+              </Link>
+              <Link 
+                href="/investment" 
+                className="text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
+              >
+                Investment
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
+              >
+                About
               </Link>
               <Link 
                 href="/contact" 
@@ -56,20 +68,19 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link 
-              href="/valuation" 
+              href="/search" 
               className="bg-link-blue text-white px-6 py-2 rounded-default text-nav font-secondary hover:bg-primary-navy transition-colors duration-300"
             >
-              Get Home Value
+              Find Your Home
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-text-dark hover:text-link-blue transition-colors duration-300"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMenuOpen ? "true" : "false"}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 {isMenuOpen ? (
@@ -84,7 +95,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-light-gray">
               <Link 
                 href="/" 
@@ -101,18 +112,32 @@ export default function Navigation() {
                 Communities
               </Link>
               <Link 
-                href="/market" 
+                href="/search" 
                 className="block px-3 py-2 text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Market Data
+                Search
               </Link>
               <Link 
-                href="/valuation" 
+                href="/market-analysis" 
                 className="block px-3 py-2 text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home Valuation
+                Market Analysis
+              </Link>
+              <Link 
+                href="/investment" 
+                className="block px-3 py-2 text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Investment
+              </Link>
+              <Link 
+                href="/about" 
+                className="block px-3 py-2 text-nav font-secondary text-text-dark hover:text-link-blue transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
               </Link>
               <Link 
                 href="/contact" 
@@ -123,11 +148,11 @@ export default function Navigation() {
               </Link>
               <div className="pt-4">
                 <Link 
-                  href="/valuation" 
+                  href="/search" 
                   className="block w-full text-center bg-link-blue text-white px-6 py-2 rounded-default text-nav font-secondary hover:bg-primary-navy transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Get Home Value
+                  Find Your Home
                 </Link>
               </div>
             </div>

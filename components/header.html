@@ -1,0 +1,204 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo and Branding -->
+            <div class="header-brand">
+                <a href="/" class="logo">
+                    <h1>The Vistas Summerlin</h1>
+                    <span class="tagline">Luxury Real Estate in Las Vegas</span>
+                </a>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="header-contact">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-details">
+                        <span class="contact-label">Call Us</span>
+                        <a href="tel:+17025551234" class="contact-value">(702) 555-1234</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div class="contact-details">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:info@thevistassummerlin.com" class="contact-value">info@thevistassummerlin.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="header-social">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <span class="social-icon">📘</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <span class="social-icon">📷</span>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <span class="social-icon">💼</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Header Styles */
+.site-header {
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+}
+
+.header-brand .logo {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.header-brand h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.header-brand .tagline {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    display: block;
+    margin-top: var(--spacing-xs);
+}
+
+.header-contact {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.contact-icon {
+    font-size: 1.25rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.contact-value:hover {
+    color: var(--secondary-color);
+}
+
+.header-social {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--background-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    font-size: 1.25rem;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header-contact {
+        display: none;
+    }
+    
+    .header-social {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .header-brand h1 {
+        font-size: 1.25rem;
+    }
+    
+    .header-brand .tagline {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .header-brand h1 {
+        font-size: 1.125rem;
+    }
+}
+</style> 
