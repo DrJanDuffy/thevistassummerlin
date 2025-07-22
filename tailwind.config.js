@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/components/**/*.{js,ts,jsx,tsx}',
-    './lib/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/app/(routes)/**/*.{js,ts,jsx,tsx}',
+    './src/app/(marketing)/**/*.{js,ts,jsx,tsx}',
+    './src/app/(dashboard)/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/lib/**/*.{js,ts,jsx,tsx}',
+    './src/hooks/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   theme: {
@@ -18,6 +22,8 @@ module.exports = {
     fontFamily: {
       heading: ['var(--font-heading)', 'serif'],
       body: ['var(--font-body)', 'sans-serif'],
+      primary: ['var(--font-primary)', 'sans-serif'],
+      secondary: ['var(--font-secondary)', 'sans-serif'],
     },
     // Add default spacing scale
     spacing: {
@@ -59,6 +65,15 @@ module.exports = {
     },
     extend: {
       colors: {
+        // New design system colors
+        'primary-navy': 'var(--color-primary-navy)',
+        'text-dark': 'var(--color-text-dark)',
+        'text-light': 'var(--color-text-light)',
+        'link-blue': 'var(--color-link-blue)',
+        'success-green': 'var(--color-success-green)',
+        'light-gray': 'var(--color-light-gray)',
+        
+        // Existing colors
         primary: 'var(--primary)',
         'primary-foreground': 'var(--primary-foreground)',
         secondary: 'var(--secondary)',
@@ -82,14 +97,24 @@ module.exports = {
         'destructive-foreground': 'var(--destructive-foreground)',
       },
       fontSize: {
-        'h1': ['2.5rem', { lineHeight: '3rem' }],
-        'h2': ['2rem', { lineHeight: '2.5rem' }],
+        'h1': ['var(--text-h1)', { lineHeight: '1.2' }],
+        'h2': ['var(--text-h2)', { lineHeight: '1.3' }],
         'h3': ['1.75rem', { lineHeight: '2.25rem' }],
         'h4': ['1.5rem', { lineHeight: '2rem' }],
-        'body': ['1rem', { lineHeight: '1.5rem' }],
+        'body': ['var(--text-body)', { lineHeight: '1.6' }],
+        'nav': ['var(--text-nav)', { lineHeight: '1.4' }],
+      },
+      fontWeight: {
+        'light': 'var(--font-weight-light)',
+        'regular': 'var(--font-weight-regular)',
+        'medium': 'var(--font-weight-medium)',
+      },
+      borderRadius: {
+        'default': 'var(--radius-default)',
       },
       boxShadow: {
         'widget': '0 2px 8px rgba(0,0,0,0.08)',
+        'card': 'var(--shadow-card)',
       },
       minHeight: {
         'widget': '480px',
