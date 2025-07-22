@@ -3,23 +3,64 @@
 /* Home Value Widget Styles */
 realscout-home-value {
   --rs-hvw-background-color: #ffffff;
-  --rs-hvw-title-color: #2C3E50;
+  --rs-hvw-title-color: #0A2540;
   --rs-hvw-subtitle-color: #666666;
   --rs-hvw-primary-button-text-color: #ffffff;
-  --rs-hvw-primary-button-color: #007BFF;
-  --rs-hvw-secondary-button-text-color: #007BFF;
+  --rs-hvw-primary-button-color: #3A8DDE;
+  --rs-hvw-secondary-button-text-color: #3A8DDE;
   --rs-hvw-secondary-button-color: #ffffff;
   --rs-hvw-widget-width: 100%;
   --rs-hvw-border-radius: 8px;
-  --rs-hvw-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --rs-hvw-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 /* Advanced Search Widget Styles */
 realscout-advanced-search {
   --rs-as-button-text-color: #ffffff;
   --rs-as-background-color: #ffffff;
-  --rs-as-button-color: #007BFF;
-  --rs-as-widget-width: 100%;
+  --rs-as-button-color: #1c71c3;
+  --rs-as-widget-width: 500px !important;
   --rs-as-border-radius: 8px;
-  --rs-as-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --rs-as-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Office Listings Widget Styles */
+realscout-office-listings {
+  --rs-ol-background-color: #ffffff;
+  --rs-ol-title-color: #0A2540;
+  --rs-ol-subtitle-color: #666666;
+  --rs-ol-primary-button-text-color: #ffffff;
+  --rs-ol-primary-button-color: #3A8DDE;
+  --rs-ol-widget-width: 100%;
+  --rs-ol-border-radius: 8px;
+  --rs-ol-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Simple Search Widget Styles */
+realscout-simple-search {
+  --rs-ss-background-color: #ffffff;
+  --rs-ss-title-color: #0A2540;
+  --rs-ss-subtitle-color: #666666;
+  --rs-ss-primary-button-text-color: #ffffff;
+  --rs-ss-primary-button-color: #3A8DDE;
+  --rs-ss-widget-width: 100%;
+  --rs-ss-border-radius: 8px;
+  --rs-ss-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Global RealScout Widget Container Styles */
+realscout-advanced-search,
+realscout-home-value,
+realscout-office-listings,
+realscout-simple-search {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  realscout-advanced-search {
+    --rs-as-widget-width: 100% !important;
+  }
 } 

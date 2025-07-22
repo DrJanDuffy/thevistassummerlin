@@ -43,11 +43,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#2C3E50" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)" />
         
-        {/* RealScout Widget Script */}
+        {/* RealScout Widget Script - Loaded once for all pages */}
         <Script 
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
           type="module" 
-          strategy="lazyOnload" 
+          strategy="beforeInteractive"
+          id="realscout-widgets"
         />
       </head>
       <body className={`antialiased ${playfair.variable} ${lato.variable} font-secondary text-text-dark bg-white`}>
