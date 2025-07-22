@@ -1,7 +1,7 @@
 "use client";
 // import { useState } from 'react';
-import { RealScoutWidget } from '../components/RealScoutWidget';
-import { PropertyFilter, usePropertyFilterStore } from '../components/PropertyFilter';
+import { RealScoutWidget } from '@/components/RealScoutWidget';
+import { PropertyFilter, usePropertyFilterStore } from '@/components/PropertyFilter';
 // import dynamic from 'next/dynamic';
 
 // const InteractiveMap = dynamic(() => import('../components/InteractiveMap').then(mod => mod.InteractiveMap), {

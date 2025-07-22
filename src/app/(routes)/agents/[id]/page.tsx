@@ -1,4 +1,4 @@
-import { CalendlyButton } from '../../components/CalendlyButton';
+import { CalendlyButton } from '@/components/CalendlyButton';
 
 export default function AgentProfilePage() {
   return (
