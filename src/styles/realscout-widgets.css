@@ -48,11 +48,25 @@ realscout-simple-search {
   --rs-ss-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Your Listings Widget Styles */
+realscout-your-listings {
+  --rs-listing-divider-color: rgb(101, 141, 172);
+  width: 100%;
+  --rs-yl-background-color: #ffffff;
+  --rs-yl-title-color: #0A2540;
+  --rs-yl-subtitle-color: #666666;
+  --rs-yl-primary-button-text-color: #ffffff;
+  --rs-yl-primary-button-color: #3A8DDE;
+  --rs-yl-border-radius: 8px;
+  --rs-yl-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
 /* Global RealScout Widget Container Styles */
 realscout-advanced-search,
 realscout-home-value,
 realscout-office-listings,
-realscout-simple-search {
+realscout-simple-search,
+realscout-your-listings {
   font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;

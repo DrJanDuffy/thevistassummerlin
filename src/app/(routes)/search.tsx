@@ -1,6 +1,7 @@
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
+import RealScoutYourListings from '@/components/RealScoutYourListings';
 
 export default function Search() {
   return (
@@ -21,7 +22,7 @@ export default function Search() {
 
         {/* Search Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
                 Advanced Property Search
@@ -31,7 +32,10 @@ export default function Search() {
               </p>
             </div>
             
-            <RealScoutAdvancedSearch />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <RealScoutAdvancedSearch />
+              <RealScoutYourListings />
+            </div>
           </div>
         </section>
       </main>
