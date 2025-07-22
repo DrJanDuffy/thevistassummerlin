@@ -37,7 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#2C3E50" />
+        {/* Theme color for supported browsers (Chrome, Safari, Edge) */}
+        <meta name="theme-color" content="#2C3E50" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)" />
         
         {/* RealScout Widget Script */}
         <Script 
