@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "@/styles/globals.css";
@@ -48,8 +49,6 @@ export default function RootLayout({
           type="module" 
           strategy="lazyOnload" 
         />
-
-
       </head>
       <body className={`antialiased ${playfair.variable} ${lato.variable} font-secondary text-text-dark bg-white`}>
         <ErrorReporter />

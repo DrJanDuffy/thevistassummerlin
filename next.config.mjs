@@ -1,5 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+import path from "node:path";
+
+const nextConfig: NextConfig = {
   experimental: {
     typedRoutes: false,
   },
@@ -7,14 +9,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: '**',
       },
       {
-        protocol: 'https',
-        hostname: 'realscout.com',
+        protocol: 'http',
+        hostname: '**',
       },
     ],
   },
+  outputFileTracingRoot: path.resolve(__dirname, '../../'),
   async headers() {
     return [
       {
@@ -36,6 +39,6 @@ const nextConfig = {
       },
     ]
   },
-}
+};
 
-export default nextConfig 
+export default nextConfig; 
