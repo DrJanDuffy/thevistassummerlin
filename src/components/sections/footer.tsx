@@ -45,7 +45,7 @@ export default function Footer() {
               The Vistas Summerlin
             </h3>
             <p className="text-body font-secondary mb-6 opacity-90">
-              Your trusted partner in finding the perfect home in one of Las Vegas' most 
+              Your trusted partner in finding the perfect home in one of Las Vegas&apos; most 
               prestigious residential areas. Discover 28 unique subcommunities with 
               diverse housing options and world-class amenities.
             </p>

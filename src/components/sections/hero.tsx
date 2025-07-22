@@ -13,7 +13,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-body font-secondary text-lg mb-8 max-w-3xl mx-auto opacity-90">
-            Explore 28 vibrant subcommunities in one of Las Vegas' most prestigious areas. 
+            Explore 28 vibrant subcommunities in one of Las Vegas&apos; most prestigious areas. 
             Get instant home valuations, market insights, and expert guidance.
           </p>
           

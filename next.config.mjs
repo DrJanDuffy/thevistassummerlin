@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const nextConfig: NextConfig = {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const nextConfig = {
   experimental: {
     typedRoutes: false,
   },
@@ -17,7 +19,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
   async headers() {
     return [
       {

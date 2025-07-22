@@ -6,7 +6,7 @@ export default function HomeEvaluationSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-h2 font-primary font-medium text-text-dark mb-4">
-            Get Your Home's Current Market Value
+            Get Your Home&apos;s Current Market Value
           </h2>
           <p className="text-body font-secondary text-text-light max-w-2xl mx-auto">
             Our advanced valuation tool provides instant, accurate home values using real-time market data 

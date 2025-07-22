@@ -227,9 +227,8 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary), sans-serif;
+    font-family: var(--font-heading), serif;
     color: var(--color-text-dark);
-    @apply font-heading;
   }
 
   h1 {

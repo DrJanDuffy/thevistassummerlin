@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 
 export function StatsForChangelog() {
