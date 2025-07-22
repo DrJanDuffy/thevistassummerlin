@@ -24,18 +24,6 @@ export default function HomeEvaluationSection() {
               {/* RealScout Home Value Widget */}
               <realscout-home-value 
                 agent-encoded-id="QWdlbnQtMjI1MDUw"
-                style={{
-                  '--rs-hvw-background-color': '#ffffff',
-                  '--rs-hvw-title-color': '#2C3E50',
-                  '--rs-hvw-subtitle-color': '#666666',
-                  '--rs-hvw-primary-button-text-color': '#ffffff',
-                  '--rs-hvw-primary-button-color': '#007BFF',
-                  '--rs-hvw-secondary-button-text-color': '#007BFF',
-                  '--rs-hvw-secondary-button-color': '#ffffff',
-                  '--rs-hvw-widget-width': '100%',
-                  '--rs-hvw-border-radius': '8px',
-                  '--rs-hvw-box-shadow': '0 2px 10px rgba(0,0,0,0.1)'
-                } as React.CSSProperties}
               />
             </div>
           </div>

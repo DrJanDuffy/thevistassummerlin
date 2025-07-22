@@ -4,7 +4,7 @@ A modern real estate website for The Vistas Summerlin, featuring 28 vibrant subc
 
 ## 🏗️ Modern Project Structure
 
-```
+```bash
 thevistassummerlin-8/
 ├── public/                    # Static assets
 ├── src/                       # Source code
@@ -66,7 +66,7 @@ This project uses a comprehensive design system with:
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "@/styles/globals.css";
+import "@/styles/realscout-widgets.css";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from 'next/script';
 import { ReactNode } from 'react';
@@ -48,29 +49,7 @@ export default function RootLayout({
           strategy="lazyOnload" 
         />
 
-        {/* RealScout Widget Styles */}
-        <style>{`
-          realscout-home-value {
-            --rs-hvw-background-color: #ffffff;
-            --rs-hvw-title-color: #2C3E50;
-            --rs-hvw-subtitle-color: #666666;
-            --rs-hvw-primary-button-text-color: #ffffff;
-            --rs-hvw-primary-button-color: #007BFF;
-            --rs-hvw-secondary-button-text-color: #007BFF;
-            --rs-hvw-secondary-button-color: #ffffff;
-            --rs-hvw-widget-width: 100%;
-            --rs-hvw-border-radius: 8px;
-            --rs-hvw-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-          }
-          realscout-advanced-search {
-            --rs-as-button-text-color: #ffffff;
-            --rs-as-background-color: #ffffff;
-            --rs-as-button-color: #007BFF;
-            --rs-as-widget-width: 100%;
-            --rs-as-border-radius: 8px;
-            --rs-as-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-          }
-        `}</style>
+
       </head>
       <body className={`antialiased ${playfair.variable} ${lato.variable} font-secondary text-text-dark bg-white`}>
         <ErrorReporter />

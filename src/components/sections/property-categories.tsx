@@ -116,14 +116,6 @@ export default function PropertyCategories() {
           <div className="max-w-2xl mx-auto">
             <realscout-advanced-search 
               agent-encoded-id="QWdlbnQtMjI1MDUw"
-              style={{
-                '--rs-as-button-text-color': '#ffffff',
-                '--rs-as-background-color': '#ffffff',
-                '--rs-as-button-color': '#007BFF',
-                '--rs-as-widget-width': '100%',
-                '--rs-as-border-radius': '8px',
-                '--rs-as-box-shadow': '0 2px 10px rgba(0,0,0,0.1)'
-              } as React.CSSProperties}
             />
           </div>
         </div>
