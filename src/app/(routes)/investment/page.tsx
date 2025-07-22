@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 export const metadata: Metadata = {
   title: 'Investment Opportunities - The Vistas Summerlin Real Estate',
@@ -402,23 +403,34 @@ export default function InvestmentPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-light-gray">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
-                Ready to Start Investing?
+                Ready to Invest in The Vistas Summerlin?
               </h2>
               <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto mb-12 leading-relaxed">
-                Connect with our investment specialists to discuss your goals and explore opportunities 
-                in The Vistas Summerlin real estate market.
+                Start your investment journey by exploring available properties in our community
               </p>
+              
+              {/* RealScout Advanced Search */}
+              <div className="max-w-2xl mx-auto mb-12">
+                <RealScoutAdvancedSearch />
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="bg-link-blue text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Schedule Investment Consultation
-                </button>
-                <button className="border-2 border-link-blue text-link-blue px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-link-blue hover:text-white transition-all duration-300 transform hover:scale-105">
-                  Download Investment Guide
-                </button>
+                <Link
+                  href="/communities"
+                  className="bg-link-blue text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Explore Communities
+                </Link>
+                <a
+                  href="/contact"
+                  className="border-2 border-link-blue text-link-blue px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-link-blue hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Investment Team
+                </a>
               </div>
             </div>
           </div>

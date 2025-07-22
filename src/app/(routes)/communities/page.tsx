@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine } from 'lucide-react';
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 const allCommunities = [
   {
@@ -546,6 +547,14 @@ export default function CommunitiesPage() {
             <p className="text-xl font-secondary opacity-90 max-w-2xl mx-auto mb-8">
               Connect with our expert team to schedule a personalized tour of your favorite communities
             </p>
+            
+            {/* RealScout Advanced Search */}
+            <div className="max-w-2xl mx-auto mb-12">
+              <RealScoutAdvancedSearch 
+                containerClassName="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20"
+              />
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/search"

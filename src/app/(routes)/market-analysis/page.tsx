@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 export const metadata: Metadata = {
   title: 'Market Analysis - The Vistas Summerlin Real Estate Market',
@@ -295,6 +296,40 @@ export default function MarketAnalysisPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
+                Ready to Act on Market Insights?
+              </h2>
+              <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto mb-12 leading-relaxed">
+                Use our market analysis to find the perfect property in The Vistas Summerlin
+              </p>
+              
+              {/* RealScout Advanced Search */}
+              <div className="max-w-2xl mx-auto mb-12">
+                <RealScoutAdvancedSearch />
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  href="/communities"
+                  className="bg-link-blue text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Explore Communities
+                </Link>
+                <a
+                  href="/contact"
+                  className="border-2 border-link-blue text-link-blue px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-link-blue hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Market Report
+                </a>
+              </div>
             </div>
           </div>
         </section>

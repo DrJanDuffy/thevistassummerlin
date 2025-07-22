@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 export const metadata: Metadata = {
   title: 'About - The Vistas Summerlin Community & Location',
@@ -374,13 +375,19 @@ export default function AboutPage() {
                 Discover why The Vistas Summerlin is the perfect place to call home. 
                 Explore our communities and find your perfect match.
               </p>
+              
+              {/* RealScout Advanced Search */}
+              <div className="max-w-2xl mx-auto mb-12">
+                <RealScoutAdvancedSearch />
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                                 <Link 
-                   href="/communities"
-                   className="bg-link-blue text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                 >
-                   Explore Communities
-                 </Link>
+                <Link 
+                  href="/communities"
+                  className="bg-link-blue text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Explore Communities
+                </Link>
                 <a 
                   href="/contact"
                   className="border-2 border-link-blue text-link-blue px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-link-blue hover:text-white transition-all duration-300 transform hover:scale-105"

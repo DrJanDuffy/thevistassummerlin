@@ -2,6 +2,7 @@
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
 import { DollarSign, HelpCircle, BarChart2 } from "lucide-react";
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 const AGENT_ID = process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID;
 
@@ -75,6 +76,15 @@ export default function Valuation() {
               </AccordionItem>
             ))}
           </Accordion>
+        </section>
+
+        {/* RealScout Advanced Search Section */}
+        <section className="mt-24 max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Find Your Perfect Home?</h2>
+            <p className="text-lg text-gray-600">Search available properties in The Vistas Summerlin</p>
+          </div>
+          <RealScoutAdvancedSearch />
         </section>
       </main>
       
