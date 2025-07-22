@@ -42,8 +42,9 @@ const CommunityDetailsSidebar = ({ community }: { community: CommunityData }) =>
   </aside>
 );
 
-export default async function CommunityPage({ params }: { params: { slug: string } }) {
-  const community = await getCommunityBySlug(params.slug);
+export default async function CommunityPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const community = await getCommunityBySlug(slug);
   if (!community) return notFound();
 
   // For the map - ensure coordinates exist
