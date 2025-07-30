@@ -20,61 +20,61 @@ export default function Navigation() {
   const [showCommunitiesDropdown, setShowCommunitiesDropdown] = useState(false);
 
   return (
-    <nav className="bg-white shadow-card sticky top-0 z-modal">
+    <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl lg:text-2xl font-primary font-medium text-primary-navy hover:text-link-blue transition-colors duration-300">
+            <Link href="/" className="text-lg lg:text-xl font-primary font-semibold text-primary-navy hover:text-link-blue transition-colors duration-300">
               The Vistas Summerlin
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:block">
-            <div className="ml-12 flex items-center space-x-8">
+          <div className="hidden lg:block">
+            <div className="ml-8 lg:ml-12 flex items-center space-x-6 lg:space-x-8">
               <Link 
                 href="/" 
-                className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
               >
                 Home
               </Link>
               <Link 
                 href="/sell" 
-                className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
               >
-                Sell Your Vistas Home
+                Sell
               </Link>
               
               {/* Communities Dropdown */}
               <div className="relative">
                 <button
-                  className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 flex items-center whitespace-nowrap"
+                  className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 flex items-center px-2 py-1 rounded group"
                   onClick={() => setShowCommunitiesDropdown(!showCommunitiesDropdown)}
                   onBlur={() => setTimeout(() => setShowCommunitiesDropdown(false), 150)}
                 >
-                  The Vistas Communities
-                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  Communities
+                  <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 {showCommunitiesDropdown && (
-                  <div className="absolute left-0 mt-2 w-72 bg-white border border-light-gray rounded-default shadow-lg max-h-96 overflow-y-auto z-50">
+                  <div className="absolute left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-xl max-h-96 overflow-y-auto z-50">
                     <div className="p-4">
                       <Link
                         href="/communities"
-                        className="block px-4 py-3 text-sm font-secondary text-text-dark hover:bg-link-blue hover:text-white rounded transition-colors duration-300 mb-2 font-medium"
+                        className="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-link-blue hover:text-white rounded-md transition-colors duration-200 mb-2"
                         onClick={() => setShowCommunitiesDropdown(false)}
                       >
-                        All Communities
+                        View All Communities
                       </Link>
-                      <div className="border-t border-light-gray my-2"></div>
-                      <div className="grid grid-cols-1 gap-1">
+                      <div className="border-t border-gray-200 my-3"></div>
+                      <div className="grid grid-cols-2 gap-1">
                         {subcommunities.map((name) => (
                           <Link
                             key={name}
                             href={`/communities/${toKebabCase(name)}`}
-                            className="block px-4 py-2 text-sm font-secondary text-text-dark hover:bg-link-blue hover:text-white rounded transition-colors duration-300"
+                            className="block px-3 py-2 text-sm text-gray-700 hover:bg-link-blue hover:text-white rounded transition-colors duration-200"
                             onClick={() => setShowCommunitiesDropdown(false)}
                           >
                             {name}
@@ -88,13 +88,13 @@ export default function Navigation() {
               
               <Link 
                 href="/market-reports" 
-                className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
               >
                 Market Reports
               </Link>
               <Link 
                 href="/contact" 
-                className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
               >
                 Contact
               </Link>
@@ -105,17 +105,17 @@ export default function Navigation() {
           <div className="hidden lg:block">
             <Link 
               href="/search" 
-              className="bg-link-blue text-white px-6 py-3 rounded-default text-sm font-secondary font-medium hover:bg-primary-navy transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="bg-link-blue text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg text-sm font-medium hover:bg-primary-navy transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               Find Your Home
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="xl:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-text-dark hover:text-link-blue transition-colors duration-300 p-2"
+              className="text-gray-700 hover:text-link-blue transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -131,47 +131,47 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="xl:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-white border-t border-light-gray">
+          <div className="lg:hidden">
+            <div className="px-4 pt-2 pb-6 space-y-1 bg-white border-t border-gray-200">
               <Link 
                 href="/" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/sell" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Sell Your Vistas Home
+                Sell Your Home
               </Link>
               <Link 
                 href="/communities" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                The Vistas Communities
+                Communities
               </Link>
               <Link 
                 href="/market-reports" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Market Reports
               </Link>
               <Link 
                 href="/contact" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
-              <div className="pt-4 border-t border-light-gray mt-4">
+              <div className="pt-4 border-t border-gray-200 mt-4">
                 <Link 
                   href="/search" 
-                  className="block w-full text-center bg-link-blue text-white px-6 py-3 rounded-default text-base font-secondary font-medium hover:bg-primary-navy transition-colors duration-300 shadow-lg"
+                  className="block w-full text-center bg-link-blue text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-primary-navy transition-colors duration-200 shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Find Your Home
