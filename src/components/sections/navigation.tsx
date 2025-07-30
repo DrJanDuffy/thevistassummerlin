@@ -31,17 +31,17 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="ml-8 lg:ml-12 flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:block flex-1">
+            <div className="flex justify-center items-center space-x-10">
               <Link 
                 href="/" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Home
               </Link>
               <Link 
                 href="/sell" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Sell
               </Link>
@@ -49,7 +49,7 @@ export default function Navigation() {
               {/* Communities Dropdown */}
               <div className="relative">
                 <button
-                  className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 flex items-center px-2 py-1 rounded group"
+                  className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded group"
                   onClick={() => setShowCommunitiesDropdown(!showCommunitiesDropdown)}
                   onBlur={() => setTimeout(() => setShowCommunitiesDropdown(false), 150)}
                 >
@@ -88,13 +88,13 @@ export default function Navigation() {
               
               <Link 
                 href="/market-reports" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Market Reports
               </Link>
               <Link 
                 href="/contact" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-2 py-1 rounded"
+                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Contact
               </Link>
@@ -102,10 +102,10 @@ export default function Navigation() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block flex-shrink-0">
             <Link 
               href="/search" 
-              className="bg-link-blue text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg text-sm font-medium hover:bg-primary-navy transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="bg-link-blue text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary-navy transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               Find Your Home
             </Link>
