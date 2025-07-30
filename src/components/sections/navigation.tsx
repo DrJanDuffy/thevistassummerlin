@@ -99,12 +99,6 @@ export default function Navigation() {
                 Market Reports
               </Link>
               <Link 
-                href="/about" 
-                className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
-              >
-                About Dr. Jan Duffy
-              </Link>
-              <Link 
                 href="/contact" 
                 className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
               >
@@ -179,13 +173,6 @@ export default function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Market Reports
-              </Link>
-              <Link 
-                href="/about" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About Dr. Jan Duffy
               </Link>
               <Link 
                 href="/contact" 
