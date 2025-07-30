@@ -35,13 +35,13 @@ export default function Navigation() {
             <div className="flex justify-center items-center space-x-10">
               <Link 
                 href="/" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
+                className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Home
               </Link>
               <Link 
                 href="/sell" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
+                className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Sell
               </Link>
@@ -49,7 +49,7 @@ export default function Navigation() {
               {/* Communities Dropdown */}
               <div className="relative">
                 <button
-                  className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded group"
+                  className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded group"
                   onClick={() => setShowCommunitiesDropdown(!showCommunitiesDropdown)}
                   onBlur={() => setTimeout(() => setShowCommunitiesDropdown(false), 150)}
                 >
@@ -63,7 +63,7 @@ export default function Navigation() {
                     <div className="p-4">
                       <Link
                         href="/communities"
-                        className="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-link-blue hover:text-white rounded-md transition-colors duration-200 mb-2"
+                        className="block px-4 py-3 text-sm font-primary font-medium text-gray-900 hover:bg-link-blue hover:text-white rounded-md transition-colors duration-200 mb-2"
                         onClick={() => setShowCommunitiesDropdown(false)}
                       >
                         View All Communities
@@ -74,7 +74,7 @@ export default function Navigation() {
                           <Link
                             key={name}
                             href={`/communities/${toKebabCase(name)}`}
-                            className="block px-3 py-2 text-sm text-gray-700 hover:bg-link-blue hover:text-white rounded transition-colors duration-200"
+                            className="block px-3 py-2 text-sm font-primary text-gray-700 hover:bg-link-blue hover:text-white rounded transition-colors duration-200"
                             onClick={() => setShowCommunitiesDropdown(false)}
                           >
                             {name}
@@ -88,13 +88,13 @@ export default function Navigation() {
               
               <Link 
                 href="/market-reports" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
+                className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Market Reports
               </Link>
               <Link 
                 href="/contact" 
-                className="text-sm font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
+                className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
                 Contact
               </Link>
@@ -105,7 +105,7 @@ export default function Navigation() {
           <div className="hidden lg:block flex-shrink-0">
             <Link 
               href="/search" 
-              className="bg-link-blue text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary-navy transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="bg-link-blue text-white px-6 py-3 rounded-lg text-sm font-primary font-medium hover:bg-primary-navy transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               Find Your Home
             </Link>
@@ -135,35 +135,35 @@ export default function Navigation() {
             <div className="px-4 pt-2 pb-6 space-y-1 bg-white border-t border-gray-200">
               <Link 
                 href="/" 
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/sell" 
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sell Your Home
               </Link>
               <Link 
                 href="/communities" 
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Communities
               </Link>
               <Link 
                 href="/market-reports" 
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Market Reports
               </Link>
               <Link 
                 href="/contact" 
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -171,7 +171,7 @@ export default function Navigation() {
               <div className="pt-4 border-t border-gray-200 mt-4">
                 <Link 
                   href="/search" 
-                  className="block w-full text-center bg-link-blue text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-primary-navy transition-colors duration-200 shadow-md"
+                  className="block w-full text-center bg-link-blue text-white px-6 py-3 rounded-lg text-base font-primary font-medium hover:bg-primary-navy transition-colors duration-200 shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Find Your Home
