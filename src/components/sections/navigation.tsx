@@ -34,12 +34,6 @@ export default function Navigation() {
           <div className="hidden lg:block flex-1">
             <div className="flex justify-center items-center space-x-10">
               <Link 
-                href="/" 
-                className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
-              >
-                Home
-              </Link>
-              <Link 
                 href="/sell" 
                 className="text-sm font-primary font-medium text-gray-700 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded"
               >
@@ -133,13 +127,6 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="px-4 pt-2 pb-6 space-y-1 bg-white border-t border-gray-200">
-              <Link 
-                href="/" 
-                className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
               <Link 
                 href="/sell" 
                 className="block px-4 py-3 text-base font-primary font-medium text-gray-700 hover:text-link-blue hover:bg-gray-50 rounded-lg transition-colors duration-200"
