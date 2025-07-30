@@ -40,12 +40,6 @@ export default function Navigation() {
                 Home
               </Link>
               <Link 
-                href="/buy" 
-                className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
-              >
-                Buy in The Vistas
-              </Link>
-              <Link 
                 href="/sell" 
                 className="text-sm font-secondary text-text-dark hover:text-link-blue transition-colors duration-300 whitespace-nowrap"
               >
@@ -145,13 +139,6 @@ export default function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </Link>
-              <Link 
-                href="/buy" 
-                className="block px-4 py-3 text-base font-secondary text-text-dark hover:text-link-blue hover:bg-light-gray rounded transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Buy in The Vistas
               </Link>
               <Link 
                 href="/sell" 
