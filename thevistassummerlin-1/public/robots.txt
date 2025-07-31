@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Disallow API routes
+Disallow: /api/
+
+# Disallow admin/dashboard areas
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Disallow temporary or development pages
+Disallow: /*.vercel.app/
+
+# Allow important pages
+Allow: /communities/
+Allow: /search
+Allow: /buy
+Allow: /sell
+Allow: /valuation
+Allow: /financing
+Allow: /market-reports
+Allow: /about
+Allow: /contact
+
+# Sitemap
+Sitemap: https://www.thevistassummerlin.com/sitemap.xml 
