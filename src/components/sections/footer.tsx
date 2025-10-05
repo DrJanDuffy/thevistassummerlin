@@ -44,10 +44,13 @@ export default function Footer() {
             <h3 className="text-h3 font-primary font-medium mb-4">
               The Vistas Summerlin
             </h3>
+            <div className="mb-4">
+              <p className="text-secondary-gold font-semibold mb-2">Homes by Dr. Jan Duffy</p>
+              <p className="text-sm text-secondary-gold">Preferred Realtor | Award-Winning Service</p>
+            </div>
             <p className="text-body font-secondary mb-6 opacity-90">
-              Your trusted partner in finding the perfect home in one of Las Vegas&apos; most 
-              prestigious residential areas. Discover 28 unique subcommunities with 
-              diverse housing options and world-class amenities.
+              Dr. Jan Duffy, your preferred realtor, guides you through 28 unique subcommunities in Las Vegas&apos; most 
+              prestigious residential area. Discover luxury homes with world-class amenities and award-winning expertise.
             </p>
             
             {/* Contact Info */}
@@ -56,13 +59,17 @@ export default function Footer() {
                 <svg className="w-5 h-5 mr-3 text-link-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-body font-secondary">(702) 555-0123</span>
+                <a href="tel:+17025551234" className="text-body font-secondary hover:text-link-blue transition-colors">
+                  Call Dr. Jan: (702) 555-1234
+                </a>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3 text-link-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-body font-secondary">info@thevistassummerlin.com</span>
+                <a href="mailto:drjan@thevistassummerlin.com" className="text-body font-secondary hover:text-link-blue transition-colors">
+                  drjan@thevistassummerlin.com
+                </a>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3 text-link-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">

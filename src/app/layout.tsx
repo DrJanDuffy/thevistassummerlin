@@ -21,11 +21,11 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "The Vistas Summerlin - Luxury Homes in Las Vegas",
-  description: "Discover your perfect home in one of 28 vibrant subcommunities in The Vistas Summerlin. Get instant home valuations, market insights, and expert guidance.",
+  title: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Preferred Realtor",
+  description: "Award-winning realtor Dr. Jan Duffy guides you through 28 prestigious subcommunities in The Vistas Summerlin. Get VIP access to luxury homes with expert guidance and insider market insights.",
   openGraph: {
-    title: "The Vistas Summerlin - Luxury Homes in Las Vegas",
-    description: "Explore local market insights, community events, and find your dream home in The Vistas Summerlin.",
+    title: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Preferred Realtor",
+    description: "Discover luxury homes in The Vistas Summerlin with Dr. Jan Duffy, the preferred realtor offering award-winning service and exclusive access to premium properties.",
     url: "https://www.thevistassummerlin.com",
     type: "website",
   },
