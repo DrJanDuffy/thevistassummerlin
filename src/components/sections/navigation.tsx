@@ -74,7 +74,7 @@ export default function Navigation() {
                 className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded-md hover:bg-gray-50 group"
                 onClick={() => setShowCommunitiesDropdown(!showCommunitiesDropdown)}
                 onBlur={() => setTimeout(() => setShowCommunitiesDropdown(false), 150)}
-                aria-expanded={showCommunitiesDropdown.toString()}
+                aria-expanded={showCommunitiesDropdown}
                 aria-haspopup="true"
               >
                 Communities
@@ -119,7 +119,7 @@ export default function Navigation() {
                 className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded-md hover:bg-gray-50 group"
                 onClick={() => setShowPropertiesDropdown(!showPropertiesDropdown)}
                 onBlur={() => setTimeout(() => setShowPropertiesDropdown(false), 150)}
-                aria-expanded={showPropertiesDropdown.toString()}
+                aria-expanded={showPropertiesDropdown}
                 aria-haspopup="true"
               >
                 Properties
@@ -199,7 +199,7 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-link-blue transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMenuOpen.toString()}
+              aria-expanded={isMenuOpen}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 {isMenuOpen ? (
