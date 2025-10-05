@@ -48,7 +48,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 lg:py-20">
           {/* Left Column - Main Content */}
           <div className="text-white space-y-8 animate-slide-up">
             {/* Luxury Badge */}
@@ -59,7 +59,7 @@ export default function Hero() {
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl xl:text-8xl font-primary font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-primary font-bold leading-tight">
                 <span className="block text-white">Find Your Perfect</span>
                 <span className="block text-secondary-gold">Home in</span>
                 <span className="block text-white">The Vistas</span>
@@ -68,7 +68,7 @@ export default function Hero() {
             </div>
 
             {/* Subtitle */}
-            <p className="text-xl lg:text-2xl font-secondary font-light max-w-2xl leading-relaxed opacity-95">
+            <p className="text-lg sm:text-xl lg:text-2xl font-secondary font-light max-w-2xl leading-relaxed opacity-95">
               Discover 28 prestigious subcommunities in Las Vegas&apos; most exclusive area. 
               Where luxury meets lifestyle, and every home tells a story of sophistication.
             </p>
@@ -121,26 +121,14 @@ export default function Hero() {
                 </p>
               </div>
               
-              {/* Placeholder for RealScout Widget */}
-              <div className="bg-gradient-to-br from-accent-blue/10 to-primary-navy/10 rounded-xl p-6 border border-accent-blue/20">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-accent-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Home className="w-8 h-8 text-accent-blue" />
-                  </div>
-                  <h4 className="text-lg font-primary font-medium text-primary-navy mb-2">
-                    Instant Home Valuation
-                  </h4>
-                  <p className="text-sm text-text-light mb-4">
-                    Enter your address to receive a comprehensive market analysis
-                  </p>
-                  <Link 
-                    href="/valuation" 
-                    className="btn-primary w-full"
-                  >
-                    Start Valuation
-                  </Link>
-                </div>
-              </div>
+              {/* RealScout Simple Search Widget */}
+              <realscout-simple-search
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                placeholder="Enter an address, neighborhood, or city..."
+                button-text="Search Homes"
+                show-suggested-searches="true"
+                class="realscout-hero-widget"
+              />
             </div>
           </div>
         </div>

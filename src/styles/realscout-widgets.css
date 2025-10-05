@@ -48,6 +48,22 @@ realscout-simple-search {
   --rs-ss-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Hero Widget Styling */
+realscout-simple-search.realscout-hero-widget {
+  --rs-ss-background-color: rgba(255, 255, 255, 0.95);
+  --rs-ss-title-color: #0A2540;
+  --rs-ss-subtitle-color: #6B7280;
+  --rs-ss-primary-button-color: #D4AF37;
+  --rs-ss-primary-button-text-color: #FFFFFF;
+  --rs-ss-primary-button-hover-color: #B8941F;
+  --rs-ss-border-radius: 16px;
+  --rs-ss-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --rs-ss-widget-width: 100% !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 /* Your Listings Widget Styles */
 realscout-your-listings {
   --rs-listing-divider-color: rgb(101, 141, 172);
