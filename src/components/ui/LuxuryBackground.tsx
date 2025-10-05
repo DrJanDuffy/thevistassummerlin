@@ -17,10 +17,10 @@ export default function LuxuryBackground({
 }: LuxuryBackgroundProps) {
   const getPatternSize = () => {
     switch (variant) {
-      case 'hero': return '60';
-      case 'card': return '40';
-      case 'section': return '80';
-      default: return '60';
+      case 'hero': return 60;
+      case 'card': return 40;
+      case 'section': return 80;
+      default: return 60;
     }
   };
 
