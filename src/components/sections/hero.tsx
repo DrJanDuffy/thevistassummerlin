@@ -8,62 +8,26 @@ import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import GradientCard from '@/components/ui/GradientCard';
 
 export default function Hero() {
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    {
-      src: '/subcommunities/IMG_0737.JPG',
-      alt: 'Luxury home exterior in The Vistas Summerlin with mountain views',
-      fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop&crop=center'
-    },
-    {
-      src: '/subcommunities/IMG_0738.JPG',
-      alt: 'Modern home design in The Vistas Summerlin community',
-      fallback: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop&crop=center'
-    },
-    {
-      src: '/subcommunities/IMG_0739.JPG',
-      alt: 'Beautiful residential street in The Vistas Summerlin',
-      fallback: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop&crop=center'
-    }
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  // Removed image carousel for luxury background style
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Carousel */}
+      {/* Luxury Background */}
       <div className="absolute inset-0 z-0">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImage ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover"
-              priority={index === 0}
-              sizes="100vw"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = image.fallback;
-              }}
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/80 via-primary-navy/60 to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/40 to-transparent"></div>
-          </div>
-        ))}
+        {/* Primary Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-primary-navy/95 to-accent-blue"></div>
+        
+        {/* Luxury Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5 bg-luxury-dots-hero"></div>
+        
+        {/* Elegant Geometric Shapes */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-secondary-gold/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-gold/5 rounded-full blur-3xl"></div>
+        
+        {/* Subtle Texture */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/20 to-transparent"></div>
       </div>
 
       {/* Content */}

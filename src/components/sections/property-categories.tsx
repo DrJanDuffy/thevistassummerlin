@@ -99,22 +99,18 @@ export default function PropertyCategories() {
                 )}
 
                 <div className="card-luxury h-full overflow-hidden">
-                  {/* Image Section */}
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={property.image}
-                      alt={`${property.name} in The Vistas Summerlin`}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = property.fallbackImage;
-                      }}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  {/* Luxury Background Section */}
+                  <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${property.gradient} transition-all duration-700 group-hover:scale-105`}>
+                    {/* Luxury Pattern Overlay */}
+                    <div className="absolute inset-0 opacity-10 bg-luxury-pattern-property"></div>
+                    
+                    {/* Elegant Geometric Elements */}
+                    <div className="absolute top-4 right-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                    <div className="absolute bottom-4 left-4 w-12 h-12 bg-white/5 rounded-full blur-lg"></div>
+                    
+                    {/* Subtle Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
                     
                     {/* Icon Overlay */}
                     <div className="absolute top-6 right-6">

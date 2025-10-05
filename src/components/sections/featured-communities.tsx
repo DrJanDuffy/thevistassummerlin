@@ -102,22 +102,19 @@ export default function FeaturedCommunities() {
                 </div>
 
                 <div className="card-luxury h-full overflow-hidden bg-white/95 backdrop-blur-sm border-white/20">
-                  {/* Image Section */}
-                  <div className="relative h-80 overflow-hidden">
-                    <Image
-                      src={community.image}
-                      alt={`Luxury homes in ${community.name} community`}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = community.fallbackImage;
-                      }}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
+                  {/* Luxury Background Section */}
+                  <div className={`relative h-80 overflow-hidden bg-gradient-to-br ${community.gradient} transition-all duration-700 group-hover:scale-105`}>
+                    {/* Luxury Pattern Overlay */}
+                    <div className="absolute inset-0 opacity-10 bg-luxury-dots-community"></div>
+                    
+                    {/* Elegant Geometric Elements */}
+                    <div className="absolute top-6 right-6 w-20 h-20 bg-white/10 rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-6 left-6 w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
+                    
+                    {/* Subtle Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
                     
                     {/* Icon Overlay */}
                     <div className="absolute top-6 right-6">
