@@ -12,7 +12,8 @@ const featuredCommunities = [
     description: 'Luxury homes with mountain views and resort-style amenities',
     priceRange: '$800K - $2.5M',
     homesAvailable: 12,
-    image: '/subcommunities/Santaluz.jpg',
+    image: '/subcommunities/IMG_0737.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center',
     features: ['Mountain Views', 'Resort Pool', 'Golf Course', 'Hiking Trails'],
     rating: 4.9,
     population: '2,400+',
@@ -26,7 +27,8 @@ const featuredCommunities = [
     description: 'Stunning homes with panoramic views of the iconic Red Rock Canyon',
     priceRange: '$650K - $1.8M',
     homesAvailable: 8,
-    image: '/subcommunities/IMG_0737.JPG',
+    image: '/subcommunities/IMG_0738.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center',
     features: ['Canyon Views', 'Private Patios', 'Modern Design', 'Community Center'],
     rating: 4.8,
     population: '1,800+',
@@ -40,7 +42,8 @@ const featuredCommunities = [
     description: 'Family-friendly community with parks, schools, and shopping nearby',
     priceRange: '$525K - $1.2M',
     homesAvailable: 25,
-    image: '/subcommunities/IMG_0738.JPG',
+    image: '/subcommunities/IMG_0739.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center',
     features: ['Parks & Playgrounds', 'Top Schools', 'Shopping Center', 'Walking Trails'],
     rating: 4.7,
     population: '3,200+',
@@ -103,10 +106,16 @@ export default function FeaturedCommunities() {
                   <div className="relative h-80 overflow-hidden">
                     <Image
                       src={community.image}
-                      alt={community.name}
+                      alt={`Luxury homes in ${community.name} community`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = community.fallbackImage;
+                      }}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     

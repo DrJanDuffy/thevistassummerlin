@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const blogPosts = [
   {
@@ -10,7 +11,8 @@ const blogPosts = [
     category: 'Market Insights',
     readTime: '5 min read',
     date: 'Dec 15, 2024',
-    image: '/subcommunities/IMG_0737.JPG'
+    image: '/subcommunities/IMG_0737.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center'
   },
   {
     id: 2,
@@ -19,7 +21,8 @@ const blogPosts = [
     category: 'Community',
     readTime: '4 min read',
     date: 'Dec 12, 2024',
-    image: '/subcommunities/IMG_0738.JPG'
+    image: '/subcommunities/IMG_0738.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center'
   },
   {
     id: 3,
@@ -28,7 +31,8 @@ const blogPosts = [
     category: 'Buying Guide',
     readTime: '7 min read',
     date: 'Dec 10, 2024',
-    image: '/subcommunities/Santaluz.jpg'
+    image: '/subcommunities/IMG_0739.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center'
   }
 ];
 
@@ -49,7 +53,21 @@ export default function BlogPosts() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {blogPosts.map((post) => (
             <article key={post.id} className="bg-white rounded-default shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-light-gray">
-              <div className="relative h-56 bg-light-gray">
+              <div className="relative h-56 bg-light-gray overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = post.fallbackImage;
+                  }}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute top-6 left-6">
                   <span className="bg-link-blue text-white px-4 py-2 rounded-full text-sm font-secondary font-medium">
                     {post.category}

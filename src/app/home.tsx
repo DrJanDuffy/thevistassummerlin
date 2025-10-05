@@ -8,7 +8,9 @@ import PropertyCategories from '@/components/sections/property-categories';
 import FeaturedCommunities from '@/components/sections/featured-communities';
 import BlogPosts from '@/components/sections/blog-posts';
 import Footer from '@/components/sections/footer';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
+import FloatingActionButton from '@/components/ui/FloatingActionButton';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 export default function Home() {
   return (
@@ -655,6 +657,19 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      
+      {/* Floating Action Button */}
+      <FloatingActionButton
+        href="tel:+17025551234"
+        position="bottom-right"
+        variant="secondary"
+        className="animate-bounce"
+      >
+        <Phone className="w-6 h-6" />
+      </FloatingActionButton>
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 } 

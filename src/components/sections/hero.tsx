@@ -4,13 +4,27 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Home, MapPin, TrendingUp } from 'lucide-react';
+import AnimatedCounter from '@/components/ui/AnimatedCounter';
+import GradientCard from '@/components/ui/GradientCard';
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    '/subcommunities/IMG_0737.JPG',
-    '/subcommunities/IMG_0738.JPG',
-    '/subcommunities/IMG_0739.JPG'
+    {
+      src: '/subcommunities/IMG_0737.JPG',
+      alt: 'Luxury home exterior in The Vistas Summerlin with mountain views',
+      fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop&crop=center'
+    },
+    {
+      src: '/subcommunities/IMG_0738.JPG',
+      alt: 'Modern home design in The Vistas Summerlin community',
+      fallback: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop&crop=center'
+    },
+    {
+      src: '/subcommunities/IMG_0739.JPG',
+      alt: 'Beautiful residential street in The Vistas Summerlin',
+      fallback: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop&crop=center'
+    }
   ];
 
   useEffect(() => {
@@ -32,12 +46,18 @@ export default function Hero() {
             }`}
           >
             <Image
-              src={image}
-              alt={`Luxury home in The Vistas Summerlin ${index + 1}`}
+              src={image.src}
+              alt={image.alt}
               fill
               className="object-cover"
               priority={index === 0}
               sizes="100vw"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = image.fallback;
+              }}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/80 via-primary-navy/60 to-transparent"></div>
@@ -52,12 +72,14 @@ export default function Hero() {
           {/* Left Column - Main Content */}
           <div className="text-white space-y-8 animate-slide-up">
             {/* Preferred Realtor Badge */}
-            <div className="inline-flex items-center space-x-2 bg-secondary-gold/20 backdrop-blur-sm border border-secondary-gold/30 rounded-full px-4 py-2 text-secondary-gold font-medium">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span>Preferred Realtor - Dr. Jan Duffy</span>
-            </div>
+            <GradientCard gradient="from-secondary-gold/20 to-secondary-gold/10" className="inline-block p-0">
+              <div className="flex items-center space-x-2 px-4 py-2 text-secondary-gold font-medium">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span>Preferred Realtor - Dr. Jan Duffy</span>
+              </div>
+            </GradientCard>
 
             {/* Main Headline */}
             <div className="space-y-4">
@@ -89,15 +111,21 @@ export default function Hero() {
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-6 py-6">
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-primary font-bold text-secondary-gold mb-2">28</div>
+                <div className="text-3xl lg:text-4xl font-primary font-bold text-secondary-gold mb-2">
+                  <AnimatedCounter end={28} />
+                </div>
                 <div className="text-sm lg:text-base font-secondary opacity-90">Subcommunities</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-primary font-bold text-secondary-gold mb-2">$875K</div>
+                <div className="text-3xl lg:text-4xl font-primary font-bold text-secondary-gold mb-2">
+                  <AnimatedCounter end={875} prefix="$" suffix="K" />
+                </div>
                 <div className="text-sm lg:text-base font-secondary opacity-90">Median Price</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-primary font-bold text-secondary-gold mb-2">12</div>
+                <div className="text-3xl lg:text-4xl font-primary font-bold text-secondary-gold mb-2">
+                  <AnimatedCounter end={12} />
+                </div>
                 <div className="text-sm lg:text-base font-secondary opacity-90">Homes Remaining</div>
               </div>
             </div>

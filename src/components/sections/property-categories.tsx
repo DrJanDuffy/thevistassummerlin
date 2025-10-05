@@ -13,7 +13,8 @@ const propertyTypes = [
     description: 'Spacious family homes with private yards and modern amenities',
     priceRange: '$525K - $2.5M',
     count: '350+',
-    image: '/subcommunities/Santaluz.jpg',
+    image: '/subcommunities/IMG_0737.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center',
     features: ['3-6 Bedrooms', '2-4 Bathrooms', '1,800-4,500 sq ft', 'Private Yards'],
     icon: Home,
     gradient: 'from-accent-blue to-primary-navy',
@@ -25,7 +26,8 @@ const propertyTypes = [
     description: 'Townhomes and duplexes perfect for families and investors',
     priceRange: '$450K - $1.2M',
     count: '120+',
-    image: '/subcommunities/IMG_0737.JPG',
+    image: '/subcommunities/IMG_0738.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center',
     features: ['2-4 Bedrooms', '2-3 Bathrooms', '1,200-2,800 sq ft', 'Shared Amenities'],
     icon: Building2,
     gradient: 'from-success-green to-accent-blue',
@@ -37,7 +39,8 @@ const propertyTypes = [
     description: 'Low-maintenance living with community amenities',
     priceRange: '$400K - $900K',
     count: '80+',
-    image: '/subcommunities/IMG_0738.JPG',
+    image: '/subcommunities/IMG_0739.JPG',
+    fallbackImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center',
     features: ['1-3 Bedrooms', '1-2 Bathrooms', '800-2,200 sq ft', 'Community Pools'],
     icon: Building,
     gradient: 'from-secondary-gold to-accent-blue',
@@ -100,10 +103,16 @@ export default function PropertyCategories() {
                   <div className="relative h-64 overflow-hidden">
                     <Image
                       src={property.image}
-                      alt={property.name}
+                      alt={`${property.name} in The Vistas Summerlin`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = property.fallbackImage;
+                      }}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     
