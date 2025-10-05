@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Navigation from '@/components/sections/navigation';
 import Hero from '@/components/sections/hero';
 import HomeEvaluationSection from '@/components/sections/home-evaluation';
