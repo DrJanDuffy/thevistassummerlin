@@ -22,6 +22,126 @@ export default function Home() {
         <PropertyCategories />
         <FeaturedCommunities />
         
+        {/* Client Testimonials Section */}
+        <section className="py-24 bg-gradient-to-br from-white via-off-white to-light-gray relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-20 right-20 w-96 h-96 bg-primary-navy rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary-gold rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center space-x-2 bg-primary-navy/10 border border-primary-navy/20 rounded-full px-4 py-2 text-primary-navy font-medium mb-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                </svg>
+                <span>Client Success Stories</span>
+              </div>
+
+              <h2 className="text-4xl lg:text-6xl font-primary font-bold text-primary-navy mb-6 leading-tight">
+                What Our Clients
+                <span className="block text-secondary-gold">Say About Dr. Jan</span>
+              </h2>
+
+              <p className="text-xl lg:text-2xl font-secondary font-light text-text-light max-w-4xl mx-auto leading-relaxed">
+                Real testimonials from families who found their dream homes in The Vistas Summerlin with Dr. Jan Duffy's expert guidance
+              </p>
+            </div>
+
+            {/* Testimonials Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-secondary-gold to-accent-blue rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-xl">JS</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text-dark">Jennifer & Scott Martinez</h4>
+                    <p className="text-sm text-text-light">Santaluz Community</p>
+                  </div>
+                </div>
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-secondary-gold fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-text-light italic leading-relaxed">
+                  "Dr. Jan Duffy made our home buying experience seamless. Her expertise in The Vistas Summerlin market helped us find the perfect home in Santaluz. We couldn't be happier with our new community!"
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent-blue to-primary-navy rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-xl">MR</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text-dark">Michael & Rachel Thompson</h4>
+                    <p className="text-sm text-text-light">Red Rock Canyon Community</p>
+                  </div>
+                </div>
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-secondary-gold fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-text-light italic leading-relaxed">
+                  "Dr. Jan's insider knowledge and preferred realtor status gave us access to properties we never would have found. The process was smooth, professional, and we felt confident every step of the way."
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-success-green to-accent-blue rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-xl">DL</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text-dark">David & Lisa Chen</h4>
+                    <p className="text-sm text-text-light">Summerlin Park Community</p>
+                  </div>
+                </div>
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-secondary-gold fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-text-light italic leading-relaxed">
+                  "As first-time homebuyers, we were nervous about the process. Dr. Jan guided us through everything with patience and expertise. We're now proud homeowners in The Vistas Summerlin!"
+                </p>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-primary-navy to-accent-blue rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-primary font-bold mb-4">
+                  Ready to Join Our Happy Homeowners?
+                </h3>
+                <p className="text-white/90 font-secondary mb-6 leading-relaxed max-w-2xl mx-auto">
+                  Let Dr. Jan Duffy help you find your perfect home in The Vistas Summerlin
+                </p>
+                <a
+                  href="tel:+17025551234"
+                  className="btn-gold inline-flex items-center"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                  Call Dr. Jan: (702) 555-1234
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* VIP Access Section */}
         <section className="py-20 bg-gradient-to-br from-secondary-gold/10 via-secondary-gold/5 to-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -648,6 +768,189 @@ export default function Home() {
                     className="btn-secondary bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary-navy inline-flex items-center"
                   >
                     Schedule Consultation
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Dr. Jan's Services Section */}
+        <section className="py-24 bg-gradient-to-br from-primary-navy via-primary-navy/95 to-accent-blue relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-20 w-96 h-96 bg-secondary-gold rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white font-medium mb-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span>Comprehensive Real Estate Services</span>
+              </div>
+
+              <h2 className="text-4xl lg:text-6xl font-primary font-bold text-white mb-6 leading-tight">
+                Dr. Jan Duffy's
+                <span className="block text-secondary-gold">Expert Services</span>
+              </h2>
+
+              <p className="text-xl lg:text-2xl font-secondary font-light text-white/90 max-w-4xl mx-auto leading-relaxed">
+                From first-time buyers to luxury investors, Dr. Jan provides comprehensive real estate services tailored to your unique needs
+              </p>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-secondary-gold to-accent-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  First-Time Home Buying
+                </h3>
+                <p className="text-white/80 font-secondary leading-relaxed mb-6">
+                  Complete guidance for new buyers including pre-approval, market education, and negotiation strategies
+                </p>
+                <ul className="text-white/70 text-sm space-y-2 text-left">
+                  <li>• Pre-approval assistance</li>
+                  <li>• Market education</li>
+                  <li>• Inspection coordination</li>
+                  <li>• Closing support</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-accent-blue to-primary-navy rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  Luxury Home Sales
+                </h3>
+                <p className="text-white/80 font-secondary leading-relaxed mb-6">
+                  Specialized expertise in high-end properties with premium marketing and exclusive buyer networks
+                </p>
+                <ul className="text-white/70 text-sm space-y-2 text-left">
+                  <li>• Premium marketing</li>
+                  <li>• Exclusive buyer networks</li>
+                  <li>• Market analysis</li>
+                  <li>• Staging consultation</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-success-green to-accent-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  Investment Properties
+                </h3>
+                <p className="text-white/80 font-secondary leading-relaxed mb-6">
+                  Strategic investment guidance with ROI analysis and portfolio building expertise
+                </p>
+                <ul className="text-white/70 text-sm space-y-2 text-left">
+                  <li>• ROI analysis</li>
+                  <li>• Market trends</li>
+                  <li>• Property management</li>
+                  <li>• Tax implications</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-secondary-gold to-primary-navy rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  Relocation Services
+                </h3>
+                <p className="text-white/80 font-secondary leading-relaxed mb-6">
+                  Comprehensive relocation support for families moving to Las Vegas and The Vistas Summerlin
+                </p>
+                <ul className="text-white/70 text-sm space-y-2 text-left">
+                  <li>• Area orientation</li>
+                  <li>• School information</li>
+                  <li>• Local amenities</li>
+                  <li>• Moving coordination</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-accent-blue to-success-green rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  Market Analysis
+                </h3>
+                <p className="text-white/80 font-secondary leading-relaxed mb-6">
+                  Detailed market reports and pricing strategies to maximize your real estate investment
+                </p>
+                <ul className="text-white/70 text-sm space-y-2 text-left">
+                  <li>• Comparative market analysis</li>
+                  <li>• Pricing strategies</li>
+                  <li>• Market trends</li>
+                  <li>• Investment opportunities</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary-navy to-secondary-gold rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  Concierge Service
+                </h3>
+                <p className="text-white/80 font-secondary leading-relaxed mb-6">
+                  White-glove service for high-net-worth clients with personalized attention and exclusive access
+                </p>
+                <ul className="text-white/70 text-sm space-y-2 text-left">
+                  <li>• Personalized attention</li>
+                  <li>• Exclusive access</li>
+                  <li>• Private showings</li>
+                  <li>• VIP treatment</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-primary font-bold text-white mb-4">
+                  Ready to Experience Dr. Jan's Expert Service?
+                </h3>
+                <p className="text-white/90 font-secondary mb-6 leading-relaxed">
+                  Schedule a consultation to discuss your real estate needs and discover how Dr. Jan can help you achieve your goals
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="tel:+17025551234"
+                    className="btn-gold inline-flex items-center"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Call Dr. Jan: (702) 555-1234
+                  </a>
+                  <Link
+                    href="/services"
+                    className="btn-secondary bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary-navy inline-flex items-center"
+                  >
+                    View All Services
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </div>
