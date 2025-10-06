@@ -31,7 +31,7 @@ export default function Navigation() {
                 </svg>
                 Call Dr. Jan: (702) 555-1234
               </a>
-              <a href="mailto:drdrjan@thevistassummerlin.com" className="flex items-center hover:text-link-blue transition-colors duration-200">
+              <a href="mailto:drjan@thevistassummerlin.com" className="flex items-center hover:text-link-blue transition-colors duration-200">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -69,7 +69,7 @@ export default function Navigation() {
                 className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded-md hover:bg-gray-50 group"
                 onClick={() => setShowCommunitiesDropdown(!showCommunitiesDropdown)}
                 onBlur={() => setTimeout(() => setShowCommunitiesDropdown(false), 150)}
-                aria-expanded={showCommunitiesDropdown}
+                aria-expanded={showCommunitiesDropdown ? "true" : "false"}
                 aria-haspopup="true"
               >
                 Communities
@@ -114,7 +114,7 @@ export default function Navigation() {
                 className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded-md hover:bg-gray-50 group"
                 onClick={() => setShowPropertiesDropdown(!showPropertiesDropdown)}
                 onBlur={() => setTimeout(() => setShowPropertiesDropdown(false), 150)}
-                aria-expanded={showPropertiesDropdown}
+                aria-expanded={showPropertiesDropdown ? "true" : "false"}
                 aria-haspopup="true"
               >
                 Properties
@@ -151,6 +151,13 @@ export default function Navigation() {
               )}
             </div>
 
+            <Link 
+              href="/blog" 
+              className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-50"
+            >
+              Blog
+            </Link>
+            
             <Link 
               href="/about" 
               className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-50"
@@ -194,7 +201,7 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-link-blue transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMenuOpen}
+              aria-expanded={isMenuOpen ? "true" : "false"}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 {isMenuOpen ? (

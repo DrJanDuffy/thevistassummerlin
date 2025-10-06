@@ -5,12 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // Community slugs for dynamic sitemap generation
   const communitySlugs = [
-    'barrington',
-    'kingwood', 
-    'santalina',
-    'bella-vista',
-    'canyon-ridge',
-    'sunset-hills'
+    'img-0737', // Barrington
+    'img-0738', // Kingwood
+    'img-0739', // Santalina
+    'portofino',
+    'kingwood',
+    'barrington'
   ]
   
   return [
@@ -57,27 +57,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.6,
     },
-    // The Vistas specific pages
     {
-      url: `${baseUrl}/the-vistas-summerlin-homes`,
+      url: `${baseUrl}/search`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/the-vistas-luxury-real-estate`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/the-vistas-summerlin-realtor`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/the-vistas-community-guide`,
+      url: `${baseUrl}/sell`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/market-reports`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/market-analysis`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/investment`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/community-guide`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

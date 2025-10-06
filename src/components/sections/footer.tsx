@@ -6,24 +6,25 @@ import { Phone, Mail, MapPin, ArrowRight, Star, Award, Users, TrendingUp, Facebo
 const footerLinks = {
   communities: [
     { name: 'All Communities', href: '/communities' },
-    { name: 'Santaluz', href: '/communities/santaluz' },
-    { name: 'Red Rock Canyon', href: '/communities/red-rock' },
-    { name: 'Summerlin Park', href: '/communities/summerlin-park' },
-    { name: 'View All 28', href: '/communities' }
+    { name: 'Barrington', href: '/communities/img-0737' },
+    { name: 'Kingwood', href: '/communities/img-0738' },
+    { name: 'Santalina', href: '/communities/img-0739' },
+    { name: 'Portofino', href: '/communities/portofino' },
+    { name: 'View All Communities', href: '/communities' }
   ],
   services: [
     { name: 'Home Valuation', href: '/valuation' },
-    { name: 'Market Data', href: '/market' },
+    { name: 'Market Reports', href: '/market-reports' },
     { name: 'Property Search', href: '/search' },
-    { name: 'Buying Guide', href: '/guide' },
-    { name: 'Selling Guide', href: '/sell' }
+    { name: 'Sell Your Home', href: '/sell' },
+    { name: 'Community Guide', href: '/community-guide' }
   ],
   resources: [
-    { name: 'Blog', href: '/blog' },
-    { name: 'Market Insights', href: '/market' },
-    { name: 'School Information', href: '/schools' },
-    { name: 'Community Events', href: '/events' },
-    { name: 'Local Amenities', href: '/amenities' }
+    { name: 'Blog & News', href: '/blog' },
+    { name: 'Market Analysis', href: '/market-analysis' },
+    { name: 'Investment Guide', href: '/investment' },
+    { name: 'Featured Property', href: '/properties/11773-golden-moments-avenue' },
+    { name: 'About Dr. Jan Duffy', href: '/about' }
   ],
   company: [
     { name: 'About Us', href: '/about' },
@@ -106,6 +107,7 @@ export default function Footer() {
                       key={social.name}
                       href={social.href}
                       className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-200 hover:scale-110"
+                      aria-label={`Follow us on ${social.name}`}
                     >
                       <IconComponent className="w-5 h-5 text-blue-200" />
                     </a>

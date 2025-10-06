@@ -10,7 +10,9 @@ import {
   RealEstateExpertSchema, 
   FAQSchema, 
   LocalBusinessSchema, 
-  RealEstateListingSchema 
+  RealEstateListingSchema,
+  WebsiteSchema,
+  OrganizationSchema
 } from '@/components/StructuredData';
 
 const playfair = Playfair_Display({
@@ -103,6 +105,8 @@ export default function RootLayout({
         <FAQSchema />
         <LocalBusinessSchema />
         <RealEstateListingSchema />
+        <WebsiteSchema />
+        <OrganizationSchema />
         
         {/* RealScout Widget Script - Loaded once for all pages */}
         <Script 

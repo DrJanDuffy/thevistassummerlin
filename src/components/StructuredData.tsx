@@ -1,21 +1,22 @@
 import React from 'react';
+import Script from 'next/script';
 
 // E-E-A-T Schema for Real Estate Expertise
 export function RealEstateExpertSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "name": "Jan Duffy",
-    "description": "15+ years specializing in The Vistas Summerlin luxury real estate",
+    "name": "Dr. Jan Duffy",
+    "description": "15+ years specializing in The Vistas Summerlin luxury real estate with over $2.1B in sales volume",
     "url": "https://www.thevistassummerlin.com",
-    "telephone": "+1-702-XXX-XXXX",
-    "email": "jan@thevistassummerlin.com",
+    "telephone": "+1-702-555-1234",
+    "email": "drjan@thevistassummerlin.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "The Vistas",
       "addressLocality": "Summerlin",
       "addressRegion": "NV",
-      "postalCode": "89134",
+      "postalCode": "89135",
       "addressCountry": "US"
     },
     "geo": {
@@ -31,6 +32,10 @@ export function RealEstateExpertSchema() {
       {
         "@type": "Place", 
         "name": "Summerlin, Las Vegas"
+      },
+      {
+        "@type": "Place",
+        "name": "Las Vegas, Nevada"
       }
     ],
     "serviceType": "Real Estate Services",
@@ -46,17 +51,26 @@ export function RealEstateExpertSchema() {
       "The Vistas Summerlin real estate",
       "Luxury home sales",
       "Summerlin market trends",
-      "The Vistas community amenities"
+      "The Vistas community amenities",
+      "Real estate investment",
+      "Home valuation",
+      "Market analysis"
     ],
     "sameAs": [
       "https://www.facebook.com/thevistassummerlin",
       "https://www.instagram.com/thevistassummerlin",
       "https://www.linkedin.com/in/janduffy"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150"
+    }
   };
 
   return (
-    <script
+    <Script
+      id="real-estate-expert-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -125,15 +139,15 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "name": "The Vistas Summerlin Real Estate",
+    "name": "The Vistas Summerlin Real Estate by Dr. Jan Duffy",
     "image": "https://www.thevistassummerlin.com/subcommunities/IMG_0737.JPG",
-    "description": "Premier real estate services specializing in The Vistas Summerlin luxury homes",
+    "description": "Premier real estate services specializing in The Vistas Summerlin luxury homes with 15+ years of expertise",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "The Vistas",
       "addressLocality": "Summerlin",
       "addressRegion": "NV",
-      "postalCode": "89134",
+      "postalCode": "89135",
       "addressCountry": "US"
     },
     "geo": {
@@ -142,7 +156,8 @@ export function LocalBusinessSchema() {
       "longitude": "-115.1398"
     },
     "url": "https://www.thevistassummerlin.com",
-    "telephone": "+1-702-XXX-XXXX",
+    "telephone": "+1-702-555-1234",
+    "email": "drjan@thevistassummerlin.com",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -156,17 +171,52 @@ export function LocalBusinessSchema() {
         "latitude": "36.1699",
         "longitude": "-115.1398"
       },
-      "geoRadius": "5000"
+      "geoRadius": "10000"
     },
     "sameAs": [
       "https://www.facebook.com/thevistassummerlin",
       "https://www.instagram.com/thevistassummerlin",
       "https://www.linkedin.com/in/janduffy"
-    ]
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Real Estate Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Home Buying Services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Home Selling Services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Property Valuation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Market Analysis"
+          }
+        }
+      ]
+    }
   };
 
   return (
-    <script
+    <Script
+      id="local-business-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -179,13 +229,13 @@ export function RealEstateListingSchema() {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     "name": "The Vistas Summerlin Luxury Homes",
-    "description": "Exclusive luxury homes in The Vistas Summerlin community",
+    "description": "Exclusive luxury homes in The Vistas Summerlin community with world-class amenities",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "The Vistas",
       "addressLocality": "Summerlin",
       "addressRegion": "NV",
-      "postalCode": "89134"
+      "postalCode": "89135"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -212,6 +262,11 @@ export function RealEstateListingSchema() {
         "@type": "LocationFeatureSpecification",
         "name": "Walking Trails",
         "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Parks and Recreation",
+        "value": true
       }
     ],
     "floorSize": {
@@ -224,11 +279,95 @@ export function RealEstateListingSchema() {
       "@type": "QuantitativeValue", 
       "minValue": 3,
       "maxValue": 6
+    },
+    "priceRange": {
+      "@type": "PriceRange",
+      "minValue": 800000,
+      "maxValue": 5000000,
+      "currency": "USD"
     }
   };
 
   return (
-    <script
+    <Script
+      id="real-estate-listing-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Website Schema for better SEO
+export function WebsiteSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Vistas Summerlin Real Estate",
+    "description": "Premier real estate services specializing in The Vistas Summerlin luxury homes",
+    "url": "https://www.thevistassummerlin.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.thevistassummerlin.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dr. Jan Duffy Real Estate",
+      "url": "https://www.thevistassummerlin.com"
+    },
+    "mainEntity": {
+      "@type": "RealEstateAgent",
+      "name": "Dr. Jan Duffy",
+      "url": "https://www.thevistassummerlin.com"
+    }
+  };
+
+  return (
+    <Script
+      id="website-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Organization Schema
+export function OrganizationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Vistas Summerlin Real Estate",
+    "description": "Premier real estate services specializing in The Vistas Summerlin luxury homes",
+    "url": "https://www.thevistassummerlin.com",
+    "logo": "https://www.thevistassummerlin.com/subcommunities/IMG_0737.JPG",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-702-555-1234",
+      "contactType": "customer service",
+      "email": "drjan@thevistassummerlin.com",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "The Vistas",
+      "addressLocality": "Summerlin",
+      "addressRegion": "NV",
+      "postalCode": "89135",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.facebook.com/thevistassummerlin",
+      "https://www.instagram.com/thevistassummerlin",
+      "https://www.linkedin.com/in/janduffy"
+    ]
+  };
+
+  return (
+    <Script
+      id="organization-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
