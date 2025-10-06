@@ -1,9 +1,10 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, MapPin, Bed, Bath, Square, Calendar, DollarSign, Car, Home, TreePine } from 'lucide-react';
+import { ArrowLeft, MapPin, Bed, Bath, Square, Calendar, DollarSign, Car, Home, TreePine, Phone, Mail, ExternalLink } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import { PropertyImageGallery, goldenMomentsImages } from '@/components/PropertyImageGallery';
 
 export const metadata: Metadata = {
   title: "11773 Golden Moments Avenue - Luxury Home in The Vistas Summerlin | $738,700",
@@ -119,67 +120,113 @@ export default function GoldenMomentsProperty() {
   return (
     <>
       <PropertySchema />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gray-50">
         <Navigation />
         
         {/* Breadcrumb */}
-        <div className="bg-gray-50 py-4">
-          <div className="max-w-7xl mx-auto px-4">
+        <div className="bg-white border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav className="flex items-center space-x-2 text-sm">
-              <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+              <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">Home</Link>
               <span className="text-gray-400">/</span>
-              <Link href="/properties" className="text-blue-600 hover:text-blue-800">Properties</Link>
+              <Link href="/properties" className="text-blue-600 hover:text-blue-800 transition-colors">Properties</Link>
               <span className="text-gray-400">/</span>
-              <span className="text-gray-600">11773 Golden Moments Avenue</span>
+              <span className="text-gray-600 font-medium">11773 Golden Moments Avenue</span>
             </nav>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                  11773 Golden Moments Avenue
-                </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Move-in Ready Luxury Home in The Vistas Summerlin
-                </p>
-                <div className="flex flex-wrap gap-4 mb-8">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-                    <span className="text-2xl font-bold">$738,700</span>
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-                    <span className="text-lg">$303/sqft</span>
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-                    <span className="text-lg">MLS #2722090</span>
+        <section className="bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              
+              {/* Property Image Gallery */}
+              <div className="order-2 lg:order-1">
+                <PropertyImageGallery 
+                  images={goldenMomentsImages} 
+                  propertyAddress="11773 Golden Moments Avenue" 
+                />
+              </div>
+              
+              {/* Property Info */}
+              <div className="order-1 lg:order-2 space-y-6">
+                <div>
+                  <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    11773 Golden Moments Avenue
+                  </h1>
+                  <div className="flex items-center space-x-2 text-gray-600 mb-6">
+                    <MapPin className="w-5 h-5" />
+                    <span>Canterra At The Vistas, Summerlin, Las Vegas, NV 89138</span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-4">
+
+                {/* Price & Key Stats */}
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+                  <div className="text-5xl font-bold mb-2">$738,700</div>
+                  <div className="text-xl text-blue-100 mb-6">$303 per sqft</div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center space-x-3">
+                      <Bed className="w-6 h-6" />
+                      <div>
+                        <div className="text-2xl font-bold">4</div>
+                        <div className="text-blue-100">Bedrooms</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Bath className="w-6 h-6" />
+                      <div>
+                        <div className="text-2xl font-bold">3</div>
+                        <div className="text-blue-100">Bathrooms</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Square className="w-6 h-6" />
+                      <div>
+                        <div className="text-2xl font-bold">2,436</div>
+                        <div className="text-blue-100">Sq Ft</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Car className="w-6 h-6" />
+                      <div>
+                        <div className="text-2xl font-bold">2</div>
+                        <div className="text-blue-100">Garage</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <a 
                     href="https://drjanduffy.realscout.com/homesearch/listings/p-11773-golden-moments-avenue-las-vegas-89138-glvartrestle-139" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                    className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
                   >
-                    View Full Listing
+                    <ExternalLink className="w-5 h-5" />
+                    <span>View Full Listing</span>
                   </a>
                   <a 
                     href="tel:+1702XXX" 
-                    className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors"
+                    className="flex items-center justify-center space-x-2 border-2 border-blue-600 text-blue-600 px-6 py-4 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-colors"
                   >
-                    Call Jan Duffy
+                    <Phone className="w-5 h-5" />
+                    <span>Call Jan Duffy</span>
                   </a>
                 </div>
-              </div>
-              
-              {/* Property Image Placeholder */}
-              <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <Home className="w-16 h-16 mx-auto mb-4" />
-                  <p>Property Photos Coming Soon</p>
+
+                {/* Open House Notice */}
+                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                  <div className="flex items-center space-x-3 text-green-800">
+                    <Calendar className="w-6 h-6" />
+                    <div>
+                      <div className="font-semibold text-lg">Open House</div>
+                      <div className="text-green-700">Thursday, Oct 9th • 3:00-6:00 PM</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -188,57 +235,32 @@ export default function GoldenMomentsProperty() {
 
         {/* Property Details */}
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-12">
               
               {/* Main Content */}
-              <div className="lg:col-span-2">
-                <h2 className="text-3xl font-bold mb-8 text-gray-900">Property Details</h2>
+              <div className="lg:col-span-2 space-y-12">
                 
-                {/* Key Features */}
-                <div className="grid md:grid-cols-2 gap-6 mb-12">
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <Bed className="w-8 h-8 text-blue-600 mb-3" />
-                    <h3 className="text-xl font-semibold mb-2">4 Bedrooms</h3>
-                    <p className="text-gray-600">Two spacious primary suites with private baths</p>
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <Bath className="w-8 h-8 text-blue-600 mb-3" />
-                    <h3 className="text-xl font-semibold mb-2">3 Bathrooms</h3>
-                    <p className="text-gray-600">Modern fixtures and finishes throughout</p>
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <Square className="w-8 h-8 text-blue-600 mb-3" />
-                    <h3 className="text-xl font-semibold mb-2">2,436 Sq Ft</h3>
-                    <p className="text-gray-600">Bright, open living spaces</p>
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <TreePine className="w-8 h-8 text-blue-600 mb-3" />
-                    <h3 className="text-xl font-semibold mb-2">5,662 Sq Ft Lot</h3>
-                    <p className="text-gray-600">Huge landscaped yard for entertaining</p>
-                  </div>
-                </div>
-
                 {/* Description */}
-                <div className="mb-12">
-                  <h3 className="text-2xl font-semibold mb-6 text-gray-900">About This Home</h3>
-                  <div className="prose prose-lg max-w-none text-gray-700">
-                    <p className="mb-4">
+                <div className="bg-white rounded-2xl p-8 shadow-sm">
+                  <h2 className="text-3xl font-bold mb-6 text-gray-900">About This Home</h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+                    <p>
                       Discover jackpot value in The Vistas, Summerlin! This move-in ready 4-bedroom, 3-bath home 
                       is available now in the highly sought-after Vistas village. Enjoy flexible living with two 
                       spacious primary suites, each with private baths.
                     </p>
-                    <p className="mb-4">
+                    <p>
                       One suite is perfect to serve as a Main Master suite downstairs, second master on second 
                       floor for family, private home office or a comfortable guest suite, making this an ideal 
                       family home in Summerlin.
                     </p>
-                    <p className="mb-4">
+                    <p>
                       This upgraded Summerlin property features bright, open living spaces and a modern chef's 
                       kitchen. The huge landscaped yard offers ideal space for an outdoor kitchen, relaxation, 
                       and family entertaining.
                     </p>
-                    <p className="mb-4">
+                    <p>
                       Live in a prime vibrant Las Vegas location, close to top-rated Summerlin schools, beautiful 
                       parks, and scenic trails. You'll also be just moments from Downtown Summerlin's premier 
                       shopping and dining.
@@ -250,14 +272,45 @@ export default function GoldenMomentsProperty() {
                   </div>
                 </div>
 
-                {/* Virtual Tour */}
-                <div id="virtual-tour" className="mb-12">
-                  <h3 className="text-2xl font-semibold mb-6 text-gray-900">Virtual Tour</h3>
-                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                    <div className="text-center text-gray-500">
-                      <Calendar className="w-12 h-12 mx-auto mb-4" />
-                      <p>Virtual Tour Coming Soon</p>
-                      <p className="text-sm">Contact Jan Duffy to schedule a private showing</p>
+                {/* Key Features */}
+                <div className="bg-white rounded-2xl p-8 shadow-sm">
+                  <h2 className="text-3xl font-bold mb-6 text-gray-900">Key Features</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-blue-100 rounded-lg p-3">
+                        <Home className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">Two Primary Suites</h3>
+                        <p className="text-gray-600">Flexible living with dual master bedrooms</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-blue-100 rounded-lg p-3">
+                        <Square className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">Modern Chef's Kitchen</h3>
+                        <p className="text-gray-600">Updated with island and premium appliances</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-blue-100 rounded-lg p-3">
+                        <TreePine className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">Huge Landscaped Yard</h3>
+                        <p className="text-gray-600">Perfect for outdoor entertaining</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-blue-100 rounded-lg p-3">
+                        <Car className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">2-Car Garage</h3>
+                        <p className="text-gray-600">Attached garage with storage</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -267,85 +320,85 @@ export default function GoldenMomentsProperty() {
               <div className="space-y-8">
                 
                 {/* Contact Card */}
-                <div className="bg-blue-50 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Contact Jan Duffy</h3>
-                  <p className="text-gray-600 mb-4">
+                <div className="bg-white rounded-2xl p-8 shadow-sm">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900">Contact Jan Duffy</h3>
+                  <p className="text-gray-600 mb-6">
                     Your trusted real estate expert for The Vistas Summerlin
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     <a 
                       href="https://drjanduffy.realscout.com/homesearch/listings/p-11773-golden-moments-avenue-las-vegas-89138-glvartrestle-139" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                      className="flex items-center justify-center space-x-2 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
                     >
-                      View Full Listing
+                      <ExternalLink className="w-5 h-5" />
+                      <span>View Full Listing</span>
                     </a>
                     <a 
                       href="tel:+1702XXX" 
-                      className="block w-full border-2 border-blue-600 text-blue-600 text-center py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+                      className="flex items-center justify-center space-x-2 w-full border-2 border-blue-600 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-colors"
                     >
-                      Call Jan Duffy
+                      <Phone className="w-5 h-5" />
+                      <span>Call Now</span>
+                    </a>
+                    <a 
+                      href="mailto:jan@thevistassummerlin.com" 
+                      className="flex items-center justify-center space-x-2 w-full border-2 border-gray-300 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                    >
+                      <Mail className="w-5 h-5" />
+                      <span>Email Jan</span>
                     </a>
                   </div>
                 </div>
 
                 {/* Property Facts */}
-                <div className="bg-white border rounded-lg p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Property Facts</h3>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
+                <div className="bg-white rounded-2xl p-8 shadow-sm">
+                  <h3 className="text-2xl font-bold mb-6 text-gray-900">Property Facts</h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
                       <span className="text-gray-600">MLS Number:</span>
-                      <span className="font-semibold">2722090</span>
+                      <span className="font-semibold text-gray-900">2722090</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
                       <span className="text-gray-600">List Date:</span>
-                      <span className="font-semibold">Sep 24, 2025</span>
+                      <span className="font-semibold text-gray-900">Sep 24, 2025</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
                       <span className="text-gray-600">Days on Market:</span>
-                      <span className="font-semibold">9 days</span>
+                      <span className="font-semibold text-gray-900">9 days</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
                       <span className="text-gray-600">Year Built:</span>
-                      <span className="font-semibold">2003</span>
+                      <span className="font-semibold text-gray-900">2003</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
                       <span className="text-gray-600">HOA Fee:</span>
-                      <span className="font-semibold">$60/month</span>
+                      <span className="font-semibold text-gray-900">$60/month</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center py-2">
                       <span className="text-gray-600">Taxes:</span>
-                      <span className="font-semibold">$3,227/year</span>
+                      <span className="font-semibold text-gray-900">$3,227/year</span>
                     </div>
                   </div>
                 </div>
 
                 {/* School Information */}
-                <div className="bg-white border rounded-lg p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Schools</h3>
-                  <div className="space-y-3 text-sm">
-                    <div>
-                      <span className="text-gray-600">Elementary:</span>
-                      <div className="font-semibold">Linda Rankin Givens</div>
+                <div className="bg-white rounded-2xl p-8 shadow-sm">
+                  <h3 className="text-2xl font-bold mb-6 text-gray-900">Schools</h3>
+                  <div className="space-y-4">
+                    <div className="py-2">
+                      <div className="text-gray-600 text-sm">Elementary</div>
+                      <div className="font-semibold text-gray-900">Linda Rankin Givens</div>
                     </div>
-                    <div>
-                      <span className="text-gray-600">Middle:</span>
-                      <div className="font-semibold">Sig Rogich</div>
+                    <div className="py-2">
+                      <div className="text-gray-600 text-sm">Middle</div>
+                      <div className="font-semibold text-gray-900">Sig Rogich</div>
                     </div>
-                    <div>
-                      <span className="text-gray-600">High:</span>
-                      <div className="font-semibold">Palo Verde</div>
+                    <div className="py-2">
+                      <div className="text-gray-600 text-sm">High</div>
+                      <div className="font-semibold text-gray-900">Palo Verde</div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Open House */}
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-green-800">Open House</h3>
-                  <div className="text-green-700">
-                    <div className="font-semibold">Thursday, Oct 9th</div>
-                    <div>3:00 PM - 6:00 PM</div>
                   </div>
                 </div>
               </div>
