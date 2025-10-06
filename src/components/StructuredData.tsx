@@ -7,14 +7,14 @@ export function RealEstateExpertSchema() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Dr. Jan Duffy",
-    "description": "15+ years specializing in The Vistas Summerlin luxury real estate with over $2.1B in sales volume",
-    "url": "https://www.thevistassummerlin.com",
-    "telephone": "+1-702-555-1234",
+    "description": "Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
+    "url": "https://summerlin-real-estate.localo.site/",
+    "telephone": "+1-702-842-0410",
     "email": "drjan@thevistassummerlin.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "The Vistas",
-      "addressLocality": "Summerlin",
+      "streetAddress": "10777 West Twain Avenue # 333",
+      "addressLocality": "Las Vegas",
       "addressRegion": "NV",
       "postalCode": "89135",
       "addressCountry": "US"
@@ -27,15 +27,27 @@ export function RealEstateExpertSchema() {
     "areaServed": [
       {
         "@type": "Place",
-        "name": "The Vistas, Summerlin"
+        "name": "Paradise, NV"
       },
       {
         "@type": "Place", 
-        "name": "Summerlin, Las Vegas"
+        "name": "Henderson, NV"
       },
       {
         "@type": "Place",
-        "name": "Las Vegas, Nevada"
+        "name": "Las Vegas, NV"
+      },
+      {
+        "@type": "Place",
+        "name": "Enterprise, NV"
+      },
+      {
+        "@type": "Place",
+        "name": "Clark County, NV"
+      },
+      {
+        "@type": "Place",
+        "name": "Summerlin, Las Vegas, NV"
       }
     ],
     "serviceType": "Real Estate Services",
@@ -48,24 +60,58 @@ export function RealEstateExpertSchema() {
       }
     ],
     "knowsAbout": [
-      "The Vistas Summerlin real estate",
-      "Luxury home sales",
-      "Summerlin market trends",
-      "The Vistas community amenities",
+      "Las Vegas real estate",
+      "Summerlin luxury homes",
+      "Henderson real estate",
+      "Enterprise real estate",
+      "Southwest Vegas real estate",
       "Real estate investment",
       "Home valuation",
       "Market analysis"
     ],
     "sameAs": [
-      "https://www.facebook.com/thevistassummerlin",
-      "https://www.instagram.com/thevistassummerlin",
-      "https://www.linkedin.com/in/janduffy"
+      "https://www.youtube.com/@DrDuffy",
+      "https://www.tiktok.com/@dr.janduffy",
+      "https://www.instagram.com/drjanduffy/",
+      "https://twitter.com/drjanduffy",
+      "https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/",
+      "https://www.pinterest.com/DrJanDuffy/",
+      "https://www.facebook.com/RealtorDrJanDuffySummerlin"
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "150"
-    }
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "06:00",
+      "closes": "21:00"
+    },
+    "foundingDate": "2013-09-01",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Veteran-owned business",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue", 
+        "name": "Women-owned business",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "LGBTQ+ friendly",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Wheelchair accessible",
+        "value": true
+      }
+    ]
   };
 
   return (
@@ -139,13 +185,13 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "name": "The Vistas Summerlin Real Estate by Dr. Jan Duffy",
+    "name": "Summerlin Real Estate | Homes by Dr. Jan Duffy",
     "image": "https://www.thevistassummerlin.com/subcommunities/IMG_0737.JPG",
-    "description": "Premier real estate services specializing in The Vistas Summerlin luxury homes with 15+ years of expertise",
+    "description": "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "The Vistas",
-      "addressLocality": "Summerlin",
+      "streetAddress": "10777 West Twain Avenue # 333",
+      "addressLocality": "Las Vegas",
       "addressRegion": "NV",
       "postalCode": "89135",
       "addressCountry": "US"
@@ -155,28 +201,49 @@ export function LocalBusinessSchema() {
       "latitude": "36.1699",
       "longitude": "-115.1398"
     },
-    "url": "https://www.thevistassummerlin.com",
-    "telephone": "+1-702-555-1234",
+    "url": "https://summerlin-real-estate.localo.site/",
+    "telephone": "+1-702-842-0410",
     "email": "drjan@thevistassummerlin.com",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "06:00",
+      "closes": "21:00"
     },
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "36.1699",
-        "longitude": "-115.1398"
+    "serviceArea": [
+      {
+        "@type": "Place",
+        "name": "Paradise, NV, USA"
       },
-      "geoRadius": "10000"
-    },
+      {
+        "@type": "Place",
+        "name": "Henderson, NV, USA"
+      },
+      {
+        "@type": "Place",
+        "name": "Las Vegas, NV, USA"
+      },
+      {
+        "@type": "Place",
+        "name": "Enterprise, NV, USA"
+      },
+      {
+        "@type": "Place",
+        "name": "Clark County, NV, USA"
+      },
+      {
+        "@type": "Place",
+        "name": "Summerlin, Las Vegas, NV, USA"
+      }
+    ],
     "sameAs": [
-      "https://www.facebook.com/thevistassummerlin",
-      "https://www.instagram.com/thevistassummerlin",
-      "https://www.linkedin.com/in/janduffy"
+      "https://www.youtube.com/@DrDuffy",
+      "https://www.tiktok.com/@dr.janduffy",
+      "https://www.instagram.com/drjanduffy/",
+      "https://twitter.com/drjanduffy",
+      "https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/",
+      "https://www.pinterest.com/DrJanDuffy/",
+      "https://www.facebook.com/RealtorDrJanDuffySummerlin"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -209,9 +276,56 @@ export function LocalBusinessSchema() {
             "@type": "Service",
             "name": "Market Analysis"
           }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Investment Consulting"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Luxury Real Estate"
+          }
         }
       ]
-    }
+    },
+    "foundingDate": "2013-09-01",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Veteran-owned business",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue", 
+        "name": "Women-owned business",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "LGBTQ+ friendly",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Wheelchair accessible",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Online appointments available",
+        "value": true
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Onsite services available",
+        "value": true
+      }
+    ]
   };
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Phone, Mail, MapPin, ArrowRight, Star, Award, Users, TrendingUp, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, Star, Award, Users, TrendingUp, Facebook, Twitter, Instagram, Linkedin, Youtube, MessageCircle, Heart } from 'lucide-react';
 
 const footerLinks = {
   communities: [
@@ -36,10 +36,13 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'Instagram', href: '#', icon: Instagram },
-  { name: 'LinkedIn', href: '#', icon: Linkedin }
+  { name: 'Facebook', href: 'https://www.facebook.com/RealtorDrJanDuffySummerlin', icon: Facebook },
+  { name: 'Instagram', href: 'https://www.instagram.com/drjanduffy/', icon: Instagram },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/', icon: Linkedin },
+  { name: 'YouTube', href: 'https://www.youtube.com/@DrDuffy', icon: Youtube },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@dr.janduffy', icon: MessageCircle },
+  { name: 'Twitter', href: 'https://twitter.com/drjanduffy', icon: Twitter },
+  { name: 'Pinterest', href: 'https://www.pinterest.com/DrJanDuffy/', icon: Heart },
 ];
 
 export default function Footer() {

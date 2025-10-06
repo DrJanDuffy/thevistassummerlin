@@ -76,7 +76,7 @@ export default function GoogleBusinessProfileWidget() {
                 <Phone className="w-5 h-5 text-green-600" />
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <a href="tel:+17025551234" className="text-blue-600 hover:text-blue-700">(702) 555-1234</a>
+                  <a href="tel:+17028420410" className="text-blue-600 hover:text-blue-700">(702) 842-0410</a>
                 </div>
               </div>
               
@@ -84,7 +84,7 @@ export default function GoogleBusinessProfileWidget() {
                 <Clock className="w-5 h-5 text-blue-600" />
                 <div>
                   <p className="font-semibold text-gray-900">Hours</p>
-                  <p className="text-gray-600">Mon-Sat: 9:00 AM - 6:00 PM</p>
+                  <p className="text-gray-600">Daily: 6:00 AM - 9:00 PM</p>
                 </div>
               </div>
               
@@ -92,7 +92,7 @@ export default function GoogleBusinessProfileWidget() {
                 <MapPin className="w-5 h-5 text-red-600" />
                 <div>
                   <p className="font-semibold text-gray-900">Service Area</p>
-                  <p className="text-gray-600">The Vistas Summerlin & Surrounding Areas</p>
+                  <p className="text-gray-600">Henderson, Enterprise, Southwest Vegas & More</p>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function GoogleBusinessProfileWidget() {
             {/* Quick Actions */}
             <div className="mt-8 space-y-3">
               <a
-                href="tel:+17025551234"
+                href="tel:+17028420410"
                 className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-2xl font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
@@ -250,11 +250,11 @@ export default function GoogleBusinessProfileWidget() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025551234"
+                href="tel:+17028420410"
                 className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call (702) 555-1234</span>
+                <span>Call (702) 842-0410</span>
               </a>
               <a
                 href="/contact"

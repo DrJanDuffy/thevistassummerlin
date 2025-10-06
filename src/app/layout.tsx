@@ -29,25 +29,28 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.thevistassummerlin.com'),
+  metadataBase: new URL('https://summerlin-real-estate.localo.site/'),
   title: {
-    default: "The Vistas Summerlin Homes - Luxury Real Estate in Las Vegas | Jan Duffy",
-    template: "%s | The Vistas Summerlin Real Estate"
+    default: "Summerlin Real Estate | Homes by Dr. Jan Duffy - Las Vegas Expert",
+    template: "%s | Summerlin Real Estate by Dr. Jan Duffy"
   },
-  description: "The Vistas Summerlin offers luxury homes starting at $800K. Located in Summerlin, Las Vegas. HOA fees $200/month. Top-rated schools: Palo Verde High School. Expert realtor Jan Duffy with 15+ years specializing in The Vistas community.",
+  description: "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
   keywords: [
-    "The Vistas Summerlin homes",
-    "The Vistas Las Vegas real estate", 
-    "luxury homes Summerlin",
-    "The Vistas community",
-    "Jan Duffy realtor",
-    "The Vistas Summerlin realtor",
-    "homes for sale The Vistas",
-    "Summerlin luxury real estate"
+    "Summerlin real estate",
+    "Las Vegas real estate agent", 
+    "Henderson real estate",
+    "Enterprise real estate",
+    "Southwest Vegas real estate",
+    "Dr. Jan Duffy realtor",
+    "Summerlin luxury homes",
+    "Las Vegas luxury real estate",
+    "flexible scheduling real estate",
+    "veteran-owned real estate",
+    "women-owned real estate"
   ],
-  authors: [{ name: "Jan Duffy", url: "https://www.thevistassummerlin.com" }],
-  creator: "Jan Duffy - The Vistas Summerlin Real Estate Expert",
-  publisher: "The Vistas Summerlin Real Estate",
+  authors: [{ name: "Dr. Jan Duffy", url: "https://summerlin-real-estate.localo.site/" }],
+  creator: "Dr. Jan Duffy - Summerlin Real Estate Expert",
+  publisher: "Summerlin Real Estate | Homes by Dr. Jan Duffy",
   robots: {
     index: true,
     follow: true,

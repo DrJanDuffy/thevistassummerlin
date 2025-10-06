@@ -336,7 +336,7 @@ export default function GoldenMomentsProperty() {
                       <span>View Full Listing</span>
                     </a>
                     <a 
-                      href="tel:+1702XXX" 
+                      href="tel:+17028420410" 
                       className="flex items-center justify-center space-x-2 w-full border-2 border-blue-600 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-colors"
                     >
                       <Phone className="w-5 h-5" />
