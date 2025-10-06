@@ -12,6 +12,7 @@ import { ArrowRight, Phone } from 'lucide-react';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { VoiceSearchFAQ, AnswerEngineOptimization } from '@/components/VoiceSearchOptimization';
+import { FeaturedProperty } from '@/components/FeaturedProperty';
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
         <HomeEvaluationSection />
         <PropertyCategories />
         <FeaturedCommunities />
+        
+        {/* Featured Property Showcase */}
+        <FeaturedProperty />
         
         {/* Client Testimonials Section */}
         <section className="py-24 bg-gradient-to-br from-white via-off-white to-light-gray relative overflow-hidden">
