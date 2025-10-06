@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Home, Users, Star, ArrowRight, CheckCircle, Mountain, TreePine } from 'lucide-react';
+import { MapPin, Home, Users, Star, ArrowRight, CheckCircle, Mountain, TreePine, Sparkles, Heart, Award } from 'lucide-react';
 
 const featuredCommunities = [
   {
@@ -13,13 +13,13 @@ const featuredCommunities = [
     priceRange: '$800K - $2.5M',
     homesAvailable: 12,
     image: '/subcommunities/IMG_0737.JPG',
-    fallbackImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center',
     features: ['Mountain Views', 'Resort Pool', 'Golf Course', 'Hiking Trails'],
     rating: 4.9,
     population: '2,400+',
     icon: Mountain,
-    gradient: 'from-secondary-gold to-accent-blue',
-    badge: 'Premium'
+    gradient: 'from-blue-500 to-purple-600',
+    badge: 'Premium',
+    color: 'blue'
   },
   {
     id: 'red-rock',
@@ -28,13 +28,13 @@ const featuredCommunities = [
     priceRange: '$650K - $1.8M',
     homesAvailable: 8,
     image: '/subcommunities/IMG_0738.JPG',
-    fallbackImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center',
     features: ['Canyon Views', 'Private Patios', 'Modern Design', 'Community Center'],
     rating: 4.8,
     population: '1,800+',
     icon: Mountain,
-    gradient: 'from-accent-blue to-primary-navy',
-    badge: 'Exclusive'
+    gradient: 'from-green-500 to-teal-600',
+    badge: 'Exclusive',
+    color: 'green'
   },
   {
     id: 'summerlin-park',
@@ -43,13 +43,13 @@ const featuredCommunities = [
     priceRange: '$525K - $1.2M',
     homesAvailable: 25,
     image: '/subcommunities/IMG_0739.JPG',
-    fallbackImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center',
     features: ['Parks & Playgrounds', 'Top Schools', 'Shopping Center', 'Walking Trails'],
     rating: 4.7,
     population: '3,200+',
     icon: TreePine,
-    gradient: 'from-success-green to-accent-blue',
-    badge: 'Family'
+    gradient: 'from-purple-500 to-pink-600',
+    badge: 'Family',
+    color: 'purple'
   }
 ];
 
@@ -57,27 +57,28 @@ export default function FeaturedCommunities() {
   const [hoveredCommunity, setHoveredCommunity] = useState<string | null>(null);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-navy via-primary-navy/95 to-accent-blue relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-secondary-gold rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      {/* V0 Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white font-medium mb-6">
-            <MapPin className="w-4 h-4" />
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-blue-100 font-medium mb-6 shadow-lg">
+            <MapPin className="w-5 h-5" />
             <span>Featured Communities</span>
           </div>
           
-          <h2 className="text-4xl lg:text-6xl font-primary font-bold text-white mb-6 leading-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Discover Our Most
-            <span className="block text-secondary-gold">Prestigious Communities</span>
+            <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Prestigious Communities</span>
           </h2>
           
-          <p className="text-xl lg:text-2xl font-secondary font-light text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
             Experience the finest lifestyle options across our most sought-after subcommunities, 
             each offering unique amenities and unparalleled quality of life.
           </p>
@@ -95,26 +96,22 @@ export default function FeaturedCommunities() {
                 onMouseLeave={() => setHoveredCommunity(null)}
               >
                 {/* Badge */}
-                <div className="absolute top-4 left-4 z-20">
-                  <div className="bg-secondary-gold text-primary-navy px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-6 left-6 z-20">
+                  <div className={`bg-${community.color}-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg`}>
                     {community.badge}
                   </div>
                 </div>
 
-                <div className="card-luxury h-full overflow-hidden bg-white/95 backdrop-blur-sm border-white/20">
-                  {/* Luxury Background Section */}
-                  <div className={`relative h-80 overflow-hidden bg-gradient-to-br ${community.gradient} transition-all duration-700 group-hover:scale-105`}>
-                    {/* Luxury Pattern Overlay */}
-                    <div className="absolute inset-0 opacity-10 bg-luxury-dots-community"></div>
-                    
-                    {/* Elegant Geometric Elements */}
-                    <div className="absolute top-6 right-6 w-20 h-20 bg-white/10 rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-6 left-6 w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
-                    
-                    {/* Subtle Gradient Overlay */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden border border-white/50 h-full">
+                  {/* Image Section */}
+                  <div className="relative h-80 overflow-hidden">
+                    <Image
+                      src={community.image}
+                      alt={community.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
                     
                     {/* Icon Overlay */}
                     <div className="absolute top-6 right-6">
@@ -130,14 +127,14 @@ export default function FeaturedCommunities() {
                           {[...Array(5)].map((_, i) => (
                             <Star 
                               key={i} 
-                              className={`w-4 h-4 ${i < Math.floor(community.rating) ? 'text-secondary-gold fill-current' : 'text-white/40'}`} 
+                              className={`w-4 h-4 ${i < Math.floor(community.rating) ? 'text-yellow-400 fill-current' : 'text-white/40'}`} 
                             />
                           ))}
                         </div>
                         <span className="text-white/90 text-sm font-medium">{community.rating}</span>
                       </div>
                       
-                      <h3 className="text-2xl font-primary font-bold text-white mb-3">
+                      <h3 className="text-2xl font-bold text-white mb-3">
                         {community.name}
                       </h3>
                       
@@ -164,19 +161,19 @@ export default function FeaturedCommunities() {
                   
                   {/* Content Section */}
                   <div className="p-8">
-                    <p className="text-lg font-secondary text-text-light mb-6 leading-relaxed">
+                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                       {community.description}
                     </p>
                     
                     {/* Features */}
                     <div className="mb-8">
-                      <h4 className="text-lg font-primary font-semibold text-primary-navy mb-4">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
                         Community Features:
                       </h4>
                       <div className="grid grid-cols-2 gap-3">
                         {community.features.map((feature, index) => (
-                          <div key={index} className="flex items-center text-body font-secondary text-text-light">
-                            <CheckCircle className="w-4 h-4 text-success-green mr-2 flex-shrink-0" />
+                          <div key={index} className="flex items-center text-gray-700">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                             <span className="text-sm">{feature}</span>
                           </div>
                         ))}
@@ -187,14 +184,14 @@ export default function FeaturedCommunities() {
                     <div className="flex gap-3">
                       <Link 
                         href={`/communities/${community.id}`}
-                        className="flex-1 bg-gradient-to-r from-primary-navy to-accent-blue text-white text-center py-3 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center"
+                        className={`flex-1 bg-gradient-to-r ${community.gradient} text-white text-center py-3 rounded-2xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center`}
                       >
                         View Community
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
                       <Link 
                         href={`/search?community=${community.id}`}
-                        className="flex-1 bg-light-gray text-primary-navy text-center py-3 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-medium-gray"
+                        className="flex-1 bg-gray-100 text-gray-900 text-center py-3 rounded-2xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-gray-200 hover:bg-gray-200"
                       >
                         View Homes
                       </Link>
@@ -208,23 +205,26 @@ export default function FeaturedCommunities() {
 
         {/* View All Communities CTA */}
         <div className="text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-primary font-bold text-white mb-4">
+          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 max-w-2xl mx-auto shadow-xl">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Sparkles className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-4">
               Explore All 28 Communities
             </h3>
-            <p className="text-white/90 font-secondary mb-6 leading-relaxed">
+            <p className="text-blue-100 mb-6 leading-relaxed">
               Discover the perfect community that matches your lifestyle and preferences
             </p>
             <Link 
               href="/communities"
-              className="btn-gold inline-flex items-center"
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
-              View All Communities
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <span>View All Communities</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}
