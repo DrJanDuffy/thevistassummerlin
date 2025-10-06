@@ -29,6 +29,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.thevistassummerlin.com'),
   title: {
     default: "The Vistas Summerlin Homes - Luxury Real Estate in Las Vegas | Jan Duffy",
     template: "%s | The Vistas Summerlin Real Estate"
