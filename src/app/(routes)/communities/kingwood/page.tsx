@@ -32,15 +32,17 @@ import {
   Waves,
   Crown,
   Gem,
-  Sparkles
+  Sparkles,
+  Award,
+  TrendingUp
 } from 'lucide-react';
 import { RealScoutWidget } from "@/components/RealScoutWidget";
 import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Kingwood Community - The Vistas Summerlin | Royal-Inspired Luxury Homes',
-  description: 'Discover Kingwood in The Vistas Summerlin. Royal-inspired homes with majestic mountain views, luxury finishes, and resort-style amenities. Expert realtor Jan Duffy helps you find your dream home.',
+  title: 'Kingwood Community - The Vistas Summerlin | 322 Luxury Homes',
+  description: 'Discover Kingwood in The Vistas Summerlin. The largest community with 322 luxury homes, royal-inspired architecture, and premium amenities. Expert realtor Jan Duffy helps you find your dream home.',
   keywords: [
     'Kingwood Summerlin homes',
     'Kingwood Las Vegas real estate',
@@ -49,12 +51,13 @@ export const metadata: Metadata = {
     'Jan Duffy Kingwood realtor',
     'luxury homes Kingwood',
     'Kingwood real estate agent',
-    'mountain view homes Summerlin'
+    '322 homes Kingwood',
+    'largest community Summerlin'
   ],
   openGraph: {
-    title: 'Kingwood Community - The Vistas Summerlin',
-    description: 'Royal-inspired homes with majestic mountain views and luxury finishes.',
-    url: 'https://www.thevistassummerlin.com/communities/img-0738',
+    title: 'Kingwood Community - The Vistas Summerlin | 322 Luxury Homes',
+    description: 'The largest community with 322 luxury homes featuring royal-inspired architecture and premium amenities.',
+    url: 'https://www.thevistassummerlin.com/communities/kingwood',
     images: [
       {
         url: '/subcommunities/IMG_0738.JPG',
@@ -67,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kingwood Community - The Vistas Summerlin',
-    description: 'Royal-inspired homes with majestic mountain views and luxury finishes.',
+    title: 'Kingwood Community - The Vistas Summerlin | 322 Luxury Homes',
+    description: 'The largest community with 322 luxury homes featuring royal-inspired architecture.',
     images: ['/subcommunities/IMG_0738.JPG'],
   },
 };
@@ -90,14 +93,14 @@ export default function KingwoodCommunityPage() {
             <div>
               <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-purple-100 font-medium mb-6">
                 <Crown className="w-5 h-5" />
-                <span>Royal Luxury Community</span>
+                <span>The Largest Community</span>
               </div>
               
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Kingwood Community
               </h1>
               <p className="text-purple-100 text-xl lg:text-2xl mb-8 leading-relaxed">
-                Royal-inspired homes with majestic mountain views and luxury finishes in The Vistas Summerlin
+                The crown jewel of The Vistas Summerlin with 322 luxury homes featuring royal-inspired architecture and premium amenities
               </p>
 
               {/* Key Stats */}
@@ -107,12 +110,12 @@ export default function KingwoodCommunityPage() {
                     <DollarSign className="w-6 h-6 text-purple-200" />
                     <span className="text-purple-100 font-medium">Price Range</span>
                   </div>
-                  <div className="text-2xl font-bold">$850K - $2.1M</div>
+                  <div className="text-2xl font-bold">$750K - $2.5M</div>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
                   <div className="flex items-center space-x-3 mb-2">
                     <Home className="w-6 h-6 text-purple-200" />
-                    <span className="text-purple-100 font-medium">Available Homes</span>
+                    <span className="text-purple-100 font-medium">Total Homes</span>
                   </div>
                   <div className="text-2xl font-bold">322</div>
                 </div>
@@ -168,27 +171,27 @@ export default function KingwoodCommunityPage() {
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">About Kingwood Community</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Kingwood stands as the crown jewel of The Vistas Summerlin, offering residents an unparalleled luxury living experience that combines royal-inspired architecture with breathtaking mountain vistas. This exclusive enclave represents the pinnacle of sophisticated desert living, where every detail has been carefully crafted to create an atmosphere of elegance and grandeur.
+                Kingwood stands as the largest and most prestigious community within The Vistas Summerlin, boasting an impressive 322 luxury homes that represent the pinnacle of sophisticated desert living. This expansive neighborhood combines royal-inspired architecture with breathtaking mountain vistas, creating an unparalleled residential experience that attracts discerning homeowners from across the country.
               </p>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Majestic Mountain Views</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Scale & Prestige</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Kingwood's prime positioning offers residents spectacular views of the Spring Mountains and Red Rock Canyon, creating a dramatic backdrop that changes throughout the day. The community's elevated location ensures that homes capture these magnificent vistas, providing a sense of tranquility and connection to Nevada's natural beauty. Many properties feature expansive windows and outdoor living spaces designed to maximize these breathtaking views, creating an indoor-outdoor lifestyle that's perfect for entertaining and relaxation.
+                With 322 homes, Kingwood represents the largest single community in The Vistas Summerlin, offering an incredible variety of architectural styles, floor plans, and price points. This scale creates a vibrant, diverse neighborhood where residents can find everything from elegant starter homes to sprawling luxury estates. The community's size also ensures robust amenities, extensive landscaping, and a strong sense of community that comes from having a large, established neighborhood.
               </p>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Luxury Finishes & Amenities</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Royal-Inspired Architecture</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Every home in Kingwood showcases premium finishes and materials that reflect the community's commitment to luxury living. From imported marble and granite countertops to custom cabinetry and high-end appliances, these residences offer the finest in modern convenience and aesthetic appeal. Private patios and balconies provide intimate spaces for outdoor dining and relaxation, while resort-style community amenities include a sparkling pool, state-of-the-art fitness center, and elegant clubhouse perfect for social gatherings and special events.
+                Kingwood's homes showcase sophisticated architectural designs that blend traditional elegance with contemporary functionality. Each residence features carefully crafted details, from grand entrance facades to meticulously landscaped grounds. The community's architectural guidelines ensure consistency while allowing for individual expression, resulting in a cohesive yet distinctive streetscape that enhances property values and neighborhood appeal. Many homes feature soaring ceilings, premium finishes, and outdoor living spaces designed to maximize the stunning mountain views.
               </p>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Exclusive Lifestyle</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Prime Location & Views</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Living in Kingwood means enjoying an exclusive lifestyle that combines privacy with convenience. The community's gated entrance and 24-hour security provide peace of mind, while the proximity to Downtown Summerlin ensures easy access to world-class shopping, dining, and entertainment. Residents can enjoy morning walks through beautifully landscaped common areas, afternoon swims in the resort-style pool, or evening gatherings in the elegant clubhouse, all while maintaining the privacy and exclusivity that makes Kingwood special.
+                Kingwood's elevated positioning offers residents spectacular views of the Spring Mountains and Red Rock Canyon, creating a dramatic backdrop that changes throughout the day. The community's strategic location within The Vistas provides exceptional convenience and accessibility, with easy access to Downtown Summerlin's premier shopping, dining, and entertainment destinations. The I-215 beltway provides quick connections to the Las Vegas Strip, McCarran International Airport, and major employment centers throughout the valley.
               </p>
 
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Investment Excellence</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Properties in Kingwood have consistently demonstrated strong appreciation and high demand in the Las Vegas luxury real estate market. The combination of prime location, architectural excellence, and premium amenities creates a solid foundation for long-term value growth. Recent market analysis shows Kingwood homes appreciating at rates significantly above the Las Vegas metropolitan average, making it an exceptional choice for both primary residences and luxury investment properties. The community's reputation for quality and exclusivity continues to attract discerning buyers from across the country.
+                Properties in Kingwood have consistently demonstrated strong appreciation and high demand in the Las Vegas luxury real estate market. The combination of prime location, architectural excellence, premium amenities, and community scale creates a solid foundation for long-term value growth. Recent market analysis shows Kingwood homes appreciating at rates significantly above the Las Vegas metropolitan average, making it an exceptional choice for both primary residences and luxury investment properties. The community's reputation for quality and exclusivity continues to attract discerning buyers from across the country.
               </p>
             </div>
 
@@ -231,15 +234,15 @@ export default function KingwoodCommunityPage() {
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-100">
                     <span className="text-gray-600">Price Range</span>
-                    <span className="font-bold text-purple-600">$850K - $2.1M</span>
+                    <span className="font-bold text-purple-600">$750K - $2.5M</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                    <span className="text-gray-600">Sold Last Month</span>
-                    <span className="font-bold text-green-600">2</span>
+                    <span className="text-gray-600">Community Size</span>
+                    <span className="font-bold text-green-600">Largest</span>
                   </div>
                   <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-600">Days on Market</span>
-                    <span className="font-bold text-orange-600">18</span>
+                    <span className="text-gray-600">Market Status</span>
+                    <span className="font-bold text-orange-600">High Demand</span>
                   </div>
                 </div>
               </div>
@@ -252,10 +255,10 @@ export default function KingwoodCommunityPage() {
                 </h3>
                 <div className="grid grid-cols-1 gap-3">
                   {[
-                    'Mountain Views',
-                    'Luxury Finishes', 
-                    'Private Patios',
-                    'Resort-Style Pool',
+                    '322 Luxury Homes',
+                    'Mountain Views', 
+                    'Royal Architecture',
+                    'Premium Amenities',
                     'Gated Community',
                     '24-Hour Security'
                   ].map((amenity) => (
@@ -267,47 +270,38 @@ export default function KingwoodCommunityPage() {
                 </div>
               </div>
 
-              {/* Neighborhood Scores */}
+              {/* Community Ranking */}
               <div className="bg-white rounded-3xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 flex items-center">
-                  <Building className="mr-3 text-purple-600" /> 
-                  Neighborhood Scores
+                  <Award className="mr-3 text-purple-600" /> 
+                  Community Ranking
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <Footprints className="w-5 h-5 text-gray-600" />
-                      <span className="text-gray-700">Walk Score</span>
+                      <TrendingUp className="w-5 h-5 text-gray-600" />
+                      <span className="text-gray-700">Size Ranking</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-20 h-2 bg-gray-200 rounded-full">
-                        <div className="w-14 h-2 bg-green-500 rounded-full"></div>
-                      </div>
-                      <span className="font-bold text-gray-900">72</span>
+                      <span className="font-bold text-purple-600">#1</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <TrainFront className="w-5 h-5 text-gray-600" />
-                      <span className="text-gray-700">Transit Score</span>
+                      <Crown className="w-5 h-5 text-gray-600" />
+                      <span className="text-gray-700">Luxury Ranking</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-20 h-2 bg-gray-200 rounded-full">
-                        <div className="w-10 h-2 bg-yellow-500 rounded-full"></div>
-                      </div>
-                      <span className="font-bold text-gray-900">58</span>
+                      <span className="font-bold text-purple-600">#1</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <Bike className="w-5 h-5 text-gray-600" />
-                      <span className="text-gray-700">Bike Score</span>
+                      <Star className="w-5 h-5 text-gray-600" />
+                      <span className="text-gray-700">Demand Level</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-20 h-2 bg-gray-200 rounded-full">
-                        <div className="w-12 h-2 bg-blue-500 rounded-full"></div>
-                      </div>
-                      <span className="font-bold text-gray-900">68</span>
+                      <span className="font-bold text-purple-600">Premium</span>
                     </div>
                   </div>
                 </div>
@@ -317,15 +311,15 @@ export default function KingwoodCommunityPage() {
         </div>
       </section>
 
-      {/* Luxury Features & Lifestyle */}
+      {/* Community Scale & Features */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Luxury Features & Lifestyle
+              Kingwood's Scale & Features
             </h2>
             <p className="text-xl text-gray-600">
-              Experience the royal lifestyle that Kingwood offers
+              Experience the benefits of living in The Vistas' largest community
             </p>
           </div>
 
@@ -334,10 +328,10 @@ export default function KingwoodCommunityPage() {
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
                 <Crown className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Royal Architecture</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Largest Community</h3>
               <p className="text-gray-600">
-                Homes feature grand entrances, soaring ceilings, and elegant facades that reflect 
-                the community's royal-inspired design philosophy and attention to detail.
+                With 322 homes, Kingwood offers the most diverse selection of properties, 
+                architectural styles, and price points in The Vistas Summerlin.
               </p>
             </div>
 
@@ -407,7 +401,7 @@ export default function KingwoodCommunityPage() {
               Available Properties in Kingwood
             </h2>
             <p className="text-xl text-gray-600">
-              Discover your royal residence in this exclusive community
+              Discover your royal residence in The Vistas' largest community
             </p>
           </div>
 
@@ -421,11 +415,11 @@ export default function KingwoodCommunityPage() {
       <section className="py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Live Like Royalty?
+            Ready to Join Kingwood's 322 Families?
           </h2>
           <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
             Experience the luxury lifestyle that Kingwood offers. Let Jan Duffy help you 
-            find your royal residence in this prestigious community.
+            find your royal residence in The Vistas' largest and most prestigious community.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

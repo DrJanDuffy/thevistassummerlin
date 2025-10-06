@@ -4,7 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const subcommunities = [
-  "IMG_0737", "IMG_0738", "IMG_0739"
+  "Kingwood", "Portofino", "Capri", "Hillstone", "Ashton Park", "Bella Vista", 
+  "Canterra", "Cara Vella", "Barrington", "Casa Rosa", "Encanto", "Estancia",
+  "Miraleste", "Monterossa", "Palmilla", "Paradiso", "Sage Hills", "San Marcos",
+  "Santalina", "Solano", "Somerset", "Sonesta", "Summerfield", "Talaverde",
+  "Talega", "Vista Verde"
 ];
 
 function toKebabCase(name: string) {

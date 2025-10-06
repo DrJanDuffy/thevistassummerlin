@@ -4,7 +4,7 @@
 
 export const realScoutImageUrls = {
   // Front exterior
-  frontExterior: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+  frontExterior: "/properties/11773-golden-moments-avenue-front.jpg",
   
   // Kitchen
   kitchen: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",

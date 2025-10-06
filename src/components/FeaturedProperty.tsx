@@ -33,7 +33,7 @@ export function FeaturedProperty() {
             {/* Property Image */}
             <div className="relative h-96 lg:h-full">
               <Image
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+                src="/properties/11773-golden-moments-avenue-front.jpg"
                 alt="11773 Golden Moments Avenue - Front exterior view"
                 fill
                 className="object-cover"
