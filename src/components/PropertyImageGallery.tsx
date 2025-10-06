@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, Camera, ZoomIn } from 'lucide-react';
 import { realScoutImageUrls } from '@/lib/propertyImages';
