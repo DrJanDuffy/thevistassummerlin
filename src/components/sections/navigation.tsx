@@ -2,17 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { getAvailableCommunities, getCommunitySlug } from '@/lib/community-mapping';
 
-const subcommunities = [
-  "Kingwood", "Portofino", "Capri", "Hillstone", "Ashton Park", "Bella Vista", 
-  "Canterra", "Cara Vella", "Barrington", "Casa Rosa", "Encanto", "Estancia",
-  "Miraleste", "Monterossa", "Palmilla", "Paradiso", "Sage Hills", "San Marcos",
-  "Santalina", "Solano", "Somerset", "Sonesta", "Summerfield", "Talaverde",
-  "Talega", "Vista Verde"
-];
+const subcommunities = getAvailableCommunities();
 
 function toKebabCase(name: string) {
-  return name.toLowerCase().replace(/\s+/g, "-");
+  return getCommunitySlug(name);
 }
 
 export default function Navigation() {

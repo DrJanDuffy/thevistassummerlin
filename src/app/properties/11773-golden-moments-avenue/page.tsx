@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "https://www.thevistassummerlin.com/properties/11773-golden-moments-avenue",
          images: [
            {
-             url: "/properties/11773-golden-moments-avenue-front.jpg",
+             url: "/subcommunities/IMG_0737.JPG",
              width: 1200,
              height: 630,
              alt: "11773 Golden Moments Avenue - The Vistas Summerlin",
@@ -42,7 +42,7 @@ function PropertySchema() {
     "name": "11773 Golden Moments Avenue, Las Vegas, NV",
     "description": "Move-in ready 4-bedroom, 3-bath home in The Vistas Summerlin with two spacious primary suites and modern chef's kitchen",
     "url": "https://www.thevistassummerlin.com/properties/11773-golden-moments-avenue",
-     "image": "https://www.thevistassummerlin.com/properties/11773-golden-moments-avenue-front.jpg",
+     "image": "https://www.thevistassummerlin.com/subcommunities/IMG_0737.JPG",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "11773 Golden Moments Avenue",

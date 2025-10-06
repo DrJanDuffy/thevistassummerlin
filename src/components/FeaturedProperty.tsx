@@ -33,7 +33,7 @@ export function FeaturedProperty() {
             {/* Property Image */}
             <div className="relative h-96 lg:h-full">
               <Image
-                src="/properties/11773-golden-moments-avenue-front.jpg"
+                src="/subcommunities/IMG_0737.JPG"
                 alt="11773 Golden Moments Avenue - Front exterior view"
                 fill
                 className="object-cover"
