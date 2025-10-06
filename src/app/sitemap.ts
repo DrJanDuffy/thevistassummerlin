@@ -1,10 +1,15 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.thevistassummerlin.com'
+  const baseUrl = 'https://thevistassummerlin.com'
   
   // Community slugs for dynamic sitemap generation
   const communitySlugs = [
+    'vistas', // Dr. Jan Duffy's office location
+    'summerlin-west',
+    'red-rock', 
+    'southern-highlands',
+    'macdonald-highlands',
     'img-0737', // Barrington
     'img-0738', // Kingwood
     'img-0739', // Santalina
@@ -98,6 +103,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/testimonials`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ]
 }

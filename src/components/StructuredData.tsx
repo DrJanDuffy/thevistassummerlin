@@ -9,14 +9,14 @@ export function RealEstateExpertSchema() {
     "name": "Dr. Jan Duffy",
     "description": "Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
     "url": "https://summerlin-real-estate.localo.site/",
-    "telephone": "+1-702-842-0410",
+    "telephone": "+1-702-500-0607",
     "email": "DrJanSells@TheVistasSummerlin.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "10777 West Twain Avenue # 333",
+      "streetAddress": "11312 Parkside Way",
       "addressLocality": "Las Vegas",
       "addressRegion": "NV",
-      "postalCode": "89135",
+      "postalCode": "89138",
       "addressCountry": "US"
     },
     "geo": {
@@ -190,10 +190,10 @@ export function LocalBusinessSchema() {
     "description": "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "10777 West Twain Avenue # 333",
+      "streetAddress": "11312 Parkside Way",
       "addressLocality": "Las Vegas",
       "addressRegion": "NV",
-      "postalCode": "89135",
+      "postalCode": "89138",
       "addressCountry": "US"
     },
     "geo": {
@@ -202,7 +202,7 @@ export function LocalBusinessSchema() {
       "longitude": "-115.1398"
     },
     "url": "https://summerlin-real-estate.localo.site/",
-    "telephone": "+1-702-842-0410",
+    "telephone": "+1-702-500-0607",
     "email": "DrJanSells@TheVistasSummerlin.com",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -349,7 +349,7 @@ export function RealEstateListingSchema() {
       "streetAddress": "The Vistas",
       "addressLocality": "Summerlin",
       "addressRegion": "NV",
-      "postalCode": "89135"
+      "postalCode": "89138"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -469,7 +469,7 @@ export function OrganizationSchema() {
       "streetAddress": "The Vistas",
       "addressLocality": "Summerlin",
       "addressRegion": "NV",
-      "postalCode": "89135",
+      "postalCode": "89138",
       "addressCountry": "US"
     },
     "sameAs": [

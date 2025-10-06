@@ -44,8 +44,8 @@ export default function Contact() {
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl">
                 <Phone className="w-8 h-8 text-blue-300 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Call Now</h3>
-                <a href="tel:+17028420410" className="text-blue-200 hover:text-white transition-colors text-lg font-medium">
-                  (702) 842-0410
+                <a href="tel:+17025000607" className="text-blue-200 hover:text-white transition-colors text-lg font-medium">
+                  (702) 500-0607
                 </a>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl">
@@ -209,8 +209,8 @@ export default function Contact() {
                         </div>
                         <div>
                           <p className="text-sm font-medium text-gray-500">Phone</p>
-                          <a href="tel:+17028420410" className="text-lg font-bold text-blue-600 hover:text-blue-700 transition-colors">
-                            (702) 842-0410
+                          <a href="tel:+17025000607" className="text-lg font-bold text-blue-600 hover:text-blue-700 transition-colors">
+                            (702) 500-0607
                           </a>
                         </div>
                       </div>
@@ -244,8 +244,8 @@ export default function Contact() {
                       <div>
                         <p className="text-sm font-medium text-gray-500">Address</p>
                         <p className="text-lg font-bold text-gray-900">
-                          10777 West Twain Avenue # 333<br />
-                          Las Vegas, NV 89135
+                          11312 Parkside Way<br />
+                          Las Vegas, NV 89138
                         </p>
                       </div>
                     </div>

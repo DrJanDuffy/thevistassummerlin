@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://www.thevistassummerlin.com',
+  siteUrl: 'https://thevistassummerlin.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [

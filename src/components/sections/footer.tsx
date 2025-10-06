@@ -95,7 +95,7 @@ export default function Footer() {
                 <div className="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center">
                   <MapPin className="w-5 h-5 text-purple-300" />
                 </div>
-                <span className="text-blue-100">Las Vegas, NV 89135</span>
+                <span className="text-blue-100">Las Vegas, NV 89138</span>
               </div>
             </div>
 

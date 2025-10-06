@@ -362,7 +362,7 @@ const ContactSection = () => (
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <a
-            href="tel:+17028420410"
+            href="tel:+17025000607"
             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2"
           >
             <Phone className="w-5 h-5" />

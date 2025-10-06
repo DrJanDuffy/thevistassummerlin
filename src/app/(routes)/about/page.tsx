@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const phoneNumber = "+17028420410";
+  const phoneNumber = "+17025000607";
   const emailAddress = "DrJanSells@TheVistasSummerlin.com";
 
   return (
@@ -184,7 +184,7 @@ export default function AboutPage() {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">Location</div>
-                        <div className="text-gray-700">Las Vegas, NV 89135</div>
+                        <div className="text-gray-700">Las Vegas, NV 89138</div>
                       </div>
                     </div>
                   </div>

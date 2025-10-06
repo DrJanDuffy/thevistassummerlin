@@ -192,7 +192,7 @@ export default function Contact() {
                         <p className="text-sm font-secondary text-text-light">Address</p>
                         <p className="text-lg font-primary font-medium text-text-dark">
                           The Vistas Summerlin<br />
-                          Las Vegas, NV 89135
+                          Las Vegas, NV 89138
                         </p>
                       </div>
                     </div>
