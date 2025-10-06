@@ -1,21 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface AnimatedCounterProps {
   end: number;
   duration?: number;
-  suffix?: string;
   prefix?: string;
-  className?: string;
+  suffix?: string;
 }
 
-export default function AnimatedCounter({
-  end,
-  duration = 2000,
-  suffix = '',
-  prefix = '',
-  className = '',
+export default function AnimatedCounter({ 
+  end, 
+  duration = 2000, 
+  prefix = '', 
+  suffix = '' 
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
 
@@ -23,13 +21,15 @@ export default function AnimatedCounter({
     let startTime: number;
     let animationFrame: number;
 
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
       
       // Easing function for smooth animation
-      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(easeOutCubic * end));
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * end);
+      
+      setCount(currentCount);
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
@@ -46,7 +46,7 @@ export default function AnimatedCounter({
   }, [end, duration]);
 
   return (
-    <span className={className}>
+    <span>
       {prefix}{count.toLocaleString()}{suffix}
     </span>
   );
