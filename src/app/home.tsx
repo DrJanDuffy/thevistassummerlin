@@ -7,7 +7,7 @@ import HomeEvaluationSection from '@/components/sections/home-evaluation';
 import PropertyCategories from '@/components/sections/property-categories';
 import FeaturedCommunities from '@/components/sections/featured-communities';
 import Footer from '@/components/sections/footer';
-import { Phone, BookOpen, User, MapPin, ArrowRight, Zap, Sparkles, Heart, Award, TrendingUp, Users, Star } from 'lucide-react';
+import { Phone, BookOpen, User, MapPin, ArrowRight, Zap, Sparkles, Heart, Award, TrendingUp, Users, Star, HomeIcon, DollarSign, Calendar, CheckCircle, Crown, Mountain, Building, Clock } from 'lucide-react';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { FeaturedProperty } from '@/components/FeaturedProperty';
@@ -21,12 +21,128 @@ export default function Home() {
       <Navigation />
       <main className="flex-grow">
         <Hero />
+        
+        {/* V0 Brand Focus Section */}
+        <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+          {/* V0 Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+            
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              {/* V0 Brand Badge */}
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4 text-blue-200 font-medium mb-8 shadow-lg hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Crown className="w-6 h-6" />
+                <span>The Vistas Summerlin | Homes by Dr. Jan Duffy</span>
+              </div>
+
+              <h2 className="text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                Your Trusted Real Estate Expert
+              </h2>
+              <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-12">
+                Dr. Jan Duffy specializes in The Vistas Summerlin luxury community, offering personalized service 
+                with flexible scheduling that works around YOUR lifestyle. Serving discerning buyers, sellers, 
+                and investors across Henderson, Enterprise, and Southwest Vegas.
+              </p>
+
+              {/* V0 Trust Indicators */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
+                  <Award className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
+                  <p className="text-sm text-blue-200">12+ Years</p>
+                  <p className="text-lg font-bold text-white">Experience</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
+                  <Star className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
+                  <p className="text-sm text-blue-200">4.9 Rating</p>
+                  <p className="text-lg font-bold text-white">150+ Reviews</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
+                  <HomeIcon className="w-8 h-8 text-green-300 mx-auto mb-3" />
+                  <p className="text-sm text-blue-200">The Vistas</p>
+                  <p className="text-lg font-bold text-white">Specialist</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
+                  <Clock className="w-8 h-8 text-purple-300 mx-auto mb-3" />
+                  <p className="text-sm text-blue-200">Flexible</p>
+                  <p className="text-lg font-bold text-white">Scheduling</p>
+                </div>
+              </div>
+
+              {/* V0 CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  href="/contact"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>Call Dr. Jan Duffy</span>
+                </Link>
+                <Link
+                  href="/communities"
+                  className="border-2 border-white text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-white hover:text-blue-900 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                >
+                  <MapPin className="w-5 h-5" />
+                  <span>Explore The Vistas</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <HomeEvaluationSection />
         <PropertyCategories />
         <FeaturedCommunities />
         
         {/* Featured Property Showcase */}
         <FeaturedProperty />
+        
+        {/* V0 Service Areas Section */}
+        <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+          {/* V0 Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-blue-200/30 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Service Areas
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Dr. Jan Duffy serves discerning clients across the Las Vegas Valley with expertise in The Vistas Summerlin
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { name: 'The Vistas Summerlin', icon: Crown, featured: true },
+                { name: 'Henderson', icon: Building },
+                { name: 'Enterprise', icon: Building },
+                { name: 'Southwest Vegas', icon: Building },
+                { name: 'Summerlin', icon: Mountain },
+                { name: 'Paradise', icon: Building },
+                { name: 'Las Vegas', icon: Building },
+                { name: 'Clark County', icon: Building },
+                { name: 'Desert Hills', icon: Building },
+                { name: 'Spring Valley', icon: Building }
+              ].map((area, index) => (
+                <div key={index} className={`${area.featured ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : 'bg-white/80 backdrop-blur-sm border border-white/50'} rounded-xl p-4 text-center hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                  <area.icon className={`w-6 h-6 ${area.featured ? 'text-white' : 'text-blue-600'} mx-auto mb-2`} />
+                  <p className={`text-sm font-medium ${area.featured ? 'text-white' : 'text-gray-900'}`}>{area.name}</p>
+                  {area.featured && <p className="text-xs text-blue-200 mt-1">Specialty</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* Google Business Profile Widget */}
         <GoogleBusinessProfileWidget />
@@ -37,168 +153,117 @@ export default function Home() {
         {/* Local SEO Showcase */}
         <LocalSEOShowcase />
         
-        {/* Enhanced Quick Links Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-          {/* Advanced Background Elements */}
+        {/* V0 Enhanced Quick Links Section */}
+        <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+          {/* V0 Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 right-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 left-20 w-80 h-80 bg-indigo-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-200/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+            <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 left-20 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
             
             {/* Additional floating elements */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-200/10 rounded-full blur-xl animate-pulse delay-700"></div>
-            <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-pink-200/10 rounded-full blur-lg animate-pulse delay-300"></div>
-            
-            {/* Grid pattern overlay */}
-            <div className="absolute inset-0 opacity-5" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
-              backgroundSize: '40px 40px'
-            }}></div>
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl animate-pulse delay-700"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-pink-500/10 rounded-full blur-lg animate-pulse delay-300"></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-blue-200 rounded-full px-6 py-3 text-blue-700 font-medium mb-6 shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <Sparkles className="w-5 h-5" />
-                <span>Explore More</span>
-                <Zap className="w-4 h-4 text-blue-500 animate-pulse" />
-              </div>
-              
-              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Discover Everything About
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  The Vistas Summerlin
-                </span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                Ready to Work with The Vistas Summerlin Expert?
               </h2>
-              
-              <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Dive deeper into our community with expert insights, market analysis, and comprehensive guides 
-                designed to help you make informed decisions about your real estate journey.
+              <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+                Dr. Jan Duffy offers flexible scheduling that works around YOUR lifestyle. 
+                Available early mornings, evenings, and weekends.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {/* Blog Link */}
-              <Link 
-                href="/blog"
-                className="group bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50 hover:scale-105"
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <BookOpen className="w-8 h-8 text-white" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* V0 Quick Action Cards */}
+              <Link href="/contact" className="group">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-                    Market Insights
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Stay informed with expert analysis, market updates, and helpful guides for The Vistas Summerlin real estate market.
-                  </p>
-                  <div className="flex items-center justify-center space-x-2 text-blue-600 group-hover:text-blue-700 transition-colors">
-                    <span className="font-semibold">Read Latest Posts</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    <Sparkles className="w-4 h-4 group-hover:animate-pulse" />
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">Call Dr. Jan</h3>
+                  <p className="text-blue-200 mb-4">(702) 842-0410</p>
+                  <p className="text-sm text-blue-300">Available Daily 6AM-9PM</p>
                 </div>
               </Link>
 
-              {/* About Link */}
-              <Link 
-                href="/about"
-                className="group bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50 hover:scale-105"
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <User className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
-                    About Dr. Jan Duffy
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Meet your preferred realtor and learn about our award-winning service, client testimonials, and success stories.
-                  </p>
-                  <div className="flex items-center justify-center space-x-2 text-green-600 group-hover:text-green-700 transition-colors">
-                    <span className="font-semibold">Meet Dr. Jan</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    <Heart className="w-4 h-4 group-hover:animate-pulse" />
-                  </div>
-                </div>
-              </Link>
-
-              {/* Community Guide Link */}
-              <Link 
-                href="/community-guide"
-                className="group bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50 hover:scale-105"
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Link href="/communities" className="group">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <MapPin className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
-                    Community Guide
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Complete guide to The Vistas Summerlin - amenities, schools, lifestyle, and everything you need to know.
-                  </p>
-                  <div className="flex items-center justify-center space-x-2 text-purple-600 group-hover:text-purple-700 transition-colors">
-                    <span className="font-semibold">Explore Guide</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    <Award className="w-4 h-4 group-hover:animate-pulse" />
+                  <h3 className="text-xl font-bold text-white mb-3">Explore Communities</h3>
+                  <p className="text-blue-200 mb-4">The Vistas & More</p>
+                  <p className="text-sm text-blue-300">Luxury Neighborhoods</p>
+                </div>
+              </Link>
+
+              <Link href="/valuation" className="group">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <DollarSign className="w-8 h-8 text-white" />
                   </div>
+                  <h3 className="text-xl font-bold text-white mb-3">Home Valuation</h3>
+                  <p className="text-blue-200 mb-4">Free Market Analysis</p>
+                  <p className="text-sm text-blue-300">Instant Results</p>
+                </div>
+              </Link>
+
+              <Link href="/about" className="group">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <User className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">Meet Dr. Jan</h3>
+                  <p className="text-blue-200 mb-4">Your Real Estate Expert</p>
+                  <p className="text-sm text-blue-300">12+ Years Experience</p>
                 </div>
               </Link>
             </div>
 
-            {/* Enhanced Stats Section */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/50">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  Why Choose The Vistas Summerlin?
+            {/* V0 Final CTA */}
+            <div className="text-center mt-16">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-12 max-w-4xl mx-auto shadow-2xl">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                  Why Choose The Vistas Summerlin | Homes by Dr. Jan Duffy?
                 </h3>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Experience the perfect blend of luxury, convenience, and community in Las Vegas' most prestigious area.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div className="text-center bg-blue-50 rounded-2xl p-6 hover:bg-blue-100 transition-all duration-300 hover:scale-105 group">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <TrendingUp className="w-6 h-6 text-blue-600" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                  <div className="text-center">
+                    <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                    <h4 className="text-lg font-bold text-white mb-2">Flexible Scheduling</h4>
+                    <p className="text-blue-200">Works around YOUR lifestyle</p>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-2 group-hover:scale-110 transition-transform">4.5%</div>
-                  <div className="text-gray-600">Annual Appreciation</div>
-                </div>
-                <div className="text-center bg-green-50 rounded-2xl p-6 hover:bg-green-100 transition-all duration-300 hover:scale-105 group">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Users className="w-6 h-6 text-green-600" />
+                  <div className="text-center">
+                    <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                    <h4 className="text-lg font-bold text-white mb-2">The Vistas Expert</h4>
+                    <p className="text-blue-200">Specialized local knowledge</p>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-2 group-hover:scale-110 transition-transform">28</div>
-                  <div className="text-gray-600">Subcommunities</div>
-                </div>
-                <div className="text-center bg-purple-50 rounded-2xl p-6 hover:bg-purple-100 transition-all duration-300 hover:scale-105 group">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Star className="w-6 h-6 text-purple-600" />
+                  <div className="text-center">
+                    <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                    <h4 className="text-lg font-bold text-white mb-2">12+ Years Experience</h4>
+                    <p className="text-blue-200">Proven track record</p>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-2 group-hover:scale-110 transition-transform">9.2</div>
-                  <div className="text-gray-600">School Rating</div>
                 </div>
-                <div className="text-center bg-orange-50 rounded-2xl p-6 hover:bg-orange-100 transition-all duration-300 hover:scale-105 group">
-                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Award className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-2 group-hover:scale-110 transition-transform">98%</div>
-                  <div className="text-gray-600">Client Satisfaction</div>
-                </div>
+                <Link
+                  href="/contact"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-xl text-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center space-x-3"
+                >
+                  <span>Get Started Today</span>
+                  <ArrowRight className="w-6 h-6" />
+                </Link>
               </div>
             </div>
           </div>
         </section>
-        
-        <Footer />
-        <FloatingActionButton href="tel:+17025551234">
-          <Phone className="w-6 h-6" />
-        </FloatingActionButton>
-        <ScrollToTop />
       </main>
+      <Footer />
+      <FloatingActionButton href="tel:+17028420410">
+        <Phone className="w-6 h-6" />
+      </FloatingActionButton>
+      <ScrollToTop />
     </div>
   );
 }

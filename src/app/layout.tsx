@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://summerlin-real-estate.localo.site/'),
   title: {
     default: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
-    template: "%s | The Vistas Summerlin Real Estate"
+    template: "%s | The Vistas Summerlin | Homes by Dr. Jan Duffy"
   },
   description: "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
   keywords: [

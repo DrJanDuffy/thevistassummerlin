@@ -6,18 +6,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About Dr. Jan Duffy - The Vistas Summerlin Preferred Realtor',
-  description: 'Meet Dr. Jan Duffy, your preferred realtor for The Vistas Summerlin. Award-winning service, 15+ years experience, and 500+ happy families.',
+  title: 'About Dr. Jan Duffy - The Vistas Summerlin | Homes by Dr. Jan Duffy',
+  description: 'Meet Dr. Jan Duffy, your trusted real estate expert for The Vistas Summerlin. 12+ years experience, flexible scheduling, and personalized service for discerning buyers and sellers.',
   openGraph: {
-    title: 'About Dr. Jan Duffy - The Vistas Summerlin Preferred Realtor',
-    description: 'Award-winning realtor with 15+ years experience serving The Vistas Summerlin community.',
+    title: 'About Dr. Jan Duffy - The Vistas Summerlin | Homes by Dr. Jan Duffy',
+    description: 'Trusted real estate expert with 12+ years experience serving The Vistas Summerlin community with flexible scheduling.',
     url: 'https://www.thevistassummerlin.com/about',
     type: 'website',
   },
 };
 
 export default function AboutPage() {
-  const phoneNumber = "+17025551234";
+  const phoneNumber = "+17028420410";
   const emailAddress = "DrJanSells@TheVistasSummerlin.com";
 
   return (
@@ -48,7 +48,7 @@ export default function AboutPage() {
               <div>
                 <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-blue-100 font-medium mb-6 shadow-lg hover:bg-white/20 transition-all duration-300 hover:scale-105">
                   <Award className="w-5 h-5" />
-                  <span>Preferred Realtor</span>
+                  <span>The Vistas Summerlin | Homes by Dr. Jan Duffy</span>
                   <Sparkles className="w-4 h-4 text-blue-300 animate-pulse" />
                 </div>
                 
@@ -60,9 +60,9 @@ export default function AboutPage() {
                 </h1>
                 
                 <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                  With over 15 years of experience specializing in The Vistas Summerlin, 
-                  Dr. Jan Duffy has helped 500+ families find their dream homes in Las Vegas' 
-                  most prestigious community.
+                  With over 12 years of experience specializing in The Vistas Summerlin, 
+                  Dr. Jan Duffy offers flexible scheduling that works around YOUR lifestyle. 
+                  Serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -91,16 +91,16 @@ export default function AboutPage() {
                       <span className="text-4xl font-bold text-white">JD</span>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">Dr. Jan Duffy</h3>
-                    <p className="text-blue-200 mb-6">Preferred Realtor - The Vistas Summerlin</p>
+                    <p className="text-blue-200 mb-6">The Vistas Summerlin | Homes by Dr. Jan Duffy</p>
                     
                     <div className="grid grid-cols-2 gap-4 text-center">
                       <div className="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 group">
-                        <div className="text-2xl font-bold text-white mb-1 group-hover:scale-110 transition-transform">15+</div>
+                        <div className="text-2xl font-bold text-white mb-1 group-hover:scale-110 transition-transform">12+</div>
                         <div className="text-blue-200 text-sm">Years Experience</div>
                       </div>
                       <div className="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 group">
-                        <div className="text-2xl font-bold text-white mb-1 group-hover:scale-110 transition-transform">500+</div>
-                        <div className="text-blue-200 text-sm">Happy Families</div>
+                        <div className="text-2xl font-bold text-white mb-1 group-hover:scale-110 transition-transform">150+</div>
+                        <div className="text-blue-200 text-sm">Happy Clients</div>
                       </div>
                     </div>
                   </div>

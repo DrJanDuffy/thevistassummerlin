@@ -28,7 +28,7 @@ export default function Contact() {
             {/* V0 Badge */}
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-blue-200 font-medium mb-8 shadow-lg hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <Sparkles className="w-5 h-5" />
-              <span>Flexible Scheduling That Works Around YOUR Lifestyle</span>
+              <span>The Vistas Summerlin | Homes by Dr. Jan Duffy</span>
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-primary font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent leading-tight">
