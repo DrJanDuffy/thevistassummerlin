@@ -11,11 +11,12 @@ import Footer from '@/components/sections/footer';
 import { ArrowRight, Phone } from 'lucide-react';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
+import { VoiceSearchFAQ, AnswerEngineOptimization } from '@/components/VoiceSearchOptimization';
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col font-secondary text-text-dark">
-      <Navigation />
+        <Navigation />
       <main className="flex-grow">
         <Hero />
         <HomeEvaluationSection />
@@ -633,7 +634,9 @@ export default function Home() {
 
         <BlogPosts />
         
-        {/* Community Spotlight Section */}
+        {/* 2025 SEO Optimization Components */}
+        <AnswerEngineOptimization />
+        <VoiceSearchFAQ />
         <section className="py-24 bg-gradient-to-br from-white via-off-white to-light-gray relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -1810,20 +1813,20 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
-      
-      {/* Floating Action Button */}
-      <FloatingActionButton
+        <Footer />
+
+        {/* Floating Action Button */}
+        <FloatingActionButton
         href="tel:+17025551234"
         position="bottom-right"
-        variant="secondary"
-        className="animate-bounce"
-      >
-        <Phone className="w-6 h-6" />
-      </FloatingActionButton>
-      
-      {/* Scroll to Top Button */}
-      <ScrollToTop />
+          variant="secondary"
+          className="animate-bounce"
+        >
+          <Phone className="w-6 h-6" />
+        </FloatingActionButton>
+
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
     </div>
   );
-} 
+}
