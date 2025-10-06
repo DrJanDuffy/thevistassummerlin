@@ -168,8 +168,8 @@ export default function Contact() {
                         </div>
                         <div>
                           <p className="text-sm font-secondary text-text-light">Email</p>
-                          <a href="mailto:drjan@thevistassummerlin.com" className="text-lg font-primary font-medium text-link-blue hover:text-primary-navy transition-colors">
-                            drjan@thevistassummerlin.com
+                          <a href="mailto:DrJanSells@TheVistasSummerlin.com" className="text-lg font-primary font-medium text-link-blue hover:text-primary-navy transition-colors">
+                            DrJanSells@TheVistasSummerlin.com
                           </a>
                         </div>
                       </div>

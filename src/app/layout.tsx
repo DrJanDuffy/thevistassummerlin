@@ -31,8 +31,8 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL('https://summerlin-real-estate.localo.site/'),
   title: {
-    default: "Summerlin Real Estate | Homes by Dr. Jan Duffy - Las Vegas Expert",
-    template: "%s | Summerlin Real Estate by Dr. Jan Duffy"
+    default: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
+    template: "%s | The Vistas Summerlin Real Estate"
   },
   description: "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
   keywords: [
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     "women-owned real estate"
   ],
   authors: [{ name: "Dr. Jan Duffy", url: "https://summerlin-real-estate.localo.site/" }],
-  creator: "Dr. Jan Duffy - Summerlin Real Estate Expert",
-  publisher: "Summerlin Real Estate | Homes by Dr. Jan Duffy",
+  creator: "Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert",
+  publisher: "The Vistas Summerlin | Homes by Dr. Jan Duffy",
   robots: {
     index: true,
     follow: true,

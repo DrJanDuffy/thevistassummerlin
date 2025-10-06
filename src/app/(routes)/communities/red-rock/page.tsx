@@ -369,7 +369,7 @@ const ContactSection = () => (
             <span>Call Now</span>
           </a>
           <a
-            href="mailto:drjan@thevistassummerlin.com"
+            href="mailto:DrJanSells@TheVistasSummerlin.com"
             className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-white hover:text-blue-900 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
           >
             <Mail className="w-5 h-5" />

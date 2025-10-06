@@ -51,8 +51,8 @@ export default function Contact() {
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl">
                 <Mail className="w-8 h-8 text-purple-300 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Email</h3>
-                <a href="mailto:drjan@thevistassummerlin.com" className="text-purple-200 hover:text-white transition-colors text-lg font-medium">
-                  drjan@thevistassummerlin.com
+                <a href="mailto:DrJanSells@TheVistasSummerlin.com" className="text-purple-200 hover:text-white transition-colors text-lg font-medium">
+                  DrJanSells@TheVistasSummerlin.com
                 </a>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl">
@@ -221,8 +221,8 @@ export default function Contact() {
                         </div>
                         <div>
                           <p className="text-sm font-medium text-gray-500">Email</p>
-                          <a href="mailto:drjan@thevistassummerlin.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors">
-                            drjan@thevistassummerlin.com
+                          <a href="mailto:DrJanSells@TheVistasSummerlin.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors">
+                            DrJanSells@TheVistasSummerlin.com
                           </a>
                         </div>
                       </div>

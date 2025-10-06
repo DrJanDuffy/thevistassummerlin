@@ -10,7 +10,7 @@ export function RealEstateExpertSchema() {
     "description": "Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
     "url": "https://summerlin-real-estate.localo.site/",
     "telephone": "+1-702-842-0410",
-    "email": "drjan@thevistassummerlin.com",
+    "email": "DrJanSells@TheVistasSummerlin.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "10777 West Twain Avenue # 333",
@@ -185,7 +185,7 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "name": "Summerlin Real Estate | Homes by Dr. Jan Duffy",
+    "name": "The Vistas Summerlin | Homes by Dr. Jan Duffy",
     "image": "https://www.thevistassummerlin.com/subcommunities/IMG_0737.JPG",
     "description": "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
     "address": {
@@ -203,7 +203,7 @@ export function LocalBusinessSchema() {
     },
     "url": "https://summerlin-real-estate.localo.site/",
     "telephone": "+1-702-842-0410",
-    "email": "drjan@thevistassummerlin.com",
+    "email": "DrJanSells@TheVistasSummerlin.com",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -461,7 +461,7 @@ export function OrganizationSchema() {
       "@type": "ContactPoint",
       "telephone": "+1-702-555-1234",
       "contactType": "customer service",
-      "email": "drjan@thevistassummerlin.com",
+      "email": "DrJanSells@TheVistasSummerlin.com",
       "availableLanguage": "English"
     },
     "address": {

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const phoneNumber = "+17025551234";
-  const emailAddress = "drjan@thevistassummerlin.com";
+  const emailAddress = "DrJanSells@TheVistasSummerlin.com";
 
   return (
     <div className="flex min-h-screen flex-col font-secondary text-gray-800 bg-gray-50">
