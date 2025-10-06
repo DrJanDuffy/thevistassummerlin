@@ -76,8 +76,10 @@ export interface CommunityData {
     medianPrice?: string;
     priceRange?: string;
     soldLastMonth?: number;
+    daysOnMarket?: number;
   };
   amenities?: string[];
+  features?: string[];
   neighborhood?: {
     walkScore?: number;
     transitScore?: number;

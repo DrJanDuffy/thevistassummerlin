@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
-import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine } from 'lucide-react';
+import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine, ArrowRight, ChevronDown } from 'lucide-react';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import RealScoutYourListings from '@/components/RealScoutYourListings';
 
@@ -51,224 +51,24 @@ const allCommunities = [
     category: 'Premium'
   },
   {
-    id: 'miraleste',
-    name: 'Miraleste',
-    description: 'Homes with stunning vistas and modern amenities in a peaceful setting',
+    id: 'canyon-ridge',
+    name: 'Canyon Ridge',
+    description: 'Modern homes with stunning canyon views and contemporary design',
     priceRange: '$700K - $1.6M',
     homesAvailable: 10,
     image: '/subcommunities/IMG_0738.JPG',
-    features: ['Stunning Vistas', 'Modern Amenities', 'Peaceful Setting', 'Walking Trails'],
-    category: 'Premium'
+    features: ['Canyon Views', 'Modern Design', 'Smart Homes', 'Fitness Center'],
+    category: 'Luxury'
   },
   {
-    id: 'solano',
-    name: 'Solano',
-    description: 'Family-friendly community with excellent schools and recreational facilities',
+    id: 'sunset-hills',
+    name: 'Sunset Hills',
+    description: 'Family-friendly community with parks, trails, and excellent schools',
     priceRange: '$550K - $1.2M',
     homesAvailable: 20,
     image: '/subcommunities/IMG_0739.JPG',
-    features: ['Excellent Schools', 'Recreational Facilities', 'Family Friendly', 'Parks & Playgrounds'],
+    features: ['Family-Friendly', 'Parks & Trails', 'Top Schools', 'Community Events'],
     category: 'Family'
-  },
-  {
-    id: 'canterra',
-    name: 'Canterra',
-    description: 'Contemporary homes with sustainable design and energy-efficient features',
-    priceRange: '$650K - $1.5M',
-    homesAvailable: 14,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Sustainable Design', 'Energy Efficient', 'Contemporary Style', 'Smart Home Features'],
-    category: 'Premium'
-  },
-  {
-    id: 'miramonte',
-    name: 'Miramonte',
-    description: 'Homes with mountain views and Spanish-inspired architecture',
-    priceRange: '$700K - $1.7M',
-    homesAvailable: 11,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Mountain Views', 'Spanish Architecture', 'Private Courtyards', 'Community Pool'],
-    category: 'Premium'
-  },
-  {
-    id: 'somerset',
-    name: 'Somerset',
-    description: 'Charming English-inspired homes with manicured gardens and community spirit',
-    priceRange: '$600K - $1.4M',
-    homesAvailable: 16,
-    image: '/subcommunities/IMG_0739.JPG',
-    features: ['English Style', 'Manicured Gardens', 'Community Spirit', 'Walking Paths'],
-    category: 'Family'
-  },
-  {
-    id: 'capri',
-    name: 'Capri',
-    description: 'Island-inspired homes with resort-style amenities and tropical landscaping',
-    priceRange: '$750K - $1.8M',
-    homesAvailable: 9,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Island Inspired', 'Resort Amenities', 'Tropical Landscaping', 'Pool & Spa'],
-    category: 'Luxury'
-  },
-  {
-    id: 'monterosa',
-    name: 'Monterosa',
-    description: 'Homes with rose garden themes and elegant European-inspired design',
-    priceRange: '$650K - $1.5M',
-    homesAvailable: 13,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Rose Gardens', 'European Design', 'Elegant Architecture', 'Community Events'],
-    category: 'Premium'
-  },
-  {
-    id: 'sonesta',
-    name: 'Sonesta',
-    description: 'Musical-themed community with harmonious design and artistic touches',
-    priceRange: '$600K - $1.3M',
-    homesAvailable: 17,
-    image: '/subcommunities/IMG_0739.JPG',
-    features: ['Musical Theme', 'Harmonious Design', 'Artistic Touches', 'Community Concerts'],
-    category: 'Family'
-  },
-  {
-    id: 'cara-vella',
-    name: 'Cara Vella',
-    description: 'Beautiful face homes with stunning architecture and premium finishes',
-    priceRange: '$800K - $2.0M',
-    homesAvailable: 7,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Stunning Architecture', 'Premium Finishes', 'Gated Entry', 'Luxury Amenities'],
-    category: 'Luxury'
-  },
-  {
-    id: 'palmilla',
-    name: 'Palmilla',
-    description: 'Palm tree-lined streets with tropical landscaping and resort-style living',
-    priceRange: '$700K - $1.6M',
-    homesAvailable: 12,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Palm Trees', 'Tropical Landscaping', 'Resort Living', 'Pool & Tennis'],
-    category: 'Premium'
-  },
-  {
-    id: 'summerfield',
-    name: 'Summerfield',
-    description: 'Summer-inspired homes with bright colors and outdoor entertainment spaces',
-    priceRange: '$550K - $1.2M',
-    homesAvailable: 19,
-    image: '/subcommunities/IMG_0739.JPG',
-    features: ['Summer Theme', 'Bright Colors', 'Outdoor Entertainment', 'BBQ Areas'],
-    category: 'Family'
-  },
-  {
-    id: 'casa-rosa',
-    name: 'Casa Rosa',
-    description: 'Rose-colored homes with romantic architecture and garden settings',
-    priceRange: '$650K - $1.4M',
-    homesAvailable: 14,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Rose Theme', 'Romantic Architecture', 'Garden Settings', 'Community Rose Garden'],
-    category: 'Premium'
-  },
-  {
-    id: 'paradiso',
-    name: 'Paradiso',
-    description: 'Paradise-inspired homes with heavenly views and luxurious amenities',
-    priceRange: '$900K - $2.3M',
-    homesAvailable: 5,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Heavenly Views', 'Luxurious Amenities', 'Private Pools', 'Gated Security'],
-    category: 'Luxury'
-  },
-  {
-    id: 'talaverde',
-    name: 'Talaverde',
-    description: 'Green valley homes with natural landscaping and eco-friendly features',
-    priceRange: '$600K - $1.3M',
-    homesAvailable: 16,
-    image: '/subcommunities/IMG_0739.JPG',
-    features: ['Green Valley', 'Natural Landscaping', 'Eco-Friendly', 'Walking Trails'],
-    category: 'Family'
-  },
-  {
-    id: 'encanto',
-    name: 'Encanto',
-    description: 'Enchanted homes with magical gardens and whimsical design elements',
-    priceRange: '$700K - $1.7M',
-    homesAvailable: 11,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Enchanted Gardens', 'Whimsical Design', 'Magical Elements', 'Community Events'],
-    category: 'Premium'
-  },
-  {
-    id: 'portofino',
-    name: 'Portofino',
-    description: 'Italian coastal-inspired homes with Mediterranean charm and luxury amenities',
-    priceRange: '$850K - $2.0M',
-    homesAvailable: 8,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Italian Coastal', 'Mediterranean Charm', 'Luxury Amenities', 'Private Beach Club'],
-    category: 'Luxury'
-  },
-  {
-    id: 'talega',
-    name: 'Talega',
-    description: 'Homes with valley views and natural surroundings in a peaceful setting',
-    priceRange: '$650K - $1.5M',
-    homesAvailable: 13,
-    image: '/subcommunities/IMG_0739.JPG',
-    features: ['Valley Views', 'Natural Surroundings', 'Peaceful Setting', 'Hiking Trails'],
-    category: 'Premium'
-  },
-  {
-    id: 'estancia',
-    name: 'Estancia',
-    description: 'Spanish ranch-style homes with authentic architecture and courtyard living',
-    priceRange: '$750K - $1.8M',
-    homesAvailable: 10,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Spanish Ranch', 'Authentic Architecture', 'Courtyard Living', 'Community Pool'],
-    category: 'Premium'
-  },
-  {
-    id: 'sage-hills',
-    name: 'Sage Hills',
-    description: 'Homes nestled in sage-covered hills with natural desert landscaping',
-    priceRange: '$600K - $1.4M',
-    homesAvailable: 15,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Sage Hills', 'Desert Landscaping', 'Natural Setting', 'Hiking Access'],
-    category: 'Family'
-  },
-  {
-    id: 'vista-verde',
-    name: 'Vista Verde',
-    description: 'Green view homes with sustainable design and energy-efficient features',
-    priceRange: '$700K - $1.6M',
-    homesAvailable: 12,
-    image: '/subcommunities/IMG_0739.JPG',
-    features: ['Green Views', 'Sustainable Design', 'Energy Efficient', 'Solar Panels'],
-    category: 'Premium'
-  },
-  {
-    id: 'hillstone',
-    name: 'Hillstone',
-    description: 'Stone homes on hills with rustic charm and modern amenities',
-    priceRange: '$800K - $1.9M',
-    homesAvailable: 9,
-    image: '/subcommunities/IMG_0737.JPG',
-    features: ['Stone Homes', 'Rustic Charm', 'Modern Amenities', 'Hill Views'],
-    category: 'Luxury'
-  },
-  {
-    id: 'san-marcos',
-    name: 'San Marcos',
-    description: 'Spanish mission-inspired homes with authentic details and community spirit',
-    priceRange: '$650K - $1.5M',
-    homesAvailable: 14,
-    image: '/subcommunities/IMG_0738.JPG',
-    features: ['Spanish Mission', 'Authentic Details', 'Community Spirit', 'Mission Bell'],
-    category: 'Premium'
   }
 ];
 
@@ -278,307 +78,294 @@ export default function CommunitiesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [showMap, setShowMap] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
 
   const filteredCommunities = useMemo(() => {
     return allCommunities.filter(community => {
       const matchesSearch = community.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           community.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           community.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
-      
+                           community.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || community.category === selectedCategory;
-      
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory]);
 
-  const categoryStats = useMemo(() => {
-    const stats = { Luxury: 0, Premium: 0, Family: 0 };
-    allCommunities.forEach(community => {
-      stats[community.category as keyof typeof stats]++;
-    });
-    return stats;
-  }, []);
-
   return (
-    <div className="flex min-h-screen flex-col font-secondary text-text-dark">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-primary-navy via-link-blue to-primary-navy text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="absolute inset-0 opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-primary font-medium mb-6">
-                Our Communities
-              </h1>
-              <p className="text-xl lg:text-2xl font-secondary opacity-90 max-w-3xl mx-auto leading-relaxed">
-                Discover all 28 unique subcommunities that make The Vistas Summerlin special
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Breadcrumbs */}
-        <section className="py-4 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="text-sm font-secondary text-text-light">
-              <Link href="/" className="hover:text-link-blue transition-colors">Home</Link>
-              <span className="mx-2">/</span>
-              <span className="text-text-dark">Communities</span>
-            </nav>
-          </div>
-        </section>
-
-        {/* Search and Filter Section */}
-        <section className="py-8 bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-              {/* Search Bar */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+      
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+              The Vistas Communities
+              <span className="block text-blue-200">Discover Your Perfect Neighborhood</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto mb-8">
+              Explore 28 prestigious subcommunities in The Vistas Summerlin, each offering unique luxury living experiences.
+            </p>
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search communities..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-link-blue focus:border-transparent"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-300"
                 />
               </div>
-
-              {/* Category Filter */}
-              <div className="flex gap-2">
-                {categories.map(category => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                      selectedCategory === category
-                        ? 'bg-link-blue text-white shadow-lg'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-
-                             {/* View Toggle */}
-               <div className="flex gap-2">
-                 <button
-                   onClick={() => setViewMode('grid')}
-                   title="Grid view"
-                   className={`p-2 rounded-lg transition-all duration-200 ${
-                     viewMode === 'grid' ? 'bg-link-blue text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                   }`}
-                 >
-                   <Grid className="w-5 h-5" />
-                 </button>
-                 <button
-                   onClick={() => setViewMode('list')}
-                   title="List view"
-                   className={`p-2 rounded-lg transition-all duration-200 ${
-                     viewMode === 'list' ? 'bg-link-blue text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                   }`}
-                 >
-                   <List className="w-5 h-5" />
-                 </button>
-                 <button
-                   onClick={() => setShowMap(!showMap)}
-                   title="Toggle map view"
-                   className={`p-2 rounded-lg transition-all duration-200 ${
-                     showMap ? 'bg-link-blue text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                   }`}
-                 >
-                   <MapPin className="w-5 h-5" />
-                 </button>
-               </div>
-            </div>
-
-            {/* Results Count */}
-            <div className="mt-4 text-sm text-gray-600">
-              Showing {filteredCommunities.length} of {allCommunities.length} communities
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Community Overview Stats */}
-        <section className="py-12 bg-gradient-to-br from-light-gray to-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center p-6 bg-white rounded-lg shadow-lg">
-                <div className="text-3xl font-primary font-medium text-primary-navy mb-2">{allCommunities.length}</div>
-                <div className="text-sm font-secondary text-gray-600">Total Communities</div>
-              </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-lg">
-                <div className="text-3xl font-primary font-medium text-link-blue mb-2">{categoryStats.Luxury}</div>
-                <div className="text-sm font-secondary text-gray-600">Luxury Communities</div>
-              </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-lg">
-                <div className="text-3xl font-primary font-medium text-success-green mb-2">{categoryStats.Premium}</div>
-                <div className="text-sm font-secondary text-gray-600">Premium Communities</div>
-              </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-lg">
-                <div className="text-3xl font-primary font-medium text-purple-600 mb-2">{categoryStats.Family}</div>
-                <div className="text-sm font-secondary text-gray-600">Family Communities</div>
-              </div>
+      {/* Filters & Controls */}
+      <section className="bg-white border-b py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            
+            {/* Category Filters */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+                    selectedCategory === category
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
-          </div>
-        </section>
 
-        {/* Map Section (Placeholder) */}
-        {showMap && (
-          <section className="py-8 bg-white border-b border-gray-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-gray-100 rounded-lg p-8 text-center">
-                <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-primary font-medium text-gray-700 mb-2">Interactive Community Map</h3>
-                <p className="text-gray-600 mb-4">Explore our communities on an interactive map</p>
-                <button className="bg-link-blue text-white px-6 py-3 rounded-lg hover:bg-primary-navy transition-colors">
-                  Launch Map View
+            {/* View Controls */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors"
+              >
+                <Filter className="w-4 h-4" />
+                <span>Filters</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className="flex border border-gray-300 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`p-3 transition-colors ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
+                >
+                  <Grid className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`p-3 transition-colors ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
+                >
+                  <List className="w-4 h-4" />
                 </button>
               </div>
             </div>
-          </section>
-        )}
+          </div>
 
-        {/* Communities Grid/List */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {filteredCommunities.length === 0 ? (
-              <div className="text-center py-12">
-                <Search className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-primary font-medium text-gray-700 mb-2">No communities found</h3>
-                <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+          {/* Advanced Filters */}
+          {showFilters && (
+            <div className="mt-6 p-6 bg-gray-50 rounded-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Price Range</label>
+                  <select className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>Any Price</option>
+                    <option>$500K - $750K</option>
+                    <option>$750K - $1M</option>
+                    <option>$1M - $1.5M</option>
+                    <option>$1.5M+</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Homes Available</label>
+                  <select className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>Any Amount</option>
+                    <option>1-5 Homes</option>
+                    <option>6-10 Homes</option>
+                    <option>11-15 Homes</option>
+                    <option>16+ Homes</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Features</label>
+                  <select className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>Any Features</option>
+                    <option>Gated Community</option>
+                    <option>Mountain Views</option>
+                    <option>Pool</option>
+                    <option>Fitness Center</option>
+                  </select>
+                </div>
               </div>
-            ) : (
-              <div className={viewMode === 'grid' 
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' 
-                : 'space-y-6'
-              }>
-                {filteredCommunities.map((community) => (
-                  <div
-                    key={community.id}
-                    className={`bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-200 ${
-                      viewMode === 'list' ? 'flex' : ''
-                    }`}
-                  >
-                    {/* Image */}
-                    <div className={viewMode === 'list' ? 'w-1/3' : 'w-full'}>
-                      <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={community.image}
-                          alt={`${community.name} community`}
-                          fill
-                          className="object-cover hover:scale-110 transition-transform duration-300"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium text-white ${
-                            community.category === 'Luxury' ? 'bg-purple-600' :
-                            community.category === 'Premium' ? 'bg-link-blue' : 'bg-success-green'
-                          }`}>
-                            {community.category}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+            </div>
+          )}
+        </div>
+      </section>
 
-                    {/* Content */}
-                    <div className={`p-6 ${viewMode === 'list' ? 'w-2/3' : ''}`}>
-                      <h3 className="text-xl font-primary font-medium text-text-dark mb-2">
-                        {community.name}
-                      </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-2">
-                        {community.description}
-                      </p>
-                      
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="text-lg font-primary font-medium text-link-blue">
-                          {community.priceRange}
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {community.homesAvailable} homes available
-                        </div>
-                      </div>
+      {/* Communities Grid */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Results Header */}
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900">
+                {filteredCommunities.length} Communities Found
+              </h2>
+              <p className="text-gray-600 mt-2">
+                {selectedCategory !== 'All' && `in ${selectedCategory} category`}
+              </p>
+            </div>
+          </div>
 
-                      {/* Features */}
-                      <div className="mb-4">
-                        <div className="flex flex-wrap gap-2">
-                          {community.features.slice(0, 3).map((feature, index) => (
-                            <span
-                              key={index}
-                              className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                          {community.features.length > 3 && (
-                            <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                              +{community.features.length - 3} more
-                            </span>
-                          )}
-                        </div>
-                      </div>
+          {/* Communities Grid */}
+          <div className={`grid gap-8 ${
+            viewMode === 'grid' 
+              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
+              : 'grid-cols-1'
+          }`}>
+            {filteredCommunities.map((community) => (
+              <div
+                key={community.id}
+                className={`bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${
+                  viewMode === 'list' ? 'flex' : ''
+                }`}
+              >
+                {/* Community Image */}
+                <div className={`relative ${viewMode === 'list' ? 'w-80 h-64' : 'h-64'}`}>
+                  <Image
+                    src={community.image}
+                    alt={community.name}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      community.category === 'Luxury' 
+                        ? 'bg-purple-100 text-purple-800' 
+                        : community.category === 'Premium'
+                        ? 'bg-blue-100 text-blue-800'
+                        : 'bg-green-100 text-green-800'
+                    }`}>
+                      {community.category}
+                    </span>
+                  </div>
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+                    <Star className="w-5 h-5 text-yellow-500" />
+                  </div>
+                </div>
 
-                      {/* Action Button */}
-                      <Link
-                        href={`/communities/${community.id}`}
-                        className="inline-block w-full bg-primary-navy text-white text-center py-3 rounded-lg hover:bg-link-blue transition-colors font-medium"
-                      >
-                        Explore {community.name}
-                      </Link>
+                {/* Community Content */}
+                <div className={`p-8 ${viewMode === 'list' ? 'flex-1' : ''}`}>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{community.name}</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">{community.description}</p>
+                  
+                  {/* Price & Stats */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-2xl font-bold text-blue-600">{community.priceRange}</div>
+                    <div className="flex items-center space-x-1 text-gray-600">
+                      <Home className="w-4 h-4" />
+                      <span className="text-sm">{community.homesAvailable} homes</span>
                     </div>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
 
-        {/* Call to Action */}
-        <section className="py-20 bg-gradient-to-br from-primary-navy to-link-blue text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl lg:text-4xl font-primary font-medium mb-6">
-              Ready to Find Your Perfect Community?
-            </h2>
-            <p className="text-xl font-secondary opacity-90 max-w-2xl mx-auto mb-8">
-              Connect with our expert team to schedule a personalized tour of your favorite communities
-            </p>
-            
-            {/* RealScout Widgets */}
-            <div className="max-w-6xl mx-auto mb-12">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <RealScoutAdvancedSearch 
-                  containerClassName="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20"
-                />
-                <RealScoutYourListings 
-                  containerClassName="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20"
-                />
+                  {/* Features */}
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {community.features.slice(0, 3).map((feature) => (
+                        <span
+                          key={feature}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                      {community.features.length > 3 && (
+                        <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                          +{community.features.length - 3} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Link
+                    href={`/communities/${community.id}`}
+                    className="flex items-center justify-center space-x-2 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    <span>Explore {community.name}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* No Results */}
+          {filteredCommunities.length === 0 && (
+            <div className="text-center py-16">
+              <div className="bg-gray-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                <Search className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No communities found</h3>
+              <p className="text-gray-600 mb-6">Try adjusting your search criteria</p>
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedCategory('All');
+                }}
+                className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* RealScout Integration */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Ready to Find Your Dream Home?
+            </h2>
+            <p className="text-xl text-gray-600">
+              Use our advanced search tools to find the perfect property in The Vistas
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Advanced Property Search</h3>
+              <p className="text-gray-600 mb-6">
+                Search all available properties across The Vistas communities with detailed filters.
+              </p>
+              <RealScoutAdvancedSearch />
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/search"
-                className="bg-white text-primary-navy px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-              >
-                Search Available Homes
-              </Link>
-              <Link
-                href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-primary-navy transition-colors"
-              >
-                Contact Our Team
-              </Link>
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Your Saved Listings</h3>
+              <p className="text-gray-600 mb-6">
+                View and manage your saved properties and get updates on price changes.
+              </p>
+              <RealScoutYourListings />
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
-} 
+}

@@ -3,6 +3,16 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.thevistassummerlin.com'
   
+  // Community slugs for dynamic sitemap generation
+  const communitySlugs = [
+    'barrington',
+    'kingwood', 
+    'santalina',
+    'bella-vista',
+    'canyon-ridge',
+    'sunset-hills'
+  ]
+  
   return [
     {
       url: baseUrl,
@@ -20,8 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/communities`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
     },
+    // Individual community pages
+    ...communitySlugs.map(slug => ({
+      url: `${baseUrl}/communities/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
