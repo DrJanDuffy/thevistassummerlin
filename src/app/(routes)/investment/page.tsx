@@ -53,7 +53,7 @@ const investmentOpportunities = [
     description: 'High-end homes perfect for executive rentals and vacation stays',
     priceRange: '$800K - $2.5M',
     roi: '6.5% - 8.5%',
-    image: '/subcommunities/Santaluz.jpg',
+    image: '/subcommunities/IMG_0737.JPG',
     features: ['Executive Rentals', 'Vacation Rentals', 'High-End Amenities', 'Premium Location']
   },
   {

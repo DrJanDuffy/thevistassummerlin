@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     siteName: "The Vistas Summerlin Real Estate",
     images: [
       {
-        url: "/the-vistas-hero.jpg",
+        url: "/subcommunities/IMG_0737.JPG",
         width: 1200,
         height: 630,
         alt: "The Vistas Summerlin Luxury Homes",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Vistas Summerlin Homes - Luxury Real Estate",
     description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Jan Duffy specializing in The Vistas community.",
-    images: ["/the-vistas-twitter.jpg"],
+    images: ["/subcommunities/IMG_0737.JPG"],
   },
   verification: {
     google: "your-google-verification-code",

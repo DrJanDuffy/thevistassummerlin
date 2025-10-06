@@ -126,7 +126,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "The Vistas Summerlin Real Estate",
-    "image": "https://www.thevistassummerlin.com/logo.jpg",
+    "image": "https://www.thevistassummerlin.com/subcommunities/IMG_0737.JPG",
     "description": "Premier real estate services specializing in The Vistas Summerlin luxury homes",
     "address": {
       "@type": "PostalAddress",

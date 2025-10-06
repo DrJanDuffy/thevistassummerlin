@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   name: 'The Vistas Summerlin',
   description: 'Discover your perfect home in one of 28 vibrant subcommunities in The Vistas Summerlin. Get instant home valuations, market insights, and expert guidance.',
   url: 'https://www.thevistassummerlin.com',
-  ogImage: '/og-image.jpg',
+  ogImage: '/subcommunities/IMG_0737.JPG',
   links: {
     twitter: 'https://twitter.com/thevistassummerlin',
     github: 'https://github.com/thevistassummerlin',

@@ -21,7 +21,7 @@ const propertyTypes = [
     description: 'Spacious family homes with private yards and modern amenities',
     priceRange: '$525K - $2.5M',
     count: '350+',
-    image: '/subcommunities/Santaluz.jpg',
+    image: '/subcommunities/IMG_0737.JPG',
     features: ['3-6 Bedrooms', '2-4 Bathrooms', '1,800-4,500 sq ft', 'Private Yards']
   },
   {
@@ -53,7 +53,7 @@ const featuredListings = [
     beds: 4,
     baths: 3.5,
     sqft: '3,200',
-    image: '/subcommunities/Santaluz.jpg',
+    image: '/subcommunities/IMG_0737.JPG',
     status: 'Active'
   },
   {
