@@ -11,6 +11,9 @@ import { Phone, BookOpen, User, MapPin, ArrowRight, Zap, Sparkles, Heart, Award,
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { FeaturedProperty } from '@/components/FeaturedProperty';
+import GoogleBusinessProfileWidget from '@/components/sections/google-business-profile-widget';
+import ReviewCollectionWidget from '@/components/sections/review-collection-widget';
+import LocalSEOShowcase from '@/components/sections/local-seo-showcase';
 
 export default function Home() {
   return (
@@ -24,6 +27,15 @@ export default function Home() {
         
         {/* Featured Property Showcase */}
         <FeaturedProperty />
+        
+        {/* Google Business Profile Widget */}
+        <GoogleBusinessProfileWidget />
+        
+        {/* Review Collection Widget */}
+        <ReviewCollectionWidget />
+        
+        {/* Local SEO Showcase */}
+        <LocalSEOShowcase />
         
         {/* Enhanced Quick Links Section */}
         <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
