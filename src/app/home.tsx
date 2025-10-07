@@ -163,13 +163,15 @@ export default function Home() {
 
                     {/* V0 CTA Buttons */}
                     <div className="space-y-4">
-                      <Link
-                        href="/properties/11773-golden-moments-avenue"
+                      <a
+                        href="https://drjanduffy.realscout.com/homesearch/listings/p-11773-golden-moments-avenue-las-vegas-89138-glvartrestle-139"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-4 rounded-2xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2"
                       >
                         <ExternalLink className="w-5 h-5" />
                         <span>View Full Listing</span>
-                      </Link>
+                      </a>
                       
                       <a
                         href="tel:+17025000607"
