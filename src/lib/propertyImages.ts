@@ -7,7 +7,7 @@ export const realScoutImageUrls = {
   frontExterior: "/subcommunities/IMG_0737.JPG",
   
   // Kitchen
-  kitchen: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+  kitchen: "/images/featured-home-kitchen.jpg",
   
   // Living room
   livingRoom: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",

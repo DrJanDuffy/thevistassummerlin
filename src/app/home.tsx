@@ -92,16 +92,16 @@ export default function Home() {
                 
                 {/* Property Image */}
                 <div className="relative h-96 lg:h-[500px]">
-                  <OptimizedImage
-                    src="/subcommunities/IMG_0737.JPG"
-                    alt="11773 Golden Moments Avenue luxury home in The Vistas Summerlin - Mediterranean-style exterior with mountain views"
-                    fill
-                    className="object-cover"
-                    priority
-                    quality={90}
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URLS.house}
-                  />
+                        <OptimizedImage
+                          src="/images/featured-home-kitchen.jpg"
+                          alt="11773 Golden Moments Avenue luxury kitchen in The Vistas Summerlin - Modern black and white design with granite countertops"
+                          fill
+                          className="object-cover"
+                          priority
+                          quality={90}
+                          placeholder="blur"
+                          blurDataURL={BLUR_DATA_URLS.house}
+                        />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   
                   {/* V0 Image Overlay Content */}
@@ -147,7 +147,7 @@ export default function Home() {
                       <div className="grid grid-cols-1 gap-4">
                         {[
                           "Two spacious primary suites",
-                          "Modern chef's kitchen with premium appliances",
+                          "Modern chef's kitchen with black granite countertops and white shaker cabinets",
                           "Huge landscaped yard perfect for entertaining",
                           "Move-in ready condition",
                           "Prime location in The Vistas Summerlin",

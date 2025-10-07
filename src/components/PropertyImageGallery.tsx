@@ -192,8 +192,8 @@ export const goldenMomentsImages: PropertyImage[] = [
   },
   {
     src: realScoutImageUrls.kitchen,
-    alt: "11773 Golden Moments Avenue - Modern kitchen",
-    caption: "Updated chef's kitchen with island"
+    alt: "11773 Golden Moments Avenue - Modern kitchen with black granite countertops and white shaker cabinets",
+    caption: "Stunning modern kitchen with black granite countertops, white shaker cabinets, and premium appliances"
   },
   {
     src: realScoutImageUrls.livingRoom,
