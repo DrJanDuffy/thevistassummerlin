@@ -76,9 +76,9 @@ const propertySchema = {
 
 ```typescript
 // ✅ DO: Optimized property images
-import { OptimizedImage } from '@/components/OptimizedImage';
+import Image from 'next/image';
 
-<OptimizedImage
+<Image
   src={property.image}
   alt={`${property.address} - Las Vegas real estate`}
   width={800}
