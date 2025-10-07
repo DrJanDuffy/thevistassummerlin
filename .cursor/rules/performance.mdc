@@ -1,0 +1,298 @@
+---
+description: Performance optimization patterns for real estate websites and Next.js applications
+globs: src/**/*.tsx, src/**/*.ts, app/**/*.tsx, components/**/*.tsx
+alwaysApply: true
+---
+
+# Performance Optimization Rules
+
+## **Core Web Vitals Optimization**
+- **Maintain LCP under 2.5s for property pages**
+- **Keep FID under 100ms for interactive elements**
+- **Ensure CLS under 0.1 for layout stability**
+- **Optimize INP for smooth user interactions**
+
+```typescript
+// ✅ DO: Optimize LCP with priority loading
+import Image from 'next/image';
+
+<Image
+  src="/hero-property.jpg"
+  alt="Featured property"
+  width={1200}
+  height={600}
+  priority={true}
+  placeholder="blur"
+  className="w-full h-auto"
+/>
+
+// ✅ DO: Prevent CLS with proper sizing
+<div className="aspect-video bg-gray-200">
+  <Image
+    src="/property-image.jpg"
+    alt="Property"
+    fill
+    className="object-cover"
+  />
+</div>
+```
+
+## **Image Optimization**
+- **Use Next.js Image component for all images**
+- **Implement proper lazy loading**
+- **Use WebP format with fallbacks**
+- **Optimize property gallery images**
+
+```typescript
+// ✅ DO: Optimized property gallery
+import Image from 'next/image';
+
+const PropertyGallery = ({ images }: { images: string[] }) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {images.map((image, index) => (
+      <div key={index} className="aspect-video relative">
+        <Image
+          src={image}
+          alt={`Property view ${index + 1}`}
+          fill
+          className="object-cover rounded-lg"
+          loading={index === 0 ? "eager" : "lazy"}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    ))}
+  </div>
+);
+```
+
+## **Code Splitting and Lazy Loading**
+- **Use dynamic imports for heavy components**
+- **Implement route-based code splitting**
+- **Lazy load non-critical components**
+- **Optimize bundle size**
+
+```typescript
+// ✅ DO: Dynamic imports for heavy components
+import dynamic from 'next/dynamic';
+
+const PropertyMap = dynamic(() => import('@/components/PropertyMap'), {
+  loading: () => <div className="h-96 bg-gray-200 animate-pulse" />,
+  ssr: false
+});
+
+const PropertyCalculator = dynamic(() => import('@/components/PropertyCalculator'), {
+  loading: () => <CalculatorSkeleton />
+});
+```
+
+## **Caching Strategies**
+- **Implement proper HTTP caching**
+- **Use Next.js built-in caching**
+- **Cache API responses appropriately**
+- **Implement stale-while-revalidate patterns**
+
+```typescript
+// ✅ DO: Proper caching configuration
+export const revalidate = 3600; // 1 hour
+
+async function getProperties() {
+  const res = await fetch('https://api.properties.com/listings', {
+    next: { revalidate: 3600 }
+  });
+  return res.json();
+}
+
+// ✅ DO: Client-side caching
+import { useQuery } from '@tanstack/react-query';
+
+const useProperties = () => {
+  return useQuery({
+    queryKey: ['properties'],
+    queryFn: fetchProperties,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    cacheTime: 10 * 60 * 1000, // 10 minutes
+  });
+};
+```
+
+## **RealScout Widget Optimization**
+- **Lazy load RealScout widgets**
+- **Implement proper error boundaries**
+- **Use intersection observer for widget loading**
+- **Optimize iframe performance**
+
+```typescript
+// ✅ DO: Optimized RealScout widget loading
+'use client';
+import { useEffect, useRef, useState } from 'react';
+
+const RealScoutWidget = ({ officeId }: { officeId: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="min-h-[600px]">
+      {isVisible && (
+        <iframe
+          src={`https://realscout.com/widget/${officeId}`}
+          className="w-full h-full"
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+};
+```
+
+## **Database Query Optimization**
+- **Optimize Supabase queries**
+- **Use proper indexing**
+- **Implement query result caching**
+- **Minimize database round trips**
+
+```typescript
+// ✅ DO: Optimized database queries
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(url, key);
+
+// Use select to limit fields
+const { data: properties } = await supabase
+  .from('properties')
+  .select('id, address, price, bedrooms, bathrooms, images')
+  .eq('active', true)
+  .limit(20);
+
+// Use proper filtering
+const { data: filteredProperties } = await supabase
+  .from('properties')
+  .select('*')
+  .gte('price', minPrice)
+  .lte('price', maxPrice)
+  .eq('bedrooms', bedrooms)
+  .order('created_at', { ascending: false });
+```
+
+## **Search Performance**
+- **Implement debounced search**
+- **Use virtual scrolling for large lists**
+- **Cache search results**
+- **Optimize filter operations**
+
+```typescript
+// ✅ DO: Debounced search implementation
+'use client';
+import { useDebounce } from '@/hooks/useDebounce';
+
+const PropertySearch = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+  
+  const { data: searchResults } = useQuery({
+    queryKey: ['properties', 'search', debouncedSearchTerm],
+    queryFn: () => searchProperties(debouncedSearchTerm),
+    enabled: debouncedSearchTerm.length > 2,
+  });
+
+  return (
+    <input
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      placeholder="Search properties..."
+    />
+  );
+};
+```
+
+## **Memory Management**
+- **Clean up event listeners**
+- **Use proper dependency arrays**
+- **Implement cleanup in useEffect**
+- **Avoid memory leaks**
+
+```typescript
+// ✅ DO: Proper cleanup
+useEffect(() => {
+  const handleScroll = () => {
+    // Handle scroll
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
+// ✅ DO: Proper dependency arrays
+useEffect(() => {
+  fetchPropertyDetails(propertyId);
+}, [propertyId]); // Only depend on propertyId
+```
+
+## **Bundle Optimization**
+- **Analyze bundle size regularly**
+- **Use tree shaking effectively**
+- **Optimize imports**
+- **Remove unused dependencies**
+
+```typescript
+// ✅ DO: Specific imports
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+
+// ❌ DON'T: Barrel imports that pull entire libraries
+import * as UI from '@/components/ui';
+```
+
+## **Monitoring and Analytics**
+- **Implement Core Web Vitals monitoring**
+- **Track performance metrics**
+- **Monitor real user metrics**
+- **Set up performance alerts**
+
+```typescript
+// ✅ DO: Core Web Vitals monitoring
+import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
+
+function sendToAnalytics(metric: any) {
+  // Send to your analytics service
+  console.log(metric);
+}
+
+getCLS(sendToAnalytics);
+getFID(sendToAnalytics);
+getFCP(sendToAnalytics);
+getLCP(sendToAnalytics);
+getTTFB(sendToAnalytics);
+```
+
+## **Progressive Enhancement**
+- **Ensure basic functionality without JavaScript**
+- **Implement graceful degradation**
+- **Use proper loading states**
+- **Provide fallbacks for failed loads**
+
+## **Real Estate Specific Optimizations**
+- **Optimize property search for speed**
+- **Implement instant property filtering**
+- **Cache property data aggressively**
+- **Optimize image galleries for mobile**

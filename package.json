@@ -8,7 +8,14 @@
         "build:fast": "next build --no-lint",
         "start": "next start",
         "lint": "next lint",
-        "postbuild": "next-sitemap"
+        "postbuild": "next-sitemap",
+        "monitor": "node .cursor/scripts/background-monitor.js",
+        "monitor:watch": "nodemon .cursor/scripts/background-monitor.js",
+        "automation:setup": "node .cursor/scripts/setup-automation.js",
+        "performance:check": "lighthouse http://localhost:3000 --output json --output-path .cursor/reports/lighthouse.json",
+        "accessibility:check": "axe http://localhost:3000 --reporter json --save .cursor/reports/accessibility.json",
+        "seo:check": "node .cursor/scripts/seo-check.js",
+        "real-estate:validate": "node .cursor/scripts/real-estate-validator.js"
     },
     "dependencies": {
         "@headlessui/react": "^2.2.4",

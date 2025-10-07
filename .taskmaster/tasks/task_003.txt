@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: Optimize Core Web Vitals and Performance
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Achieve sub-3-second load times and meet 2025 Core Web Vitals requirements
+# Details:
+Optimize website performance to meet Core Web Vitals requirements: Largest Contentful Paint under 2.5 seconds, Interaction to Next Paint under 200 milliseconds, and Cumulative Layout Shift under 0.1. Implement image optimization with next-generation formats (WebP, AVIF), responsive images with srcset attributes, and CDN deployment.
+
+# Test Strategy:
+Run Lighthouse audits and Core Web Vitals testing to ensure 95%+ pass rates across all pages.
