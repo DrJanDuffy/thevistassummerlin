@@ -110,7 +110,7 @@ export default function Home() {
                       <h3 className="text-3xl font-bold mb-2">11773 Golden Moments Avenue</h3>
                       <div className="flex items-center space-x-2 text-blue-100 mb-4">
                         <MapPin className="w-5 h-5" />
-                        <span>The Vistas Summerlin</span>
+                        <span>The Vistas Summerlin, Las Vegas, NV 89138</span>
                       </div>
                       <div className="flex items-center space-x-4 text-sm">
                         <div className="flex items-center space-x-1">
@@ -125,6 +125,9 @@ export default function Home() {
                           <Square className="w-4 h-4" />
                           <span>2,500+ sq ft</span>
                         </div>
+                      </div>
+                      <div className="mt-4 text-sm text-blue-100">
+                        <span className="bg-white/20 px-3 py-1 rounded-full">MLS #2722090</span>
                       </div>
                     </div>
                   </div>
@@ -141,17 +144,39 @@ export default function Home() {
                 <div className="p-12 bg-gradient-to-br from-white to-blue-50">
                   <div className="space-y-8">
                     
+                    {/* Property Description */}
+                    <div>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🏡 About This Home</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                        This exceptional 4-bedroom, 3-bathroom home at 11773 Golden Moments Avenue represents the perfect 
+                        blend of luxury and comfort in The Vistas Summerlin. Featuring two spacious primary suites, 
+                        this property offers flexible living arrangements perfect for multi-generational families or 
+                        those seeking additional privacy. The modern chef's kitchen showcases black granite countertops 
+                        and white shaker cabinets, creating a sophisticated culinary space.
+                      </p>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        The expansive landscaped yard provides ample space for outdoor entertaining and relaxation, 
+                        while the move-in ready condition ensures a seamless transition. Located in the prestigious 
+                        Vistas Summerlin master-planned community, this home offers access to world-class amenities 
+                        including TPC Summerlin golf course and Downtown Summerlin's shopping and dining destinations.
+                      </p>
+                    </div>
+                    
                     {/* V0 Property Features */}
                     <div>
                       <h4 className="text-2xl font-bold text-gray-900 mb-6">✨ Key Features</h4>
                       <div className="grid grid-cols-1 gap-4">
                         {[
-                          "Two spacious primary suites",
+                          "Two spacious primary suites with private bathrooms",
                           "Modern chef's kitchen with black granite countertops and white shaker cabinets",
-                          "Huge landscaped yard perfect for entertaining",
-                          "Move-in ready condition",
-                          "Prime location in The Vistas Summerlin",
-                          "Excellent schools and amenities nearby"
+                          "Huge landscaped yard perfect for entertaining and outdoor living",
+                          "Move-in ready condition with recent updates",
+                          "Prime location in The Vistas Summerlin master-planned community",
+                          "Excellent schools and world-class amenities nearby",
+                          "Access to TPC Summerlin golf course",
+                          "Close proximity to Downtown Summerlin shopping and dining",
+                          "Mountain views and natural desert landscaping",
+                          "Two-car garage with additional storage space"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-center space-x-3">
                             <CheckCircle className="w-5 h-5 text-green-500" />
@@ -180,6 +205,29 @@ export default function Home() {
                         <Phone className="w-5 h-5" />
                         <span>Call Dr. Jan Duffy</span>
                       </a>
+                    </div>
+                    
+                    {/* Neighborhood Information */}
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-200">
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">📍 The Vistas Summerlin Community</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                        <div>
+                          <h5 className="font-semibold text-gray-900 mb-2">🏫 Schools</h5>
+                          <ul className="space-y-1">
+                            <li>• Palo Verde High School</li>
+                            <li>• Sig Rogich Middle School</li>
+                            <li>• Ernest May Elementary</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="font-semibold text-gray-900 mb-2">🏌️ Amenities</h5>
+                          <ul className="space-y-1">
+                            <li>• TPC Summerlin Golf Course</li>
+                            <li>• Community pools & tennis courts</li>
+                            <li>• Walking trails & parks</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
 
                     {/* V0 Urgency Message */}
