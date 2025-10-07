@@ -439,6 +439,103 @@ export default function PortofinoCommunityPage() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+              Portofino: Mediterranean Luxury Living in The Vistas Summerlin
+            </h2>
+            
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <p className="text-xl mb-6">
+                Portofino represents the pinnacle of Mediterranean-inspired luxury living within The Vistas Summerlin community. 
+                This exclusive subcommunity features 213 meticulously designed homes that capture the essence of Italian coastal 
+                elegance while providing modern amenities and resort-style living in the heart of Las Vegas.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Architectural Excellence in Portofino
+              </h3>
+              
+              <p className="mb-6">
+                Portofino homes showcase distinctive Mediterranean architecture with warm earth tones, clay tile roofs, 
+                and elegant stucco exteriors. Each residence features spacious layouts ranging from 2,200 to 4,500 square feet, 
+                with many homes offering private courtyards, covered patios, and stunning mountain views. The community's 
+                design emphasizes indoor-outdoor living, perfect for Las Vegas's year-round pleasant climate.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Resort-Style Amenities and Lifestyle
+              </h3>
+              
+              <p className="mb-6">
+                Portofino residents enjoy access to The Vistas Summerlin's world-class amenities, including the community 
+                center at 11312 Parkside Way, featuring basketball courts, tennis courts, and a football field. The community 
+                offers miles of walking paths, professionally maintained parks, and proximity to TPC Summerlin golf course. 
+                Portofino's location provides easy access to Summerlin's premier shopping, dining, and entertainment venues.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Investment Potential in Portofino
+              </h3>
+              
+              <p className="mb-6">
+                Portofino has demonstrated strong market performance with homes typically appreciating 5-7% annually. 
+                The community's Mediterranean charm and prime location within The Vistas Summerlin make it highly 
+                desirable among luxury homebuyers. Current market trends show Portofino homes selling within 30-45 days 
+                on average, indicating strong demand and market stability.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Education and Family Life in Portofino
+              </h3>
+              
+              <p className="mb-6">
+                Families in Portofino benefit from access to top-rated schools within the Clark County School District, 
+                including Ernest May Elementary, Sig Rogich Middle School, and Palo Verde High School. The community's 
+                safe, family-friendly environment and abundance of recreational facilities make it an ideal place for 
+                children to grow and thrive. Portofino's location provides convenient access to Summerlin's cultural 
+                attractions and family entertainment venues.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Why Choose Portofino for Your Next Home?
+              </h3>
+              
+              <p className="mb-6">
+                Portofino offers the perfect blend of Mediterranean elegance and modern convenience. With its distinctive 
+                architecture, resort-style amenities, and prime location within The Vistas Summerlin, Portofino provides 
+                an exceptional living experience for discerning homebuyers. The community's strong market performance and 
+                family-friendly environment make it an excellent choice for both primary residences and investment properties.
+              </p>
+              
+              <div className="bg-blue-50 p-6 rounded-xl mt-8">
+                <h4 className="text-xl font-bold text-blue-900 mb-4">Ready to Explore Portofino?</h4>
+                <p className="text-blue-800 mb-4">
+                  Dr. Jan Duffy specializes in Portofino real estate and can help you find your perfect Mediterranean-inspired home. 
+                  With flexible scheduling and personalized service, Dr. Duffy makes your home search convenient and stress-free.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/contact"
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
+                  >
+                    Contact Dr. Jan Duffy
+                  </Link>
+                  <Link
+                    href="/search"
+                    className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors text-center"
+                  >
+                    Search Portofino Homes
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

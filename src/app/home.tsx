@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import OptimizedImage, { BLUR_DATA_URLS } from '@/components/OptimizedImage';
 import Navigation from '@/components/sections/navigation';
 import Hero from '@/components/sections/hero';
 import HomeEvaluationSection from '@/components/sections/home-evaluation';
@@ -92,12 +92,15 @@ export default function Home() {
                 
                 {/* Property Image */}
                 <div className="relative h-96 lg:h-[500px]">
-                  <Image
+                  <OptimizedImage
                     src="/subcommunities/IMG_0737.JPG"
-                    alt="11773 Golden Moments Avenue - Front exterior view"
+                    alt="11773 Golden Moments Avenue luxury home in The Vistas Summerlin - Mediterranean-style exterior with mountain views"
                     fill
                     className="object-cover"
                     priority
+                    quality={90}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URLS.house}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   

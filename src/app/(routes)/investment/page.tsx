@@ -6,7 +6,15 @@ import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 export const metadata: Metadata = {
   title: 'Investment Opportunities - The Vistas Summerlin Real Estate',
-  description: 'Discover investment opportunities in The Vistas Summerlin. Learn about market performance, ROI potential, and investment strategies.',
+  description: 'Discover lucrative investment opportunities in The Vistas Summerlin luxury real estate. Get ROI analysis, market performance data, and investment strategies from expert realtor Dr. Jan Duffy. High-return properties from $800K-$2.5M+.',
+  keywords: [
+    'The Vistas Summerlin investment properties',
+    'luxury real estate investment Las Vegas',
+    'Summerlin investment opportunities',
+    'real estate ROI The Vistas',
+    'Dr. Jan Duffy investment advisor',
+    'Las Vegas luxury home investment'
+  ],
   openGraph: {
     title: 'Investment Opportunities - The Vistas Summerlin Real Estate',
     description: 'Comprehensive investment analysis and opportunities in The Vistas Summerlin.',

@@ -6,7 +6,15 @@ import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 export const metadata: Metadata = {
   title: 'Market Analysis - The Vistas Summerlin Real Estate Market',
-  description: 'Get detailed market insights, trends, and analysis for The Vistas Summerlin real estate market. View current prices, sales data, and market forecasts.',
+  description: 'Comprehensive market analysis for The Vistas Summerlin luxury real estate. Get current prices, sales trends, and market forecasts from expert realtor Dr. Jan Duffy. Data-driven insights for buyers and sellers.',
+  keywords: [
+    'The Vistas Summerlin market analysis',
+    'Summerlin real estate trends',
+    'Las Vegas luxury home market',
+    'The Vistas market data',
+    'Dr. Jan Duffy market analysis',
+    'Summerlin home prices 2025'
+  ],
   openGraph: {
     title: 'Market Analysis - The Vistas Summerlin Real Estate Market',
     description: 'Comprehensive market analysis and trends for The Vistas Summerlin area.',
