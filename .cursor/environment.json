@@ -2,19 +2,10 @@
   "agentCanUpdateSnapshot": true,
   "agentCanAccessFiles": true,
   "agentCanRunTerminalCommands": true,
-  "maxConcurrentOperations": 3,
-  "defaultTimeout": 20000,
   "autoSave": true,
   "autoFormat": true,
   "preferredLanguage": "typescript",
   "projectType": "nextjs-realscout",
   "domainContext": "real-estate",
-  "qualityGates": {
-    "requireTypeSafety": true,
-    "maxCyclomaticComplexity": 8
-  },
-  "realEstateContext": {
-    "marketFocus": "las-vegas",
-    "complianceRequirements": ["fair-housing", "real-estate-regulations"]
-  }
+  "marketFocus": "las-vegas"
 }

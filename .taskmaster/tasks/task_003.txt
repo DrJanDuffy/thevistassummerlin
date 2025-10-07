@@ -1,6 +1,6 @@
 # Task ID: 3
 # Title: Optimize Core Web Vitals and Performance
-# Status: pending
+# Status: in-progress
 # Dependencies: 1
 # Priority: high
 # Description: Achieve sub-3-second load times and meet 2025 Core Web Vitals requirements

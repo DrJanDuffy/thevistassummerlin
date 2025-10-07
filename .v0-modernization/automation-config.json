@@ -1,0 +1,74 @@
+{
+  "schedule": "weekly",
+  "notify": true,
+  "autoUpdate": false,
+  "priorityComponents": [
+    "hero",
+    "navigation",
+    "footer",
+    "property-search",
+    "contact-forms"
+  ],
+  "lastRun": "2025-10-07T14:26:42.273Z",
+  "modernizationHistory": [
+    {
+      "date": "2025-10-07T14:26:42.280Z",
+      "analysis": {
+        "totalPrompts": 24,
+        "componentPrompts": 18,
+        "pagePrompts": 0,
+        "realEstatePrompts": 4,
+        "designSystemPrompts": 1,
+        "priorityComponents": [
+          {
+            "name": "hero",
+            "promptFile": "component-hero.md",
+            "status": "ready"
+          },
+          {
+            "name": "navigation",
+            "promptFile": "component-navigation.md",
+            "status": "ready"
+          },
+          {
+            "name": "footer",
+            "promptFile": "component-footer.md",
+            "status": "ready"
+          },
+          {
+            "name": "property-search",
+            "promptFile": "real-estate-property-search.md",
+            "status": "ready"
+          },
+          {
+            "name": "contact-forms",
+            "promptFile": "real-estate-contact-forms.md",
+            "status": "ready"
+          }
+        ],
+        "recommendations": [
+          {
+            "type": "priority",
+            "message": "Focus on 4 high-priority components first",
+            "components": [
+              "component-footer.md",
+              "component-hero.md",
+              "component-navigation.md",
+              "example-hero-prompt.md"
+            ]
+          },
+          {
+            "type": "conversion",
+            "message": "Implement 4 real estate features for better conversion",
+            "features": [
+              "real-estate-agent-profile.md",
+              "real-estate-community-showcase.md",
+              "real-estate-contact-forms.md",
+              "real-estate-property-search.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

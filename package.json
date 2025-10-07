@@ -1,23 +1,19 @@
 {
-    "name": "app",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "build:fast": "next build --no-lint",
-        "start": "next start",
-        "lint": "next lint",
-        "postbuild": "next-sitemap",
-        "monitor": "node .cursor/scripts/background-monitor.js",
-        "monitor:watch": "nodemon .cursor/scripts/background-monitor.js",
-        "automation:setup": "node .cursor/scripts/setup-automation.js",
-        "performance:check": "lighthouse http://localhost:3000 --output json --output-path .cursor/reports/lighthouse.json",
-        "accessibility:check": "axe http://localhost:3000 --reporter json --save .cursor/reports/accessibility.json",
-        "seo:check": "node .cursor/scripts/seo-check.js",
-        "real-estate:validate": "node .cursor/scripts/real-estate-validator.js"
-    },
-    "dependencies": {
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "monitor": "node .cursor/scripts/background-monitor.js",
+    "modernize": "node scripts/v0-modernize.js",
+    "modernize:all": "node scripts/v0-modernize.js --all",
+    "modernize:interactive": "node scripts/v0-modernize.js --interactive",
+    "modernize:automation": "node scripts/v0-automation.js"
+  },
+  "dependencies": {
         "@headlessui/react": "^2.2.4",
         "@heroicons/react": "^2.2.0",
         "@hookform/resolvers": "^5.1.1",

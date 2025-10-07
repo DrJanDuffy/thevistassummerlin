@@ -1,25 +1,21 @@
 ---
 description: Real estate specific development patterns and requirements for Las Vegas market
-globs: src/**/*.tsx, src/**/*.ts, pages/**/*.tsx, components/**/*.tsx
 alwaysApply: true
 ---
 
 # Real Estate Development Rules
 
 ## **Las Vegas Market Context**
-- **Market Focus**: Las Vegas Summerlin area specifically
-- **Property Types**: Residential, commercial, investment properties
-- **Key Features**: Golf courses, master-planned communities, luxury amenities
-- **Target Audience**: Buyers, sellers, investors, relocating professionals
+- **Market Focus**: Las Vegas Summerlin area
+- **Target Audience**: Buyers, sellers, investors
 
-## **RealScout Integration Patterns**
-- **Always use RealScout widgets for property listings**
-- **Implement proper iframe handling for RealScout components**
-- **Handle RealScout API responses with proper error boundaries**
-- **Maintain responsive design for RealScout embeds**
+## **RealScout Integration**
+- **Use RealScout widgets for property listings**
+- **Implement proper error boundaries**
+- **Maintain responsive design**
 
 ```typescript
-// ✅ DO: Proper RealScout widget implementation
+// ✅ DO: RealScout widget implementation
 import { RealScoutListings } from '@/components/RealScoutListings';
 
 const PropertySearch = () => {
@@ -28,55 +24,24 @@ const PropertySearch = () => {
       officeId="your-office-id"
       marketId="las-vegas"
       responsive={true}
-      errorFallback={<PropertySearchFallback />}
     />
   );
 };
-
-// ❌ DON'T: Direct iframe without proper handling
-<iframe src="realscout-url" />
 ```
 
-## **SEO & Local Search Optimization**
-- **Include Las Vegas and Summerlin in meta descriptions**
-- **Use structured data for real estate listings**
-- **Implement local business schema markup**
-- **Optimize for "Las Vegas real estate" keywords**
+## **SEO & Performance**
+- **Include Las Vegas in meta descriptions**
+- **Use structured data for listings**
+- **Optimize images with Next.js Image**
 
 ```typescript
-// ✅ DO: Proper SEO implementation
+// ✅ DO: SEO and image optimization
+import Image from 'next/image';
+
 export const metadata = {
   title: "Las Vegas Summerlin Real Estate | Dr. Janet Duffy",
-  description: "Expert real estate services in Summerlin, Las Vegas. Find your dream home in master-planned communities with Dr. Janet Duffy.",
-  keywords: ["Las Vegas real estate", "Summerlin homes", "Las Vegas realtor"]
+  description: "Expert real estate services in Summerlin, Las Vegas."
 };
-
-// ✅ DO: Structured data for properties
-const propertySchema = {
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "Dr. Janet Duffy",
-  "areaServed": "Las Vegas, NV",
-  "geo": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.1699,
-      "longitude": -115.1398
-    }
-  }
-};
-```
-
-## **Performance Requirements**
-- **Core Web Vitals optimization for real estate sites**
-- **Image optimization for property photos**
-- **Lazy loading for property galleries**
-- **Fast search and filtering capabilities**
-
-```typescript
-// ✅ DO: Optimized property images
-import Image from 'next/image';
 
 <Image
   src={property.image}
@@ -88,70 +53,12 @@ import Image from 'next/image';
 />
 ```
 
-## **Accessibility Requirements**
-- **WCAG 2.1 AA compliance for real estate websites**
-- **Screen reader friendly property descriptions**
-- **Keyboard navigation for search filters**
-- **High contrast mode support**
-
 ## **Fair Housing Compliance**
-- **Use inclusive language in all property descriptions**
-- **Avoid discriminatory language patterns**
-- **Implement proper alt text for property images**
-- **Ensure accessibility for all user types**
+- **Use inclusive language**
+- **Avoid discriminatory patterns**
+- **Ensure accessibility**
 
-```typescript
-// ✅ DO: Inclusive property descriptions
-const PropertyDescription = ({ property }) => (
-  <div>
-    <h2>{property.address}</h2>
-    <p>
-      This {property.bedrooms}-bedroom, {property.bathrooms}-bathroom home 
-      features {property.sqft} square feet of living space.
-    </p>
-    {/* Avoid: "perfect for families", "ideal for young professionals" */}
-  </div>
-);
-```
-
-## **Market Analysis Integration**
-- **Real-time market data display**
-- **Interactive charts for price trends**
-- **Neighborhood comparison tools**
-- **Investment analysis calculators**
-
-## **Lead Generation Optimization**
-- **Strategic CTA placement on property pages**
-- **Contact forms with proper validation**
-- **Calendly integration for appointments**
-- **Phone number click-to-call functionality**
-
-## **Mobile-First Design**
-- **Responsive property search interface**
-- **Touch-friendly filter controls**
-- **Mobile-optimized property galleries**
-- **Fast loading on mobile networks**
-
-## **Security Requirements**
-- **HTTPS enforcement for all forms**
-- **CSRF protection for contact forms**
-- **Secure handling of user data**
-- **GDPR compliance for international visitors**
-
-## **Analytics & Tracking**
-- **Google Analytics 4 implementation**
-- **Real estate specific event tracking**
-- **Conversion tracking for lead generation**
-- **Property view tracking and analytics**
-
-## **Content Management**
-- **Dynamic content for market updates**
-- **Blog integration for SEO content**
-- **Testimonial management system**
-- **Property description templates**
-
-## **Integration Requirements**
-- **MLS data synchronization**
-- **CRM system integration**
-- **Email marketing platform connection**
-- **Social media integration for property sharing**
+## **Lead Generation**
+- **Strategic CTA placement**
+- **Contact forms with validation**
+- **Mobile-optimized interface**
