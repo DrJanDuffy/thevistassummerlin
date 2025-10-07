@@ -248,6 +248,25 @@ export default function Home() {
               </div>
             </div>
 
+            {/* V0 Interactive RealScout Frame */}
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  🏡 Explore Complete Property Details
+                </h3>
+                <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+                  View detailed photos, virtual tours, and contact Dr. Jan Duffy directly through our interactive listing portal
+                </p>
+              </div>
+              
+              <RealScoutFrame 
+                url="https://drjanduffy.realscout.com/homesearch/listings/p-11773-golden-moments-avenue-las-vegas-89138-glvartrestle-139"
+                title="11773 Golden Moments Avenue - Complete Listing"
+                description="Interactive RealScout portal with full property details, photos, and contact options"
+                className="shadow-2xl"
+              />
+            </div>
+
             {/* V0 Bottom CTA */}
             <div className="text-center mt-16">
               <p className="text-xl text-blue-100 mb-8">
@@ -270,29 +289,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-        </section>
-        
-        {/* RealScout Portfolio Frame */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                🏡 Featured Property: 11773 Golden Moments Avenue
-              </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                Explore the complete RealScout listing for this exceptional luxury home in The Vistas Summerlin. 
-                View detailed photos, property information, virtual tours, and contact Dr. Jan Duffy directly 
-                through the interactive listing portal.
-              </p>
-            </div>
-            
-            <RealScoutFrame 
-              url="https://drjanduffy.realscout.com/homesearch/listings/p-11773-golden-moments-avenue-las-vegas-89138-glvartrestle-139"
-              title="11773 Golden Moments Avenue - Featured Property"
-              description="Explore the complete listing details for this exceptional luxury home in The Vistas Summerlin"
-              className="shadow-2xl"
-            />
           </div>
         </section>
         
