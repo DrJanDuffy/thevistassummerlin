@@ -229,6 +229,41 @@ export default function CommunitiesPage() {
               />
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Downtown Summerlin Lifestyle & Entertainment
+              </h3>
+              
+              <p className="mb-6">
+                The Vistas Summerlin residents enjoy easy access to <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Downtown Summerlin</a>, 
+                a premier lifestyle and entertainment hub featuring world-class restaurants, retail shopping, and entertainment venues. 
+                Recent community highlights include celebrations for the Little League World Series Champions and exciting new additions 
+                arriving at Downtown Summerlin, making it an even more vibrant destination for residents.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                The Vistas Community Center & Amenities
+              </h3>
+              
+              <p className="mb-6">
+                The Vistas Community Center, located at 11312 Parkside Way, serves as the heart 
+                of our community. This world-class facility features basketball courts, tennis 
+                courts, a football field, and ample green spaces perfect for family recreation. 
+                The community also offers miles of walking paths, professionally maintained parks, 
+                and access to TPC Summerlin golf course.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                The Vistas Summerlin HOA and Community Features
+              </h3>
+              
+              <p className="mb-6">
+                The Vistas Summerlin HOA fees typically range from $200 to $400 per month, 
+                depending on the specific subcommunity and included amenities. These fees 
+                cover professional landscape maintenance, community security, and access to 
+                shared facilities. The community is served by top-rated schools including 
+                Palo Verde High School and Ernest May Elementary.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
                 Expert Real Estate Services for The Vistas Communities
               </h3>
               

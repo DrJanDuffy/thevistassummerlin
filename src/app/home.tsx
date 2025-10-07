@@ -292,107 +292,104 @@ export default function Home() {
           </div>
         </section>
         
-        {/* SEO-Optimized Content Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
-                The Vistas Summerlin: Las Vegas Premier Luxury Community
+        {/* V0 Clean Homepage Content */}
+        <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-indigo-50 relative overflow-hidden">
+          {/* V0 Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 right-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 left-20 w-80 h-80 bg-indigo-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-200/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                The Vistas Summerlin
+                <span className="block text-3xl lg:text-4xl mt-4 text-gray-700">Las Vegas Premier Luxury Community</span>
               </h2>
               
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                <p className="text-xl mb-6">
-                  Welcome to The Vistas Summerlin, Las Vegas's most prestigious master-planned community. 
-                  Developed in 2000 as Summerlin West's first community, The Vistas offers an 815-acre 
-                  European-inspired village that combines luxury living with unparalleled amenities.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Why Choose The Vistas Summerlin for Your Next Home?
-                </h3>
-                
-                <p className="mb-6">
-                  The Vistas Summerlin represents the pinnacle of luxury real estate in Las Vegas. 
-                  This exclusive community features over 28 distinct <Link href="/communities" className="text-blue-600 hover:text-blue-800 font-semibold underline">subcommunities</Link>, each offering 
-                  unique architectural styles and premium amenities. From Mediterranean-inspired 
-                  <Link href="/communities/portofino" className="text-blue-600 hover:text-blue-800 font-semibold underline">Portofino</Link> to the royal elegance of <Link href="/communities/kingwood" className="text-blue-600 hover:text-blue-800 font-semibold underline">Kingwood</Link>, The Vistas provides diverse options 
-                  for discerning homebuyers seeking the ultimate in Summerlin living.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Luxury Homes for Sale in The Vistas Summerlin
-                </h3>
-                
-                <p className="mb-6">
-                  Our current inventory includes stunning luxury homes ranging from $500,000 to 
-                  $600,000. Each property in The Vistas Summerlin offers exceptional 
-                  value with features like mountain views, golf course access, and proximity to 
-                  world-class amenities. The community's elevation provides many homes with 
-                  breathtaking views of the Las Vegas Strip and surrounding mountains. Browse our live listings below or <Link href="/valuation" className="text-blue-600 hover:text-blue-800 font-semibold underline">get your home's value</Link>.
-                </p>
-                
-                {/* RealScout Listings Widget */}
-                <RealScoutListings 
-                  title="Current Luxury Homes for Sale in The Vistas Summerlin"
-                  description="Discover our curated selection of luxury homes in The Vistas Summerlin. Each property offers exceptional value with premium amenities, mountain views, and access to world-class community features."
-                  priceMin="500000"
-                  priceMax="600000"
-                  className="my-12"
-                />
-                
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                      Downtown Summerlin Lifestyle & Entertainment
-                    </h3>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
+                Welcome to The Vistas Summerlin, Las Vegas's most prestigious master-planned community. 
+                Developed in 2000 as Summerlin West's first community, The Vistas offers an 815-acre 
+                European-inspired village that combines luxury living with unparalleled amenities.
+              </p>
+            </div>
 
-                    <p className="mb-6">
-                      The Vistas Summerlin residents enjoy easy access to <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Downtown Summerlin</a>, 
-                      a premier lifestyle and entertainment hub featuring world-class restaurants, retail shopping, and entertainment venues. 
-                      Recent community highlights include celebrations for the Little League World Series Champions and exciting new additions 
-                      arriving at Downtown Summerlin, making it an even more vibrant destination for residents.
-                    </p>
-                
-                <p className="mb-6">
-                  The Vistas Community Center, located at 11312 Parkside Way, serves as the heart 
-                  of our community. This world-class facility features basketball courts, tennis 
-                  courts, a football field, and ample green spaces perfect for family recreation. 
-                  The community also offers miles of walking paths, professionally maintained parks, 
-                  and access to TPC Summerlin golf course.
+            {/* V0 Community Highlights Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                  <Home className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">28+ Subcommunities</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  From Mediterranean-inspired Portofino to the royal elegance of Kingwood, 
+                  discover diverse luxury living options.
                 </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Expert Real Estate Services in The Vistas Summerlin
-                </h3>
-                
-                <p className="mb-6">
-                  <Link href="/about" className="text-blue-600 hover:text-blue-800 font-semibold underline">Dr. Jan Duffy</Link> specializes in The Vistas Summerlin real estate market, offering 
-                  personalized service with flexible scheduling that works around your lifestyle. 
-                  With over 12 years of experience in Las Vegas luxury real estate, Dr. Duffy 
-                  understands the unique characteristics of each subcommunity and can help you 
-                  find your perfect home in The Vistas. <Link href="/contact" className="text-blue-600 hover:text-blue-800 font-semibold underline">Contact Dr. Duffy today</Link> for personalized assistance.
+                <div className="text-center mt-6">
+                  <Link href="/communities" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                    Explore Communities <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">$500K - $2.5M+</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Stunning luxury homes with mountain views, golf course access, and 
+                  proximity to world-class amenities.
                 </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  The Vistas Summerlin HOA and Community Features
-                </h3>
-                
-                <p className="mb-6">
-                  The Vistas Summerlin HOA fees typically range from $200 to $400 per month, 
-                  depending on the specific subcommunity and included amenities. These fees 
-                  cover professional landscape maintenance, community security, and access to 
-                  shared facilities. The community is served by top-rated schools including 
-                  Palo Verde High School and Ernest May Elementary.
+                <div className="text-center mt-6">
+                  <Link href="/search" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                    View Listings <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                  <Award className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Expert Service</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Dr. Jan Duffy offers personalized service with flexible scheduling 
+                  that works around your lifestyle.
                 </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Contact Dr. Jan Duffy for The Vistas Summerlin Real Estate
-                </h3>
-                
-                <p className="mb-6">
-                  Ready to explore luxury homes for sale in The Vistas Summerlin? Contact Dr. Jan Duffy 
-                  at (702) 500-0607 for expert guidance on buying or selling in this prestigious community. 
-                  Our office is conveniently located at 11312 Parkside Way, Las Vegas, NV 89138, 
-                  right in the heart of The Vistas community.
+                <div className="text-center mt-6">
+                  <Link href="/about" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                    Meet Dr. Duffy <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* V0 CTA Section */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white shadow-2xl">
+                <h3 className="text-3xl font-bold mb-6">Ready to Find Your Dream Home?</h3>
+                <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                  Let Dr. Jan Duffy guide you through The Vistas Summerlin's luxury real estate market 
+                  with personalized service and expert local knowledge.
                 </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <Link
+                    href="/contact"
+                    className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span>Contact Dr. Duffy</span>
+                  </Link>
+                  <Link
+                    href="/valuation"
+                    className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                  >
+                    <TrendingUp className="w-5 h-5" />
+                    <span>Get Home Value</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
