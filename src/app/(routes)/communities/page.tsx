@@ -182,8 +182,8 @@ export default function CommunitiesPage() {
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
               <p className="text-xl mb-6">
                 Discover The Vistas Summerlin's 28 distinct subcommunities, each offering unique 
-                architectural styles and luxury amenities. From Mediterranean-inspired Portofino 
-                to the royal elegance of Kingwood, The Vistas provides diverse options for 
+                architectural styles and luxury amenities. From Mediterranean-inspired <Link href="/communities/portofino" className="text-blue-600 hover:text-blue-800 font-semibold underline">Portofino</Link> 
+                to the royal elegance of <Link href="/communities/kingwood" className="text-blue-600 hover:text-blue-800 font-semibold underline">Kingwood</Link>, The Vistas provides diverse options for 
                 discerning homebuyers seeking the ultimate in Summerlin living.
               </p>
               
@@ -192,9 +192,9 @@ export default function CommunitiesPage() {
               </h3>
               
               <p className="mb-6">
-                The Vistas Summerlin features world-class subcommunities including Barrington with 
-                sophisticated architecture, Kingwood with royal-inspired homes and mountain views, 
-                and Santalina with Mediterranean charm. Each community offers unique amenities 
+                The Vistas Summerlin features world-class subcommunities including <Link href="/communities/barrington" className="text-blue-600 hover:text-blue-800 font-semibold underline">Barrington</Link> with 
+                sophisticated architecture, <Link href="/communities/kingwood" className="text-blue-600 hover:text-blue-800 font-semibold underline">Kingwood</Link> with royal-inspired homes and mountain views, 
+                and <Link href="/communities/santalina" className="text-blue-600 hover:text-blue-800 font-semibold underline">Santalina</Link> with Mediterranean charm. Each community offers unique amenities 
                 ranging from resort-style pools to private patios and landscaped grounds, creating 
                 a diverse portfolio of luxury living options.
               </p>
@@ -207,7 +207,7 @@ export default function CommunitiesPage() {
                 Our current inventory spans The Vistas Summerlin's prestigious communities with 
                 luxury homes ranging from $600,000 to over $2.5 million. Each property benefits 
                 from The Vistas' world-class amenities including the community center at 11312 
-                Parkside Way, miles of walking paths, and access to TPC Summerlin golf course.
+                Parkside Way, miles of walking paths, and access to TPC Summerlin golf course. <Link href="/search" className="text-blue-600 hover:text-blue-800 font-semibold underline">Browse current listings</Link> or <Link href="/market-reports" className="text-blue-600 hover:text-blue-800 font-semibold underline">view market trends</Link>.
               </p>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">

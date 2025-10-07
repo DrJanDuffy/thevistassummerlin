@@ -239,9 +239,9 @@ export default function Home() {
                 
                 <p className="mb-6">
                   The Vistas Summerlin represents the pinnacle of luxury real estate in Las Vegas. 
-                  This exclusive community features over 28 distinct subcommunities, each offering 
+                  This exclusive community features over 28 distinct <Link href="/communities" className="text-blue-600 hover:text-blue-800 font-semibold underline">subcommunities</Link>, each offering 
                   unique architectural styles and premium amenities. From Mediterranean-inspired 
-                  Portofino to the royal elegance of Kingwood, The Vistas provides diverse options 
+                  <Link href="/communities/portofino" className="text-blue-600 hover:text-blue-800 font-semibold underline">Portofino</Link> to the royal elegance of <Link href="/communities/kingwood" className="text-blue-600 hover:text-blue-800 font-semibold underline">Kingwood</Link>, The Vistas provides diverse options 
                   for discerning homebuyers seeking the ultimate in Summerlin living.
                 </p>
                 
@@ -254,7 +254,7 @@ export default function Home() {
                   over $2.5 million. Each property in The Vistas Summerlin offers exceptional 
                   value with features like mountain views, golf course access, and proximity to 
                   world-class amenities. The community's elevation provides many homes with 
-                  breathtaking views of the Las Vegas Strip and surrounding mountains.
+                  breathtaking views of the Las Vegas Strip and surrounding mountains. <Link href="/search" className="text-blue-600 hover:text-blue-800 font-semibold underline">Browse our current listings</Link> or <Link href="/valuation" className="text-blue-600 hover:text-blue-800 font-semibold underline">get your home's value</Link>.
                 </p>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
@@ -274,11 +274,11 @@ export default function Home() {
                 </h3>
                 
                 <p className="mb-6">
-                  Dr. Jan Duffy specializes in The Vistas Summerlin real estate market, offering 
+                  <Link href="/about" className="text-blue-600 hover:text-blue-800 font-semibold underline">Dr. Jan Duffy</Link> specializes in The Vistas Summerlin real estate market, offering 
                   personalized service with flexible scheduling that works around your lifestyle. 
                   With over 12 years of experience in Las Vegas luxury real estate, Dr. Duffy 
                   understands the unique characteristics of each subcommunity and can help you 
-                  find your perfect home in The Vistas.
+                  find your perfect home in The Vistas. <Link href="/contact" className="text-blue-600 hover:text-blue-800 font-semibold underline">Contact Dr. Duffy today</Link> for personalized assistance.
                 </p>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">

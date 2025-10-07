@@ -131,12 +131,12 @@ export default function AboutPage() {
                 </h3>
                 
                 <p className="mb-6">
-                  Dr. Jan Duffy specializes exclusively in The Vistas Summerlin, Las Vegas's most 
+                  Dr. Jan Duffy specializes exclusively in <Link href="/communities" className="text-blue-600 hover:text-blue-800 font-semibold underline">The Vistas Summerlin</Link>, Las Vegas's most 
                   prestigious master-planned community. Her office is strategically located at 
                   11312 Parkside Way, right in the heart of The Vistas community, providing 
                   unparalleled access to local market insights and community knowledge. This 
                   specialized focus allows Dr. Duffy to offer expert guidance on luxury homes 
-                  ranging from $800,000 to over $2.5 million.
+                  ranging from $800,000 to over $2.5 million. <Link href="/search" className="text-blue-600 hover:text-blue-800 font-semibold underline">Browse current listings</Link> or <Link href="/valuation" className="text-blue-600 hover:text-blue-800 font-semibold underline">get your home's value</Link>.
                 </p>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
