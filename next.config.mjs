@@ -19,6 +19,25 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/market',
+        destination: '/market-reports',
+        permanent: true,
+      },
+      {
+        source: '/communities/img_0738',
+        destination: '/communities/img-0738',
+        permanent: true,
+      },
+      {
+        source: '/map',
+        destination: '/communities',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
