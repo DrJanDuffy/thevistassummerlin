@@ -118,7 +118,51 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* Blog Posts Section */}
+        {/* Summerlin Blog Integration */}
+        <section className="py-20 bg-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Stay Connected with Summerlin News
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Keep up with the latest developments, events, and community highlights from Summerlin's official blog.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Neighborhood Spotlights</h3>
+                <p className="text-gray-600 mb-4">
+                  Discover the latest new neighborhoods including Mockingbird by Lennar, Ascension by Toll Brothers, and Edgewood by Tri Pointe Homes.
+                </p>
+                <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold">
+                  Read More →
+                </a>
+              </div>
+              
+              <div className="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Community Events</h3>
+                <p className="text-gray-600 mb-4">
+                  Stay informed about Downtown Summerlin events, celebrations, and community gatherings throughout the year.
+                </p>
+                <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold">
+                  Read More →
+                </a>
+              </div>
+              
+              <div className="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Lifestyle & Culture</h3>
+                <p className="text-gray-600 mb-4">
+                  Explore dining, shopping, activities, and the vibrant lifestyle that makes Summerlin special.
+                </p>
+                <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold">
+                  Read More →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
         <BlogPosts />
 
         {/* Enhanced CTA Section */}

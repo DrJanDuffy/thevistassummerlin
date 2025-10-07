@@ -181,6 +181,45 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Summerlin Community Section */}
+        <section className="py-20 bg-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Summerlin: An Award-Winning Master-Planned Community
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                The Vistas Summerlin is part of <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Summerlin</a>, 
+                an award-winning community built from a big vision. This master-planned community continues to receive recognition 
+                for its innovative design, exceptional amenities, and commitment to quality living.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Latest Developments</h3>
+                <p className="text-gray-600">
+                  Recent neighborhoods include Mockingbird by Lennar, Ascension by Toll Brothers, and Edgewood by Tri Pointe Homes.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Community Events</h3>
+                <p className="text-gray-600">
+                  Downtown Summerlin hosts celebrations, festivals, and community gatherings throughout the year.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Award Recognition</h3>
+                <p className="text-gray-600">
+                  Summerlin continues to be recognized as one of the nation's premier master-planned communities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Enhanced About Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

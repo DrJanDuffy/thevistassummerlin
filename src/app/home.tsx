@@ -260,9 +260,16 @@ export default function Home() {
                   breathtaking views of the Las Vegas Strip and surrounding mountains. <Link href="/search" className="text-blue-600 hover:text-blue-800 font-semibold underline">Browse our current listings</Link> or <Link href="/valuation" className="text-blue-600 hover:text-blue-800 font-semibold underline">get your home's value</Link>.
                 </p>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  The Vistas Community Center and Amenities
-                </h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                      Downtown Summerlin Lifestyle & Entertainment
+                    </h3>
+
+                    <p className="mb-6">
+                      The Vistas Summerlin residents enjoy easy access to <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Downtown Summerlin</a>, 
+                      a premier lifestyle and entertainment hub featuring world-class restaurants, retail shopping, and entertainment venues. 
+                      Recent community highlights include celebrations for the Little League World Series Champions and exciting new additions 
+                      arriving at Downtown Summerlin, making it an even more vibrant destination for residents.
+                    </p>
                 
                 <p className="mb-6">
                   The Vistas Community Center, located at 11312 Parkside Way, serves as the heart 

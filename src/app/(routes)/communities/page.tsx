@@ -188,8 +188,16 @@ export default function CommunitiesPage() {
               </p>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                Premier Subcommunities in The Vistas Summerlin
+                Latest Summerlin Community News
               </h3>
+              
+              <p className="mb-6">
+                Stay informed about the latest developments in Summerlin communities. Recent neighborhood spotlights include 
+                <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Mockingbird by Lennar</a>, 
+                <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Ascension by Toll Brothers</a>, and 
+                <a href="https://summerlin.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">Edgewood by Tri Pointe Homes</a>. 
+                These new developments showcase the continued growth and innovation in Summerlin's master-planned community.
+              </p>
               
               <p className="mb-6">
                 The Vistas Summerlin features world-class subcommunities including <Link href="/communities/img-0737" className="text-blue-600 hover:text-blue-800 font-semibold underline">Barrington</Link> with 

@@ -15,29 +15,16 @@
       ],
       "destination": "https://www.thevistassummerlin.com/$1",
       "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.thevistassummerlin.com"
-        }
-      ],
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        }
-      ],
-      "destination": "https://www.thevistassummerlin.com/$1",
-      "permanent": false
     }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
