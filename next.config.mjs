@@ -21,6 +21,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Other page redirects (middleware handles www/HTTP redirects)
       {
         source: '/market',
         destination: '/market-reports',

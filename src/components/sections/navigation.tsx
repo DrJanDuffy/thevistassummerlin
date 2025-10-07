@@ -74,7 +74,14 @@ export default function Navigation() {
               <button
                 className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded-md hover:bg-gray-50 group"
                 onClick={() => setShowCommunitiesDropdown(!showCommunitiesDropdown)}
-                onBlur={() => setTimeout(() => setShowCommunitiesDropdown(false), 150)}
+                onBlur={(e) => {
+                  // Use requestIdleCallback for better performance
+                  if ('requestIdleCallback' in window) {
+                    requestIdleCallback(() => setShowCommunitiesDropdown(false));
+                  } else {
+                    setTimeout(() => setShowCommunitiesDropdown(false), 0);
+                  }
+                }}
                 aria-expanded={showCommunitiesDropdown ? "true" : "false"}
                 aria-haspopup="true"
               >
@@ -119,7 +126,14 @@ export default function Navigation() {
               <button
                 className="text-base font-primary font-medium text-gray-800 hover:text-link-blue transition-colors duration-200 flex items-center px-3 py-2 rounded-md hover:bg-gray-50 group"
                 onClick={() => setShowPropertiesDropdown(!showPropertiesDropdown)}
-                onBlur={() => setTimeout(() => setShowPropertiesDropdown(false), 150)}
+                onBlur={(e) => {
+                  // Use requestIdleCallback for better performance
+                  if ('requestIdleCallback' in window) {
+                    requestIdleCallback(() => setShowPropertiesDropdown(false));
+                  } else {
+                    setTimeout(() => setShowPropertiesDropdown(false), 0);
+                  }
+                }}
                 aria-expanded={showPropertiesDropdown ? "true" : "false"}
                 aria-haspopup="true"
               >

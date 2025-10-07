@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/sections/navigation';
@@ -8,6 +8,19 @@ import Footer from '@/components/sections/footer';
 import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine, ArrowRight, ChevronDown } from 'lucide-react';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import RealScoutYourListings from '@/components/RealScoutYourListings';
+
+// Debounce utility function
+const debounce = (func: Function, wait: number) => {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
 
 const allCommunities = [
   {
@@ -80,6 +93,25 @@ export default function CommunitiesPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
 
+  // Optimized click handlers using useCallback
+  const handleCategoryClick = useCallback((category: string) => {
+    setSelectedCategory(category);
+  }, []);
+
+  const handleFilterToggle = useCallback(() => {
+    setShowFilters(!showFilters);
+  }, [showFilters]);
+
+  const handleViewModeChange = useCallback((mode: 'grid' | 'list') => {
+    setViewMode(mode);
+  }, []);
+
+  const handleSearchChange = useMemo(() => 
+    debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchTerm(e.target.value);
+    }, 300), []
+  );
+
   const filteredCommunities = useMemo(() => {
     return allCommunities.filter(community => {
       const matchesSearch = community.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -130,7 +162,7 @@ export default function CommunitiesPage() {
                   type="text"
                   placeholder="Search The Vistas communities..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={handleSearchChange}
                   className="w-full pl-12 pr-4 py-4 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-300 shadow-xl"
                 />
               </div>
@@ -215,7 +247,7 @@ export default function CommunitiesPage() {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryClick(category)}
                   className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
                     selectedCategory === category
                       ? 'bg-blue-600 text-white shadow-lg'
@@ -230,7 +262,7 @@ export default function CommunitiesPage() {
             {/* View Controls */}
             <div className="flex items-center gap-4">
               <button
-                onClick={() => setShowFilters(!showFilters)}
+                onClick={handleFilterToggle}
                 className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors"
               >
                 <Filter className="w-4 h-4" />
@@ -240,13 +272,13 @@ export default function CommunitiesPage() {
               
               <div className="flex border border-gray-300 rounded-xl overflow-hidden">
                 <button
-                  onClick={() => setViewMode('grid')}
+                  onClick={() => handleViewModeChange('grid')}
                   className={`p-3 transition-colors ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
                 >
                   <Grid className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => setViewMode('list')}
+                  onClick={() => handleViewModeChange('list')}
                   className={`p-3 transition-colors ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
                 >
                   <List className="w-4 h-4" />

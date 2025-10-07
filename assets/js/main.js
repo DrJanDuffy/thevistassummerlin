@@ -1,5 +1,5 @@
 // ===== MAIN JAVASCRIPT FILE =====
-// The Vistas Summerlin Real Estate Website
+// The Vistas Summerlin Real Estate Website - Optimized for Performance
 
 // ===== UTILITY FUNCTIONS =====
 const debounce = (func, wait) => {
@@ -22,12 +22,17 @@ const throttle = (func, limit) => {
         if (!inThrottle) {
             func.apply(context, args);
             inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
+            // Use requestIdleCallback for better performance
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => inThrottle = false);
+            } else {
+                setTimeout(() => inThrottle = false, limit);
+            }
         }
     };
 };
 
-// ===== COMPONENT LOADING SYSTEM =====
+// ===== OPTIMIZED COMPONENT LOADING SYSTEM =====
 class ComponentLoader {
     constructor() {
         this.components = {};
@@ -84,20 +89,39 @@ class ComponentLoader {
     }
 
     initializeHeader() {
-        // Header-specific functionality
-        const contactButtons = document.querySelectorAll('.header-contact');
-        contactButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
+        // Use event delegation for better performance
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.header-contact')) {
                 e.preventDefault();
-                // Add contact functionality
                 console.log('Contact button clicked');
-            });
+            }
         });
     }
 
     initializeNavigation() {
-        // Mobile navigation toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        // Use event delegation for mobile menu
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.mobile-menu-toggle')) {
+                const menu = document.querySelector('.mobile-menu');
+                if (menu) {
+                    menu.classList.toggle('hidden');
+                }
+            }
+            
+            if (e.target.matches('.mobile-menu-overlay')) {
+                const menu = document.querySelector('.mobile-menu');
+                if (menu) {
+                    menu.classList.add('hidden');
+                }
+            }
+        });
+    }
+
+    initializeFooter() {
+        // Footer-specific functionality
+        console.log('Footer initialized');
+    }
+}
         const mobileMenu = document.querySelector('.mobile-menu');
         const overlay = document.querySelector('.mobile-overlay');
 
@@ -518,59 +542,105 @@ class Analytics {
     }
 
     trackInteractions() {
-        // Track button clicks
+        // Use event delegation for better performance
         document.addEventListener('click', (e) => {
             if (e.target.matches('button, .btn, a[href]')) {
-                const element = e.target;
-                const eventData = {
-                    element_type: element.tagName.toLowerCase(),
-                    element_text: element.textContent.trim(),
-                    element_href: element.href || null,
-                    page_url: window.location.href
-                };
-                
-                this.sendEvent('element_click', eventData);
+                // Use requestIdleCallback to defer analytics processing
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(() => {
+                        const element = e.target;
+                        const eventData = {
+                            element_type: element.tagName.toLowerCase(),
+                            element_text: element.textContent.trim(),
+                            element_href: element.href || null,
+                            page_url: window.location.href
+                        };
+                        this.sendEvent('element_click', eventData);
+                    });
+                } else {
+                    // Fallback for browsers without requestIdleCallback
+                    setTimeout(() => {
+                        const element = e.target;
+                        const eventData = {
+                            element_type: element.tagName.toLowerCase(),
+                            element_text: element.textContent.trim(),
+                            element_href: element.href || null,
+                            page_url: window.location.href
+                        };
+                        this.sendEvent('element_click', eventData);
+                    }, 0);
+                }
             }
         });
 
-        // Track scroll depth
+        // Track scroll depth with optimized throttling
         let maxScroll = 0;
         const trackScroll = throttle(() => {
             const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
             if (scrollPercent > maxScroll) {
                 maxScroll = scrollPercent;
                 if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
-                    this.sendEvent('scroll_depth', { depth: maxScroll });
+                    // Defer analytics processing
+                    if ('requestIdleCallback' in window) {
+                        requestIdleCallback(() => this.sendEvent('scroll_depth', { depth: maxScroll }));
+                    } else {
+                        setTimeout(() => this.sendEvent('scroll_depth', { depth: maxScroll }), 0);
+                    }
                 }
             }
         }, 1000);
 
-        window.addEventListener('scroll', trackScroll);
+        window.addEventListener('scroll', trackScroll, { passive: true });
     }
 
     trackFormSubmissions() {
         document.addEventListener('submit', (e) => {
             const form = e.target;
-            const formData = {
-                form_id: form.id || 'unknown',
-                form_action: form.action,
-                page_url: window.location.href
-            };
-            
-            this.sendEvent('form_submit', formData);
+            // Defer form analytics processing
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => {
+                    const formData = {
+                        form_id: form.id || 'unknown',
+                        form_action: form.action,
+                        page_url: window.location.href
+                    };
+                    this.sendEvent('form_submit', formData);
+                });
+            } else {
+                setTimeout(() => {
+                    const formData = {
+                        form_id: form.id || 'unknown',
+                        form_action: form.action,
+                        page_url: window.location.href
+                    };
+                    this.sendEvent('form_submit', formData);
+                }, 0);
+            }
         });
     }
 
     trackRealScoutInteractions() {
-        // Track RealScout widget interactions
+        // Track RealScout widget interactions with deferred processing
         document.addEventListener('click', (e) => {
             if (e.target.closest('realscout-office-listings, realscout-simple-search')) {
-                const widgetData = {
-                    widget_type: e.target.tagName.toLowerCase(),
-                    page_url: window.location.href
-                };
-                
-                this.sendEvent('realscout_interaction', widgetData);
+                // Defer analytics processing
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(() => {
+                        const widgetData = {
+                            widget_type: e.target.tagName.toLowerCase(),
+                            page_url: window.location.href
+                        };
+                        this.sendEvent('realscout_interaction', widgetData);
+                    });
+                } else {
+                    setTimeout(() => {
+                        const widgetData = {
+                            widget_type: e.target.tagName.toLowerCase(),
+                            page_url: window.location.href
+                        };
+                        this.sendEvent('realscout_interaction', widgetData);
+                    }, 0);
+                }
             }
         });
     }
