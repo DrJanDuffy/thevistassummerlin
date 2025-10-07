@@ -3,37 +3,35 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.thevistassummerlin.com'
   
-          // Community slugs for dynamic sitemap generation - All 28 Subcommunities
+          // Community slugs for dynamic sitemap generation - All 26+ Subcommunities
           const communitySlugs = [
-            // The Vistas Summerlin Subcommunities (28 confirmed)
+            // The Vistas Summerlin Subcommunities (26 confirmed)
+            'ashton-park',
             'barrington',
-            'kingwood',
-            'santalina',
             'bella-vista',
-            'miraleste',
-            'solano',
             'canterra',
-            'miramonte',
-            'somerset',
             'capri',
-            'monterosa',
-            'sonesta',
             'cara-vella',
-            'palmilla',
-            'summerfield',
             'casa-rosa',
-            'paradiso',
-            'talaverde',
             'encanto',
-            'portofino',
-            'talega',
             'estancia',
-            'sage-hills',
-            'vista-verde',
             'hillstone',
+            'kingwood',
+            'miraleste',
+            'monterossa',
+            'palmilla',
+            'paradiso',
+            'portofino',
+            'sage-hills',
             'san-marcos',
-            'casa-blanca',
-            'villa-rosa',
+            'santalina',
+            'solano',
+            'somerset',
+            'sonesta',
+            'summerfield',
+            'talaverde',
+            'talega',
+            'vista-verde',
             
             // Legacy communities and other pages
             'vistas', // Dr. Jan Duffy's office location
