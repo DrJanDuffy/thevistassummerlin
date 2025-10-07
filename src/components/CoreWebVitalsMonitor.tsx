@@ -3,6 +3,11 @@
 import { useEffect } from 'react';
 import { initializeSEOMonitoring } from '@/utils/seoAuditUtils';
 
+// Declare gtag as a global function
+declare global {
+  function gtag(...args: any[]): void;
+}
+
 // Core Web Vitals monitoring for 2025 SEO
 export default function CoreWebVitalsMonitor() {
   useEffect(() => {
@@ -10,9 +15,9 @@ export default function CoreWebVitalsMonitor() {
     if (process.env.NODE_ENV !== 'production') return;
 
     // Import web-vitals library dynamically
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+    import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
       // Cumulative Layout Shift (CLS)
-      getCLS((metric) => {
+      onCLS((metric) => {
         console.log('CLS:', metric);
         // Send to analytics
         if (typeof gtag !== 'undefined') {
@@ -25,13 +30,13 @@ export default function CoreWebVitalsMonitor() {
         }
       });
 
-      // First Input Delay (FID)
-      getFID((metric) => {
-        console.log('FID:', metric);
+      // Interaction to Next Paint (INP) - replaces FID
+      onINP((metric) => {
+        console.log('INP:', metric);
         if (typeof gtag !== 'undefined') {
           gtag('event', 'web_vitals', {
             event_category: 'Web Vitals',
-            event_label: 'FID',
+            event_label: 'INP',
             value: Math.round(metric.value),
             non_interaction: true,
           });
@@ -39,7 +44,7 @@ export default function CoreWebVitalsMonitor() {
       });
 
       // First Contentful Paint (FCP)
-      getFCP((metric) => {
+      onFCP((metric) => {
         console.log('FCP:', metric);
         if (typeof gtag !== 'undefined') {
           gtag('event', 'web_vitals', {
@@ -52,7 +57,7 @@ export default function CoreWebVitalsMonitor() {
       });
 
       // Largest Contentful Paint (LCP)
-      getLCP((metric) => {
+      onLCP((metric) => {
         console.log('LCP:', metric);
         if (typeof gtag !== 'undefined') {
           gtag('event', 'web_vitals', {
@@ -65,7 +70,7 @@ export default function CoreWebVitalsMonitor() {
       });
 
       // Time to First Byte (TTFB)
-      getTTFB((metric) => {
+      onTTFB((metric) => {
         console.log('TTFB:', metric);
         if (typeof gtag !== 'undefined') {
           gtag('event', 'web_vitals', {

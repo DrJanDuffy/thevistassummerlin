@@ -64,10 +64,7 @@ export default function ValuationPage() {
             Discover your home's true market value in today's competitive Las Vegas real estate market.
           </p>
           <div className="flex justify-center space-x-4">
-            <CalendlyButton 
-              buttonText="Get Free Valuation"
-              className="bg-white text-blue-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-100 transition-colors shadow-lg"
-            />
+            <CalendlyButton url="https://calendly.com/drjanduffy" />
             <Link
               href="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors shadow-lg"
@@ -196,10 +193,7 @@ export default function ValuationPage() {
               </div>
 
               <div className="mt-8 space-y-4">
-                <CalendlyButton 
-                  buttonText="Schedule Free Valuation"
-                  className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-                />
+                <CalendlyButton url="https://calendly.com/drjanduffy" />
                 <a
                   href="tel:+17025000607"
                   className="flex items-center justify-center space-x-2 w-full border-2 border-blue-600 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-colors"
@@ -313,10 +307,7 @@ export default function ValuationPage() {
                   With flexible scheduling and personalized service, getting your valuation is convenient and stress-free.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <CalendlyButton 
-                    buttonText="Schedule Free Valuation"
-                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
-                  />
+                  <CalendlyButton url="https://calendly.com/drjanduffy" />
                   <Link
                     href="/contact"
                     className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors text-center"
