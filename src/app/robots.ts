@@ -23,7 +23,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://thevistassummerlin.com/sitemap.xml',
-    host: 'https://thevistassummerlin.com',
+    sitemap: 'https://www.thevistassummerlin.com/sitemap.xml',
+    host: 'https://www.thevistassummerlin.com',
   }
 }
