@@ -3,10 +3,10 @@ export const COMMUNITY_MAPPING = {
   // Map display names to actual image slugs
   "Barrington": "img-0737",
   "Kingwood": "img-0738", 
-  "Santalina": "img-0739",
+  "Santalina": "santalina", // Updated to use proper URL
   
   // Additional communities that can be added later
-  "Portofino": "img-0737", // Using existing image as placeholder
+  "Portofino": "portofino",
   "Capri": "img-0738",     // Using existing image as placeholder
   "Hillstone": "img-0739", // Using existing image as placeholder
 };

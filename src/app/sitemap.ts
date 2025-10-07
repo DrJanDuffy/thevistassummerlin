@@ -12,10 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'macdonald-highlands',
     'img-0737', // Barrington
     'img-0738', // Kingwood
-    'img-0739', // Santalina
+    'img-0739', // Santalina (legacy URL)
     'portofino',
     'kingwood',
-    'barrington'
+    'barrington',
+    'santalina' // New proper URL
   ]
   
   return [
