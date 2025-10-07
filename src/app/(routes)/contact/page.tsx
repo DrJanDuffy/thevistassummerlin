@@ -1,10 +1,31 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import { CalendlyButton } from '@/components/CalendlyButton';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Star, Award, Users, CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Contact Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert',
+  description: 'Contact Dr. Jan Duffy for personalized real estate services in The Vistas Summerlin. Flexible scheduling, expert guidance, and local market knowledge.',
+  keywords: [
+    'contact Dr. Jan Duffy',
+    'The Vistas Summerlin real estate agent',
+    'Summerlin realtor contact',
+    'Las Vegas luxury real estate',
+    'Dr. Jan Duffy phone number',
+    'real estate consultation'
+  ],
+  openGraph: {
+    title: 'Contact Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert',
+    description: 'Contact Dr. Jan Duffy for personalized real estate services in The Vistas Summerlin. Flexible scheduling, expert guidance, and local market knowledge.',
+    url: 'https://www.thevistassummerlin.com/contact',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.thevistassummerlin.com/contact',
+  },
+};
 
 export default function Contact() {
   return (

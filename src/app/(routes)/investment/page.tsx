@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     url: 'https://www.thevistassummerlin.com/investment',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.thevistassummerlin.com/investment',
+  },
 };
 
 const investmentStats = [

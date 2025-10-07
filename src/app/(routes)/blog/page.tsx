@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     url: 'https://www.thevistassummerlin.com/blog',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.thevistassummerlin.com/blog',
+  },
 };
 
 export default function BlogPage() {

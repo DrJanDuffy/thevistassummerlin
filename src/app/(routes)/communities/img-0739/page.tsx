@@ -210,7 +210,7 @@ export default function SantalinaCommunityPage() {
                     <span>Call Now</span>
                   </a>
                   <a
-                    href="mailto:jan@thevistassummerlin.com"
+                    href="mailto:DrJanSells@TheVistasSummerlin.com"
                     className="block w-full border-2 border-orange-600 text-orange-600 text-center py-4 rounded-xl font-semibold hover:bg-orange-600 hover:text-white transition-colors shadow-md flex items-center justify-center space-x-2"
                   >
                     <Mail className="w-5 h-5" />

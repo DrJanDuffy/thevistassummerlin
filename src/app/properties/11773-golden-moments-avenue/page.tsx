@@ -410,7 +410,7 @@ export default function GoldenMomentsProperty() {
                       <span>Call Now</span>
                     </a>
                     <a 
-                      href="mailto:jan@thevistassummerlin.com" 
+                      href="mailto:DrJanSells@TheVistasSummerlin.com" 
                       className="flex items-center justify-center space-x-2 w-full border-2 border-gray-300 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
                     >
                       <Mail className="w-5 h-5" />

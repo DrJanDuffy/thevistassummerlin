@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     url: 'https://www.thevistassummerlin.com/search',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.thevistassummerlin.com/search',
+  },
 };
 
 const propertyTypes = [

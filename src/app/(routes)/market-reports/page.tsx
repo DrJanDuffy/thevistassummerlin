@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     url: 'https://www.thevistassummerlin.com/market-reports',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.thevistassummerlin.com/market-reports',
+  },
 };
 
 export default function MarketReportsPage() {

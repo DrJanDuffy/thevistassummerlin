@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     url: 'https://www.thevistassummerlin.com/sell',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.thevistassummerlin.com/sell',
+  },
 };
 
 export default function SellPage() {
@@ -279,7 +282,7 @@ export default function SellPage() {
               Call Jan Duffy
             </a>
             <a
-              href="mailto:jan@thevistassummerlin.com"
+              href="mailto:DrJanSells@TheVistasSummerlin.com"
               className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-green-900 transition-colors shadow-lg"
             >
               <Mail className="w-5 h-5 inline mr-2" />

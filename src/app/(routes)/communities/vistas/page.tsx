@@ -498,10 +498,10 @@ const ContactSection = () => (
             <Mail className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-900 mb-2">Email</h3>
             <a 
-              href="mailto:jan@thevistassummerlin.com"
+              href="mailto:DrJanSells@TheVistasSummerlin.com"
               className="text-lg text-blue-600 hover:text-blue-700 transition-colors"
             >
-              jan@thevistassummerlin.com
+              DrJanSells@TheVistasSummerlin.com
             </a>
           </div>
         </div>

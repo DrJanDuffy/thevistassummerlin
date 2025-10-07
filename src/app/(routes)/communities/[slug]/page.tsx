@@ -131,7 +131,7 @@ const CommunityDetailsSidebar = ({ community }: { community: CommunityData }) =>
           <span>Call Now</span>
         </a>
         <a
-          href="mailto:jan@thevistassummerlin.com"
+          href="mailto:DrJanSells@TheVistasSummerlin.com"
           className="block w-full border-2 border-blue-600 text-blue-600 text-center py-4 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-colors shadow-md flex items-center justify-center space-x-2"
         >
           <Mail className="w-5 h-5" />
