@@ -14,6 +14,7 @@ import ScrollToTop from '@/components/ui/ScrollToTop';
 import GoogleBusinessProfileWidget from '@/components/sections/google-business-profile-widget';
 import ReviewCollectionWidget from '@/components/sections/review-collection-widget';
 import RealScoutListings from '@/components/RealScoutListings';
+import RealScoutFrame from '@/components/RealScoutFrame';
 import LocalSEOShowcase from '@/components/sections/local-seo-showcase';
 
 export default function Home() {
@@ -269,6 +270,29 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+        
+        {/* RealScout Portfolio Frame */}
+        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                🏠 Dr. Jan Duffy's Complete Property Portfolio
+              </h2>
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                Explore Dr. Jan Duffy's comprehensive listing management system and discover all available properties 
+                in The Vistas Summerlin. This interactive portal provides real-time access to current listings, 
+                market data, and property management tools.
+              </p>
+            </div>
+            
+            <RealScoutFrame 
+              url="https://drjanduffy.realscout.com/agent/listing-tools/my-listings"
+              title="Complete Property Management Portal"
+              description="Real-time access to all listings, market data, and property management tools"
+              className="shadow-2xl"
+            />
           </div>
         </section>
         
