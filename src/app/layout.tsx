@@ -14,6 +14,7 @@ import {
   WebsiteSchema,
   OrganizationSchema
 } from '@/components/StructuredData';
+import CoreWebVitalsMonitor from '@/components/CoreWebVitalsMonitor';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -83,7 +84,7 @@ export const metadata: Metadata = {
     images: ["/subcommunities/IMG_0737.JPG"],
   },
   verification: {
-    google: "your-google-verification-code",
+    google: process.env.GOOGLE_SITE_VERIFICATION || "your-google-verification-code",
   },
   alternates: {
     canonical: "https://www.thevistassummerlin.com",
@@ -120,6 +121,7 @@ export default function RootLayout({
       </head>
       <body className={`antialiased ${playfair.variable} ${lato.variable} font-secondary text-text-dark bg-white`}>
         <ErrorReporter />
+        <CoreWebVitalsMonitor />
         {children}
       </body>
     </html>

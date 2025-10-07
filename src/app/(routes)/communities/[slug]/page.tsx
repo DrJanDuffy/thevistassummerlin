@@ -356,6 +356,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: `${community.description}`,
       images: [community.image || '/subcommunities/IMG_0737.JPG'],
     },
+    alternates: {
+      canonical: `https://www.thevistassummerlin.com/communities/${slug}`,
+    },
   };
 }
 
