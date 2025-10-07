@@ -192,7 +192,7 @@ export default function CommunitiesPage() {
               </h3>
               
               <p className="mb-6">
-                The Vistas Summerlin features world-class subcommunities including <Link href="/communities/barrington" className="text-blue-600 hover:text-blue-800 font-semibold underline">Barrington</Link> with 
+                The Vistas Summerlin features world-class subcommunities including <Link href="/communities/img-0737" className="text-blue-600 hover:text-blue-800 font-semibold underline">Barrington</Link> with 
                 sophisticated architecture, <Link href="/communities/kingwood" className="text-blue-600 hover:text-blue-800 font-semibold underline">Kingwood</Link> with royal-inspired homes and mountain views, 
                 and <Link href="/communities/santalina" className="text-blue-600 hover:text-blue-800 font-semibold underline">Santalina</Link> with Mediterranean charm. Each community offers unique amenities 
                 ranging from resort-style pools to private patios and landscaped grounds, creating 

@@ -246,7 +246,7 @@ export default function Contact() {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
-                href="/buy"
+                href="/search"
                 className="bg-link-blue text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Explore Homes for Sale

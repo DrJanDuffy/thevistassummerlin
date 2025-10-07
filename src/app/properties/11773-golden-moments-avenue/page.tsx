@@ -129,7 +129,7 @@ export default function GoldenMomentsProperty() {
             <nav className="flex items-center space-x-2 text-sm">
               <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">Home</Link>
               <span className="text-gray-400">/</span>
-              <Link href="/properties" className="text-blue-600 hover:text-blue-800 transition-colors">Properties</Link>
+              <Link href="/search" className="text-blue-600 hover:text-blue-800 transition-colors">Search Properties</Link>
               <span className="text-gray-400">/</span>
               <span className="text-gray-600 font-medium">11773 Golden Moments Avenue</span>
             </nav>

@@ -159,7 +159,7 @@ export function FeaturedProperty() {
             Looking for other properties in The Vistas Summerlin?
           </p>
           <Link 
-            href="/properties"
+            href="/search"
             className="inline-flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors text-lg"
           >
             <span>View All Properties</span>

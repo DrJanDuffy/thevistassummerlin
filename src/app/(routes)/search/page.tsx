@@ -421,7 +421,7 @@ export default function SearchPage() {
 
             <div className="text-center mt-12">
               <a 
-                href="/search/all"
+                href="/search"
                 className="inline-flex items-center bg-primary-navy text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-link-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 View All Listings
