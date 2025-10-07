@@ -5,19 +5,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
           // Community slugs for dynamic sitemap generation
           const communitySlugs = [
+            // The Vistas Summerlin Subcommunities (26 confirmed)
+            'ashton-park',
+            'barrington',
+            'bella-vista',
+            'canterra',
+            'capri',
+            'cara-vella',
+            'casa-rosa',
+            'encanto',
+            'estancia',
+            'hillstone',
+            'kingwood',
+            'miraleste',
+            'monterossa',
+            'palmilla',
+            'paradiso',
+            'portofino',
+            'sage-hills',
+            'san-marcos',
+            'santalina',
+            'solano',
+            'somerset',
+            'sonesta',
+            'summerfield',
+            'talaverde',
+            'talega',
+            'vista-verde',
+            
+            // Legacy communities and other pages
             'vistas', // Dr. Jan Duffy's office location
             'summerlin-west',
             'red-rock', 
             'southern-highlands',
             'macdonald-highlands',
-            'img-0737', // Barrington
-            'img-0738', // Kingwood
-            'img-0739', // Santalina (legacy URL)
-            'portofino',
-            'kingwood',
-            'barrington',
-            'santalina', // New proper URL
-            'santaluz' // Premium community
+            'img-0737', // Legacy Barrington URL
+            'img-0738', // Legacy Kingwood URL
+            'img-0739', // Legacy Santalina URL
+            'santaluz' // Premium community (not in official list)
           ]
   
   return [

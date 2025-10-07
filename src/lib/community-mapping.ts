@@ -1,15 +1,35 @@
 // Community mapping for navigation and routing
 export const COMMUNITY_MAPPING = {
-  // Map display names to actual image slugs
-  "Barrington": "img-0737",
-  "Kingwood": "img-0738", 
-  "Santalina": "santalina", // Updated to use proper URL
-  "Santaluz": "santaluz", // Premium community
-  
-  // Additional communities that can be added later
+  // The Vistas Summerlin Subcommunities (26 confirmed)
+  "Ashton Park": "ashton-park",
+  "Barrington": "barrington", // Updated to use proper URL
+  "Bella Vista": "bella-vista",
+  "Canterra": "canterra",
+  "Capri": "capri",
+  "Cara Vella": "cara-vella",
+  "Casa Rosa": "casa-rosa",
+  "Encanto": "encanto",
+  "Estancia": "estancia",
+  "Hillstone": "hillstone",
+  "Kingwood": "kingwood", // Updated to use proper URL
+  "Miraleste": "miraleste",
+  "Monterossa": "monterossa",
+  "Palmilla": "palmilla",
+  "Paradiso": "paradiso",
   "Portofino": "portofino",
-  "Capri": "img-0738",     // Using existing image as placeholder
-  "Hillstone": "img-0739", // Using existing image as placeholder
+  "Sage Hills": "sage-hills",
+  "San Marcos": "san-marcos",
+  "Santalina": "santalina",
+  "Solano": "solano",
+  "Somerset": "somerset",
+  "Sonesta": "sonesta",
+  "Summerfield": "summerfield",
+  "Talaverde": "talaverde",
+  "Talega": "talega",
+  "Vista Verde": "vista-verde",
+  
+  // Legacy mappings for existing pages
+  "Santaluz": "santaluz", // Premium community (not in official list but referenced in code)
 };
 
 // Convert display name to slug for navigation
