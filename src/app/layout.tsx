@@ -29,7 +29,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.thevistassummerlin.com'),
+  metadataBase: new URL('https://thevistassummerlin.com'),
   title: {
     default: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
     template: "%s | The Vistas Summerlin | Homes by Dr. Jan Duffy"
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "11312 Parkside Way",
     "flexible scheduling real estate"
   ],
-  authors: [{ name: "Dr. Jan Duffy", url: "https://www.thevistassummerlin.com" }],
+  authors: [{ name: "Dr. Jan Duffy", url: "https://thevistassummerlin.com" }],
   creator: "Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert",
   publisher: "The Vistas Summerlin | Homes by Dr. Jan Duffy",
   robots: {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
     description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
-    url: "https://www.thevistassummerlin.com",
+    url: "https://thevistassummerlin.com",
     siteName: "The Vistas Summerlin | Homes by Dr. Jan Duffy",
     images: [
       {
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://www.thevistassummerlin.com",
+    canonical: "https://thevistassummerlin.com",
   },
 };
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.thevistassummerlin.com'
+  const baseUrl = 'https://thevistassummerlin.com'
   
   // Community slugs for dynamic sitemap generation
   const communitySlugs = [
