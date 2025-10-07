@@ -4,6 +4,7 @@ export const COMMUNITY_MAPPING = {
   "Barrington": "img-0737",
   "Kingwood": "img-0738", 
   "Santalina": "santalina", // Updated to use proper URL
+  "Santaluz": "santaluz", // Premium community
   
   // Additional communities that can be added later
   "Portofino": "portofino",

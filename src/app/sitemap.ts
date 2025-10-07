@@ -3,21 +3,22 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.thevistassummerlin.com'
   
-  // Community slugs for dynamic sitemap generation
-  const communitySlugs = [
-    'vistas', // Dr. Jan Duffy's office location
-    'summerlin-west',
-    'red-rock', 
-    'southern-highlands',
-    'macdonald-highlands',
-    'img-0737', // Barrington
-    'img-0738', // Kingwood
-    'img-0739', // Santalina (legacy URL)
-    'portofino',
-    'kingwood',
-    'barrington',
-    'santalina' // New proper URL
-  ]
+          // Community slugs for dynamic sitemap generation
+          const communitySlugs = [
+            'vistas', // Dr. Jan Duffy's office location
+            'summerlin-west',
+            'red-rock', 
+            'southern-highlands',
+            'macdonald-highlands',
+            'img-0737', // Barrington
+            'img-0738', // Kingwood
+            'img-0739', // Santalina (legacy URL)
+            'portofino',
+            'kingwood',
+            'barrington',
+            'santalina', // New proper URL
+            'santaluz' // Premium community
+          ]
   
   return [
     {
