@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "thevistassummerlin.com"
+        }
+      ],
+      "destination": "https://www.thevistassummerlin.com/sitemap.xml",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -11,5 +22,10 @@
       "destination": "https://thevistassummerlin.com/$1",
       "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "app/page.tsx": {
+      "maxDuration": 30
+    }
+  }
 }
