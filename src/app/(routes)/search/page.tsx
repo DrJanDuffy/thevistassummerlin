@@ -151,6 +151,70 @@ export default function SearchPage() {
           </div>
         </section>
 
+        {/* SEO Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                Find Your Perfect Home in The Vistas Summerlin
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Discover luxury homes for sale in The Vistas Summerlin with our comprehensive 
+                  property search tools. Filter by price range, bedrooms, bathrooms, and community 
+                  features to find your ideal home in Las Vegas's most prestigious master-planned 
+                  community.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Advanced Property Search in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  Our advanced search tools help you find luxury homes across The Vistas Summerlin's 
+                  28 distinct subcommunities. From Mediterranean-inspired Portofino to the royal 
+                  elegance of Kingwood, search by specific features, price ranges, and amenities 
+                  to discover your perfect match in this prestigious Las Vegas community.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Luxury Homes Available in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Summerlin offers luxury homes ranging from $600,000 to over $2.5 million, 
+                  featuring 2,500 to 4,500 square feet of living space. Each property benefits from 
+                  The Vistas' world-class amenities including the community center at 11312 Parkside Way, 
+                  miles of walking paths, and access to TPC Summerlin golf course.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Expert Guidance from Dr. Jan Duffy
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy specializes in The Vistas Summerlin real estate market, offering 
+                  personalized service with flexible scheduling that works around your lifestyle. 
+                  Her office at 11312 Parkside Way provides convenient access and deep local 
+                  market knowledge to help you find your perfect home.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy for Personalized Search Assistance
+                </h3>
+                
+                <p className="mb-6">
+                  Ready to find your dream home in The Vistas Summerlin? Contact Dr. Jan Duffy 
+                  at (702) 500-0607 for personalized search assistance and expert market guidance. 
+                  Her flexible scheduling and deep community knowledge ensure you'll find the 
+                  perfect home for your family.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Advanced Search Widget */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -110,6 +110,74 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* SEO Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                Dr. Jan Duffy: Your Trusted The Vistas Summerlin Real Estate Expert
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Dr. Jan Duffy has been serving The Vistas Summerlin community for over 12 years, 
+                  establishing herself as the premier real estate expert for luxury homes in Las Vegas. 
+                  With deep knowledge of The Vistas market and personalized service that adapts to your 
+                  schedule, Dr. Duffy provides exceptional guidance for both buyers and sellers.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Expertise in The Vistas Summerlin Real Estate Market
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy specializes exclusively in The Vistas Summerlin, Las Vegas's most 
+                  prestigious master-planned community. Her office is strategically located at 
+                  11312 Parkside Way, right in the heart of The Vistas community, providing 
+                  unparalleled access to local market insights and community knowledge. This 
+                  specialized focus allows Dr. Duffy to offer expert guidance on luxury homes 
+                  ranging from $800,000 to over $2.5 million.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Flexible Scheduling for Busy Professionals
+                </h3>
+                
+                <p className="mb-6">
+                  Understanding that luxury home buyers and sellers often have demanding schedules, 
+                  Dr. Jan Duffy offers flexible scheduling that works around your lifestyle. Whether 
+                  you're a busy executive, healthcare professional, or entrepreneur, Dr. Duffy 
+                  accommodates evening and weekend appointments to ensure your real estate needs 
+                  are met without disrupting your professional commitments.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Comprehensive Real Estate Services in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy provides comprehensive real estate services including luxury home 
+                  sales, property valuations, market analysis, and investment consulting. Her deep 
+                  understanding of The Vistas community's 28 distinct subcommunities, from 
+                  Mediterranean-inspired Portofino to the royal elegance of Kingwood, ensures 
+                  clients find their perfect match in this prestigious Las Vegas community.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy for Expert Real Estate Guidance
+                </h3>
+                
+                <p className="mb-6">
+                  Ready to buy or sell luxury real estate in The Vistas Summerlin? Contact Dr. Jan Duffy 
+                  at (702) 500-0607 for personalized service and expert market guidance. Her office 
+                  at 11312 Parkside Way, Las Vegas, NV 89138 is conveniently located in the heart of 
+                  The Vistas community, providing easy access for all your real estate needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Enhanced About Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

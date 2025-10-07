@@ -59,6 +59,61 @@ export default function SellPage() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+              Sell Your Home in The Vistas Summerlin with Expert Guidance
+            </h2>
+            
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <p className="text-xl mb-6">
+                Ready to sell your home in The Vistas Summerlin? Dr. Jan Duffy offers expert 
+                real estate services with over 12 years of experience in The Vistas community. 
+                Her office at 11312 Parkside Way provides convenient access and deep local 
+                market knowledge to help you achieve top dollar for your luxury home.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Why Choose Dr. Jan Duffy for Your The Vistas Summerlin Home Sale
+              </h3>
+              
+              <p className="mb-6">
+                Dr. Jan Duffy specializes exclusively in The Vistas Summerlin real estate market, 
+                providing personalized service with flexible scheduling that works around your 
+                lifestyle. Her deep understanding of the community's 28 distinct subcommunities 
+                and current market trends ensures your home is positioned for maximum value and 
+                quick sale.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Comprehensive Home Selling Services in The Vistas Summerlin
+              </h3>
+              
+              <p className="mb-6">
+                Dr. Jan Duffy provides comprehensive selling services including free home 
+                valuations, professional marketing strategies, and expert negotiation. Her 
+                flexible scheduling accommodates busy professionals with evening and weekend 
+                appointments, ensuring your home selling process fits seamlessly into your 
+                lifestyle.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Contact Dr. Jan Duffy for Your Free Home Valuation
+              </h3>
+              
+              <p className="mb-6">
+                Don't wait to start your home selling journey in The Vistas Summerlin. Contact 
+                Dr. Jan Duffy at (702) 500-0607 for your free home valuation and expert market 
+                analysis. Her office at 11312 Parkside Way provides convenient access for all 
+                your real estate needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Jan Duffy */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

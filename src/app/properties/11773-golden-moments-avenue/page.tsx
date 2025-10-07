@@ -233,6 +233,73 @@ export default function GoldenMomentsProperty() {
           </div>
         </section>
 
+        {/* SEO Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                11773 Golden Moments Avenue: Luxury Living in The Vistas Summerlin
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Welcome to 11773 Golden Moments Avenue, a stunning luxury home in The Vistas Summerlin 
+                  that represents the pinnacle of Las Vegas real estate. This move-in ready property 
+                  offers exceptional value with its two spacious primary suites, modern chef's kitchen, 
+                  and huge landscaped yard perfect for entertaining.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Prime Location in The Vistas Summerlin Community
+                </h3>
+                
+                <p className="mb-6">
+                  Located in the prestigious Canterra At The Vistas subcommunity, this home benefits 
+                  from The Vistas Summerlin's world-class amenities including the community center 
+                  at 11312 Parkside Way, miles of walking paths, and access to TPC Summerlin golf 
+                  course. The community's elevation provides stunning mountain views and proximity 
+                  to top-rated schools including Palo Verde High School.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Luxury Home Features and Amenities
+                </h3>
+                
+                <p className="mb-6">
+                  This exceptional 4-bedroom, 3-bathroom home spans over 2,500 square feet and 
+                  features two spacious primary suites - perfect for multi-generational living or 
+                  guest accommodations. The modern chef's kitchen includes premium appliances and 
+                  flows seamlessly into the living areas, while the huge landscaped yard provides 
+                  ample space for outdoor entertaining and relaxation.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Investment Potential in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  Properties in The Vistas Summerlin have demonstrated strong appreciation and 
+                  consistent demand in the Las Vegas real estate market. With MLS #2722090, this 
+                  property offers excellent investment potential in one of Las Vegas's most 
+                  desirable communities. The combination of luxury features, prime location, and 
+                  community amenities creates a solid foundation for long-term value growth.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy for Your Private Tour
+                </h3>
+                
+                <p className="mb-6">
+                  Ready to experience luxury living in The Vistas Summerlin? Contact Dr. Jan Duffy 
+                  at (702) 500-0607 to schedule your private tour of 11773 Golden Moments Avenue. 
+                  With flexible scheduling and deep knowledge of The Vistas community, Dr. Duffy 
+                  will help you discover why this exceptional home is perfect for your family.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Property Details */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

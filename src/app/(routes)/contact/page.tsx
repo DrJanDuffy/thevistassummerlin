@@ -64,6 +64,72 @@ export default function Contact() {
           </div>
         </section>
 
+        {/* SEO Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                Contact Dr. Jan Duffy for The Vistas Summerlin Real Estate Services
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Ready to buy or sell luxury real estate in The Vistas Summerlin? Dr. Jan Duffy 
+                  offers personalized real estate services with flexible scheduling that accommodates 
+                  your busy lifestyle. Located at 11312 Parkside Way in the heart of The Vistas 
+                  community, Dr. Duffy provides expert guidance for discerning buyers and sellers.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Flexible Scheduling for Busy Professionals
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy understands that luxury real estate transactions require careful 
+                  planning and attention to detail. That's why she offers flexible scheduling 
+                  including early morning, evening, and weekend appointments. Whether you're a 
+                  busy executive, healthcare professional, or entrepreneur, Dr. Duffy ensures 
+                  your real estate needs are met without disrupting your professional commitments.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Expert Real Estate Services in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  With over 12 years of experience specializing in The Vistas Summerlin, Dr. Jan Duffy 
+                  provides comprehensive real estate services including luxury home sales, property 
+                  valuations, market analysis, and investment consulting. Her deep knowledge of the 
+                  community's 28 distinct subcommunities ensures clients find their perfect match 
+                  in this prestigious Las Vegas community.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Convenient Office Location in The Vistas Community
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy's office is strategically located at 11312 Parkside Way, Las Vegas, 
+                  NV 89138, right in the heart of The Vistas Summerlin community. This convenient 
+                  location provides easy access for clients and allows Dr. Duffy to stay connected 
+                  with the local market trends and community developments that impact property values.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy Today
+                </h3>
+                
+                <p className="mb-6">
+                  Don't wait to start your luxury real estate journey in The Vistas Summerlin. 
+                  Contact Dr. Jan Duffy at (702) 500-0607 for personalized service and expert 
+                  market guidance. Her flexible scheduling and deep community knowledge make her 
+                  the ideal choice for your The Vistas Summerlin real estate needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* V0 Contact Form Section */}
         <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
           {/* V0 Background Elements */}

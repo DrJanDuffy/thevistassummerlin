@@ -29,26 +29,24 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://summerlin-real-estate.localo.site/'),
+  metadataBase: new URL('https://thevistassummerlin.com'),
   title: {
     default: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
     template: "%s | The Vistas Summerlin | Homes by Dr. Jan Duffy"
   },
-  description: "Homes by Dr. Jan Duffy - Las Vegas real estate expert with flexible scheduling that works around YOUR lifestyle. Based in Summerlin, serving discerning buyers, sellers, and investors across Henderson, Enterprise, and Southwest Vegas. With 12+ years of Nevada market expertise.",
+  description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
   keywords: [
-    "Summerlin real estate",
-    "Las Vegas real estate agent", 
-    "Henderson real estate",
-    "Enterprise real estate",
-    "Southwest Vegas real estate",
+    "The Vistas Summerlin",
+    "Vistas Summerlin homes for sale",
+    "The Vistas Las Vegas",
     "Dr. Jan Duffy realtor",
     "Summerlin luxury homes",
     "Las Vegas luxury real estate",
-    "flexible scheduling real estate",
-    "veteran-owned real estate",
-    "women-owned real estate"
+    "The Vistas community center",
+    "11312 Parkside Way",
+    "flexible scheduling real estate"
   ],
-  authors: [{ name: "Dr. Jan Duffy", url: "https://summerlin-real-estate.localo.site/" }],
+  authors: [{ name: "Dr. Jan Duffy", url: "https://thevistassummerlin.com" }],
   creator: "Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert",
   publisher: "The Vistas Summerlin | Homes by Dr. Jan Duffy",
   robots: {
@@ -63,10 +61,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "The Vistas Summerlin Homes - Luxury Real Estate in Las Vegas",
-    description: "The Vistas Summerlin offers luxury homes starting at $800K. Located in Summerlin, Las Vegas. Expert realtor Jan Duffy with 15+ years specializing in The Vistas community.",
-    url: "https://www.thevistassummerlin.com",
-    siteName: "The Vistas Summerlin Real Estate",
+    title: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
+    description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
+    url: "https://thevistassummerlin.com",
+    siteName: "The Vistas Summerlin | Homes by Dr. Jan Duffy",
     images: [
       {
         url: "/subcommunities/IMG_0737.JPG",
@@ -80,15 +78,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Vistas Summerlin Homes - Luxury Real Estate",
-    description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Jan Duffy specializing in The Vistas community.",
+    title: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
+    description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
     images: ["/subcommunities/IMG_0737.JPG"],
   },
   verification: {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://www.thevistassummerlin.com",
+    canonical: "https://thevistassummerlin.com",
   },
 };
 

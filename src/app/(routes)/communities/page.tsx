@@ -139,6 +139,72 @@ export default function CommunitiesPage() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+              The Vistas Summerlin Communities: Luxury Living at Its Finest
+            </h2>
+            
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <p className="text-xl mb-6">
+                Discover The Vistas Summerlin's 28 distinct subcommunities, each offering unique 
+                architectural styles and luxury amenities. From Mediterranean-inspired Portofino 
+                to the royal elegance of Kingwood, The Vistas provides diverse options for 
+                discerning homebuyers seeking the ultimate in Summerlin living.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Premier Subcommunities in The Vistas Summerlin
+              </h3>
+              
+              <p className="mb-6">
+                The Vistas Summerlin features world-class subcommunities including Barrington with 
+                sophisticated architecture, Kingwood with royal-inspired homes and mountain views, 
+                and Santalina with Mediterranean charm. Each community offers unique amenities 
+                ranging from resort-style pools to private patios and landscaped grounds, creating 
+                a diverse portfolio of luxury living options.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Luxury Homes for Sale Across All Communities
+              </h3>
+              
+              <p className="mb-6">
+                Our current inventory spans The Vistas Summerlin's prestigious communities with 
+                luxury homes ranging from $600,000 to over $2.5 million. Each property benefits 
+                from The Vistas' world-class amenities including the community center at 11312 
+                Parkside Way, miles of walking paths, and access to TPC Summerlin golf course.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Expert Real Estate Services for The Vistas Communities
+              </h3>
+              
+              <p className="mb-6">
+                Dr. Jan Duffy specializes in The Vistas Summerlin real estate market, offering 
+                personalized service with flexible scheduling that works around your lifestyle. 
+                With over 12 years of experience and an office located at 11312 Parkside Way, 
+                Dr. Duffy provides expert guidance for buying or selling in any of The Vistas 
+                subcommunities.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Contact Dr. Jan Duffy for Community Expertise
+              </h3>
+              
+              <p className="mb-6">
+                Ready to explore luxury homes in The Vistas Summerlin communities? Contact Dr. Jan Duffy 
+                at (702) 500-0607 for expert guidance on finding your perfect home in The Vistas. 
+                Her deep knowledge of each subcommunity ensures you'll find the ideal match for 
+                your lifestyle and investment goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Filters & Controls */}
       <section className="bg-white border-b py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

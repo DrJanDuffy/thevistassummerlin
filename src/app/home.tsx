@@ -218,6 +218,96 @@ export default function Home() {
           </div>
         </section>
         
+        {/* SEO-Optimized Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                The Vistas Summerlin: Las Vegas Premier Luxury Community
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Welcome to The Vistas Summerlin, Las Vegas's most prestigious master-planned community. 
+                  Developed in 2000 as Summerlin West's first community, The Vistas offers an 815-acre 
+                  European-inspired village that combines luxury living with unparalleled amenities.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Why Choose The Vistas Summerlin for Your Next Home?
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Summerlin represents the pinnacle of luxury real estate in Las Vegas. 
+                  This exclusive community features over 28 distinct subcommunities, each offering 
+                  unique architectural styles and premium amenities. From Mediterranean-inspired 
+                  Portofino to the royal elegance of Kingwood, The Vistas provides diverse options 
+                  for discerning homebuyers seeking the ultimate in Summerlin living.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Luxury Homes for Sale in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  Our current inventory includes stunning luxury homes ranging from $800,000 to 
+                  over $2.5 million. Each property in The Vistas Summerlin offers exceptional 
+                  value with features like mountain views, golf course access, and proximity to 
+                  world-class amenities. The community's elevation provides many homes with 
+                  breathtaking views of the Las Vegas Strip and surrounding mountains.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  The Vistas Community Center and Amenities
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Community Center, located at 11312 Parkside Way, serves as the heart 
+                  of our community. This world-class facility features basketball courts, tennis 
+                  courts, a football field, and ample green spaces perfect for family recreation. 
+                  The community also offers miles of walking paths, professionally maintained parks, 
+                  and access to TPC Summerlin golf course.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Expert Real Estate Services in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy specializes in The Vistas Summerlin real estate market, offering 
+                  personalized service with flexible scheduling that works around your lifestyle. 
+                  With over 12 years of experience in Las Vegas luxury real estate, Dr. Duffy 
+                  understands the unique characteristics of each subcommunity and can help you 
+                  find your perfect home in The Vistas.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  The Vistas Summerlin HOA and Community Features
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Summerlin HOA fees typically range from $200 to $400 per month, 
+                  depending on the specific subcommunity and included amenities. These fees 
+                  cover professional landscape maintenance, community security, and access to 
+                  shared facilities. The community is served by top-rated schools including 
+                  Palo Verde High School and Ernest May Elementary.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy for The Vistas Summerlin Real Estate
+                </h3>
+                
+                <p className="mb-6">
+                  Ready to explore luxury homes for sale in The Vistas Summerlin? Contact Dr. Jan Duffy 
+                  at (702) 500-0607 for expert guidance on buying or selling in this prestigious community. 
+                  Our office is conveniently located at 11312 Parkside Way, Las Vegas, NV 89138, 
+                  right in the heart of The Vistas community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* V0 Brand Focus Section */}
         <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
           {/* V0 Background Elements */}

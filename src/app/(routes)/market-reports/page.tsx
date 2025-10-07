@@ -59,6 +59,59 @@ export default function MarketReportsPage() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+              The Vistas Summerlin Market Reports and Analysis
+            </h2>
+            
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <p className="text-xl mb-6">
+                Access comprehensive market reports and analysis for The Vistas Summerlin real estate 
+                market. Our detailed reports provide current trends, pricing data, and forecasts 
+                to help you make informed decisions about buying or selling luxury homes in 
+                Las Vegas's premier master-planned community.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Comprehensive Market Data for The Vistas Summerlin
+              </h3>
+              
+              <p className="mb-6">
+                Dr. Jan Duffy provides detailed market reports covering The Vistas Summerlin's 
+                28 distinct subcommunities, from Mediterranean-inspired Portofino to the royal 
+                elegance of Kingwood. Each report includes current pricing trends, inventory 
+                levels, and market forecasts based on comprehensive local market analysis.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Expert Market Analysis and Insights
+              </h3>
+              
+              <p className="mb-6">
+                Our market reports include expert analysis from Dr. Jan Duffy, who specializes 
+                in The Vistas Summerlin real estate market. With flexible scheduling and an 
+                office at 11312 Parkside Way, Dr. Duffy provides personalized market insights 
+                and comprehensive data to help you understand current market conditions.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Contact Dr. Jan Duffy for Market Reports
+              </h3>
+              
+              <p className="mb-6">
+                Ready to access detailed market reports for The Vistas Summerlin? Contact Dr. Jan Duffy 
+                at (702) 500-0607 for comprehensive market analysis and personalized insights. 
+                Her deep knowledge of local market conditions and flexible scheduling ensure 
+                you get the information you need for confident real estate decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Current Market Overview */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

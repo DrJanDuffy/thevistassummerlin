@@ -1,6 +1,5 @@
 'use client';
 
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -77,7 +76,7 @@ const CommunityHero = () => (
 
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
-          The Vistas
+          The Vistas Summerlin Community
         </h1>
         
         {/* Subtitle */}
@@ -125,6 +124,92 @@ const CommunityHero = () => (
             <Home className="w-5 h-5" />
             View Homes
           </Link>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// SEO Content Section
+const SEOContentSection = () => (
+  <section className="py-24 bg-white">
+    <div className="container mx-auto px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-center">
+          The Vistas Summerlin: Las Vegas Premier Luxury Community
+        </h2>
+        
+        <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
+          <p className="text-xl mb-6">
+            The Vistas Summerlin represents the pinnacle of luxury living in Las Vegas. 
+            Developed in 2000 as Summerlin West's first community, The Vistas offers an 
+            815-acre European-inspired village that combines sophisticated architecture 
+            with world-class amenities and natural beauty.
+          </p>
+          
+          <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-8">
+            The Vistas Community Center: Heart of the Community
+          </h3>
+          
+          <p className="mb-6">
+            Located at 11312 Parkside Way, The Vistas Community Center serves as the 
+            central hub for residents and visitors alike. This world-class facility features 
+            basketball courts, tennis courts, a football field, and ample green spaces 
+            perfect for family recreation. The community center hosts regular events, 
+            fitness classes, and community gatherings throughout the year, fostering a 
+            strong sense of community among residents.
+          </p>
+          
+          <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-8">
+            Luxury Homes for Sale in The Vistas Summerlin
+          </h3>
+          
+          <p className="mb-6">
+            The Vistas Summerlin offers luxury homes ranging from $800,000 to over 
+            $2.5 million, with properties featuring 2,500 to 4,500 square feet of 
+            living space. Each home in The Vistas provides exceptional value with 
+            features like mountain views, golf course access, and proximity to 
+            world-class amenities. The community's elevation provides many homes 
+            with breathtaking views of the Las Vegas Strip and surrounding mountains.
+          </p>
+          
+          <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-8">
+            Dr. Jan Duffy's Office in The Vistas Summerlin
+          </h3>
+          
+          <p className="mb-6">
+            Dr. Jan Duffy's real estate office is conveniently located at 11312 Parkside Way, 
+            right in the heart of The Vistas community. This strategic location allows 
+            Dr. Duffy to provide personalized service with deep knowledge of the local 
+            market. With over 12 years of experience specializing in The Vistas Summerlin, 
+            Dr. Duffy understands the unique characteristics of each subcommunity and 
+            can help you find your perfect home.
+          </p>
+          
+          <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-8">
+            The Vistas Summerlin Amenities and Lifestyle
+          </h3>
+          
+          <p className="mb-6">
+            The Vistas Summerlin offers miles of walking paths, professionally maintained 
+            parks, and access to TPC Summerlin golf course. The community features 
+            European-inspired architecture with Mediterranean charm, creating a sophisticated 
+            retreat that combines relaxed elegance with modern conveniences. Residents enjoy 
+            proximity to top-rated schools, shopping centers, and entertainment venues 
+            throughout the Las Vegas Valley.
+          </p>
+          
+          <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-8">
+            Contact Dr. Jan Duffy for The Vistas Summerlin Real Estate
+          </h3>
+          
+          <p className="mb-6">
+            Ready to explore luxury homes for sale in The Vistas Summerlin? Contact 
+            Dr. Jan Duffy at (702) 500-0607 for expert guidance on buying or selling 
+            in this prestigious community. Our office is conveniently located at 
+            11312 Parkside Way, Las Vegas, NV 89138, right in the heart of The Vistas 
+            community, providing easy access for all your real estate needs.
+          </p>
         </div>
       </div>
     </div>
@@ -448,6 +533,7 @@ export default function VistasCommunityPage() {
       <Navigation />
       
       <CommunityHero />
+      <SEOContentSection />
       <CommunityCenterSection />
       <AmenitiesSection />
       <RealEstateSection />

@@ -158,6 +158,72 @@ export default function InvestmentPage() {
           </div>
         </section>
 
+        {/* SEO Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                Investment Opportunities in The Vistas Summerlin Real Estate
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Discover exceptional investment opportunities in The Vistas Summerlin, Las Vegas's 
+                  premier luxury community. With strong appreciation rates, excellent rental yields, 
+                  and consistent demand, The Vistas Summerlin offers investors a stable and profitable 
+                  real estate market with long-term growth potential.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Why Invest in The Vistas Summerlin Real Estate?
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Summerlin has demonstrated exceptional investment performance with an 
+                  average ROI of 8.5% and year-over-year price appreciation of 5.2%. The community's 
+                  strategic location, world-class amenities, and limited inventory create a strong 
+                  foundation for continued growth. Properties in The Vistas benefit from proximity 
+                  to TPC Summerlin golf course and the community center at 11312 Parkside Way.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Investment Strategies for The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy specializes in helping investors identify profitable opportunities 
+                  in The Vistas Summerlin's 28 distinct subcommunities. From luxury single-family 
+                  homes to premium condos, each property type offers unique investment potential. 
+                  With flexible scheduling and deep market knowledge, Dr. Duffy provides personalized 
+                  investment guidance tailored to your financial goals.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Market Performance and Rental Potential
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Summerlin offers excellent rental potential with an average yield of 
+                  4.8% and strong tenant demand from professionals working in Las Vegas. The community's 
+                  amenities, including miles of walking paths and access to top-rated schools, 
+                  make it highly desirable for long-term tenants seeking luxury living.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy for Investment Guidance
+                </h3>
+                
+                <p className="mb-6">
+                  Ready to explore investment opportunities in The Vistas Summerlin? Contact Dr. Jan Duffy 
+                  at (702) 500-0607 for expert investment guidance and market analysis. Her office 
+                  at 11312 Parkside Way provides convenient access for all your real estate investment 
+                  needs in The Vistas community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Breadcrumbs */}
         <section className="py-4 bg-light-gray">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

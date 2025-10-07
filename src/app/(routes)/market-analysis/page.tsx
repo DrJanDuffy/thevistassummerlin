@@ -124,6 +124,71 @@ export default function MarketAnalysisPage() {
           </div>
         </section>
 
+        {/* SEO Content Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
+                The Vistas Summerlin Real Estate Market Analysis
+              </h2>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-xl mb-6">
+                  Get comprehensive market insights and analysis for The Vistas Summerlin real estate 
+                  market. Our detailed market analysis provides current trends, pricing data, and 
+                  forecasts to help you make informed decisions about buying or selling luxury 
+                  homes in Las Vegas's premier master-planned community.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Current Market Trends in The Vistas Summerlin
+                </h3>
+                
+                <p className="mb-6">
+                  The Vistas Summerlin real estate market continues to show strong performance with 
+                  a median home price of $875,000, representing a 5.2% increase year-over-year. 
+                  The community's limited inventory of 89 homes and average days on market of 45 
+                  days indicate a healthy, competitive market with strong buyer demand.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Market Performance Across Subcommunities
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy provides detailed market analysis across The Vistas Summerlin's 
+                  28 distinct subcommunities, from Mediterranean-inspired Portofino to the royal 
+                  elegance of Kingwood. Each subcommunity offers unique market characteristics 
+                  and investment potential, with properties benefiting from the community center 
+                  at 11312 Parkside Way and world-class amenities.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Expert Market Analysis from Dr. Jan Duffy
+                </h3>
+                
+                <p className="mb-6">
+                  Dr. Jan Duffy specializes in The Vistas Summerlin market analysis, offering 
+                  personalized insights with flexible scheduling that works around your lifestyle. 
+                  Her office at 11312 Parkside Way provides convenient access to comprehensive 
+                  market data and expert guidance for all your real estate decisions.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Contact Dr. Jan Duffy for Market Insights
+                </h3>
+                
+                <p className="mb-6">
+                  Ready to understand The Vistas Summerlin market trends? Contact Dr. Jan Duffy 
+                  at (702) 500-0607 for expert market analysis and personalized insights. Her 
+                  deep knowledge of local market conditions and flexible scheduling ensure you 
+                  get the information you need to make confident real estate decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Key Market Stats */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
