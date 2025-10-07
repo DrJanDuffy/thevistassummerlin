@@ -8,6 +8,7 @@ import Footer from '@/components/sections/footer';
 import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine, ArrowRight, ChevronDown } from 'lucide-react';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import RealScoutYourListings from '@/components/RealScoutYourListings';
+import RealScoutListings from '@/components/RealScoutListings';
 
 // Debounce utility function
 const debounce = (func: Function, wait: number) => {
@@ -213,10 +214,19 @@ export default function CommunitiesPage() {
               
               <p className="mb-6">
                 Our current inventory spans The Vistas Summerlin's prestigious communities with 
-                luxury homes ranging from $600,000 to over $2.5 million. Each property benefits 
+                luxury homes ranging from $500,000 to $600,000. Each property benefits 
                 from The Vistas' world-class amenities including the community center at 11312 
-                Parkside Way, miles of walking paths, and access to TPC Summerlin golf course. <Link href="/search" className="text-blue-600 hover:text-blue-800 font-semibold underline">Browse current listings</Link> or <Link href="/market-reports" className="text-blue-600 hover:text-blue-800 font-semibold underline">view market trends</Link>.
+                Parkside Way, miles of walking paths, and access to TPC Summerlin golf course. Browse our live listings below or <Link href="/market-reports" className="text-blue-600 hover:text-blue-800 font-semibold underline">view market trends</Link>.
               </p>
+              
+              {/* RealScout Listings Widget */}
+              <RealScoutListings 
+                title="Current Luxury Homes for Sale in The Vistas Summerlin Communities"
+                description="Explore our curated selection of luxury homes across The Vistas Summerlin's prestigious communities. Each property offers exceptional value with premium amenities and access to world-class community features."
+                priceMin="500000"
+                priceMax="600000"
+                className="my-12"
+              />
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
                 Expert Real Estate Services for The Vistas Communities

@@ -4,6 +4,7 @@ import Footer from '@/components/sections/footer';
 import { Star, Users, Award, TrendingUp, Heart, Phone, Mail, MapPin, ArrowRight, CheckCircle, Zap, Sparkles, Shield, Home } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import RealScoutListings from '@/components/RealScoutListings';
 
 export const metadata: Metadata = {
   title: 'About Dr. Jan Duffy - The Vistas Summerlin | Homes by Dr. Jan Duffy',
@@ -180,6 +181,15 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* RealScout Listings Widget */}
+        <RealScoutListings 
+          title="Current Luxury Homes for Sale - Dr. Jan Duffy's Listings"
+          description="Browse Dr. Jan Duffy's current luxury home listings in The Vistas Summerlin. Each property is carefully selected and expertly marketed with personalized service and local market expertise."
+          priceMin="500000"
+          priceMax="600000"
+          className="py-20"
+        />
 
         {/* Summerlin Community Section */}
         <section className="py-20 bg-blue-50">

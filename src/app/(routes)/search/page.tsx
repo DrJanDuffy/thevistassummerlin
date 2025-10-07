@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import RealScoutListings from '@/components/RealScoutListings';
 
 export const metadata: Metadata = {
   title: 'Property Search - Find Your Perfect Home in The Vistas Summerlin',
@@ -318,6 +319,15 @@ export default function SearchPage() {
             </div>
           </div>
         </section>
+
+        {/* RealScout Listings Widget */}
+        <RealScoutListings 
+          title="Current Luxury Homes for Sale in The Vistas Summerlin"
+          description="Browse our live inventory of luxury homes in The Vistas Summerlin. Each property offers exceptional value with premium amenities, mountain views, and access to world-class community features."
+          priceMin="500000"
+          priceMax="600000"
+          className="py-20"
+        />
 
         {/* Search Filters */}
         <section className="py-20 bg-white">

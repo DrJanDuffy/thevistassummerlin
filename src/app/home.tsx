@@ -13,6 +13,7 @@ import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import GoogleBusinessProfileWidget from '@/components/sections/google-business-profile-widget';
 import ReviewCollectionWidget from '@/components/sections/review-collection-widget';
+import RealScoutListings from '@/components/RealScoutListings';
 import LocalSEOShowcase from '@/components/sections/local-seo-showcase';
 
 export default function Home() {
@@ -303,12 +304,21 @@ export default function Home() {
                 </h3>
                 
                 <p className="mb-6">
-                  Our current inventory includes stunning luxury homes ranging from $800,000 to 
-                  over $2.5 million. Each property in The Vistas Summerlin offers exceptional 
+                  Our current inventory includes stunning luxury homes ranging from $500,000 to 
+                  $600,000. Each property in The Vistas Summerlin offers exceptional 
                   value with features like mountain views, golf course access, and proximity to 
                   world-class amenities. The community's elevation provides many homes with 
-                  breathtaking views of the Las Vegas Strip and surrounding mountains. <Link href="/search" className="text-blue-600 hover:text-blue-800 font-semibold underline">Browse our current listings</Link> or <Link href="/valuation" className="text-blue-600 hover:text-blue-800 font-semibold underline">get your home's value</Link>.
+                  breathtaking views of the Las Vegas Strip and surrounding mountains. Browse our live listings below or <Link href="/valuation" className="text-blue-600 hover:text-blue-800 font-semibold underline">get your home's value</Link>.
                 </p>
+                
+                {/* RealScout Listings Widget */}
+                <RealScoutListings 
+                  title="Current Luxury Homes for Sale in The Vistas Summerlin"
+                  description="Discover our curated selection of luxury homes in The Vistas Summerlin. Each property offers exceptional value with premium amenities, mountain views, and access to world-class community features."
+                  priceMin="500000"
+                  priceMax="600000"
+                  className="my-12"
+                />
                 
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
                       Downtown Summerlin Lifestyle & Entertainment
