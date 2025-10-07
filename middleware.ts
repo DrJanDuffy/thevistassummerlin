@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Temporarily disable redirects to fix redirect loop
-  // The redirects should be handled at the hosting level (Vercel)
+  // Let Vercel handle redirects via vercel.json
+  // This middleware is kept for future geo-targeting or other features
   return NextResponse.next();
 }
 
