@@ -5,7 +5,7 @@ import OptimizedImage, { BLUR_DATA_URLS } from '@/components/OptimizedImage';
 import { realScoutImageUrls } from '@/lib/propertyImages';
 import Navigation from '@/components/sections/navigation';
 import Hero from '@/components/sections/hero';
-import HomeEvaluationSection from '@/components/sections/home-evaluation';
+import HomeEvaluationSection from '@/components/sections/home-evaluation-v0';
 import PropertyCategories from '@/components/sections/property-categories';
 import FeaturedCommunities from '@/components/sections/featured-communities';
 import Footer from '@/components/sections/footer';

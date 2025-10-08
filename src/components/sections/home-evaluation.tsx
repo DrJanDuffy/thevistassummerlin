@@ -106,23 +106,33 @@ export default function HomeEvaluationSection() {
                 </p>
               </div>
 
-              <div className="min-h-[500px] flex items-center justify-center">
+              <div className="min-h-[300px] flex items-center justify-center">
                 {!isWidgetLoaded && (
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-                      <TrendingUp className="w-8 h-8 text-blue-500" />
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
+                      <TrendingUp className="w-6 h-6 text-blue-500" />
                     </div>
-                    <p className="text-gray-600">Loading valuation tool...</p>
+                    <p className="text-gray-600 text-sm">Loading valuation tool...</p>
                   </div>
                 )}
                 
-                {/* RealScout Home Value Widget */}
+                {/* RealScout Home Value Widget - Compact Size */}
                 {!widgetError ? (
-                  <div style={{ display: isWidgetLoaded ? 'block' : 'none', width: '100%', minHeight: '400px' }}>
+                  <div style={{ 
+                    display: isWidgetLoaded ? 'block' : 'none', 
+                    width: '100%', 
+                    maxWidth: '500px',
+                    margin: '0 auto'
+                  }}>
                     <realscout-home-value 
                       agent-encoded-id="QWdlbnQtMjI1MDUw"
                       onLoad={handleWidgetLoad}
                       onError={handleWidgetError}
+                      style={{
+                        transform: 'scale(0.9)',
+                        transformOrigin: 'center',
+                        maxHeight: '350px'
+                      }}
                     />
                   </div>
                 ) : (
