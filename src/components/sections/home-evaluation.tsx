@@ -1,11 +1,53 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { TrendingUp, Clock, MapPin, BarChart3, Award, Shield, Zap, Sparkles, Star, Users, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function HomeEvaluationSection() {
   const [isWidgetLoaded, setIsWidgetLoaded] = useState(false);
+  const [widgetError, setWidgetError] = useState(false);
+
+  useEffect(() => {
+    // Check if RealScout script is loaded
+    const checkRealScoutScript = () => {
+      if (typeof window !== 'undefined' && window.customElements) {
+        // Script is loaded, wait a bit more for widget to initialize
+        setTimeout(() => {
+          console.log('RealScout script loaded - showing widget');
+          setIsWidgetLoaded(true);
+        }, 2000);
+      } else {
+        // Script not loaded yet, check again
+        setTimeout(checkRealScoutScript, 500);
+      }
+    };
+
+    // Initial check after component mounts
+    const initialTimeout = setTimeout(checkRealScoutScript, 1000);
+    
+    // Fallback timeout to show widget after 5 seconds regardless
+    const fallbackTimeout = setTimeout(() => {
+      console.log('RealScout widget fallback timeout - showing widget anyway');
+      setIsWidgetLoaded(true);
+    }, 5000);
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearTimeout(fallbackTimeout);
+    };
+  }, []);
+
+  const handleWidgetLoad = () => {
+    console.log('RealScout widget loaded successfully');
+    setIsWidgetLoaded(true);
+  };
+
+  const handleWidgetError = () => {
+    console.error('RealScout widget failed to load');
+    setWidgetError(true);
+    setIsWidgetLoaded(true); // Show fallback content
+  };
 
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
@@ -75,10 +117,30 @@ export default function HomeEvaluationSection() {
                 )}
                 
                 {/* RealScout Home Value Widget */}
-                <realscout-home-value 
-                  agent-encoded-id="QWdlbnQtMjI1MDUw"
-                  onLoad={() => setIsWidgetLoaded(true)}
-                />
+                {!widgetError ? (
+                  <div style={{ display: isWidgetLoaded ? 'block' : 'none', width: '100%', minHeight: '400px' }}>
+                    <realscout-home-value 
+                      agent-encoded-id="QWdlbnQtMjI1MDUw"
+                      onLoad={handleWidgetLoad}
+                      onError={handleWidgetError}
+                    />
+                  </div>
+                ) : (
+                  <div className="text-center p-8">
+                    <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <TrendingUp className="w-8 h-8 text-red-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Valuation Tool Temporarily Unavailable</h3>
+                    <p className="text-gray-600 mb-4">Please contact Dr. Jan Duffy directly for a personalized home valuation.</p>
+                    <Link 
+                      href="/contact" 
+                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Contact Dr. Jan Duffy
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {/* Enhanced Trust Indicators */}
