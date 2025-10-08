@@ -66,6 +66,14 @@ export function RealEstateExpertSchema() {
           "@type": "Organization",
           "name": "Nevada Real Estate Division"
         }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Real Estate Agent",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Berkshire Hathaway HomeServices Nevada Properties"
+        }
       }
     ],
     "knowsAbout": [
@@ -154,7 +162,7 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "name": "The Vistas Summerlin | Homes by Dr. Jan Duffy",
+    "name": "Berkshire Hathaway HomeServices Nevada Properties - Dr. Jan Duffy",
     "description": "Premier real estate services for The Vistas Summerlin luxury community. Expert guidance from Dr. Jan Duffy with flexible scheduling.",
     "url": "https://www.thevistassummerlin.com",
     "telephone": "+1-702-500-0607",
@@ -302,10 +310,10 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "The Vistas Summerlin | Homes by Dr. Jan Duffy",
+    "name": "Berkshire Hathaway HomeServices Nevada Properties - The Vistas Summerlin | Dr. Jan Duffy",
     "description": "Premier real estate services specializing in The Vistas Summerlin luxury community.",
     "url": "https://www.thevistassummerlin.com",
-    "logo": "https://www.thevistassummerlin.com/logo.png",
+    "logo": "https://www.thevistassummerlin.com/berkshire-hathaway-logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-702-500-0607",

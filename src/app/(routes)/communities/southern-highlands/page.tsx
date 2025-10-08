@@ -9,7 +9,8 @@ import {
   MapPin, 
   Building, 
   Shield, 
-  Footprints, 
+  Footprints,
+  Crown, 
   TrainFront, 
   Bike, 
   GraduationCap,
@@ -33,8 +34,7 @@ import {
   CheckCircle,
   ArrowRight,
   Sun,
-  Waves,
-  Crown
+  Waves
 } from 'lucide-react';
 import { RealScoutWidget } from "@/components/RealScoutWidget";
 import Navigation from '@/components/sections/navigation';

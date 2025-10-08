@@ -32,10 +32,10 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thevistassummerlin.com'),
   title: {
-    default: "The Vistas Summerlin | Homes by Dr. Jan Duffy - Las Vegas Expert",
-    template: "%s | The Vistas Summerlin | Homes by Dr. Jan Duffy"
+    default: "The Vistas Summerlin | Berkshire Hathaway HomeServices Nevada Properties - Dr. Jan Duffy",
+    template: "%s | The Vistas Summerlin | Berkshire Hathaway HomeServices Nevada Properties"
   },
-  description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
+  description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
   keywords: [
     "The Vistas Summerlin",
     "Vistas Summerlin homes for sale",
@@ -45,11 +45,15 @@ export const metadata: Metadata = {
     "Las Vegas luxury real estate",
     "The Vistas community center",
     "11312 Parkside Way",
-    "flexible scheduling real estate"
+    "flexible scheduling real estate",
+    "Berkshire Hathaway HomeServices",
+    "Berkshire Hathaway Nevada Properties",
+    "BHHS Nevada Properties",
+    "Berkshire Hathaway real estate agent"
   ],
   authors: [{ name: "Dr. Jan Duffy", url: "https://www.thevistassummerlin.com" }],
-  creator: "Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert",
-  publisher: "The Vistas Summerlin | Homes by Dr. Jan Duffy",
+  creator: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties Real Estate Expert",
+  publisher: "Berkshire Hathaway HomeServices Nevada Properties | Dr. Jan Duffy",
   robots: {
     index: true,
     follow: true,

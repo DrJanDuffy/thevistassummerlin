@@ -72,7 +72,7 @@ export default function OptimizedImage({
         {isLoading && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg" />
         )}
-        <Image {...imageProps} fill />
+        <Image {...imageProps} fill alt={alt || 'Image'} />
       </div>
     );
   }
@@ -85,7 +85,7 @@ export default function OptimizedImage({
           style={{ width: `${width}px`, height: `${height}px` }}
         />
       )}
-      <Image {...imageProps} width={width!} height={height!} />
+      <Image {...imageProps} width={width!} height={height!} alt={alt || 'Image'} />
     </div>
   );
 }

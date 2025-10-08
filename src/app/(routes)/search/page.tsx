@@ -1,30 +1,11 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import RealScoutListings from '@/components/RealScoutListings';
 
-export const metadata: Metadata = {
-  title: 'Property Search - Find Your Perfect Home in The Vistas Summerlin',
-  description: 'Search luxury homes for sale in The Vistas Summerlin with advanced filters. Find your dream home from $800K-$2.5M+ with Dr. Jan Duffy\'s expert guidance. View 28+ subcommunities including Portofino, Kingwood & Barrington.',
-  keywords: [
-    'The Vistas Summerlin homes for sale',
-    'luxury homes Summerlin',
-    'property search The Vistas',
-    'homes for sale Las Vegas',
-    'Dr. Jan Duffy real estate',
-    'Summerlin property search'
-  ],
-  openGraph: {
-    title: 'Property Search - Find Your Perfect Home in The Vistas Summerlin',
-    description: 'Advanced property search with detailed filters and real-time results.',
-    url: 'https://www.thevistassummerlin.com/search',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://www.thevistassummerlin.com/search',
-  },
-};
+// Metadata moved to layout or parent component since this is a client component
 
 const propertyTypes = [
   {
@@ -321,13 +302,23 @@ export default function SearchPage() {
         </section>
 
         {/* RealScout Listings Widget */}
-        <RealScoutListings 
-          title="Current Luxury Homes for Sale in The Vistas Summerlin"
-          description="Browse our live inventory of luxury homes in The Vistas Summerlin. Each property offers exceptional value with premium amenities, mountain views, and access to world-class community features."
-          priceMin="500000"
-          priceMax="600000"
-          className="py-20"
-        />
+        <div className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Current Luxury Homes for Sale in The Vistas Summerlin
+              </h2>
+              <p className="text-lg text-gray-600">
+                Browse our live inventory of luxury homes in The Vistas Summerlin. Each property offers exceptional value with premium amenities, mountain views, and access to world-class community features.
+              </p>
+            </div>
+            <RealScoutListings 
+              officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID || "your-office-id"}
+              marketId={process.env.NEXT_PUBLIC_REALSCOUT_MARKET_ID || "las-vegas"}
+              responsive={true}
+            />
+          </div>
+        </div>
 
         {/* Search Filters */}
         <section className="py-20 bg-white">

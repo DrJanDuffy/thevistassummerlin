@@ -188,7 +188,7 @@ export const goldenMomentsImages: PropertyImage[] = [
   {
     src: realScoutImageUrls.frontExterior,
     alt: "11773 Golden Moments Avenue - Front exterior view",
-    caption: "Beautiful front exterior with landscaped yard"
+    caption: "Beautiful front exterior with landscaped yard and curb appeal"
   },
   {
     src: realScoutImageUrls.kitchen,
@@ -197,32 +197,32 @@ export const goldenMomentsImages: PropertyImage[] = [
   },
   {
     src: realScoutImageUrls.livingRoom,
-    alt: "11773 Golden Moments Avenue - Living room",
-    caption: "Spacious living room with gas fireplace"
+    alt: "11773 Golden Moments Avenue - Living room with gas fireplace",
+    caption: "Spacious living room with gas fireplace and natural light"
   },
   {
     src: realScoutImageUrls.masterBedroom,
-    alt: "11773 Golden Moments Avenue - Master bedroom",
-    caption: "Primary suite with private bath"
+    alt: "11773 Golden Moments Avenue - Master bedroom suite",
+    caption: "Primary suite with private bath and walk-in closet"
   },
   {
     src: realScoutImageUrls.backyard,
-    alt: "11773 Golden Moments Avenue - Backyard",
-    caption: "Huge landscaped yard perfect for entertaining"
+    alt: "11773 Golden Moments Avenue - Backyard outdoor living space",
+    caption: "Huge landscaped yard perfect for entertaining and family gatherings"
   },
   {
     src: realScoutImageUrls.diningRoom,
     alt: "11773 Golden Moments Avenue - Dining room",
-    caption: "Formal dining area"
+    caption: "Formal dining area for entertaining guests"
   },
   {
     src: realScoutImageUrls.secondMaster,
-    alt: "11773 Golden Moments Avenue - Second master suite",
-    caption: "Second primary suite upstairs"
+    alt: "11773 Golden Moments Avenue - Second master suite upstairs",
+    caption: "Second primary suite upstairs - unique dual master feature"
   },
   {
     src: realScoutImageUrls.garage,
     alt: "11773 Golden Moments Avenue - 2-car garage",
-    caption: "Attached 2-car garage"
+    caption: "Attached 2-car garage with storage space"
   }
 ];

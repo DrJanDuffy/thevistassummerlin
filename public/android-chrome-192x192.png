@@ -1,0 +1,17 @@
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="berkshireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#2C3E50;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Background circle -->
+    <circle cx="96" cy="96" r="86" fill="url(#berkshireGrad)" stroke="#34495e" stroke-width="2"/>
+    
+    <!-- BHHS initials -->
+    <text x="50%" y="45%" text-anchor="middle" dy="0.35em" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">BHHS</text>
+    
+    <!-- Nevada Properties text -->
+    <text x="50%" y="70%" text-anchor="middle" dy="0.35em" fill="white" font-family="Arial, sans-serif" font-size="23.04" font-weight="normal">Nevada Properties</text>
+  </svg>

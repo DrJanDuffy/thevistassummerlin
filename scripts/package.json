@@ -1,0 +1,37 @@
+{
+  "name": "supabase-schema-manager",
+  "version": "1.0.0",
+  "description": "Modern Supabase schema management with 2025 features",
+  "type": "module",
+  "main": "schema-manager.js",
+  "scripts": {
+    "schema:init": "node schema-manager.js init",
+    "schema:create": "node schema-manager.js create",
+    "schema:apply": "node schema-manager.js apply",
+    "schema:validate": "node schema-manager.js validate",
+    "schema:types": "node schema-manager.js types",
+    "schema:history": "node schema-manager.js history",
+    "schema:rollback": "node schema-manager.js rollback",
+    "schema:env": "node schema-manager.js env",
+    "schema:ci-setup": "node schema-manager.js ci-setup"
+  },
+  "keywords": [
+    "supabase",
+    "schema",
+    "migration",
+    "database",
+    "postgresql",
+    "typescript"
+  ],
+  "author": "The Vistas Summerlin Real Estate",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}

@@ -1,4 +1,5 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import { Star, Users, Award, TrendingUp, Heart, Phone, Mail, MapPin, ArrowRight, CheckCircle, Zap, Sparkles, Shield, Home } from 'lucide-react';
@@ -6,19 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import RealScoutListings from '@/components/RealScoutListings';
 
-export const metadata: Metadata = {
-  title: 'About Dr. Jan Duffy - The Vistas Summerlin | Homes by Dr. Jan Duffy',
-  description: 'Meet Dr. Jan Duffy, your trusted real estate expert for The Vistas Summerlin. 12+ years experience, flexible scheduling, and personalized service for discerning buyers and sellers.',
-  openGraph: {
-    title: 'About Dr. Jan Duffy - The Vistas Summerlin | Homes by Dr. Jan Duffy',
-    description: 'Trusted real estate expert with 12+ years experience serving The Vistas Summerlin community with flexible scheduling.',
-    url: 'https://www.thevistassummerlin.com/about',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://www.thevistassummerlin.com/about',
-  },
-};
+// Metadata moved to layout or parent component since this is a client component
 
 export default function AboutPage() {
   const phoneNumber = "+17025000607";
@@ -183,13 +172,23 @@ export default function AboutPage() {
         </section>
 
         {/* RealScout Listings Widget */}
-        <RealScoutListings 
-          title="Current Luxury Homes for Sale - Dr. Jan Duffy's Listings"
-          description="Browse Dr. Jan Duffy's current luxury home listings in The Vistas Summerlin. Each property is carefully selected and expertly marketed with personalized service and local market expertise."
-          priceMin="500000"
-          priceMax="600000"
-          className="py-20"
-        />
+        <div className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Current Luxury Homes for Sale - Dr. Jan Duffy's Listings
+              </h2>
+              <p className="text-lg text-gray-600">
+                Browse Dr. Jan Duffy's current luxury home listings in The Vistas Summerlin. Each property is carefully selected and expertly marketed with personalized service and local market expertise.
+              </p>
+            </div>
+            <RealScoutListings 
+              officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID || "your-office-id"}
+              marketId={process.env.NEXT_PUBLIC_REALSCOUT_MARKET_ID || "las-vegas"}
+              responsive={true}
+            />
+          </div>
+        </div>
 
         {/* Summerlin Community Section */}
         <section className="py-20 bg-blue-50">

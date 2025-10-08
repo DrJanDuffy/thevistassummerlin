@@ -1,7 +1,7 @@
 {
-  "name": "Dr. Jan Duffy REALTOR®",
-  "short_name": "Jan Duffy Realty",
-  "description": "Las Vegas Real Estate by Dr. Jan Duffy REALTOR® - Berkshire Hathaway HomeServices / SkyeCanyon",
+  "name": "Berkshire Hathaway HomeServices Nevada Properties - Dr. Jan Duffy",
+  "short_name": "BHHS Nevada Properties",
+  "description": "Las Vegas Real Estate by Dr. Jan Duffy REALTOR® - Berkshire Hathaway HomeServices Nevada Properties",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F9FC",

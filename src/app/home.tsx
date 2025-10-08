@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import OptimizedImage, { BLUR_DATA_URLS } from '@/components/OptimizedImage';
+import { realScoutImageUrls } from '@/lib/propertyImages';
 import Navigation from '@/components/sections/navigation';
 import Hero from '@/components/sections/hero';
 import HomeEvaluationSection from '@/components/sections/home-evaluation';
 import PropertyCategories from '@/components/sections/property-categories';
 import FeaturedCommunities from '@/components/sections/featured-communities';
 import Footer from '@/components/sections/footer';
-import { Phone, BookOpen, User, MapPin, ArrowRight, Zap, Sparkles, Heart, Award, TrendingUp, Users, Star, HomeIcon, DollarSign, Calendar, CheckCircle, Crown, Mountain, Building, Clock, Bed, Bath, Square, ExternalLink } from 'lucide-react';
+import { Phone, BookOpen, User, MapPin, ArrowRight, Zap, Sparkles, Heart, Award, TrendingUp, Users, Star, Home as HomeIcon, DollarSign, Calendar, CheckCircle, Crown, Mountain, Building, Clock, Bed, Bath, Square, ExternalLink } from 'lucide-react';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import GoogleBusinessProfileWidget from '@/components/sections/google-business-profile-widget';
@@ -92,18 +93,53 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl shadow-2xl overflow-hidden max-w-6xl mx-auto hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
               <div className="grid lg:grid-cols-2 gap-0">
                 
-                {/* Property Image */}
+                {/* Property Image Gallery */}
                 <div className="relative h-96 lg:h-[500px]">
-                        <OptimizedImage
-                          src="/images/featured-home-kitchen.jpg"
-                          alt="11773 Golden Moments Avenue luxury kitchen in The Vistas Summerlin - Modern black and white design with granite countertops"
-                          fill
-                          className="object-cover"
-                          priority
-                          quality={90}
-                          placeholder="blur"
-                          blurDataURL={BLUR_DATA_URLS.house}
-                        />
+                  {/* Main Image - RealScout Kitchen Photo */}
+                  <OptimizedImage
+                    src={realScoutImageUrls.kitchen}
+                    alt="11773 Golden Moments Avenue luxury kitchen in The Vistas Summerlin - Modern black and white design with granite countertops"
+                    fill
+                    className="object-cover"
+                    priority
+                    quality={90}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URLS.house}
+                  />
+                  
+                  {/* Photo Gallery Thumbnails - Bottom Right */}
+                  <div className="absolute bottom-4 right-4 flex space-x-2">
+                    <div className="w-16 h-12 rounded-lg overflow-hidden border-2 border-white/50 shadow-lg hover:border-white/80 transition-colors">
+                      <OptimizedImage
+                        src={realScoutImageUrls.frontExterior}
+                        alt="Front exterior of 11773 Golden Moments Avenue"
+                        width={64}
+                        height={48}
+                        className="object-cover w-full h-full"
+                        quality={80}
+                      />
+                    </div>
+                    <div className="w-16 h-12 rounded-lg overflow-hidden border-2 border-white/50 shadow-lg hover:border-white/80 transition-colors">
+                      <OptimizedImage
+                        src={realScoutImageUrls.livingRoom}
+                        alt="Living room with gas fireplace"
+                        width={64}
+                        height={48}
+                        className="object-cover w-full h-full"
+                        quality={80}
+                      />
+                    </div>
+                    <div className="w-16 h-12 rounded-lg overflow-hidden border-2 border-white/50 shadow-lg hover:border-white/80 transition-colors">
+                      <OptimizedImage
+                        src={realScoutImageUrls.backyard}
+                        alt="Huge landscaped backyard perfect for entertaining"
+                        width={64}
+                        height={48}
+                        className="object-cover w-full h-full"
+                        quality={80}
+                      />
+                    </div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   
                   {/* V0 Image Overlay Content */}
@@ -319,7 +355,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <Home className="w-8 h-8 text-white" />
+                  <HomeIcon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">28+ Subcommunities</h3>
                 <p className="text-gray-600 text-center leading-relaxed">

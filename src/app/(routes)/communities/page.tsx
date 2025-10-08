@@ -220,13 +220,19 @@ export default function CommunitiesPage() {
               </p>
               
               {/* RealScout Listings Widget */}
-              <RealScoutListings 
-                title="Current Luxury Homes for Sale in The Vistas Summerlin Communities"
-                description="Explore our curated selection of luxury homes across The Vistas Summerlin's prestigious communities. Each property offers exceptional value with premium amenities and access to world-class community features."
-                priceMin="500000"
-                priceMax="600000"
-                className="my-12"
-              />
+              <div className="my-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Current Luxury Homes for Sale in The Vistas Summerlin Communities
+                </h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  Explore our curated selection of luxury homes across The Vistas Summerlin's prestigious communities. Each property offers exceptional value with premium amenities and access to world-class community features.
+                </p>
+                <RealScoutListings 
+                  officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID || "your-office-id"}
+                  marketId={process.env.NEXT_PUBLIC_REALSCOUT_MARKET_ID || "las-vegas"}
+                  responsive={true}
+                />
+              </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
                 Downtown Summerlin Lifestyle & Entertainment

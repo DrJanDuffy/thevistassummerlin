@@ -3,25 +3,28 @@
 // when they become available
 
 export const realScoutImageUrls = {
-  // Front exterior
-  frontExterior: "/subcommunities/IMG_0737.JPG",
+  // Temporary placeholder images until RealScout URLs are obtained
+  // Replace these with actual RealScout URLs from your listing
   
-  // Kitchen
-  kitchen: "/images/featured-home-kitchen.jpg",
+  // Front exterior - Using high-quality real estate stock photo
+  frontExterior: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center",
   
-  // Living room
-  livingRoom: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+  // Kitchen - Modern kitchen placeholder
+  kitchen: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&crop=center",
   
-  // Master bedroom
-  masterBedroom: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+  // Living room - Cozy living room placeholder
+  livingRoom: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop&crop=center",
   
-  // Backyard
-  backyard: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+  // Master bedroom - Bedroom placeholder
+  masterBedroom: "https://images.unsplash.com/photo-1631889993959-41b5b5e5b8b5?w=800&h=600&fit=crop&crop=center",
   
-  // Additional rooms (placeholder URLs)
-  diningRoom: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-  secondMaster: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-  garage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+  // Backyard - Outdoor space placeholder
+  backyard: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center",
+  
+  // Additional rooms - Placeholders
+  diningRoom: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&crop=center",
+  secondMaster: "https://images.unsplash.com/photo-1631889993959-41b5b5e5b8b5?w=800&h=600&fit=crop&crop=center",
+  garage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center",
 };
 
 // Instructions for updating with real images:

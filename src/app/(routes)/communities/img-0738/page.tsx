@@ -7,7 +7,8 @@ import {
   MapPin, 
   Building, 
   Shield, 
-  Footprints, 
+  Footprints,
+  Crown, 
   TrainFront, 
   Bike, 
   GraduationCap,
@@ -30,7 +31,6 @@ import {
   Mountain,
   Sun,
   Waves,
-  Crown,
   Gem,
   Sparkles
 } from 'lucide-react';
