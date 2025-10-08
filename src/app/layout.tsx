@@ -11,7 +11,9 @@ import {
   LocalBusinessSchema, 
   RealEstateListingSchema,
   WebsiteSchema,
-  OrganizationSchema
+  OrganizationSchema,
+  ReviewSchema,
+  ServiceSchema
 } from '@/components/StructuredData';
 
 const playfair = Playfair_Display({
@@ -88,6 +90,11 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || "your-google-verification-code",
   },
+  other: {
+    'google-site-verification': process.env.GOOGLE_SITE_VERIFICATION || "your-google-verification-code",
+    'msvalidate.01': process.env.BING_SITE_VERIFICATION || "",
+    'yandex-verification': process.env.YANDEX_SITE_VERIFICATION || "",
+  },
   alternates: {
     canonical: "https://www.thevistassummerlin.com",
   },
@@ -105,6 +112,26 @@ export default function RootLayout({
         <meta name="theme-color" content="#2C3E50" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)" />
         
+        {/* Additional SEO Meta Tags */}
+        <meta name="geo.region" content="US-NV" />
+        <meta name="geo.placename" content="Las Vegas" />
+        <meta name="geo.position" content="36.1699;-115.1398" />
+        <meta name="ICBM" content="36.1699, -115.1398" />
+        <meta name="language" content="en-US" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="Global" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="target" content="all" />
+        <meta name="audience" content="all" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* Business Information */}
+        <meta name="business:contact_data:locality" content="Las Vegas" />
+        <meta name="business:contact_data:region" content="NV" />
+        <meta name="business:contact_data:postal_code" content="89138" />
+        <meta name="business:contact_data:country_name" content="United States" />
+        
         {/* 2025 SEO Schema Markup */}
         <RealEstateExpertSchema />
         <FAQSchema />
@@ -112,6 +139,8 @@ export default function RootLayout({
         <RealEstateListingSchema />
         <WebsiteSchema />
         <OrganizationSchema />
+        <ReviewSchema />
+        <ServiceSchema />
         
         {/* RealScout Widget Script - Loaded once for all pages */}
         <Script 

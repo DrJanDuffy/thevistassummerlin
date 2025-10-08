@@ -484,3 +484,121 @@ export function PropertySchema({
     />
   );
 }
+
+// Review Schema for testimonials
+export function ReviewSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dr. Jan Duffy - The Vistas Summerlin Real Estate Expert",
+    "description": "Premier real estate services for The Vistas Summerlin luxury community with flexible scheduling that works around YOUR lifestyle.",
+    "url": "https://www.thevistassummerlin.com",
+    "telephone": "+1-702-500-0607",
+    "email": "DrJanSells@TheVistasSummerlin.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11312 Parkside Way",
+      "addressLocality": "Las Vegas",
+      "addressRegion": "NV",
+      "postalCode": "89138",
+      "addressCountry": "US"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Sarah M."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Dr. Jan Duffy made our home buying experience in The Vistas Summerlin seamless. Her flexible scheduling worked perfectly with our busy lifestyle, and her expertise in the community was invaluable."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Michael R."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "We found our dream home in Canterra thanks to Dr. Jan's knowledge of The Vistas Summerlin's unique communities. Her attention to detail and personalized service exceeded our expectations."
+      }
+    ]
+  };
+
+  return (
+    <Script
+      id="review-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Service Schema for real estate services
+export function ServiceSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Vistas Summerlin Real Estate Services",
+    "description": "Expert real estate services for The Vistas Summerlin luxury community including buying, selling, and investment consulting with flexible scheduling.",
+    "provider": {
+      "@type": "RealEstateAgent",
+      "name": "Dr. Jan Duffy",
+      "telephone": "+1-702-500-0607",
+      "email": "DrJanSells@TheVistasSummerlin.com"
+    },
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "The Vistas Summerlin, Las Vegas, NV"
+      },
+      {
+        "@type": "Place",
+        "name": "Henderson, NV"
+      },
+      {
+        "@type": "Place",
+        "name": "Enterprise, NV"
+      },
+      {
+        "@type": "Place",
+        "name": "Southwest Vegas, NV"
+      }
+    ],
+    "serviceType": [
+      "Real Estate Sales",
+      "Property Valuation",
+      "Market Analysis",
+      "Buyer Representation",
+      "Seller Representation",
+      "Investment Consulting"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "description": "Flexible scheduling that works around YOUR lifestyle - available early mornings, evenings, and weekends"
+    }
+  };
+
+  return (
+    <Script
+      id="service-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
