@@ -1,24 +1,24 @@
-# Robots.txt for The Vistas Summerlin | Dr. Jan Duffy
-# Berkshire Hathaway HomeServices Nevada Properties
-
+# *
 User-agent: *
 Allow: /
 
-# Disallow sensitive areas
+# *
+User-agent: *
 Disallow: /api/
+
+# *
+User-agent: *
 Disallow: /_next/
+
+# *
+User-agent: *
 Disallow: /admin/
+
+# *
+User-agent: *
 Disallow: /*.vercel.app/
 
-# Allow important pages for SEO
-Allow: /communities/
-Allow: /properties/
-Allow: /search
-Allow: /valuation
-Allow: /about
-Allow: /contact
-
-# Host directive
+# Host
 Host: https://www.thevistassummerlin.com
 
 # Sitemaps
