@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import { initializeSEOMonitoring } from '@/utils/seoAuditUtils';
 
 // Declare gtag as a global function
 declare global {
@@ -85,8 +84,7 @@ export default function CoreWebVitalsMonitor() {
       console.warn('Failed to load web-vitals:', error);
     });
 
-    // Initialize SEO monitoring
-    initializeSEOMonitoring();
+    // Note: SEO monitoring removed to prevent client-side errors
   }, []);
 
   return null; // This component doesn't render anything

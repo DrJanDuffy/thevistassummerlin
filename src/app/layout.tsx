@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/realscout-widgets.css";
-import ErrorReporter from "@/components/ErrorReporter";
 import Script from 'next/script';
 import { ReactNode } from 'react';
 import { 
@@ -14,7 +13,6 @@ import {
   WebsiteSchema,
   OrganizationSchema
 } from '@/components/StructuredData';
-import CoreWebVitalsMonitor from '@/components/CoreWebVitalsMonitor';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -124,8 +122,6 @@ export default function RootLayout({
         />
       </head>
       <body className={`antialiased ${playfair.variable} ${lato.variable} font-secondary text-text-dark bg-white`}>
-        <ErrorReporter />
-        <CoreWebVitalsMonitor />
         {children}
       </body>
     </html>

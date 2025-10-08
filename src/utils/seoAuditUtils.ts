@@ -1,4 +1,10 @@
 // SEO Audit Utilities for 2025 Google Standards
+
+// Declare gtag as a global function
+declare global {
+  function gtag(...args: any[]): void;
+}
+
 export const seoAuditUtils = {
   // Check canonical URL consistency
   checkCanonicalConsistency: () => {
