@@ -56,12 +56,12 @@ export default function Home() {
 
               <h2 className="text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-yellow-200 to-orange-200 bg-clip-text text-transparent leading-tight">
                 Golden Moments Avenue
-                <span className="block text-4xl lg:text-5xl mt-4">Move-In Ready Luxury</span>
+                <span className="block text-4xl lg:text-5xl mt-4">Canterra Community Luxury</span>
               </h2>
               
               <p className="text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-12">
-                Discover this exceptional 4-bedroom, 3-bath home in The Vistas Summerlin. 
-                Two spacious primary suites and a modern chef's kitchen await your family.
+                Discover this exceptional 4-bedroom, 3-bath home in Canterra - The Vistas Summerlin's premier community 
+                featuring oversized lots up to 11,761 sq ft and dual master suite floor plans perfect for multi-generational living.
               </p>
 
               {/* V0 Property Highlights */}
@@ -148,7 +148,7 @@ export default function Home() {
                       <h3 className="text-3xl font-bold mb-2">11773 Golden Moments Avenue</h3>
                       <div className="flex items-center space-x-2 text-blue-100 mb-4">
                         <MapPin className="w-5 h-5" />
-                        <span>The Vistas Summerlin, Las Vegas, NV 89138</span>
+                        <span>Canterra - The Vistas Summerlin, Las Vegas, NV 89138</span>
                       </div>
                       <div className="flex items-center space-x-4 text-sm">
                         <div className="flex items-center space-x-1">
@@ -184,19 +184,21 @@ export default function Home() {
                     
                     {/* Property Description */}
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🏡 About This Home</h4>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🏡 About This Canterra Home</h4>
                       <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                        This exceptional 4-bedroom, 3-bathroom home at 11773 Golden Moments Avenue represents the perfect 
-                        blend of luxury and comfort in The Vistas Summerlin. Featuring two spacious primary suites, 
-                        this property offers flexible living arrangements perfect for multi-generational families or 
-                        those seeking additional privacy. The modern chef's kitchen showcases black granite countertops 
-                        and white shaker cabinets, creating a sophisticated culinary space.
+                        This exceptional 4-bedroom, 3-bathroom home at 11773 Golden Moments Avenue is located in 
+                        Canterra - The Vistas Summerlin's premier community featuring oversized lots up to 11,761 sq ft. 
+                        This home showcases Canterra's signature dual master suite floor plan, perfect for multi-generational 
+                        families seeking flexible living arrangements. The modern chef's kitchen showcases black granite 
+                        countertops and white shaker cabinets, creating a sophisticated culinary space.
                       </p>
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        The expansive landscaped yard provides ample space for outdoor entertaining and relaxation, 
-                        while the move-in ready condition ensures a seamless transition. Located in the prestigious 
-                        Vistas Summerlin master-planned community, this home offers access to world-class amenities 
-                        including TPC Summerlin golf course and Downtown Summerlin's shopping and dining destinations.
+                        The expansive landscaped yard takes full advantage of Canterra's oversized lot design, providing 
+                        ample space for pools, professional landscaping, and outdoor entertaining. Built during the 
+                        pre-boom era when land was more affordable, this home represents excellent investment value. 
+                        Located in the prestigious Vistas Summerlin master-planned community, this home offers access 
+                        to world-class amenities including TPC Summerlin golf course and Downtown Summerlin's shopping 
+                        and dining destinations.
                       </p>
                     </div>
                     
@@ -205,16 +207,16 @@ export default function Home() {
                       <h4 className="text-2xl font-bold text-gray-900 mb-6">✨ Key Features</h4>
                       <div className="grid grid-cols-1 gap-4">
                         {[
-                          "Two spacious primary suites with private bathrooms",
+                          "Canterra's signature dual master suite floor plan - perfect for multi-generational living",
+                          "Oversized lot design providing space for pools, landscaping, and outdoor kitchens",
                           "Modern chef's kitchen with black granite countertops and white shaker cabinets",
-                          "Huge landscaped yard perfect for entertaining and outdoor living",
-                          "Move-in ready condition with recent updates",
-                          "Prime location in The Vistas Summerlin master-planned community",
-                          "Excellent schools and world-class amenities nearby",
-                          "Access to TPC Summerlin golf course",
-                          "Close proximity to Downtown Summerlin shopping and dining",
-                          "Mountain views and natural desert landscaping",
-                          "Two-car garage with additional storage space"
+                          "Huge landscaped yard taking advantage of Canterra's big lot advantage",
+                          "Built during pre-boom era for excellent investment value and appreciation",
+                          "Prime location in Canterra - The Vistas Summerlin's premier community",
+                          "Flexible square footage range (1,829-2,787 sq ft) hitting the sweet spot",
+                          "360-degree design with 15% outdoor living space per Summerlin standards",
+                          "Access to TPC Summerlin golf course and Downtown Summerlin amenities",
+                          "Move-in ready condition with recent updates and modern finishes"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-center space-x-3">
                             <CheckCircle className="w-5 h-5 text-green-500" />
@@ -247,22 +249,24 @@ export default function Home() {
                     
                     {/* Neighborhood Information */}
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-200">
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">📍 The Vistas Summerlin Community</h4>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">📍 Canterra Community Features</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
                         <div>
-                          <h5 className="font-semibold text-gray-900 mb-2">🏫 Schools</h5>
+                          <h5 className="font-semibold text-gray-900 mb-2">🏡 Canterra Advantages</h5>
                           <ul className="space-y-1">
-                            <li>• Palo Verde High School</li>
-                            <li>• Sig Rogich Middle School</li>
-                            <li>• Ernest May Elementary</li>
+                            <li>• Oversized lots up to 11,761 sq ft</li>
+                            <li>• Dual master suite floor plans</li>
+                            <li>• Multi-generational living ready</li>
+                            <li>• Room for pools & outdoor kitchens</li>
                           </ul>
                         </div>
                         <div>
-                          <h5 className="font-semibold text-gray-900 mb-2">🏌️ Amenities</h5>
+                          <h5 className="font-semibold text-gray-900 mb-2">🏌️ Nearby Amenities</h5>
                           <ul className="space-y-1">
                             <li>• TPC Summerlin Golf Course</li>
-                            <li>• Community pools & tennis courts</li>
-                            <li>• Walking trails & parks</li>
+                            <li>• Downtown Summerlin shopping</li>
+                            <li>• Excellent schools & parks</li>
+                            <li>• Mountain views & desert landscape</li>
                           </ul>
                         </div>
                       </div>
@@ -275,7 +279,7 @@ export default function Home() {
                         <h5 className="text-lg font-bold text-orange-800">Limited Time Opportunity</h5>
                       </div>
                       <p className="text-orange-700">
-                        This exceptional home won't last long in The Vistas Summerlin market. 
+                        This exceptional Canterra home with oversized lot and dual master suites won't last long in The Vistas Summerlin market. 
                         Schedule your private tour today!
                       </p>
                     </div>
@@ -317,11 +321,11 @@ export default function Home() {
                   <span>Schedule Tour</span>
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/communities/canterra"
                   className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-10 py-4 rounded-2xl text-lg font-bold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
                 >
-                  <Heart className="w-5 h-5" />
-                  <span>Get More Info</span>
+                  <MapPin className="w-5 h-5" />
+                  <span>Explore Canterra</span>
                 </Link>
               </div>
             </div>
