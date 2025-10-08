@@ -9,6 +9,8 @@ import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine, ArrowR
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import RealScoutYourListings from '@/components/RealScoutYourListings';
 import RealScoutListings from '@/components/RealScoutListings';
+import PropertyCategories from '@/components/sections/property-categories';
+import FeaturedCommunities from '@/components/sections/featured-communities';
 
 // Debounce utility function
 const debounce = (func: Function, wait: number) => {
@@ -506,6 +508,12 @@ export default function CommunitiesPage() {
           )}
         </div>
       </section>
+
+      {/* Property Categories Section */}
+      <PropertyCategories />
+
+      {/* Featured Communities Section */}
+      <FeaturedCommunities />
 
       {/* RealScout Integration */}
       <section className="py-16 bg-white">

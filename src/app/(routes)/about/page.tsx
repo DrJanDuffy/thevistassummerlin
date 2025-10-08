@@ -2,10 +2,13 @@
 
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
-import { Star, Users, Award, TrendingUp, Heart, Phone, Mail, MapPin, ArrowRight, CheckCircle, Zap, Sparkles, Shield, Home } from 'lucide-react';
+import { Star, Users, Award, TrendingUp, Heart, Phone, Mail, MapPin, ArrowRight, CheckCircle, Zap, Sparkles, Shield, Home, Crown, Mountain, Building } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import RealScoutListings from '@/components/RealScoutListings';
+import GoogleBusinessProfileWidget from '@/components/sections/google-business-profile-widget';
+import ReviewCollectionWidget from '@/components/sections/review-collection-widget';
+import LocalSEOShowcase from '@/components/sections/local-seo-showcase';
 
 // Metadata moved to layout or parent component since this is a client component
 
@@ -478,6 +481,56 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Service Areas Section */}
+        <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+          {/* V0 Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-blue-200/30 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Service Areas
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Dr. Jan Duffy serves discerning clients across the Las Vegas Valley with expertise in The Vistas Summerlin
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { name: 'The Vistas Summerlin', icon: Crown, featured: true },
+                { name: 'Henderson', icon: Building },
+                { name: 'Enterprise', icon: Building },
+                { name: 'Southwest Vegas', icon: Building },
+                { name: 'Summerlin', icon: Mountain },
+                { name: 'Paradise', icon: Building },
+                { name: 'Las Vegas', icon: Building },
+                { name: 'Clark County', icon: Building },
+                { name: 'Desert Hills', icon: Building },
+                { name: 'Spring Valley', icon: Building }
+              ].map((area, index) => (
+                <div key={index} className={`${area.featured ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : 'bg-white/80 backdrop-blur-sm border border-white/50'} rounded-xl p-4 text-center hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                  <area.icon className={`w-6 h-6 ${area.featured ? 'text-white' : 'text-blue-600'} mx-auto mb-2`} />
+                  <p className={`text-sm font-medium ${area.featured ? 'text-white' : 'text-gray-900'}`}>{area.name}</p>
+                  {area.featured && <p className="text-xs text-blue-200 mt-1">Specialty</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Google Business Profile Widget */}
+        <GoogleBusinessProfileWidget />
+        
+        {/* Review Collection Widget */}
+        <ReviewCollectionWidget />
+        
+        {/* Local SEO Showcase */}
+        <LocalSEOShowcase />
       </main>
       <Footer />
     </div>

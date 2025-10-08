@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import { CalendlyButton } from '@/components/CalendlyButton';
+import HomeEvaluationSection from '@/components/sections/home-evaluation-v0';
 import Link from 'next/link';
 import { 
   Calculator, 
@@ -320,6 +321,9 @@ export default function ValuationPage() {
           </div>
         </div>
       </section>
+
+      {/* Interactive Home Valuation Widget */}
+      <HomeEvaluationSection />
 
       <Footer />
     </div>
