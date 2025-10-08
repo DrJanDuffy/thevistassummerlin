@@ -7,20 +7,25 @@ import { MapPin, Home, Users, Star, ArrowRight, CheckCircle, Mountain, TreePine,
 import { CommunitySchema, BreadcrumbSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Canterra Community - Luxury Homes in The Vistas Summerlin | Dr. Jan Duffy',
-  description: 'Discover Canterra, a contemporary community in The Vistas Summerlin featuring luxury homes with resort-style amenities and modern design. Expert real estate guidance from Dr. Jan Duffy.',
+  title: 'Canterra Community - Oversized Lots & Dual Master Suites in The Vistas Summerlin | Dr. Jan Duffy',
+  description: 'Discover Canterra in The Vistas Summerlin featuring oversized lots up to 11,761 sq ft, dual master suite floor plans, and flexible square footage from 1,829-2,787 sq ft. Perfect for multi-generational living.',
   keywords: [
     'Canterra The Vistas Summerlin',
-    'luxury homes Canterra',
+    'oversized lots Las Vegas',
+    'dual master suite homes',
+    'multi-generational homes',
     'Canterra Las Vegas real estate',
     'Dr. Jan Duffy Canterra',
-    'Canterra community features',
+    'big lot homes Summerlin',
     'homes for sale Canterra',
-    'The Vistas Summerlin Canterra'
+    'The Vistas Summerlin Canterra',
+    '11,761 square foot lots',
+    'pool installation lots',
+    'RV parking homes'
   ],
   openGraph: {
-    title: 'Canterra Community - Luxury Homes in The Vistas Summerlin',
-    description: 'Contemporary community featuring luxury homes with resort-style amenities and modern design.',
+    title: 'Canterra Community - Oversized Lots & Dual Master Suites in The Vistas Summerlin',
+    description: 'Oversized lots up to 11,761 sq ft with dual master suite floor plans perfect for multi-generational living in The Vistas Summerlin.',
     url: 'https://www.thevistassummerlin.com/communities/canterra',
     type: 'website',
   },
@@ -35,10 +40,10 @@ export default function CanterraPage() {
       {/* Structured Data */}
       <CommunitySchema 
         communityName="Canterra"
-        description="Contemporary community in The Vistas Summerlin featuring luxury homes with resort-style amenities and modern design."
+        description="Oversized lots up to 11,761 sq ft with dual master suite floor plans perfect for multi-generational living in The Vistas Summerlin."
         priceRange="$550,000 - $1,300,000"
         homeCount={22}
-        amenities={['Resort Pool', 'Modern Design', 'Tennis Courts', 'Fitness Center', 'Community Events', 'Landscaped Grounds']}
+        amenities={['Oversized Lots', 'Dual Master Suites', 'Multi-Generational Living', 'Pool Installation Space', 'RV Parking', '360-Degree Design']}
       />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://www.thevistassummerlin.com' },
@@ -66,12 +71,12 @@ export default function CanterraPage() {
 
               <h1 className="text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-blue-200 to-cyan-200 bg-clip-text text-transparent leading-tight">
                 Canterra
-                <span className="block text-4xl lg:text-5xl mt-4">Resort-Style Amenities</span>
+                <span className="block text-4xl lg:text-5xl mt-4">Oversized Lots & Dual Master Suites</span>
               </h1>
               
               <p className="text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-12">
-                Discover Canterra, a contemporary community in The Vistas Summerlin featuring 
-                luxury homes with resort-style amenities and modern design.
+                Discover Canterra's unique oversized lots up to 11,761 sq ft with dual master suite 
+                floor plans perfect for multi-generational living in The Vistas Summerlin.
               </p>
 
               {/* Community Stats */}
@@ -82,9 +87,9 @@ export default function CanterraPage() {
                   <div className="text-blue-200 text-sm">Starting Price</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
-                  <Home className="w-8 h-8 text-blue-300 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-white">22+</div>
-                  <div className="text-blue-200 text-sm">Homes Available</div>
+                  <Square className="w-8 h-8 text-blue-300 mx-auto mb-3" />
+                  <div className="text-2xl font-bold text-white">11,761</div>
+                  <div className="text-blue-200 text-sm">Max Lot Size (sq ft)</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
                   <Star className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
@@ -92,69 +97,188 @@ export default function CanterraPage() {
                   <div className="text-blue-200 text-sm">Community Rating</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg">
-                  <Users className="w-8 h-8 text-cyan-300 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-white">1,100+</div>
-                  <div className="text-blue-200 text-sm">Residents</div>
+                  <Bed className="w-8 h-8 text-cyan-300 mx-auto mb-3" />
+                  <div className="text-2xl font-bold text-white">2,787</div>
+                  <div className="text-blue-200 text-sm">Max Home Size (sq ft)</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Community Overview */}
+        {/* Unique Selling Points */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Canterra's Unique Selling Points
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover what makes Canterra truly special in The Vistas Summerlin market - 
+                oversized lots, dual master suites, and flexible square footage options.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-8">
-                  Canterra: Contemporary Resort-Style Living
-                </h2>
-                
-                <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                  <p className="text-xl mb-6">
-                    Canterra represents the perfect blend of contemporary design and resort-style 
-                    amenities in The Vistas Summerlin, offering residents modern luxury living 
-                    with world-class facilities.
-                  </p>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                    Why Choose Canterra?
-                  </h3>
-                  
-                  <p className="mb-6">
-                    Canterra is designed for those who appreciate modern architecture and 
-                    resort-style amenities. This contemporary community features homes with 
-                    clean lines, open floor plans, and access to exceptional community facilities 
-                    including a resort-style pool and fitness center.
-                  </p>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                    Luxury Homes & Features
-                  </h3>
-                  
-                  <p className="mb-6">
-                    Homes in Canterra range from $550,000 to $1.3 million, featuring 
-                    contemporary floor plans, modern kitchens, and spacious living areas. 
-                    Many properties include private patios, landscaped yards, and 
-                    two-car garages with additional storage space.
-                  </p>
+                <div className="space-y-12">
+                  {/* Oversized Lots */}
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-xl border border-blue-100">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mr-6">
+                        <Square className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">1. Oversized Lots</h3>
+                        <p className="text-blue-600 font-semibold">Up to 11,761 Square Feet</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                      <strong>The biggest differentiator</strong> - lot sizes up to 11,761 square feet, 
+                      which was HUGE for production homes in that era. Most tract homes in Vegas 
+                      were on 5,000-7,000 sq ft lots.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="bg-white rounded-xl p-4 text-center shadow-sm">
+                        <div className="text-2xl font-bold text-blue-600 mb-2">🏊</div>
+                        <div className="text-sm font-semibold text-gray-700">Pool Installation</div>
+                      </div>
+                      <div className="bg-white rounded-xl p-4 text-center shadow-sm">
+                        <div className="text-2xl font-bold text-blue-600 mb-2">🌳</div>
+                        <div className="text-sm font-semibold text-gray-700">Professional Landscaping</div>
+                      </div>
+                      <div className="bg-white rounded-xl p-4 text-center shadow-sm">
+                        <div className="text-2xl font-bold text-blue-600 mb-2">🚐</div>
+                        <div className="text-sm font-semibold text-gray-700">RV Parking</div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 p-4 bg-blue-100 rounded-xl">
+                      <p className="text-blue-800 font-medium">
+                        💡 <strong>Smart Investment:</strong> In 2003-2004, when land was cheaper pre-boom, 
+                        R/S grabbed bigger parcels and marketed "room to grow" - pools, RV parking, 
+                        outdoor kitchens. Smart play that's paying off now with resale values.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Dual Master Suites */}
+                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 shadow-xl border border-purple-100">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6">
+                        <Users className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">2. Dual Master Suite Floor Plans</h3>
+                        <p className="text-purple-600 font-semibold">Perfect Multi-Generational Living</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                      The highly sought-after dual master suite floor plan was a signature R/S feature - 
+                      perfect for multi-generational living, which was becoming popular in Vegas 
+                      in the early 2000s.
+                    </p>
+                    
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-bold text-gray-900 mb-3">Ideal For:</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                          <span className="text-gray-700">Multi-generational families</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                          <span className="text-gray-700">Aging parents</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                          <span className="text-gray-700">Adult children</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                          <span className="text-gray-700">Guest accommodations</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-xl">
-                  <Image
-                    src="/subcommunities/IMG_0737.JPG"
-                    alt="Canterra community in The Vistas Summerlin - contemporary luxury homes with resort amenities"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-lg"
-                    priority
-                  />
-                  <div className="mt-6 text-center">
-                    <p className="text-gray-600 italic">
-                      "Canterra offers the perfect blend of contemporary design and resort-style living."
+              <div>
+                <div className="space-y-12">
+                  {/* Flexible Square Footage */}
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-xl border border-green-100">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6">
+                        <Home className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">3. Flexible Square Footage Range</h3>
+                        <p className="text-green-600 font-semibold">1,829 - 2,787 Square Feet</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                      With homes from 1,829-2,787 sq ft, they hit that sweet spot - bigger than 
+                      entry-level but not luxury pricing. Mid-range families could get space AND a big lot.
                     </p>
+                    
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <div className="text-center mb-4">
+                        <div className="text-3xl font-bold text-green-600">1,829 - 2,787</div>
+                        <div className="text-gray-600">Square Feet Range</div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-green-600">1,829</div>
+                          <div className="text-sm text-gray-600">Minimum</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-green-600">2,787</div>
+                          <div className="text-sm text-gray-600">Maximum</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Summerlin Mandated Features */}
+                  <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-8 shadow-xl border border-orange-100">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-6">
+                        <Award className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">4. Summerlin Mandated Features</h3>
+                        <p className="text-orange-600 font-semibold">360-Degree Design Excellence</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                      At least 15% outdoor living space (courtyards, miradors, loggias, covered patios) 
+                      and 360-degree design on all four sides - but R/S maximized these with those big lots.
+                    </p>
+                    
+                    <div className="space-y-3">
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                        <span className="text-gray-700">15% minimum outdoor living space</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                        <span className="text-gray-700">Courtyards & miradors</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                        <span className="text-gray-700">Covered patios & loggias</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                        <span className="text-gray-700">360-degree design on all four sides</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -162,83 +286,90 @@ export default function CanterraPage() {
           </div>
         </section>
 
-        {/* Amenities Section */}
+        {/* Key Features & Benefits */}
         <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-cyan-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Canterra Community Amenities
+                Why Canterra Stands Out
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Experience contemporary community living with resort-style amenities designed for modern lifestyles.
+                Canterra's unique combination of oversized lots, dual master suites, and flexible 
+                square footage makes it the perfect choice for families seeking space and versatility.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-blue-100">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
-                  <Sparkles className="w-8 h-8 text-white" />
+                  <Square className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Resort Pool</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Luxurious resort-style community pool with cabanas, spa features, 
-                  and professional landscaping for year-round enjoyment.
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Oversized Lots</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Lots up to 11,761 sq ft provide room for pools, professional landscaping, 
+                  RV parking, and outdoor kitchens - a rare find in Vegas production homes.
                 </p>
+                <div className="text-blue-600 font-semibold text-lg">Up to 11,761 sq ft</div>
               </div>
               
-              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                  <Home className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Modern Design</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Contemporary home designs featuring clean lines, open floor plans, 
-                  and modern finishes throughout the community.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Tennis Courts</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Professional-grade tennis courts with lighting for evening play 
-                  and organized community tournaments.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Fitness Center</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  State-of-the-art fitness center with modern equipment, 
-                  group classes, and personal training services.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-purple-100">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Community Events</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Regular community events including social gatherings, 
-                  holiday celebrations, and neighborhood activities.
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Dual Master Suites</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Perfect for multi-generational living with aging parents, adult children, 
+                  or guest accommodations in a separate master suite.
                 </p>
+                <div className="text-purple-600 font-semibold text-lg">Multi-generational ready</div>
               </div>
               
-              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
-                  <TreePine className="w-8 h-8 text-white" />
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-green-100">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                  <Home className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Landscaped Grounds</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Professionally maintained landscaping with mature trees, 
-                  flowering plants, and manicured common areas.
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Flexible Square Footage</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Homes from 1,829-2,787 sq ft hit the sweet spot - bigger than entry-level 
+                  but not luxury pricing, perfect for growing families.
                 </p>
+                <div className="text-green-600 font-semibold text-lg">1,829 - 2,787 sq ft</div>
+              </div>
+              
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-orange-100">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
+                  <Award className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Summerlin Standards</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  15% minimum outdoor living space with courtyards, miradors, loggias, 
+                  and 360-degree design on all four sides.
+                </p>
+                <div className="text-orange-600 font-semibold text-lg">360-degree design</div>
+              </div>
+              
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-blue-100">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Smart Investment</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Built when land was cheaper pre-boom, these oversized lots are now 
+                  paying off with excellent resale values and appreciation.
+                </p>
+                <div className="text-blue-600 font-semibold text-lg">Proven appreciation</div>
+              </div>
+              
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-green-100">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <Sparkles className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Room to Grow</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  The "room to grow" concept allows for future additions like pools, 
+                  outdoor kitchens, and expanded outdoor living spaces.
+                </p>
+                <div className="text-green-600 font-semibold text-lg">Future-proof design</div>
               </div>
             </div>
           </div>
