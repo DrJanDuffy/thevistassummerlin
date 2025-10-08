@@ -169,14 +169,14 @@ export default function Hero() {
                 </p>
               </div>
               
-              {/* RealScout Simple Search Widget */}
-              <realscout-simple-search
-                agent-encoded-id="QWdlbnQtMjI1MDUw"
-                placeholder="Enter an address, neighborhood, or city..."
-                button-text="Search Homes"
-                show-suggested-searches="true"
-                class="realscout-hero-widget"
-              />
+              {/* Call-to-Action Button */}
+              <Link 
+                href="#home-valuation" 
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+              >
+                <HomeIcon className="w-5 h-5" />
+                <span>Get Your Home Value</span>
+              </Link>
 
               {/* Enhanced Additional Features */}
               <div className="mt-6 pt-6 border-t border-gray-200">
