@@ -1,11 +1,25 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Navigation from '@/components/sections/navigation';
-import Footer from '@/components/sections/footer';
-import RealScoutListings from '@/components/RealScoutListings';
-
-// Metadata moved to layout or parent component since this is a client component
+import { 
+  Search, 
+  Home, 
+  MapPin, 
+  Filter, 
+  Star, 
+  TrendingUp, 
+  Calendar, 
+  Phone,
+  ArrowRight,
+  Sparkles,
+  Award,
+  Shield,
+  Zap,
+  CheckCircle,
+  Clock,
+  Users
+} from 'lucide-react';
 
 const propertyTypes = [
   {
@@ -15,7 +29,8 @@ const propertyTypes = [
     priceRange: '$525K - $2.5M',
     count: '350+',
     image: '/subcommunities/IMG_0737.JPG',
-    features: ['3-6 Bedrooms', '2-4 Bathrooms', '1,800-4,500 sq ft', 'Private Yards']
+    features: ['3-6 Bedrooms', '2-4 Bathrooms', '1,800-4,500 sq ft', 'Private Yards'],
+    gradient: 'from-blue-500 to-cyan-500'
   },
   {
     id: 'mf',
@@ -24,7 +39,8 @@ const propertyTypes = [
     priceRange: '$450K - $1.2M',
     count: '120+',
     image: '/subcommunities/IMG_0737.JPG',
-    features: ['2-4 Bedrooms', '2-3 Bathrooms', '1,200-2,800 sq ft', 'Shared Amenities']
+    features: ['2-4 Bedrooms', '2-3 Bathrooms', '1,200-2,800 sq ft', 'Shared Amenities'],
+    gradient: 'from-purple-500 to-pink-500'
   },
   {
     id: 'tc',
@@ -33,7 +49,8 @@ const propertyTypes = [
     priceRange: '$400K - $900K',
     count: '80+',
     image: '/subcommunities/IMG_0738.JPG',
-    features: ['1-3 Bedrooms', '1-2 Bathrooms', '800-2,200 sq ft', 'Community Pools']
+    features: ['1-3 Bedrooms', '1-2 Bathrooms', '800-2,200 sq ft', 'Community Pools'],
+    gradient: 'from-green-500 to-emerald-500'
   }
 ];
 
@@ -47,7 +64,8 @@ const featuredListings = [
     baths: 3.5,
     sqft: '3,200',
     image: '/subcommunities/IMG_0737.JPG',
-    status: 'Active'
+    status: 'Active',
+    featured: true
   },
   {
     id: 2,
@@ -58,7 +76,8 @@ const featuredListings = [
     baths: 2.5,
     sqft: '2,400',
     image: '/subcommunities/IMG_0737.JPG',
-    status: 'Active'
+    status: 'Active',
+    featured: false
   },
   {
     id: 3,
@@ -69,7 +88,8 @@ const featuredListings = [
     baths: 2,
     sqft: '1,600',
     image: '/subcommunities/IMG_0738.JPG',
-    status: 'Active'
+    status: 'Active',
+    featured: false
   },
   {
     id: 4,
@@ -80,7 +100,8 @@ const featuredListings = [
     baths: 2,
     sqft: '2,100',
     image: '/subcommunities/IMG_0739.JPG',
-    status: 'Active'
+    status: 'Active',
+    featured: false
   },
   {
     id: 5,
@@ -91,7 +112,8 @@ const featuredListings = [
     baths: 4,
     sqft: '3,800',
     image: '/subcommunities/IMG_0737.JPG',
-    status: 'Active'
+    status: 'Active',
+    featured: false
   },
   {
     id: 6,
@@ -102,400 +124,409 @@ const featuredListings = [
     baths: 2,
     sqft: '1,400',
     image: '/subcommunities/IMG_0738.JPG',
-    status: 'Active'
+    status: 'Active',
+    featured: false
   }
 ];
 
-const searchFilters = [
-  { name: 'Price Range', options: ['$400K - $600K', '$600K - $800K', '$800K - $1M', '$1M+'] },
-  { name: 'Bedrooms', options: ['1+', '2+', '3+', '4+', '5+'] },
-  { name: 'Bathrooms', options: ['1+', '2+', '3+', '4+'] },
-  { name: 'Property Type', options: ['Single Family', 'Multi-Family', 'Townhome', 'Condo'] },
-  { name: 'Community', options: ['Santaluz', 'Red Rock Canyon', 'Summerlin Park', 'All Communities'] }
-];
-
 export default function SearchPage() {
+  const [selectedPropertyType, setSelectedPropertyType] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Check for property-type query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const propertyType = urlParams.get('property-type');
+    if (propertyType) {
+      setSelectedPropertyType(propertyType);
+    }
+  }, []);
+
+  const filteredPropertyTypes = selectedPropertyType 
+    ? propertyTypes.filter(type => type.id === selectedPropertyType)
+    : propertyTypes;
+
   return (
-    <div className="flex min-h-screen flex-col font-secondary text-text-dark">
-      <Navigation />
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-primary-navy to-link-blue text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-primary font-medium mb-6">
-                Find Your Perfect Home
-              </h1>
-              <p className="text-xl lg:text-2xl font-secondary opacity-90 max-w-3xl mx-auto leading-relaxed">
-                Search through 500+ available properties across 28 subcommunities in The Vistas Summerlin
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Breadcrumbs */}
-        <section className="py-4 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="text-sm font-secondary text-text-light">
-              <Link href="/" className="hover:text-link-blue transition-colors">Home</Link>
-              <span className="mx-2">/</span>
-              <span className="text-text-dark">Property Search</span>
-            </nav>
-          </div>
-        </section>
-
-        {/* SEO Content Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
-                Find Your Perfect Home in The Vistas Summerlin
-              </h2>
-              
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                <p className="text-xl mb-6">
-                  Discover luxury homes for sale in The Vistas Summerlin with our comprehensive 
-                  property search tools. Filter by price range, bedrooms, bathrooms, and community 
-                  features to find your ideal home in Las Vegas's most prestigious master-planned 
-                  community.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Advanced Property Search in The Vistas Summerlin
-                </h3>
-                
-                <p className="mb-6">
-                  Our advanced search tools help you find luxury homes across The Vistas Summerlin's 
-                  28 distinct subcommunities. From Mediterranean-inspired Portofino to the royal 
-                  elegance of Kingwood, search by specific features, price ranges, and amenities 
-                  to discover your perfect match in this prestigious Las Vegas community.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Luxury Homes Available in The Vistas Summerlin
-                </h3>
-                
-                <p className="mb-6">
-                  The Vistas Summerlin offers luxury homes ranging from $600,000 to over $2.5 million, 
-                  featuring 2,500 to 4,500 square feet of living space. Each property benefits from 
-                  The Vistas' world-class amenities including the community center at 11312 Parkside Way, 
-                  miles of walking paths, and access to TPC Summerlin golf course.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Expert Guidance from Dr. Jan Duffy
-                </h3>
-                
-                <p className="mb-6">
-                  Dr. Jan Duffy specializes in The Vistas Summerlin real estate market, offering 
-                  personalized service with flexible scheduling that works around your lifestyle. 
-                  Her office at 11312 Parkside Way provides convenient access and deep local 
-                  market knowledge to help you find your perfect home.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-                  Contact Dr. Jan Duffy for Personalized Search Assistance
-                </h3>
-                
-                <p className="mb-6">
-                  Ready to find your dream home in The Vistas Summerlin? Contact Dr. Jan Duffy 
-                  at (702) 500-0607 for personalized search assistance and expert market guidance. 
-                  Her flexible scheduling and deep community knowledge ensure you'll find the 
-                  perfect home for your family.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Advanced Search Widget */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
-                Advanced Property Search
-              </h2>
-              <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto leading-relaxed">
-                Use our comprehensive search tools to find properties that match your exact criteria
-              </p>
-            </div>
-            
-            <div className="bg-light-gray p-10 rounded-default">
-              <div className="max-w-4xl mx-auto">
-                <realscout-advanced-search 
-                  agent-encoded-id="QWdlbnQtMjI1MDUw"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Property Types */}
-        <section className="py-20 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
-                Browse by Property Type
-              </h2>
-              <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto leading-relaxed">
-                From spacious single-family homes to convenient townhomes, discover the diverse 
-                property options available across our 28 subcommunities.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {propertyTypes.map((property) => (
-                <div key={property.id} className="bg-white rounded-default shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-light-gray">
-                  <div className="relative h-56 bg-light-gray">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-2xl font-primary font-medium text-white mb-2">
-                        {property.name}
-                      </h3>
-                      <p className="text-lg font-secondary text-white/90">
-                        {property.count} Available
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="p-8">
-                    <p className="text-body font-secondary text-text-light mb-6 leading-relaxed">
-                      {property.description}
-                    </p>
-                    
-                    <div className="mb-6">
-                      <div className="text-2xl font-primary font-medium text-link-blue mb-2">
-                        {property.priceRange}
-                      </div>
-                      <div className="text-sm font-secondary text-text-light">
-                        Price Range
-                      </div>
-                    </div>
-                    
-                    <div className="mb-8">
-                      <h4 className="text-lg font-primary font-medium text-text-dark mb-4">
-                        Key Features:
-                      </h4>
-                      <ul className="space-y-3">
-                        {property.features.map((feature, index) => (
-                          <li key={index} className="flex items-center text-body font-secondary text-text-light">
-                            <svg className="w-5 h-5 text-success-green mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <a 
-                      href={`/search?property-type=${property.id}`}
-                      className="block w-full bg-link-blue text-white text-center py-4 rounded-default text-lg font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105"
-                    >
-                      View {property.name}
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* RealScout Listings Widget */}
-        <div className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Current Luxury Homes for Sale in The Vistas Summerlin
-              </h2>
-              <p className="text-lg text-gray-600">
-                Browse our live inventory of luxury homes in The Vistas Summerlin. Each property offers exceptional value with premium amenities, mountain views, and access to world-class community features.
-              </p>
-            </div>
-            <RealScoutListings 
-              officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID || "your-office-id"}
-              marketId={process.env.NEXT_PUBLIC_REALSCOUT_MARKET_ID || "las-vegas"}
-              responsive={true}
-            />
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      {/* V0 Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white overflow-hidden">
+        {/* Advanced V0 Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+          
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 opacity-5 bg-grid-pattern"></div>
         </div>
 
-        {/* Search Filters */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
-                Quick Search Filters
-              </h2>
-              <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto leading-relaxed">
-                Use these popular filters to quickly narrow down your search
-              </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-3 text-blue-200 font-medium mb-8 shadow-lg">
+              <Search className="w-5 h-5 text-blue-300" />
+              <span>Property Search</span>
+              <Sparkles className="w-4 h-4 text-blue-300 animate-pulse" />
             </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              Find Your Dream Home in
+              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                The Vistas Summerlin
+              </span>
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-12">
+              Search through 500+ luxury properties across 28 exclusive subcommunities. 
+              Discover homes that match your lifestyle with our advanced AI-powered search tools.
+            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {searchFilters.map((filter, index) => (
-                <div key={index} className="bg-light-gray p-6 rounded-default">
-                  <h3 className="text-lg font-primary font-medium text-text-dark mb-4">
-                    {filter.name}
-                  </h3>
-                  <div className="space-y-2">
-                    {filter.options.map((option, optionIndex) => (
-                      <label key={optionIndex} className="flex items-center">
-                        <input type="checkbox" className="mr-3 text-link-blue" />
-                        <span className="text-sm font-secondary text-text-light">{option}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold text-white mb-2">500+</div>
+                <div className="text-sm text-blue-200">Properties</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold text-white mb-2">28</div>
+                <div className="text-sm text-blue-200">Communities</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold text-white mb-2">$600K+</div>
+                <div className="text-sm text-blue-200">Starting Price</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                <div className="text-sm text-blue-200">Expert Support</div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Featured Listings */}
-        <section className="py-20 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
-                Featured Listings
-              </h2>
-              <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto leading-relaxed">
-                Discover some of our most popular and highly-rated properties
-              </p>
+      {/* V0 Advanced Search Widget */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 rounded-full px-6 py-3 text-blue-800 font-medium mb-6 shadow-lg">
+              <Filter className="w-5 h-5" />
+              <span>Advanced Search</span>
+              <Zap className="w-4 h-4" />
             </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              AI-Powered Property Search
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Our intelligent search engine analyzes millions of data points to find properties 
+              that perfectly match your lifestyle and investment goals.
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-slate-900 to-indigo-900 rounded-3xl shadow-2xl p-8 lg:p-12 border border-indigo-200">
+            <div className="max-w-4xl mx-auto">
+              <realscout-advanced-search 
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredListings.map((listing) => (
-                <div key={listing.id} className="bg-white rounded-default shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-light-gray">
-                  <div className="relative h-64 bg-light-gray">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-success-green text-white px-3 py-1 rounded-full text-sm font-secondary font-medium">
-                        {listing.status}
-                      </span>
+      {/* V0 Property Types */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-200/20 rounded-full blur-3xl"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-white border border-gray-200 rounded-full px-6 py-3 text-gray-700 font-medium mb-6 shadow-lg">
+              <Home className="w-5 h-5" />
+              <span>Property Types</span>
+              <Award className="w-4 h-4" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Explore Our Diverse Collection
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              From luxury estates to cozy townhomes, discover the perfect property type 
+              that matches your lifestyle and investment goals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {filteredPropertyTypes.map((property, index) => (
+              <div 
+                key={property.id} 
+                className={`bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              >
+                <div className={`relative h-64 bg-gradient-to-br ${property.gradient} overflow-hidden`}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute top-6 right-6">
+                    <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
+                      {property.count} Available
+                    </span>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:scale-105 transition-transform">
+                      {property.name}
+                    </h3>
+                    <div className="text-lg text-white/90">
+                      {property.priceRange}
                     </div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-xl font-primary font-medium text-white mb-2">
-                        {listing.title}
-                      </h3>
-                      <div className="flex items-center justify-between">
-                        <p className="text-lg font-secondary text-white/90">
-                          {listing.location}
-                        </p>
-                        <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                          <span className="text-lg font-primary font-medium text-white">
-                            {listing.price}
-                          </span>
+                  </div>
+                </div>
+                
+                <div className="p-8">
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {property.description}
+                  </p>
+                  
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                      Key Features
+                    </h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {property.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm text-gray-600">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          {feature}
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="text-center">
-                        <div className="text-2xl font-primary font-medium text-link-blue">{listing.beds}</div>
-                        <div className="text-sm font-secondary text-text-light">Beds</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-primary font-medium text-link-blue">{listing.baths}</div>
-                        <div className="text-sm font-secondary text-text-light">Baths</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-primary font-medium text-link-blue">{listing.sqft}</div>
-                        <div className="text-sm font-secondary text-text-light">Sq Ft</div>
-                      </div>
+                  <Link 
+                    href={`/search?property-type=${property.id}`}
+                    className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-4 rounded-2xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group"
+                  >
+                    <span className="flex items-center justify-center">
+                      View {property.name}
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* V0 Featured Listings */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-3 text-blue-200 font-medium mb-6 shadow-lg">
+              <Star className="w-5 h-5 text-blue-300" />
+              <span>Featured Properties</span>
+              <Sparkles className="w-4 h-4 text-blue-300 animate-pulse" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Handpicked Luxury Homes
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Discover our curated selection of premium properties that showcase the best 
+              of The Vistas Summerlin living experience.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredListings.map((listing, index) => (
+              <div 
+                key={listing.id} 
+                className={`bg-white/10 backdrop-blur-lg rounded-3xl overflow-hidden hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              >
+                <div className="relative h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                      {listing.status}
+                    </span>
+                  </div>
+                  {listing.featured && (
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg flex items-center">
+                        <Star className="w-4 h-4 mr-1 fill-current" />
+                        Featured
+                      </span>
                     </div>
-                    
-                    <div className="flex gap-3">
-                      <button className="flex-1 bg-link-blue text-white py-3 rounded-default text-sm font-secondary font-medium hover:bg-primary-navy transition-all duration-300 transform hover:scale-105">
-                        View Details
-                      </button>
-                      <button className="flex-1 bg-light-gray text-text-dark py-3 rounded-default text-sm font-secondary font-medium hover:bg-text-light transition-all duration-300 transform hover:scale-105">
-                        Schedule Tour
-                      </button>
+                  )}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:scale-105 transition-transform">
+                      {listing.title}
+                    </h3>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-white/90">
+                        <MapPin className="w-4 h-4 mr-1" />
+                        {listing.location}
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span className="text-lg font-bold text-white">
+                          {listing.price}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <a 
-                href="/search"
-                className="inline-flex items-center bg-primary-navy text-white px-10 py-4 rounded-default text-lg font-secondary font-medium hover:bg-link-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                View All Listings
-                <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
+                
+                <div className="p-6">
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    <div className="text-center bg-white/10 rounded-xl p-3">
+                      <div className="text-2xl font-bold text-white">{listing.beds}</div>
+                      <div className="text-sm text-blue-200">Beds</div>
+                    </div>
+                    <div className="text-center bg-white/10 rounded-xl p-3">
+                      <div className="text-2xl font-bold text-white">{listing.baths}</div>
+                      <div className="text-sm text-blue-200">Baths</div>
+                    </div>
+                    <div className="text-center bg-white/10 rounded-xl p-3">
+                      <div className="text-2xl font-bold text-white">{listing.sqft}</div>
+                      <div className="text-sm text-blue-200">Sq Ft</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl text-sm font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      View Details
+                    </button>
+                    <button className="flex-1 bg-white/20 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-white/30">
+                      Schedule Tour
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
 
-        {/* Search Tips */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-primary font-medium text-text-dark mb-6">
-                Search Tips & Advice
-              </h2>
-              <p className="text-xl font-secondary text-text-light max-w-3xl mx-auto leading-relaxed">
-                Get the most out of your property search with these helpful tips
+          <div className="text-center mt-12">
+            <Link 
+              href="/search"
+              className="inline-flex items-center bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl group"
+            >
+              <span className="flex items-center">
+                View All Listings
+                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* V0 Search Tips */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 rounded-full px-6 py-3 text-blue-800 font-medium mb-6 shadow-lg">
+              <TrendingUp className="w-5 h-5" />
+              <span>Expert Tips</span>
+              <Shield className="w-4 h-4" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Master Your Property Search
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Unlock insider secrets and expert strategies to find your perfect home 
+              faster and with greater confidence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <Search className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Start Broad, Then Narrow
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Begin with basic criteria like price range and bedrooms, then refine your search 
+                with additional filters to find your perfect match in The Vistas Summerlin.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-light-gray p-8 rounded-default">
-                <div className="w-12 h-12 bg-link-blue rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-primary font-medium text-text-dark mb-4">
-                  Start Broad, Then Narrow
-                </h3>
-                <p className="text-body font-secondary text-text-light leading-relaxed">
-                  Begin with basic criteria like price range and bedrooms, then refine your search 
-                  with additional filters to find your perfect match.
-                </p>
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <Clock className="w-8 h-8 text-white" />
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Set Up Smart Alerts
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Create saved searches and get instant notifications when new properties matching 
+                your criteria become available in your preferred communities.
+              </p>
+            </div>
 
-              <div className="bg-light-gray p-8 rounded-default">
-                <div className="w-12 h-12 bg-success-green rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-primary font-medium text-text-dark mb-4">
-                  Set Up Alerts
-                </h3>
-                <p className="text-body font-secondary text-text-light leading-relaxed">
-                  Create saved searches and get notified when new properties matching your criteria 
-                  become available.
-                </p>
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <Users className="w-8 h-8 text-white" />
               </div>
-
-              <div className="bg-light-gray p-8 rounded-default">
-                <div className="w-12 h-12 bg-primary-navy rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-primary font-medium text-text-dark mb-4">
-                  Explore Communities
-                </h3>
-                <p className="text-body font-secondary text-text-light leading-relaxed">
-                  Each of our 28 subcommunities has unique character and amenities. 
-                  Research different areas to find the perfect location for your lifestyle.
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Leverage Expert Guidance
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Work with Dr. Jan Duffy's deep local knowledge to explore communities and 
+                discover hidden gems that match your lifestyle perfectly.
+              </p>
             </div>
           </div>
-        </section>
-      </main>
-      <Footer />
+        </div>
+      </section>
+
+      {/* V0 CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-3 text-blue-200 font-medium mb-8 shadow-lg">
+            <Phone className="w-5 h-5 text-blue-300" />
+            <span>Ready to Start?</span>
+            <Sparkles className="w-4 h-4 text-blue-300 animate-pulse" />
+          </div>
+          
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">
+            Let's Find Your Dream Home Together
+          </h2>
+          
+          <p className="text-xl text-blue-100 mb-12 leading-relaxed">
+            Dr. Jan Duffy is ready to provide personalized guidance and expert market insights 
+            to help you discover the perfect property in The Vistas Summerlin.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link 
+              href="/contact"
+              className="inline-flex items-center bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl group"
+            >
+              <Phone className="w-5 h-5 mr-3" />
+              Call Dr. Jan Duffy
+              <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            
+            <Link 
+              href="/about"
+              className="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 border border-white/30"
+            >
+              <Users className="w-5 h-5 mr-3" />
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 } 
