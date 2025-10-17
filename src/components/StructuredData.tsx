@@ -86,8 +86,28 @@ export function RealEstateExpertSchema() {
       "Real Estate Market Trends"
     ],
     "sameAs": [
-      "https://www.thevistassummerlin.com"
-    ]
+      "https://www.thevistassummerlin.com",
+      "https://www.facebook.com/RealtorDrJanDuffySummerlin",
+      "https://www.instagram.com/drjanduffy/",
+      "https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/",
+      "https://www.youtube.com/@DrDuffy",
+      "https://twitter.com/drjanduffy",
+      "https://www.pinterest.com/DrJanDuffy/"
+    ],
+    "image": "https://www.thevistassummerlin.com/logo.png",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "University of Nevada, Las Vegas"
+    },
+    "award": [
+      "Berkshire Hathaway HomeServices Nevada Properties Agent",
+      "Top Producer - The Vistas Summerlin",
+      "Luxury Home Specialist"
+    ],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Berkshire Hathaway HomeServices Nevada Properties"
+    }
   };
 
   return (

@@ -1,25 +1,10 @@
-# *
 User-agent: *
 Allow: /
-
-# *
-User-agent: *
 Disallow: /api/
-
-# *
-User-agent: *
 Disallow: /_next/
-
-# *
-User-agent: *
 Disallow: /admin/
-
-# *
-User-agent: *
 Disallow: /*.vercel.app/
 
-# Host
-Host: https://www.thevistassummerlin.com
-
-# Sitemaps
 Sitemap: https://www.thevistassummerlin.com/sitemap.xml
+Sitemap: https://www.thevistassummerlin.com/image-sitemap.xml
+Host: https://www.thevistassummerlin.com

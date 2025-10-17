@@ -6,9 +6,9 @@ import { Phone, Mail, MapPin, ArrowRight, Star, Award, Users, TrendingUp, Facebo
 const footerLinks = {
   communities: [
     { name: 'All Communities', href: '/communities' },
-    { name: 'Barrington', href: '/communities/img-0737' },
-    { name: 'Kingwood', href: '/communities/img-0738' },
-    { name: 'Santalina', href: '/communities/img-0739' },
+    { name: 'Barrington', href: '/communities/barrington' },
+    { name: 'Kingwood', href: '/communities/kingwood' },
+    { name: 'Santalina', href: '/communities/santalina' },
     { name: 'Portofino', href: '/communities/portofino' },
     { name: 'View All Communities', href: '/communities' }
   ],

@@ -35,14 +35,11 @@ export function RealScoutWidget(props: RealScoutWidgetProps) {
     const currentWidget = widgetRef.current;
     
     const handleListingsLoaded = (event: Event) => {
-      console.log('RealScout Widget Event Fired:', event); // DEBUGGING LINE
       const customEvent = event as CustomEvent;
       if (onListingsLoaded && customEvent.detail?.listings) {
         onListingsLoaded(customEvent.detail.listings);
       }
     };
-
-    // The event listener name is a guess. We're using the console.log to discover the real one.
     currentWidget?.addEventListener('rs:listings-loaded', handleListingsLoaded);
 
     return () => {

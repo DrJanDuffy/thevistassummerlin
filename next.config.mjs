@@ -61,6 +61,14 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(self), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'none'; object-src 'none'; base-uri 'self'",
+          },
         ],
       },
     ]

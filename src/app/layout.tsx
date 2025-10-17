@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     default: "The Vistas Summerlin | Berkshire Hathaway HomeServices Nevada Properties - Dr. Jan Duffy",
     template: "%s | The Vistas Summerlin | Berkshire Hathaway HomeServices Nevada Properties"
   },
-  description: "The Vistas Summerlin offers luxury homes starting at $800K. Expert realtor Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties specializing in The Vistas community with flexible scheduling that works around YOUR lifestyle.",
+  description: "Luxury homes in The Vistas Summerlin starting at $800K. Expert realtor Dr. Jan Duffy with Berkshire Hathaway HomeServices specializing in Las Vegas luxury real estate.",
   keywords: [
     "The Vistas Summerlin",
     "Vistas Summerlin homes for sale",
@@ -125,6 +125,21 @@ export default function RootLayout({
         <meta name="target" content="all" />
         <meta name="audience" content="all" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* RSS Feed for Google Discover Follow Feature */}
+        <link rel="alternate" type="application/rss+xml" 
+              href="https://www.thevistassummerlin.com/feed.xml" 
+              title="The Vistas Summerlin Updates" />
+        
+        {/* Favicon Links for Google Search Results */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
+        <link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
+        
+        {/* Performance Optimization - Preconnect to RealScout */}
+        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="dns-prefetch" href="https://em.realscout.com" />
         
         {/* Business Information */}
         <meta name="business:contact_data:locality" content="Las Vegas" />
