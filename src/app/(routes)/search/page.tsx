@@ -277,7 +277,7 @@ export default function SearchPage() {
 
           <div className="text-center mt-12">
             <Link 
-              href="/search"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-flex items-center bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl group"
             >
               <span className="flex items-center">

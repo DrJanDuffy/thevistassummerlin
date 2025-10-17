@@ -265,7 +265,7 @@ export default function EncantoPage() {
             </div>
             <div className="mt-12 flex flex-col sm:flex-row justify-center gap-6">
               <a
-                href="https://drjanduffy.realscout.com/homesearch/listings"
+                href="http://drjanduffy.realscout.com/onboarding"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-teal-600 hover:bg-teal-700 transition-colors duration-300 transform hover:scale-105"
