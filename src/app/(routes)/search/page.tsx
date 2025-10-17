@@ -54,80 +54,6 @@ const propertyTypes = [
   }
 ];
 
-const featuredListings = [
-  {
-    id: 1,
-    title: 'Luxury Mountain View Estate',
-    price: '$1,250,000',
-    location: 'Santaluz',
-    beds: 4,
-    baths: 3.5,
-    sqft: '3,200',
-    image: '/subcommunities/IMG_0737.JPG',
-    status: 'Active',
-    featured: true
-  },
-  {
-    id: 2,
-    title: 'Modern Family Home',
-    price: '$875,000',
-    location: 'Red Rock Canyon',
-    beds: 3,
-    baths: 2.5,
-    sqft: '2,400',
-    image: '/subcommunities/IMG_0737.JPG',
-    status: 'Active',
-    featured: false
-  },
-  {
-    id: 3,
-    title: 'Cozy Townhome',
-    price: '$650,000',
-    location: 'Summerlin Park',
-    beds: 2,
-    baths: 2,
-    sqft: '1,600',
-    image: '/subcommunities/IMG_0738.JPG',
-    status: 'Active',
-    featured: false
-  },
-  {
-    id: 4,
-    title: 'Investment Property',
-    price: '$750,000',
-    location: 'Vista Heights',
-    beds: 3,
-    baths: 2,
-    sqft: '2,100',
-    image: '/subcommunities/IMG_0739.JPG',
-    status: 'Active',
-    featured: false
-  },
-  {
-    id: 5,
-    title: 'Executive Home',
-    price: '$1,100,000',
-    location: 'Canyon Ridge',
-    beds: 5,
-    baths: 4,
-    sqft: '3,800',
-    image: '/subcommunities/IMG_0737.JPG',
-    status: 'Active',
-    featured: false
-  },
-  {
-    id: 6,
-    title: 'First-Time Buyer Special',
-    price: '$525,000',
-    location: 'Meadowbrook',
-    beds: 2,
-    baths: 2,
-    sqft: '1,400',
-    image: '/subcommunities/IMG_0738.JPG',
-    status: 'Active',
-    featured: false
-  }
-];
 
 export default function SearchPage() {
   const [selectedPropertyType, setSelectedPropertyType] = useState<string | null>(null);
@@ -316,7 +242,7 @@ export default function SearchPage() {
         </div>
       </section>
 
-      {/* V0 Featured Listings */}
+      {/* RealScout Office Widget - $800K-$1.2M Range */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -327,85 +253,26 @@ export default function SearchPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-3 text-blue-200 font-medium mb-6 shadow-lg">
               <Star className="w-5 h-5 text-blue-300" />
-              <span>Featured Properties</span>
+              <span>Premium Properties</span>
               <Sparkles className="w-4 h-4 text-blue-300 animate-pulse" />
             </div>
             
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Handpicked Luxury Homes
+              Luxury Homes $800K - $1.2M
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Discover our curated selection of premium properties that showcase the best 
-              of The Vistas Summerlin living experience.
+              Discover our curated selection of premium properties in The Vistas Summerlin. 
+              These exceptional homes offer the perfect balance of luxury, comfort, and value.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredListings.map((listing, index) => (
-              <div 
-                key={listing.id} 
-                className={`bg-white/10 backdrop-blur-lg rounded-3xl overflow-hidden hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              >
-                <div className="relative h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                      {listing.status}
-                    </span>
-                  </div>
-                  {listing.featured && (
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg flex items-center">
-                        <Star className="w-4 h-4 mr-1 fill-current" />
-                        Featured
-                      </span>
-                    </div>
-                  )}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:scale-105 transition-transform">
-                      {listing.title}
-                    </h3>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-white/90">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {listing.location}
-                      </div>
-                      <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                        <span className="text-lg font-bold text-white">
-                          {listing.price}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="text-center bg-white/10 rounded-xl p-3">
-                      <div className="text-2xl font-bold text-white">{listing.beds}</div>
-                      <div className="text-sm text-blue-200">Beds</div>
-                    </div>
-                    <div className="text-center bg-white/10 rounded-xl p-3">
-                      <div className="text-2xl font-bold text-white">{listing.baths}</div>
-                      <div className="text-sm text-blue-200">Baths</div>
-                    </div>
-                    <div className="text-center bg-white/10 rounded-xl p-3">
-                      <div className="text-2xl font-bold text-white">{listing.sqft}</div>
-                      <div className="text-sm text-blue-200">Sq Ft</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-3">
-                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl text-sm font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      View Details
-                    </button>
-                    <button className="flex-1 bg-white/20 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-white/30">
-                      Schedule Tour
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+            <realscout-office-listings 
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              price-min="800000"
+              price-max="1200000"
+              sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+            />
           </div>
 
           <div className="text-center mt-12">
