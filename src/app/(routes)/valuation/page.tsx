@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import { FAQSchema } from '@/components/StructuredData';
 import { CalendlyButton } from '@/components/CalendlyButton';
 import HomeEvaluationSection from '@/components/sections/home-evaluation-v0';
 import Link from 'next/link';
@@ -326,6 +327,7 @@ export default function ValuationPage() {
       <HomeEvaluationSection />
 
       <Footer />
+      <FAQSchema />
     </div>
   );
 }

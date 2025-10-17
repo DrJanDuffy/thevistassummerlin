@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import { FAQSchema } from '@/components/StructuredData';
 import { Home, DollarSign, TrendingUp, Users, Phone, Mail, Calendar, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
@@ -52,7 +53,7 @@ export default function SellPage() {
                 Get Free Home Valuation
               </Link>
               <a
-                href="tel:+1702XXX"
+                href="tel:+17025000607"
                 className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-green-900 transition-colors shadow-lg"
               >
                 Call Jan Duffy
@@ -275,7 +276,7 @@ export default function SellPage() {
               Get Free Valuation
             </Link>
             <a
-              href="tel:+1702XXX"
+              href="tel:+17025000607"
               className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-green-900 transition-colors shadow-lg"
             >
               <Phone className="w-5 h-5 inline mr-2" />
@@ -293,6 +294,7 @@ export default function SellPage() {
       </section>
 
       <Footer />
+      <FAQSchema />
     </div>
   );
 }

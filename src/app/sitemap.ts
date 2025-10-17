@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             'hillstone',
             'kingwood',
             'miraleste',
-            'monterossa',
+            'monterosa',
             'palmilla',
             'paradiso',
             'portofino',

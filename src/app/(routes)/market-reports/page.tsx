@@ -52,7 +52,7 @@ export default function MarketReportsPage() {
                 Get Your Home Value
               </Link>
               <a
-                href="tel:+1702XXX"
+                href="tel:+17025000607"
                 className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-900 transition-colors shadow-lg"
               >
                 Call Jan Duffy
@@ -346,7 +346,7 @@ export default function MarketReportsPage() {
               Get Free Valuation
             </Link>
             <a
-              href="tel:+1702XXX"
+              href="tel:+17025000607"
               className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-900 transition-colors shadow-lg"
             >
               Call Jan Duffy

@@ -7,6 +7,7 @@ import Navigation from '@/components/sections/navigation';
 import Hero from '@/components/sections/hero';
 import HomeEvaluationSection from '@/components/sections/home-evaluation-v0';
 import Footer from '@/components/sections/footer';
+import { FAQSchema } from '@/components/StructuredData';
 import { Phone, User, MapPin, ArrowRight, Zap, Sparkles, Heart, Award, TrendingUp, Users, Star, Home as HomeIcon, DollarSign, Calendar, CheckCircle, Crown, Mountain, Building, Clock, Bed, Bath, Square, ExternalLink } from 'lucide-react';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
@@ -612,6 +613,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <FAQSchema />
       <FloatingActionButton href="tel:+17025000607">
         <Phone className="w-6 h-6" />
       </FloatingActionButton>

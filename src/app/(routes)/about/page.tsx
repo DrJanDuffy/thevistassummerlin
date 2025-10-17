@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import { FAQSchema } from '@/components/StructuredData';
 import { Star, Users, Award, TrendingUp, Heart, Phone, Mail, MapPin, ArrowRight, CheckCircle, Zap, Sparkles, Shield, Home, Crown, Mountain, Building } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -533,6 +534,7 @@ export default function AboutPage() {
         <LocalSEOShowcase />
       </main>
       <Footer />
+      <FAQSchema />
     </div>
   );
 }

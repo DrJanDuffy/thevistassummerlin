@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
+import { FAQSchema } from '@/components/StructuredData';
 import { CalendlyButton } from '@/components/CalendlyButton';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Star, Award, Users, CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
@@ -473,6 +474,7 @@ export default function Contact() {
         </section>
       </main>
       <Footer />
+      <FAQSchema />
     </div>
   );
 }

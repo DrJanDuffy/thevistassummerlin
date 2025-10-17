@@ -15,7 +15,7 @@ const PropertySearchFallback: React.FC = () => {
             Contact Agent
           </button>
           <div className="text-sm text-gray-500">
-            <p>Phone: (555) 123-4567</p>
+            <p>Phone: (702) 500-0607</p>
             <p>Email: janet@lasvegasrealestate.com</p>
           </div>
         </div>

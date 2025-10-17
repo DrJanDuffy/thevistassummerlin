@@ -119,11 +119,11 @@ export default function Hero() {
             {/* Enhanced Call to Action Buttons */}
             <div className={`flex flex-col sm:flex-row gap-4 pt-4 transition-all duration-1000 delay-1600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <a 
-                href="tel:+17025551234" 
+                href="tel:+17025000607" 
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group hover:scale-105"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>Call Dr. Jan: (702) 555-1234</span>
+                <span>Call Dr. Jan: (702) 500-0607</span>
                 <Zap className="w-4 h-4 group-hover:animate-pulse" />
               </a>
               

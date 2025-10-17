@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { getNeighborhoodSlugs, getNeighborhoodBySlug } from '@/constants/neighborhoods';
 // TODO: Implement or import these configs/utilities from './community-config'
 export const DEFAULT_COMMUNITY_CONFIG = {
   descriptions: {
@@ -118,6 +119,10 @@ export function slugToDisplayName(slug: string): string {
 
 export async function getAllCommunitySlugs(): Promise<string[]> {
   try {
+    // Use the neighborhoods.ts data as the source of truth
+    const neighborhoodSlugs = getNeighborhoodSlugs();
+    
+    // Also include any image-based communities from subcommunities directory
     const subcommunitiesPath = path.join(process.cwd(), 'public', 'subcommunities');
     const files = await fs.readdir(subcommunitiesPath);
     const imageFiles = files.filter(file => 
@@ -125,36 +130,67 @@ export async function getAllCommunitySlugs(): Promise<string[]> {
         file.toLowerCase().endsWith(format.toLowerCase())
       )
     );
-    return imageFiles.map(filenameToSlug);
+    const imageSlugs = imageFiles.map(filenameToSlug);
+    
+    // Combine both sources and remove duplicates
+    const allSlugs = [...new Set([...neighborhoodSlugs, ...imageSlugs])];
+    return allSlugs;
   } catch (error) {
     console.error('Error getting community slugs:', error);
-    return [];
+    // Fallback to just neighborhood slugs
+    return getNeighborhoodSlugs();
   }
 }
 
 export async function getCommunityBySlug(slug: string): Promise<CommunityData | null> {
   try {
+    // First check if it's a neighborhood from neighborhoods.ts
+    const neighborhood = getNeighborhoodBySlug(slug);
+    if (neighborhood) {
+      const communityType = detectCommunityType(slug);
+      const communityData: CommunityData = {
+        slug,
+        name: neighborhood.name,
+        image: '/subcommunities/IMG_0737.JPG', // Default image
+        description: neighborhood.description,
+        stats: {
+          ...generateStats(communityType),
+          priceRange: neighborhood.priceRange
+        },
+        amenities: getAmenitiesForType(communityType, 6),
+        neighborhood: getNeighborhoodScores(communityType),
+        location: generateLocation(),
+        marketTrends: generateMarketTrends(),
+      };
+      return communityData;
+    }
+
+    // Fallback to image-based communities
     const subcommunitiesPath = path.join(process.cwd(), 'public', 'subcommunities');
     const files = await fs.readdir(subcommunitiesPath);
     const imageFile = files.find(file => {
       const fileSlug = filenameToSlug(file);
       return fileSlug === slug;
     });
-    if (!imageFile) return null;
-    const communityName = slugToDisplayName(slug);
-    const communityType = detectCommunityType(slug);
-    const communityData: CommunityData = {
-      slug,
-      name: communityName,
-      image: `${IMAGE_CONFIG.defaultImagePath}${imageFile}`,
-      description: generateDescription(communityName),
-      stats: generateStats(communityType),
-      amenities: getAmenitiesForType(communityType, 6),
-      neighborhood: getNeighborhoodScores(communityType),
-      location: generateLocation(),
-      marketTrends: generateMarketTrends(),
-    };
-    return communityData;
+    
+    if (imageFile) {
+      const communityName = slugToDisplayName(slug);
+      const communityType = detectCommunityType(slug);
+      const communityData: CommunityData = {
+        slug,
+        name: communityName,
+        image: `${IMAGE_CONFIG.defaultImagePath}${imageFile}`,
+        description: generateDescription(communityName),
+        stats: generateStats(communityType),
+        amenities: getAmenitiesForType(communityType, 6),
+        neighborhood: getNeighborhoodScores(communityType),
+        location: generateLocation(),
+        marketTrends: generateMarketTrends(),
+      };
+      return communityData;
+    }
+
+    return null;
   } catch (error) {
     console.error('Error getting community data:', error);
     return null;

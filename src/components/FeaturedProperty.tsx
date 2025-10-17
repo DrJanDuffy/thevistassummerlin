@@ -131,7 +131,7 @@ export function FeaturedProperty() {
                   <span>View Full Listing</span>
                 </a>
                 <a 
-                  href="tel:+1702XXX" 
+                  href="tel:+17025000607" 
                   className="flex items-center justify-center space-x-3 w-full border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-200"
                 >
                   <Phone className="w-5 h-5" />

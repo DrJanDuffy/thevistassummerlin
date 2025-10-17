@@ -37,6 +37,11 @@ const nextConfig = {
         destination: '/communities',
         permanent: true,
       },
+      {
+        source: '/communities/summerlin-park',
+        destination: '/communities',
+        permanent: true,
+      },
     ]
   },
   async headers() {

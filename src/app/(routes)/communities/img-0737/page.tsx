@@ -124,7 +124,7 @@ export default function BarringtonCommunityPage() {
                   <ChevronRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+1702XXX"
+                  href="tel:+17025000607"
                   className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-900 transition-colors shadow-lg flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-5 h-5" />
@@ -198,7 +198,7 @@ export default function BarringtonCommunityPage() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="tel:+1702XXX"
+                    href="tel:+17025000607"
                     className="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-md flex items-center justify-center space-x-2"
                   >
                     <Phone className="w-5 h-5" />
@@ -432,7 +432,7 @@ export default function BarringtonCommunityPage() {
               Get Free Home Valuation
             </Link>
             <a
-              href="tel:+1702XXX"
+              href="tel:+17025000607"
               className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-900 transition-colors shadow-lg"
             >
               Call Jan Duffy
