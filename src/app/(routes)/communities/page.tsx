@@ -8,7 +8,6 @@ import Footer from '@/components/sections/footer';
 import { Search, MapPin, Filter, Grid, List, Star, Home, Users, TreePine, ArrowRight, ChevronDown } from 'lucide-react';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import RealScoutYourListings from '@/components/RealScoutYourListings';
-import RealScoutListings from '@/components/RealScoutListings';
 import PropertyCategories from '@/components/sections/property-categories';
 import FeaturedCommunities from '@/components/sections/featured-communities';
 
@@ -221,7 +220,7 @@ export default function CommunitiesPage() {
                 Parkside Way, miles of walking paths, and access to TPC Summerlin golf course. Browse our live listings below or <Link href="/market-reports" className="text-blue-600 hover:text-blue-800 font-semibold underline">view market trends</Link>.
               </p>
               
-              {/* RealScout Listings Widget */}
+              {/* RealScout Office Widget */}
               <div className="my-12">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Current Luxury Homes for Sale in The Vistas Summerlin Communities
@@ -229,11 +228,14 @@ export default function CommunitiesPage() {
                 <p className="text-lg text-gray-600 mb-6">
                   Explore our curated selection of luxury homes across The Vistas Summerlin's prestigious communities. Each property offers exceptional value with premium amenities and access to world-class community features.
                 </p>
-                <RealScoutListings 
-                  officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID || "your-office-id"}
-                  marketId={process.env.NEXT_PUBLIC_REALSCOUT_MARKET_ID || "las-vegas"}
-                  responsive={true}
-                />
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                  <realscout-office-listings
+                    agent-encoded-id="QWdlbnQtMjI1MDUw"
+                    price-min="800000"
+                    price-max="2000000"
+                    sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+                  />
+                </div>
               </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
