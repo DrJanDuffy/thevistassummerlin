@@ -2,7 +2,7 @@
 
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
-import { FAQSchema } from '@/components/StructuredData';
+import { FAQSchema, ArticleSchema } from '@/components/StructuredData';
 import { Star, Users, Award, TrendingUp, Heart, Phone, Mail, MapPin, ArrowRight, CheckCircle, Zap, Sparkles, Shield, Home, Crown, Mountain, Building } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -534,6 +534,13 @@ export default function AboutPage() {
         <LocalSEOShowcase />
       </main>
       <Footer />
+      <ArticleSchema 
+        title="About Dr. Jan Duffy - Las Vegas Real Estate Expert"
+        description="Learn about Dr. Jan Duffy, your trusted Las Vegas real estate expert specializing in The Vistas Summerlin luxury homes and communities."
+        datePublished="2024-01-01T00:00:00Z"
+        dateModified="2025-10-15T00:00:00Z"
+        url="https://www.thevistassummerlin.com/about"
+      />
       <FAQSchema />
     </div>
   );

@@ -13,7 +13,9 @@ import {
   WebsiteSchema,
   OrganizationSchema,
   ReviewSchema,
-  ServiceSchema
+  ServiceSchema,
+  BreadcrumbSchema,
+  ArticleSchema
 } from '@/components/StructuredData';
 
 const playfair = Playfair_Display({

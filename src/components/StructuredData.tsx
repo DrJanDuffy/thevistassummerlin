@@ -622,3 +622,74 @@ export function ServiceSchema() {
     />
   );
 }
+
+// Breadcrumb Schema for Community Pages
+export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: string }> }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+
+  return (
+    <Script
+      id="breadcrumb-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Article Schema with Date Markup for Content Pages
+export function ArticleSchema({ 
+  title, 
+  description, 
+  datePublished, 
+  dateModified, 
+  author = "Dr. Jan Duffy",
+  url 
+}: { 
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  url: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": "https://www.thevistassummerlin.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Berkshire Hathaway HomeServices Nevada Properties",
+      "url": "https://www.thevistassummerlin.com"
+    },
+    "url": url,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url
+    }
+  };
+
+  return (
+    <Script
+      id="article-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

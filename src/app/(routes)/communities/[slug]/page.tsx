@@ -28,7 +28,7 @@ import {
 import { RealScoutWidget } from "@/components/RealScoutWidget";
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
-import { FAQSchema } from '@/components/StructuredData';
+import { FAQSchema, BreadcrumbSchema } from '@/components/StructuredData';
 
 // Enhanced Community Hero Section
 const CommunityHero = ({ community }: { community: CommunityData }) => (
@@ -416,6 +416,13 @@ export default async function CommunityPage({ params }: { params: Promise<{ slug
       <PropertiesSection community={community} />
 
       <Footer />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://www.thevistassummerlin.com" },
+          { name: "Communities", url: "https://www.thevistassummerlin.com/communities" },
+          { name: community.name, url: `https://www.thevistassummerlin.com/communities/${community.slug}` }
+        ]} 
+      />
       <FAQSchema />
     </div>
   );

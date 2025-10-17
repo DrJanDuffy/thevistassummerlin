@@ -611,6 +611,65 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section for Featured Snippets */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Get answers to common questions about The Vistas Summerlin and real estate in Las Vegas.
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">What is The Vistas Summerlin?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  The Vistas Summerlin is a prestigious master-planned community in Las Vegas featuring luxury homes, 
+                  world-class amenities, and access to TPC Summerlin golf course. It offers over 28 distinct subcommunities 
+                  with homes ranging from $800K to over $2.5M, providing an unparalleled lifestyle in the heart of Summerlin.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">How much do homes cost in The Vistas Summerlin?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Home prices in The Vistas Summerlin typically range from $800,000 to over $2.5 million, depending on the 
+                  community, home size, and features. The median home price is approximately $1.2 million, with luxury estates 
+                  commanding premium prices for their location, amenities, and architectural features.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">What amenities are available in The Vistas Summerlin?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  The Vistas Summerlin offers world-class amenities including TPC Summerlin golf course, resort-style pools, 
+                  fitness centers, walking trails, parks, and playgrounds. Many communities feature private clubhouses, 
+                  tennis courts, and concierge services, providing a resort-like living experience.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Is The Vistas Summerlin a good investment?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Yes, The Vistas Summerlin has consistently shown strong appreciation and is considered one of Las Vegas's 
+                  premier real estate investments. The community's location, amenities, and reputation make it highly 
+                  desirable for both primary residences and investment properties, with strong rental demand and property values.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">How can I find the right real estate agent for The Vistas Summerlin?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Dr. Jan Duffy is a specialized real estate agent with extensive experience in The Vistas Summerlin market. 
+                  With 12+ years of Nevada market expertise and flexible scheduling that works around your lifestyle, 
+                  Dr. Duffy provides personalized service for buyers, sellers, and investors in The Vistas Summerlin community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
       <FAQSchema />
