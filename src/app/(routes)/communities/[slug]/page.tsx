@@ -95,7 +95,7 @@ const CommunityHero = ({ community }: { community: CommunityData }) => (
           <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
             <Image
               src={community.image || '/subcommunities/IMG_0737.JPG'}
-              alt={`${community.name} community`}
+              alt={`Luxury homes in ${community.name} community, The Vistas Summerlin, Las Vegas - ${community.description}`}
               fill
               className="object-cover"
             />
